@@ -1,5 +1,4 @@
-# python-to-learn-python
-Python to learn Python
+# Python to learn Python
 
 I've just started this project. It's in its inception stage so it's
 not ready for general use.
