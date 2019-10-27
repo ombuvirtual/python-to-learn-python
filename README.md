@@ -1,7 +1,7 @@
 # Python to learn Python
 
-I've just started this project. It's in its inception stage so it's
-not ready for general use.
+This project is in its inception stage so it's not ready for general
+use.
 
 When it's finished _Python To Learn Python_ will be a small collection
 of amply documented Python scripts and associated _github pages_
