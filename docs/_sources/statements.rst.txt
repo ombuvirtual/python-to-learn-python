@@ -1,0 +1,20 @@
+.. python to learn python documentation master file, created by
+   sphinx-quickstart on Mon Oct 14 19:00:54 2019.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Statements
+==========
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   rst/stmt
+
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`

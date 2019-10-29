@@ -6,12 +6,21 @@
 Python to learn Python
 ======================
 
+This web site is generated from the contents of Python scripts in
+github project `Python to learn Python`_ . The project is in a very
+early stage of development and not ready for general use. See the
+README.md file in the project's repository for details and status.
+
+.. _`Python to learn Python`: https://github.com/ombuvirtual/python-to-learn-python
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    :name: maintoc
 
-   rst/type_list
+   structure
+   statements
+   expressions
 
 .. Indices and tables
 .. ==================

@@ -340,21 +340,58 @@ assert x == ["a", "b", "a", "b", "a", "b"]
 # Creating a list by slicing an existing list
 # ```````````````````````````````````````````
 
-# Slicing returns a new list ::
+# You can create a new list by *slicing* an existing list using the
+# *slice* operator ``x[i:j]``. Here ``x`` is an existing list; the
+# first argument ``i`` is the index of the element of ``x`` you want
+# to be the first element in the new list and the second argument
+# ``j`` is 1 *plus* the index of the last element you want
+# included.
 
-#: a list of strings
-x = ["a", "b", "c"]
+# For example, suppose you have the following list of strings, ::
 
-#: creates new list ['a', 'b']
-print(ln(), x[0:2])
+y = ["a", "b", "c", "d", "e", "f"]
 
-#: creates new list ['c', 'b', 'a']
-print(ln(), x[-2:])
+# and you want to create a new list from a slice of ``y`` containing
+# the elements "c", "d" and "e". The index of "c" is 2 (counting from
+# 0 from the the beginning of list ``y``) and that is the first
+# argument of the slice operator. The index of "e" is 4 so you add 1
+# to get 5 as the second argument of the slice operator, ::
 
-# Use slicing to make a shallow copy of a list, ::
+x = y[2:5]
+assert x == ["c", "d", "e"]
 
-x = x[:]
-print(ln(), x)
+# If you are creating a slice from the beginning of an existing list
+# you can omit the first argument of the slice operator. It is assumed
+# to be 0. For example, if you want to create a slice from ``y``
+# containing elements "a", "b", "c", you only have to include the
+# second argument (the index of the last element you want to include
+# *plus* 1), ::
+
+x = y[:3]
+assert x == ["a", "b", "c"]
+
+# Similarly you can create a slice to the end of the list by omitting
+# the last argument, ::
+
+x = y[3:]
+assert x == ["d", "e", "f"]
+
+# If you omit both arguments the slicing operation makes a shallow
+# copy of the list. In the following example ``x`` is a new list
+# containing references to the same objects as list ``y``, ::
+
+x = y[:]
+assert x == y
+
+# You can use negative arguments with the slice operator to indicate
+# you are counting from the end of the list starting at -1. For
+# example, suppose you want to create slice ``["c", "d", "e"]`` from
+# list ``y`` above using negative indices. The first element "e" has
+# index -4 and "e" has index -2 and you add 1 to get -1 for the second
+# argument of the slice operator, ::
+
+x = y[-4:-1]
+assert x == ["c", "d", "e"]
 
 # Querying lists
 # ~~~~~~~~~~~~~~
@@ -511,16 +548,104 @@ except ValueError as e:
 # Adding elements to a list
 # `````````````````````````
 
-# + append
-# + extend
-# + insert
+# Appending elements
+# ..................
+
+# The ``append()`` method adds an element to the end of a list, ::
+
+x = ["a", "b"]
+y = x.append("c")
+
+assert x == ["a", "b", "c" ]
+assert y == None
+
+# You can also add an element to the end of a list using the slice
+# operator as target of an assingment statement, ::
+
+x = ["a", "b"]
+x[len(x):len(x)] = ["c"]
+assert x == ["a", "b", "c" ]
+
+# You can extend a list with the contents of an existing list, ::
+
+x = ["a", "b"]
+y = x.extend(["c", "d"])
+assert x == ["a", "b", "c", "d"]
+assert y == None
+
+# You can achieve the same result with the slice operator as target of
+# assignment statement, ::
+
+x = ["a", "b"]
+x[len(x):len(x)] = ["c", "d"]
+assert x == ["a", "b", "c", "d"]
+
+# Inserting elements
+# ..................
+
+# You can insert an element at a given index, ::
+
+#: insert at index = 0
+x = ["c"]
+y = x.insert(0, "a")
+assert x == ["a", "c"]
+assert y == None
+
+#: insert at index = 1
+y = x.insert(1, "b")
+assert x == ["a", "b", "c"]
+assert y == None
+
+# You can achieve the same result with slice operator, ::
+
+x = ["a", "c"]
+x[1:1] = ["b"]
+assert x == ["a", "b", "c"]
+
+x = ["a", "c"]
+x[1:1] = ["b"]
+assert x == ["a", "b", "c"]
+
+x = ["a", "c"]
+x[-1:-1] = ["b"]
+assert x == ["a", "b", "c"]
+
+x = ["a", "c"]
+x[len(x)-1:len(x)-1] = ["b"]
+assert x == ["a", "b", "c"]
 
 # Removing elements from a list
 # `````````````````````````````
 
-# + remove
-# + pop
-# + clear
+# Retrieve element at index and remove it from list, ::
+
+x = ["a", "b", "c"]
+y = x.pop(1)
+assert y == "b"
+assert x == ["a", "c"]
+
+# If no index given removes the last elements, ::
+
+x = ["a", "b", "c"]
+y = x.pop()
+assert y == "c"
+assert x == ["a", "b"]
+
+# Remove the first element in list that is equal to the given object,
+# returns None, ::
+
+x = ["a", "b", "c"]
+y = x.remove("c")
+assert y == None
+assert x == ["a", "b"]
+
+# Remove all elements in a list, ::
+
+x = ["a", "b", "c"]
+y = x.clear()
+assert y == None
+assert x == []
+
 # + del
 
 # Removing elements using assignment to slice ::
@@ -553,53 +678,99 @@ print(ln(), x)
 # Sorting and reversing elements
 # ``````````````````````````````
 
-# You can sort the elements of a list, ::
+# A common requirement is to sort the elements of a list. You can use
+# the ``sort()`` method to sort the elements of a list *in place*. The
+# elements of the list must be of the same type and support the less
+# than '<' operation. For example, you can sort the following list of
+# integers, ::
 
-#: a list of integers
 x = [3, 1, 2]
-
-#: sort list in place
-#: note that the sort method returns
-#: the value 'None' not the sorted list
 assert x.sort() == None
-print(ln(), x)
+assert x == [1, 2, 3]
 
-# You can reverse the order of elements using the ``reverse()``
-# method, ::
+# Note that the ``sort()`` method does not return the sorted list. It
+# returns ``None`` instead. This is a reminder that sorting is
+# performed *in place* modifying the original list. This approach
+# saves memory when sorting large lists.
 
-#: a list of strings
+# Sometimes you want to create a new list containing the same elements
+# of an existing list but in the *reverse order*. You can you use the
+# ``reverse()`` method for that task. Like the ``sort()`` method above
+# reversing modifies the original list and returns ``None``. For
+# example, suppose you want to reverse the order of the following list
+# of strings, ::
+
 x = ["a", "b", "c"]
-
-#: reverse list in place
-#: note that the reverse method returns
-#: the value 'None' not the reversed list
 assert x.reverse() == None
-print(ln(), x)
+assert x == ["c", "b", "a"]
 
 # Comparing lists
 # ~~~~~~~~~~~~~~~
 
-# You can compare lists containing objects of the same type.
+# You can compare lists with elements of the same type and the same
+# number of elements using the comparison operator ``==``.
 
-# ::
+# Two lists with the same elements, ::
 
-assert [1, 2] == [1, 2]
-assert [1, 2] != [1, 3]
-assert [1, 2] != []
-assert [1, 2] != ["1", "2"]
+x = list("abc")
+y = list("abc")
+assert id(x) != id(y)
+assert x == y
+
+# Two empty lists, ::
+
+x = list()
+y = list()
+assert id(x) != id(y)
+assert x == y
+
+# Two lists with different elements of the same type, ::
+
+x = ["a", "b"]
+y = ["a", "c"]
+assert x != y
+
+# Two lists with elements of the same type with different number of
+# elements, ::
+
+x = ["a", "b", "c"]
+y = ["a", "c"]
+assert x != y
+
+# Two lists with elements of different types, ::
+
+x = ["a", "b"]
+y = [1, 2]
+assert x != y
 
 # Iterating lists
 # ~~~~~~~~~~~~~~~
 
-# ::
+# Lists are iterable objects so you can use them in contexts where an
+# iterable object is valid. In particular, you can use a list as the
+# iterable in a ``for`` loop. In the following example a ``for`` loop
+# is used to iterate over a list of integers to produce the sum of its
+# elements, ::
 
-x = ["a", "b", "c"]
-for i in x:
-    print(ln(), i)
+x = [1, 2, 3]; sum = 0
 
-x = [1, 2, 3]
-for i in x:
-    print(ln(), i)
+for element in x:
+    sum = sum + element
+
+assert sum == 6
+
+# You can't iterate over a list and modify the list at the same time.
+
+# You can, of course, use the traditional method of iterating using a
+# ``while`` statement, ::
+
+x = [1, 2, 3]; index = 0; sum = 0
+
+while index < len(x):
+    sum = sum + x[index]
+    index = index + 1
+
+assert sum == 6
 
 # References
 # ~~~~~~~~~~
