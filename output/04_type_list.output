@@ -13,6 +13,3 @@
 570> ValueError max() arg is an empty sequence
 627> ValueError 'd' is not in list
 937> ValueError list.remove(x): x not in list
-1046> ['a', 'b', 'f']
-1052> []
-1059> ['a', 'd', 'd', 'd']

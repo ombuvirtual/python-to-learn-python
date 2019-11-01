@@ -1019,57 +1019,338 @@ target of an assigment statement,</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="list-slices-as-target-of-assignment">
-<h3>List slices as target of assignment<a class="headerlink" href="#list-slices-as-target-of-assignment" title="Permalink to this headline">¶</a></h3>
-<p>You can also add an element to the end of a list using the slice
-operator as target of an assingment statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">]</span>
+<div class="section" id="modifying-lists-using-list-slices">
+<h3>Modifying lists using list slices<a class="headerlink" href="#modifying-lists-using-list-slices" title="Permalink to this headline">¶</a></h3>
+<p>Most of the list modification operations described above can also be
+performed using list slices as the <em>target</em> of an assignment
+statement. This section includes the following examples of using
+list slices to modify a list,</p>
+<ul class="simple">
+<li><p>adding an element to the end of the list</p></li>
+<li><p>extending a list with the elements of an iterable object</p></li>
+<li><p>inserting an element at a specified index</p></li>
+<li><p>replacing elements in a list</p></li>
+<li><p>removing elements from a list</p></li>
+</ul>
+<p>first some general characteristics of the slice operator</p>
+<p>the <em>slice</em> operator applied to a list object is used to represent
+a subset of the list</p>
+<p>the subset it represents is referred to as a <em>slice</em> of the list</p>
+<p>exactly what subset the slice represents is specified using two
+arguments, call the first <code class="docutils literal notranslate"><span class="pre">i</span></code> and the second <code class="docutils literal notranslate"><span class="pre">j</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">i</span></code> specifies the index of the first element included in the slice</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">j</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">i</span></code> then it is interpreted as specifying
+the index that points to the location immediately after the last
+element to be included in the slice</p>
+<p>examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a slice from &quot;a&quot; to &quot;c&quot;</span>
+<span class="c1"># &quot;a&quot; at index 0, &quot;c&quot; at index 2</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a slice from &quot;c&quot; to &quot;e&quot;</span>
+<span class="c1"># &quot;c&quot; at index 2, &quot;e&quot; at index 4</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
+
+<span class="c1"># a slice from &quot;e&quot; to end of list</span>
+<span class="c1"># &quot;e&quot; at index 4</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a slice containing one element</span>
+<span class="c1"># &quot;c&quot; at index 2</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>You can achieve the same result with the slice operator as target of
-assignment statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<p>if <code class="docutils literal notranslate"><span class="pre">j</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">i</span></code>, i.e. both arguments are the same, then
+the slice represents the empty set <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<p>examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Now consider using the slice operator as the target of an assignment
+statement which assigns an iterable object.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">j</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">i</span></code> then the elements of the slice are <em>replaced</em> by
+the elements in the iterable object.</p>
+<p>examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># replace from &quot;d&quot; to &quot;f&quot;</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm slice replaced</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="c1"># replace &quot;d&quot;</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm slice replaced</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove slice from &quot;d&quot; to end of list</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm slice removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove all elements in list</span>
+<span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm all elements removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">i</span></code> == <code class="docutils literal notranslate"><span class="pre">j</span></code> the elements of the iterable object are inserted
+at the index specified and the elements in the list are ‘pushed’ to
+the right accordingly.</p>
+<p>Examples follow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># insert elements at index 0</span>
+<span class="c1"># i.e. at beginning of list</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm elements inserted</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># &#39;insert&#39; elements at index len(x)</span>
+<span class="c1"># i.e. index immediatly after last element</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm elements added</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that if the empty list is assigned nothing happens when <code class="docutils literal notranslate"><span class="pre">i</span></code>
+== <code class="docutils literal notranslate"><span class="pre">j</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># assign empty list</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm nothing happens</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To <strong>add an element</strong> to the end of a list you can use a slice of
+the list with the first and second arguments set to an index that
+points <em>past</em> the last element in the list. The first index that
+points past the last element is equal to the length of the list
+which is conveniently obtained using the built-in function
+<code class="docutils literal notranslate"><span class="pre">len()</span></code>. The following is an example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+
+<span class="c1"># add string &quot;b&quot; to end of list x  using length</span>
+<span class="c1"># of list as arguments to the slice operator</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm string &quot;b&quot; added</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can use a similar approach to <strong>extend a list</strong> with the
+elements of a given iterable object. You set both arguments of the
+slice operator to the length of the list so it ‘points’ past the
+last element and ‘assign’ the iterable object using the assignment
+statement. This is shown in the following example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+
+<span class="c1"># extend list using a string</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;bc&quot;</span>
+
+<span class="c1"># confirm list was extended</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+
+<span class="c1"># extend list using a tuple</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
+
+<span class="c1"># confirm list was extended</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can extend an empty list by setting both arguments of the slice
+operator to 0 or by omitting both arguments as shown in the next
+example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># an empty list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># extend list using another list</span>
+<span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm list was extended</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can <strong>insert elements</strong> at a specified index by setting both
+arguments of the slice operator to the desired index.  The left hand
+side of the assignment statement must be an interable object. The
+following are examples list insert operations,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># insert at index 0 using another list</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># confirm elements were inserted</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="c1"># insert at index 1 using a tuple</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
+
+<span class="c1"># confirm elements were inserted</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>You can also insert elements using the slice operator,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<p>You can conveniently insert elements at the last index of the list
+using the length of the list or the negative index of the last
+element, -1,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="c1"># insert at last index using list length</span>
+<span class="c1"># to calculate last index</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="c1"># confirm elements were inserted</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="c1"># insert at last index using negative</span>
+<span class="c1"># index of last element, i.e. -1</span>
+<span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm elements were inserted</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Removing elements using assignment to slice</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<p>To <strong>replace elements</strong> in a list you assign an iterable object to
+the appropriate list slice. The first argument of the slice operator
+is set to the index of the first element you want to replace and the
+second argument is set to the index immediately after the last
+element you want to replace. For example, suppose you have a list
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and you want to replace elements from index <code class="docutils literal notranslate"><span class="pre">i</span></code> to index
+<code class="docutils literal notranslate"><span class="pre">j</span></code>. Then the appropriate list slice is <code class="docutils literal notranslate"><span class="pre">x[i:j+1]</span></code>. The
+following examples demonstrate replacing elements using this
+approach,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># replace elements &quot;b&quot; to &quot;e&quot; with elements of tuple</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">)</span>
+
+<span class="c1"># confirm elements replaced</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># replace elements &quot;b&quot; to &quot;e&quot; with elements of tuple</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">)</span>
+
+<span class="c1"># confirm elements replaced</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Remove all elements from a list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+<p>To <strong>remove elements</strong> from a list you assign the empty list <code class="docutils literal notranslate"><span class="pre">[]</span></code>
+to the appropriate list slice. The first argument of the slice
+operator is set to the index of the first element you want to remove
+and the second argument is set to the index immediately after the
+last element you want to remove. Suppose you have a list <code class="docutils literal notranslate"><span class="pre">x</span></code> and
+you want to remove elements from index <code class="docutils literal notranslate"><span class="pre">i</span></code> to index <code class="docutils literal notranslate"><span class="pre">j</span></code>, then
+the appropriate slice is <code class="docutils literal notranslate"><span class="pre">x[i:j+1]</span></code>. The following examples
+demonstrate removing list elements using this approach,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove elements &quot;b&quot; to &quot;e&quot; inclusive,</span>
+<span class="c1"># index of &quot;b&quot; is 1, index of &quot;e&quot; is 4</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm elements removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove last element</span>
+<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm last element removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove first element</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># confirm first element removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can remove <em>all</em> elements by omitting both arguments to the
+slice operator,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove all elements</span>
 <span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># confirm all elements removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<p>Replacing elements using slice operator as target of assigment
-statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<p>You can also remove elements using a list slice as the target of the
+<code class="docutils literal notranslate"><span class="pre">del</span></code> statement. This is an alternative to assigning the empty
+list to a list slice. The following examples illustrate,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># remove element &quot;b&quot; to &quot;e&quot;</span>
+<span class="k">del</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># confirm elements removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># remove all elements</span>
+<span class="k">del</span> <span class="n">x</span><span class="p">[:]</span>
+
+<span class="c1"># confirm all elements removed</span>
+<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
 </pre></div>
 </div>
 </div>

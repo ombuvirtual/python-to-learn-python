@@ -1004,59 +1004,350 @@ x[0] = "d"
 #: confirm
 assert x == ["d", "b", "c"]
 
-# List slices as target of assignment
-# ```````````````````````````````````
+# Modifying lists using list slices
+# `````````````````````````````````
 
-# You can also add an element to the end of a list using the slice
-# operator as target of an assingment statement, ::
+# Most of the list modification operations described above can also be
+# performed using list slices as the *target* of an assignment
+# statement. This section includes the following examples of using
+# list slices to modify a list,
 
-x = ["a", "b"]
-x[len(x):len(x)] = ["c"]
-assert x == ["a", "b", "c" ]
+# + adding an element to the end of the list
+# + extending a list with the elements of an iterable object
+# + inserting an element at a specified index
+# + replacing elements in a list
+# + removing elements from a list
 
-# You can achieve the same result with the slice operator as target of
-# assignment statement, ::
+# first some general characteristics of the slice operator
 
-x = ["a", "b"]
-x[len(x):len(x)] = ["c", "d"]
+# the *slice* operator applied to a list object is used to represent
+# a subset of the list
+
+# the subset it represents is referred to as a *slice* of the list
+
+# exactly what subset the slice represents is specified using two
+# arguments, call the first ``i`` and the second ``j``
+
+# ``i`` specifies the index of the first element included in the slice
+
+# if ``j`` is greater than ``i`` then it is interpreted as specifying
+# the index that points to the location immediately after the last
+# element to be included in the slice
+
+# examples ::
+
+#: a list x
+x = ["a", "b", "c" ,"d", "e", "f"]
+
+#: a slice from "a" to "c"
+#: "a" at index 0, "c" at index 2
+assert x[0:3] == ["a", "b", "c"]
+
+#: a slice from "c" to "e"
+#: "c" at index 2, "e" at index 4
+assert x[2:5] == ["c", "d", "e"]
+
+#: a slice from "e" to end of list
+#: "e" at index 4
+assert x[4:len(x)] == ["e", "f"]
+
+#: a slice containing one element
+#: "c" at index 2
+assert x[2:3] == ["c"]
+
+# if ``j`` is equal to ``i``, i.e. both arguments are the same, then
+# the slice represents the empty set ``[]``.
+
+# examples ::
+
+#: a list x
+x = ["a", "b" ,"c"]
+assert x[0:0] == []
+assert x[1:1] == []
+assert x[2:2] == []
+assert x[len(x):len(x)] == []
+
+# Now consider using the slice operator as the target of an assignment
+# statement which assigns an iterable object.
+
+# If ``j`` > ``i`` then the elements of the slice are *replaced* by
+# the elements in the iterable object.
+
+# examples ::
+
+#: a list x
+x = ["a", "d", "e", "f"]
+
+#: replace from "d" to "f"
+x[1:4] = ["b", "c"]
+
+#: confirm slice replaced
+assert x == ["a", "b", "c"]
+
+#: a list x
+x = ["a", "d"]
+
+#: replace "d" 
+x[1:2] = ["b", "c"]
+
+#: confirm slice replaced
+assert x == ["a", "b", "c"]
+
+#: a list x
+x = ["a", "b", "c", "d", "e", "f"]
+
+#: remove slice from "d" to end of list
+x[3:len(x)] = []
+
+#: confirm slice removed
+assert x == ["a", "b", "c"]
+
+#: a list x
+x = ["a", "b", "c"]
+
+#: remove all elements in list
+x[:] = []
+
+#: confirm all elements removed
+assert x == []
+
+# If ``i`` == ``j`` the elements of the iterable object are inserted
+# at the index specified and the elements in the list are 'pushed' to
+# the right accordingly.
+
+# Examples follow ::
+
+#: a list x
+x = ["d", "e", "f"]
+
+#: insert elements at index 0
+#: i.e. at beginning of list
+x[0:0] = ["a", "b", "c"]
+
+#: confirm elements inserted
+assert x == ["a", "b", "c", "d", "e", "f"]
+
+#: a list x
+x = ["a", "b", "c"]
+
+#: 'insert' elements at index len(x)
+#: i.e. index immediatly after last element
+x[len(x):len(x)] = ["d", "e", "f"]
+
+#: confirm elements added
+assert x == ["a", "b", "c", "d", "e", "f"]
+
+# Note that if the empty list is assigned nothing happens when ``i``
+# == ``j``, ::
+
+#: a list x
+x = ["a", "b", "c"]
+
+#: assign empty list
+x[1:1] = []
+
+#: confirm nothing happens
+assert x == ["a", "b", "c"]
+
+# To **add an element** to the end of a list you can use a slice of
+# the list with the first and second arguments set to an index that
+# points *past* the last element in the list. The first index that
+# points past the last element is equal to the length of the list
+# which is conveniently obtained using the built-in function
+# ``len()``. The following is an example, ::
+
+#: a list x
+x = ["a"]
+
+#: add string "b" to end of list x  using length
+#: of list as arguments to the slice operator
+x[len(x):len(x)] = ["b"]
+
+#: confirm string "b" added
+assert x == ["a", "b"]
+
+# You can use a similar approach to **extend a list** with the
+# elements of a given iterable object. You set both arguments of the
+# slice operator to the length of the list so it 'points' past the
+# last element and 'assign' the iterable object using the assignment
+# statement. This is shown in the following example, ::
+
+#: a list x
+x = ["a"]
+
+#: extend list using a string
+x[len(x):len(x)] = "bc"
+
+#: confirm list was extended
+assert x == ["a", "b", "c"]
+
+#: a list x
+x = ["a"]
+
+#: extend list using a tuple
+x[len(x):len(x)] = ("b", "c")
+
+#: confirm list was extended
+assert x == ["a", "b", "c"]
+
+# You can extend an empty list by setting both arguments of the slice
+# operator to 0 or by omitting both arguments as shown in the next
+# example, ::
+
+#: an empty list x
+x = []
+
+#: extend list using another list
+x[:] = ["a", "b", "c"]
+
+#: confirm list was extended
+assert x == ["a", "b", "c"]
+
+# You can **insert elements** at a specified index by setting both
+# arguments of the slice operator to the desired index.  The left hand
+# side of the assignment statement must be an interable object. The
+# following are examples list insert operations, ::
+
+#: a list x
+x = [3]
+
+#: insert at index 0 using another list
+x[0:0] = [1, 2]
+
+#: confirm elements were inserted
+assert x == [1, 2, 3]
+
+#: a list x
+x = ["a", "d"]
+
+#: insert at index 1 using a tuple
+x[1:1] = ("b", "c")
+
+#: confirm elements were inserted
 assert x == ["a", "b", "c", "d"]
 
-# You can also insert elements using the slice operator, ::
+# You can conveniently insert elements at the last index of the list
+# using the length of the list or the negative index of the last
+# element, -1, ::
 
-x = ["a", "c"]
-x[1:1] = ["b"]
-assert x == ["a", "b", "c"]
+#: a list x
+x = ["a", "d"]
 
-x = ["a", "c"]
-x[1:1] = ["b"]
-assert x == ["a", "b", "c"]
+#: insert at last index using list length
+#: to calculate last index
+x[len(x)-1:len(x)-1] = ["b", "c"]
 
-x = ["a", "c"]
-x[-1:-1] = ["b"]
-assert x == ["a", "b", "c"]
+#: confirm elements were inserted
+assert x == ["a", "b", "c", "d"]
 
-x = ["a", "c"]
-x[len(x)-1:len(x)-1] = ["b"]
-assert x == ["a", "b", "c"]
+#: a list x
+x = ["a", "d"]
 
-# Removing elements using assignment to slice ::
+#: insert at last index using negative
+#: index of last element, i.e. -1
+x[-1:-1] = ["b", "c"]
 
+#: confirm elements were inserted
+assert x == ["a", "b", "c", "d"]
+
+# To **replace elements** in a list you assign an iterable object to
+# the appropriate list slice. The first argument of the slice operator
+# is set to the index of the first element you want to replace and the
+# second argument is set to the index immediately after the last
+# element you want to replace. For example, suppose you have a list
+# ``x`` and you want to replace elements from index ``i`` to index
+# ``j``. Then the appropriate list slice is ``x[i:j+1]``. The
+# following examples demonstrate replacing elements using this
+# approach, ::
+
+#: a list x
 x = ["a", "b", "c", "d", "e", "f"]
-x[2:5] = []
-print(ln(), x)
 
-# Remove all elements from a list, ::
+#: replace elements "b" to "e" with elements of tuple
+x[1:5] = ("g", "h")
 
+#: confirm elements replaced
+assert x == ["a", "g", "h", "f"]
+
+#: a list x
 x = ["a", "b", "c", "d", "e", "f"]
+
+#: replace elements "b" to "e" with elements of tuple
+x[1:5] = ("g", "h", "i", "j")
+
+#: confirm elements replaced
+assert x == ["a", "g", "h", "i", "j", "f"]
+
+# To **remove elements** from a list you assign the empty list ``[]``
+# to the appropriate list slice. The first argument of the slice
+# operator is set to the index of the first element you want to remove
+# and the second argument is set to the index immediately after the
+# last element you want to remove. Suppose you have a list ``x`` and
+# you want to remove elements from index ``i`` to index ``j``, then
+# the appropriate slice is ``x[i:j+1]``. The following examples
+# demonstrate removing list elements using this approach, ::
+
+#: a list x
+x = ["a", "b", "c", "d", "e", "f"]
+
+#: remove elements "b" to "e" inclusive,
+#: index of "b" is 1, index of "e" is 4
+x[1:5] = []
+
+#: confirm elements removed
+assert x == ["a", "f"]
+
+#: a list x
+x = ["a", "b", "c"]
+ 
+#: remove last element
+x[len(x)-1:len(x)] = []
+
+#: confirm last element removed
+assert x == ["a", "b"]
+
+#: a list x
+x = ["a", "b", "c"]
+
+#: remove first element
+x[0:1] = []
+
+#: confirm first element removed
+assert x == ["b", "c"]
+
+# You can remove *all* elements by omitting both arguments to the
+# slice operator, ::
+
+#: a list x
+x = ["a", "b", "c"]
+
+#: remove all elements
 x[:] = []
-print(ln(), x)
 
-# Replacing elements using slice operator as target of assigment
-# statement, ::
+#: confirm all elements removed
+assert x == []
 
-x = ["a", "b", "c", "d"]
-x[1:3] = ["d", "d"]
-print(ln(), x)
+# You can also remove elements using a list slice as the target of the
+# ``del`` statement. This is an alternative to assigning the empty
+# list to a list slice. The following examples illustrate, ::
+
+#: a list x
+x = ["a", "b", "c", "d", "e", "f"]
+
+#: remove element "b" to "e"
+del x[1:5]
+
+#: confirm elements removed
+assert x == ["a", "f"]
+
+#: a list x
+x = [1, 2, 3]
+
+#: remove all elements
+del x[:]
+
+#: confirm all elements removed
+assert x == []
 
 # Sorting and reversing elements
 # ``````````````````````````````
