@@ -14,13 +14,14 @@ README.md file in the project's repository for details and status.
 .. _`Python to learn Python`: https://github.com/ombuvirtual/python-to-learn-python
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
    :name: maintoc
 
-   structure
-   statements
-   expressions
+   rst/structure
+   rst/stmt
+   rst/type
+   rst/type_list
 
 .. Indices and tables
 .. ==================
