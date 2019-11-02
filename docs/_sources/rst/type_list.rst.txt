@@ -1009,71 +1009,90 @@ Modifying lists using list slices
 
 Most of the list modification operations described above can also be
 performed using list slices as the *target* of an assignment
-statement. This section includes the following examples of using
-list slices to modify a list,
+statement.
 
-+ adding an element to the end of the list
-+ extending a list with the elements of an iterable object
-+ inserting an element at a specified index
-+ replacing elements in a list
-+ removing elements from a list
+In this section I first consider some general characteristics of
+list *slicing*. I then show that assigning an iterable object to a
+list slice is interpreted by Python as a *replacement* operation in
+which the elements represented by the list slice are replaced, in
+the actual list, by the elements of the iterable object. In other
+words, it is a way of telling the interpreter how to replace
+elements in a list.
 
-first some general characteristics of the slice operator
+In this section I also consider the case in which the two arguments
+of the slice operator are set to the same value. I show that, in the
+context of an assignment statement, this is interpreted as an
+*insertion* operation in which the elements of an interable object
+are inserted at the index specified in the slice operator,
+'pushing', as it were, the existing elements in the actual list to
+the 'right'.
 
-the *slice* operator applied to a list object is used to represent
-a subset of the list
+Suppose you have a list ``x`` and you want to represent a subset of
+``x`` consisting of a contiguous sub-sequence of its elements. This
+sub-sequence is commonly called a *slice* of ``x``. You can use the
+*slice* operator to represent such list slices. Suppose the index of
+the first element of x to be included in the slice is ``i`` and the
+index of the last element to be included is ``j``, so that ``i`` <
+``j``. Then this slice of ``x`` is represented by ``x[i:j+1]``.
 
-the subset it represents is referred to as a *slice* of the list
-
-exactly what subset the slice represents is specified using two
-arguments, call the first ``i`` and the second ``j``
-
-``i`` specifies the index of the first element included in the slice
-
-if ``j`` is greater than ``i`` then it is interpreted as specifying
-the index that points to the location immediately after the last
-element to be included in the slice
-
-examples ::
+Note that the first argument ``i`` is the index of the first element
+of the slice while the second argument ``j+1`` points to an element
+immediately after the last element of the slice. The following are
+some examples of list slices, ::
 
     # a list x
     x = ["a", "b", "c" ,"d", "e", "f"]
 
-    # a slice from "a" to "c"
-    # "a" at index 0, "c" at index 2
+    # create a slice of x starting at index 0
+    # and ending at index 2
     assert x[0:3] == ["a", "b", "c"]
 
-    # a slice from "c" to "e"
-    # "c" at index 2, "e" at index 4
+    # create a slice of x starting at index 2
+    # and ending at index 4
     assert x[2:5] == ["c", "d", "e"]
 
-    # a slice from "e" to end of list
-    # "e" at index 4
+    # create a slice of x starting at index 4
+    # and ending at index 5
     assert x[4:len(x)] == ["e", "f"]
 
-    # a slice containing one element
-    # "c" at index 2
+    # create a slice of x starting at index 2
+    # and endining at index 2
     assert x[2:3] == ["c"]
 
-if ``j`` is equal to ``i``, i.e. both arguments are the same, then
-the slice represents the empty set ``[]``.
-
-examples ::
+The slice operator can take an optional third argument to indicate
+the *slice step* to use when producing the slice. A slice step
+indicates how much you have to add to the index of the current
+element in the slice to obtain the index of the next element in the
+slice. For example, suppose you have the following list, ::
 
     # a list x
-    x = ["a", "b" ,"c"]
-    assert x[0:0] == []
-    assert x[1:1] == []
-    assert x[2:2] == []
-    assert x[len(x):len(x)] == []
+    x = ["a", "b", "c", "d", "e", "f"]
 
-Now consider using the slice operator as the target of an assignment
-statement which assigns an iterable object.
+You want to create a slice containing elements "a", "c" and "e". The
+first element of the slice is "a" which has index 0. You add the
+slice step to index 0 to get index 2, the index of "c", the next
+element in the slice. You now add the slice step to index 2 to get
+index 4, the index of "e", the next and last element in the
+slice. The following snippet shows the invocation of the slice
+operator for this example, ::
 
-If ``j`` > ``i`` then the elements of the slice are *replaced* by
-the elements in the iterable object.
+    # create a slice of x using a slice step of 2
+    assert x[0:len(x):2] == ["a", "c", "e"]
 
-examples ::
+Note that a slice step of 1 is equivalent to the standard case in
+which we omit the third argument to the slice operator. The
+following snippet shows this equivalence, ::
+
+    # a list x
+    x = ["a", "b", "c", "d", "e", "f"]
+
+    # confirm a slice step of 1 is the same
+    # as omitting slice step argument
+    assert x[0:len(x)] == x[0:len(x):1]
+
+When a list slice is used as the 'target' of an assignment statement
+with an iterable object as the 'source', the statement is
+interpreted as a replacement operation. ::
 
     # a list x
     x = ["a", "d", "e", "f"]
@@ -1111,11 +1130,23 @@ examples ::
     # confirm all elements removed
     assert x == []
 
-If ``i`` == ``j`` the elements of the iterable object are inserted
-at the index specified and the elements in the list are 'pushed' to
-the right accordingly.
+If you set the two arguments of the slice operator to the same value
+the operator evaluates to the empty list ``[]``. This is shown in the
+next example, ::
 
-Examples follow ::
+    # a list x
+    x = ["a", "b" ,"c"]
+
+    # a slice of x with both arguments set to
+    # the same value produces the empty list
+    assert x[0:0] == []
+    assert x[1:1] == []
+    assert x[2:2] == []
+    assert x[len(x):len(x)] == []
+
+Using a list slice with two arguments set to the same value, in the
+context of an assignment statement, is interpreted as an
+insertion operation. ::
 
     # a list x
     x = ["d", "e", "f"]
@@ -1137,8 +1168,7 @@ Examples follow ::
     # confirm elements added
     assert x == ["a", "b", "c", "d", "e", "f"]
 
-Note that if the empty list is assigned nothing happens when ``i``
-== ``j``, ::
+Note that if the empty list is assigned nothing happens, ::
 
     # a list x
     x = ["a", "b", "c"]
@@ -1249,83 +1279,6 @@ element, -1, ::
 
     # confirm elements were inserted
     assert x == ["a", "b", "c", "d"]
-
-To **replace elements** in a list you assign an iterable object to
-the appropriate list slice. The first argument of the slice operator
-is set to the index of the first element you want to replace and the
-second argument is set to the index immediately after the last
-element you want to replace. For example, suppose you have a list
-``x`` and you want to replace elements from index ``i`` to index
-``j``. Then the appropriate list slice is ``x[i:j+1]``. The
-following examples demonstrate replacing elements using this
-approach, ::
-
-    # a list x
-    x = ["a", "b", "c", "d", "e", "f"]
-
-    # replace elements "b" to "e" with elements of tuple
-    x[1:5] = ("g", "h")
-
-    # confirm elements replaced
-    assert x == ["a", "g", "h", "f"]
-
-    # a list x
-    x = ["a", "b", "c", "d", "e", "f"]
-
-    # replace elements "b" to "e" with elements of tuple
-    x[1:5] = ("g", "h", "i", "j")
-
-    # confirm elements replaced
-    assert x == ["a", "g", "h", "i", "j", "f"]
-
-To **remove elements** from a list you assign the empty list ``[]``
-to the appropriate list slice. The first argument of the slice
-operator is set to the index of the first element you want to remove
-and the second argument is set to the index immediately after the
-last element you want to remove. Suppose you have a list ``x`` and
-you want to remove elements from index ``i`` to index ``j``, then
-the appropriate slice is ``x[i:j+1]``. The following examples
-demonstrate removing list elements using this approach, ::
-
-    # a list x
-    x = ["a", "b", "c", "d", "e", "f"]
-
-    # remove elements "b" to "e" inclusive,
-    # index of "b" is 1, index of "e" is 4
-    x[1:5] = []
-
-    # confirm elements removed
-    assert x == ["a", "f"]
-
-    # a list x
-    x = ["a", "b", "c"]
- 
-    # remove last element
-    x[len(x)-1:len(x)] = []
-
-    # confirm last element removed
-    assert x == ["a", "b"]
-
-    # a list x
-    x = ["a", "b", "c"]
-
-    # remove first element
-    x[0:1] = []
-
-    # confirm first element removed
-    assert x == ["b", "c"]
-
-You can remove *all* elements by omitting both arguments to the
-slice operator, ::
-
-    # a list x
-    x = ["a", "b", "c"]
-
-    # remove all elements
-    x[:] = []
-
-    # confirm all elements removed
-    assert x == []
 
 You can also remove elements using a list slice as the target of the
 ``del`` statement. This is an alternative to assigning the empty

@@ -1023,62 +1023,86 @@ target of an assigment statement,</p>
 <h3>Modifying lists using list slices<a class="headerlink" href="#modifying-lists-using-list-slices" title="Permalink to this headline">¶</a></h3>
 <p>Most of the list modification operations described above can also be
 performed using list slices as the <em>target</em> of an assignment
-statement. This section includes the following examples of using
-list slices to modify a list,</p>
-<ul class="simple">
-<li><p>adding an element to the end of the list</p></li>
-<li><p>extending a list with the elements of an iterable object</p></li>
-<li><p>inserting an element at a specified index</p></li>
-<li><p>replacing elements in a list</p></li>
-<li><p>removing elements from a list</p></li>
-</ul>
-<p>first some general characteristics of the slice operator</p>
-<p>the <em>slice</em> operator applied to a list object is used to represent
-a subset of the list</p>
-<p>the subset it represents is referred to as a <em>slice</em> of the list</p>
-<p>exactly what subset the slice represents is specified using two
-arguments, call the first <code class="docutils literal notranslate"><span class="pre">i</span></code> and the second <code class="docutils literal notranslate"><span class="pre">j</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">i</span></code> specifies the index of the first element included in the slice</p>
-<p>if <code class="docutils literal notranslate"><span class="pre">j</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">i</span></code> then it is interpreted as specifying
-the index that points to the location immediately after the last
-element to be included in the slice</p>
-<p>examples</p>
+statement.</p>
+<p>In this section I first consider some general characteristics of
+list <em>slicing</em>. I then show that assigning an iterable object to a
+list slice is interpreted by Python as a <em>replacement</em> operation in
+which the elements represented by the list slice are replaced, in
+the actual list, by the elements of the iterable object. In other
+words, it is a way of telling the interpreter how to replace
+elements in a list.</p>
+<p>In this section I also consider the case in which the two arguments
+of the slice operator are set to the same value. I show that, in the
+context of an assignment statement, this is interpreted as an
+<em>insertion</em> operation in which the elements of an interable object
+are inserted at the index specified in the slice operator,
+‘pushing’, as it were, the existing elements in the actual list to
+the ‘right’.</p>
+<p>Suppose you have a list <code class="docutils literal notranslate"><span class="pre">x</span></code> and you want to represent a subset of
+<code class="docutils literal notranslate"><span class="pre">x</span></code> consisting of a contiguous sub-sequence of its elements. This
+sub-sequence is commonly called a <em>slice</em> of <code class="docutils literal notranslate"><span class="pre">x</span></code>. You can use the
+<em>slice</em> operator to represent such list slices. Suppose the index of
+the first element of x to be included in the slice is <code class="docutils literal notranslate"><span class="pre">i</span></code> and the
+index of the last element to be included is <code class="docutils literal notranslate"><span class="pre">j</span></code>, so that <code class="docutils literal notranslate"><span class="pre">i</span></code> &lt;
+<code class="docutils literal notranslate"><span class="pre">j</span></code>. Then this slice of <code class="docutils literal notranslate"><span class="pre">x</span></code> is represented by <code class="docutils literal notranslate"><span class="pre">x[i:j+1]</span></code>.</p>
+<p>Note that the first argument <code class="docutils literal notranslate"><span class="pre">i</span></code> is the index of the first element
+of the slice while the second argument <code class="docutils literal notranslate"><span class="pre">j+1</span></code> points to an element
+immediately after the last element of the slice. The following are
+some examples of list slices,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
-<span class="c1"># a slice from &quot;a&quot; to &quot;c&quot;</span>
-<span class="c1"># &quot;a&quot; at index 0, &quot;c&quot; at index 2</span>
+<span class="c1"># create a slice of x starting at index 0</span>
+<span class="c1"># and ending at index 2</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
-<span class="c1"># a slice from &quot;c&quot; to &quot;e&quot;</span>
-<span class="c1"># &quot;c&quot; at index 2, &quot;e&quot; at index 4</span>
+<span class="c1"># create a slice of x starting at index 2</span>
+<span class="c1"># and ending at index 4</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
 
-<span class="c1"># a slice from &quot;e&quot; to end of list</span>
-<span class="c1"># &quot;e&quot; at index 4</span>
+<span class="c1"># create a slice of x starting at index 4</span>
+<span class="c1"># and ending at index 5</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
-<span class="c1"># a slice containing one element</span>
-<span class="c1"># &quot;c&quot; at index 2</span>
+<span class="c1"># create a slice of x starting at index 2</span>
+<span class="c1"># and endining at index 2</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>if <code class="docutils literal notranslate"><span class="pre">j</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">i</span></code>, i.e. both arguments are the same, then
-the slice represents the empty set <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
-<p>examples</p>
+<p>The slice operator can take an optional third argument to indicate
+the <em>slice step</em> to use when producing the slice. A slice step
+indicates how much you have to add to the index of the current
+element in the slice to obtain the index of the next element in the
+slice. For example, suppose you have the following list,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
-<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
-<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
-<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Now consider using the slice operator as the target of an assignment
-statement which assigns an iterable object.</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">j</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">i</span></code> then the elements of the slice are <em>replaced</em> by
-the elements in the iterable object.</p>
-<p>examples</p>
+<p>You want to create a slice containing elements “a”, “c” and “e”. The
+first element of the slice is “a” which has index 0. You add the
+slice step to index 0 to get index 2, the index of “c”, the next
+element in the slice. You now add the slice step to index 2 to get
+index 4, the index of “e”, the next and last element in the
+slice. The following snippet shows the invocation of the slice
+operator for this example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a slice of x using a slice step of 2</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Note that a slice step of 1 is equivalent to the standard case in
+which we omit the third argument to the slice operator. The
+following snippet shows this equivalence,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># confirm a slice step of 1 is the same</span>
+<span class="c1"># as omitting slice step argument</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When a list slice is used as the ‘target’ of an assignment statement
+with an iterable object as the ‘source’, the statement is
+interpreted as a replacement operation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
@@ -1116,10 +1140,23 @@ the elements in the iterable object.</p>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
 </pre></div>
 </div>
-<p>If <code class="docutils literal notranslate"><span class="pre">i</span></code> == <code class="docutils literal notranslate"><span class="pre">j</span></code> the elements of the iterable object are inserted
-at the index specified and the elements in the list are ‘pushed’ to
-the right accordingly.</p>
-<p>Examples follow</p>
+<p>If you set the two arguments of the slice operator to the same value
+the operator evaluates to the empty list <code class="docutils literal notranslate"><span class="pre">[]</span></code>. This is shown in the
+next example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># a slice of x with both arguments set to</span>
+<span class="c1"># the same value produces the empty list</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">==</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Using a list slice with two arguments set to the same value, in the
+context of an assignment statement, is interpreted as an
+insertion operation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
@@ -1141,8 +1178,7 @@ the right accordingly.</p>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Note that if the empty list is assigned nothing happens when <code class="docutils literal notranslate"><span class="pre">i</span></code>
-== <code class="docutils literal notranslate"><span class="pre">j</span></code>,</p>
+<p>Note that if the empty list is assigned nothing happens,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
@@ -1252,83 +1288,6 @@ element, -1,</p>
 
 <span class="c1"># confirm elements were inserted</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>To <strong>replace elements</strong> in a list you assign an iterable object to
-the appropriate list slice. The first argument of the slice operator
-is set to the index of the first element you want to replace and the
-second argument is set to the index immediately after the last
-element you want to replace. For example, suppose you have a list
-<code class="docutils literal notranslate"><span class="pre">x</span></code> and you want to replace elements from index <code class="docutils literal notranslate"><span class="pre">i</span></code> to index
-<code class="docutils literal notranslate"><span class="pre">j</span></code>. Then the appropriate list slice is <code class="docutils literal notranslate"><span class="pre">x[i:j+1]</span></code>. The
-following examples demonstrate replacing elements using this
-approach,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-
-<span class="c1"># replace elements &quot;b&quot; to &quot;e&quot; with elements of tuple</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">)</span>
-
-<span class="c1"># confirm elements replaced</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-
-<span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-
-<span class="c1"># replace elements &quot;b&quot; to &quot;e&quot; with elements of tuple</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">)</span>
-
-<span class="c1"># confirm elements replaced</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>To <strong>remove elements</strong> from a list you assign the empty list <code class="docutils literal notranslate"><span class="pre">[]</span></code>
-to the appropriate list slice. The first argument of the slice
-operator is set to the index of the first element you want to remove
-and the second argument is set to the index immediately after the
-last element you want to remove. Suppose you have a list <code class="docutils literal notranslate"><span class="pre">x</span></code> and
-you want to remove elements from index <code class="docutils literal notranslate"><span class="pre">i</span></code> to index <code class="docutils literal notranslate"><span class="pre">j</span></code>, then
-the appropriate slice is <code class="docutils literal notranslate"><span class="pre">x[i:j+1]</span></code>. The following examples
-demonstrate removing list elements using this approach,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-
-<span class="c1"># remove elements &quot;b&quot; to &quot;e&quot; inclusive,</span>
-<span class="c1"># index of &quot;b&quot; is 1, index of &quot;e&quot; is 4</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># confirm elements removed</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
-
-<span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-
-<span class="c1"># remove last element</span>
-<span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># confirm last element removed</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
-
-<span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-
-<span class="c1"># remove first element</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># confirm first element removed</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>You can remove <em>all</em> elements by omitting both arguments to the
-slice operator,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
-
-<span class="c1"># remove all elements</span>
-<span class="n">x</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># confirm all elements removed</span>
-<span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
 </pre></div>
 </div>
 <p>You can also remove elements using a list slice as the target of the
