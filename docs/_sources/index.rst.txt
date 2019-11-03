@@ -18,9 +18,10 @@ README.md file in the project's repository for details and status.
    :caption: Contents:
    :name: maintoc
 
+   rst/introduction
    rst/structure
-   rst/stmt
-   rst/type
+   rst/statements
+   rst/datatypes
    rst/type_list
 
 .. Indices and tables

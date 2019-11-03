@@ -1,5 +1,5 @@
-Overview of Python expressions
-------------------------------
+Python data types
+-----------------
 
 Introduction
 ~~~~~~~~~~~~
