@@ -19,6 +19,7 @@ README.md file in the project's repository for details and status.
    :name: maintoc
 
    rst/introduction
+   rst/invoke
    rst/structure
    rst/statements
    rst/datatypes

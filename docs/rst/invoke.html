@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Invoking Python &#8212; Python to learn Python 0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Program structure" href="structure.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="invoking-python">
+<h1>Invoking Python<a class="headerlink" href="#invoking-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-script-as-a-shell-command">
+<h2>Running script as a shell command<a class="headerlink" href="#running-script-as-a-shell-command" title="Permalink to this headline">¶</a></h2>
+<p>In GNU/Linux systems it is possible to run a Python script as a <em>shell
+command</em>. This means you can run the script by entering its name
+directly on the command line without having to explicitly invoke the
+<code class="docutils literal notranslate"><span class="pre">python</span></code> command or specify the path of the script.</p>
+<p>To be able to invoke your script like a shell command you need to do
+three things:</p>
+<ul class="simple">
+<li><p>You must make the first line of the script begin with the ‘magic’
+characters <code class="docutils literal notranslate"><span class="pre">#!</span></code>, followed by the path of the Python interpreter
+you want to invoke to run the script. The rest of the file
+contains your Python source code.</p></li>
+<li><p>You have to make the script file executable. You can do that using
+the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> shell command.</p></li>
+<li><p>To run the script from anywhere in the filesystem without having
+to specify its path you have to place it in a directory that is in
+the shell’s command search path.</p></li>
+</ul>
+<p>The following example creates a script called <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code>. The
+first line of the script starts with the magic characters <code class="docutils literal notranslate"><span class="pre">#!</span></code>
+followed by the path <code class="docutils literal notranslate"><span class="pre">/usr/bin/python</span></code>, the path of the
+interpreter that will be invoked by the system to run the source
+code. In this simple example the source code consists of a single
+line of code, a call to the built-in function <code class="docutils literal notranslate"><span class="pre">print()</span></code> to print
+the string <code class="docutils literal notranslate"><span class="pre">&quot;running</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">shell</span> <span class="pre">command&quot;</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first line of the script indicates which interpreter the</span>
+<span class="c1"># system should invoke to run the source code in the rest of the file</span>
+<span class="n">echo</span> <span class="s2">&quot;#! /usr/bin/python&quot;</span> <span class="o">&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="c1"># the source code is just a call to print</span>
+<span class="n">echo</span> <span class="s1">&#39;print(&quot;running as a shell command&quot;)&#39;</span> <span class="o">&gt;&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Now we have a script with the appropriate first line to invoke the
+Python interpreter. However, to run it as a shell command we must
+first make the script file executable. We can do that using the
+shell command <code class="docutils literal notranslate"><span class="pre">chmod</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># make script file executable</span>
+<span class="n">chmod</span> <span class="n">u</span><span class="o">+</span><span class="n">x</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>We can now run <code class="docutils literal notranslate"><span class="pre">myscript.sh</span></code> by specifying its path but without
+having to explicitly invoke the Python interpreter in the command
+line. If the script is located in our current working directory then
+its path is <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code> and we can run it as shown in the
+following snippet,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># run script in current working directory</span>
+<span class="o">./</span><span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>To be able to run the script without having to specify its path you
+have to place it in a directory that is in the shell’s command
+search path. If you want to make the script accessible system wide,
+a good location is <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code>. In some GNU/Linux systems you
+can create a bin directory just under your home directory,
+<code class="docutils literal notranslate"><span class="pre">~/bin</span></code>. Placing your script in your <code class="docutils literal notranslate"><span class="pre">~/bin</span></code> directory makes it
+accessible only to you. Wherever you place your script, as long as
+it’s in the shell’s command search path, you’ll be able to run it
+from anywhere in the filesystem by simply entering its name in the
+command line.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Python to learn Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Invoking Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Program structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statements.html">Python statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Python data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_list.html">The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="structure.html" title="next chapter">Program structure</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Ombuvirtual.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/invoke.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
