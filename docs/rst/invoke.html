@@ -34,6 +34,24 @@
             
   <div class="section" id="invoking-python">
 <h1>Invoking Python<a class="headerlink" href="#invoking-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-a-script-file">
+<h2>Running a script file<a class="headerlink" href="#running-a-script-file" title="Permalink to this headline">¶</a></h2>
+<p>If your source code is contained in a file you can run it by passing
+its file name as an argument to the <code class="docutils literal notranslate"><span class="pre">python</span></code> command. For example,
+suppose you have a script named <code class="docutils literal notranslate"><span class="pre">myscript.py</span></code>, then to run it you
+enter <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">myscript.py</span></code> in the command line and press enter.</p>
+<p>Let’s create a simple script named <code class="docutils literal notranslate"><span class="pre">myscript.py</span></code> with a single
+line of Python code that issues a call to the built-in function
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> to print a string to <code class="docutils literal notranslate"><span class="pre">stdout</span></code> and let’s run it by
+passing its file name as an argument to the <code class="docutils literal notranslate"><span class="pre">python</span></code> command,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># write a single line of source code to myscript.py file</span>
+<span class="n">echo</span> <span class="s1">&#39;print(&quot;invoked by passing filename as argument&quot;)&#39;</span> <span class="o">&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">py</span>
+
+<span class="c1"># run script by passing filename as an argument to python</span>
+<span class="n">python</span> <span class="n">myscript</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="running-script-as-a-shell-command">
 <h2>Running script as a shell command<a class="headerlink" href="#running-script-as-a-shell-command" title="Permalink to this headline">¶</a></h2>
 <p>In GNU/Linux systems it is possible to run a Python script as a <em>shell
@@ -59,13 +77,13 @@ followed by the path <code class="docutils literal notranslate"><span class="pre
 interpreter that will be invoked by the system to run the source
 code. In this simple example the source code consists of a single
 line of code, a call to the built-in function <code class="docutils literal notranslate"><span class="pre">print()</span></code> to print
-the string <code class="docutils literal notranslate"><span class="pre">&quot;running</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">shell</span> <span class="pre">command&quot;</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first line of the script indicates which interpreter the</span>
-<span class="c1"># system should invoke to run the source code in the rest of the file</span>
+the string <code class="docutils literal notranslate"><span class="pre">&quot;invoked</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">shell</span> <span class="pre">command&quot;</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># the first line in the script indicates which interpreter</span>
+<span class="c1"># the system should invoke to run the source code</span>
 <span class="n">echo</span> <span class="s2">&quot;#! /usr/bin/python&quot;</span> <span class="o">&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
 
 <span class="c1"># the source code is just a call to print</span>
-<span class="n">echo</span> <span class="s1">&#39;print(&quot;running as a shell command&quot;)&#39;</span> <span class="o">&gt;&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">echo</span> <span class="s1">&#39;print(&quot;invoked as a shell command&quot;)&#39;</span> <span class="o">&gt;&gt;</span> <span class="n">myscript</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 <p>Now we have a script with the appropriate first line to invoke the

@@ -1,6 +1,25 @@
 # Invoking Python
 # ===============
 
+# Running a script file
+# ---------------------
+
+# If your source code is contained in a file you can run it by passing
+# its file name as an argument to the ``python`` command. For example,
+# suppose you have a script named ``myscript.py``, then to run it you
+# enter ``python myscript.py`` in the command line and press enter.
+
+# Let's create a simple script named ``myscript.py`` with a single
+# line of Python code that issues a call to the built-in function
+# ``print()`` to print a string to ``stdout`` and let's run it by
+# passing its file name as an argument to the ``python`` command, ::
+
+#: write a single line of source code to myscript.py file
+echo 'print("invoked by passing filename as argument")' > myscript.py
+
+#: run script by passing filename as an argument to python
+python myscript.py
+
 # Running script as a shell command
 # ---------------------------------
 
@@ -30,14 +49,14 @@
 # interpreter that will be invoked by the system to run the source
 # code. In this simple example the source code consists of a single
 # line of code, a call to the built-in function ``print()`` to print
-# the string ``"running as a shell command"``, ::
+# the string ``"invoked as a shell command"``, ::
 
-#: the first line of the script indicates which interpreter the
-#: system should invoke to run the source code in the rest of the file
+#: the first line in the script indicates which interpreter
+#: the system should invoke to run the source code
 echo "#! /usr/bin/python" > myscript.sh
 
 #: the source code is just a call to print
-echo 'print("running as a shell command")' >> myscript.sh
+echo 'print("invoked as a shell command")' >> myscript.sh
 
 # Now we have a script with the appropriate first line to invoke the
 # Python interpreter. However, to run it as a shell command we must
