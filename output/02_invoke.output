@@ -1,2 +1,18 @@
-invoked by passing filename as argument
+23
+invoked with script filename
+91
+script name: myscript.py
+arguments: foo bar
+103
+script name: myscript.py
+Traceback (most recent call last):
+  File "myscript.py", line 3, in <module>
+    print("arguments:", sys.argv[1], sys.argv[2])
+IndexError: list index out of range
+142
+myscript.py
+foo
+bar
+myscript.py
+208
 invoked as a shell command

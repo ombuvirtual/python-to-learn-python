@@ -6,19 +6,152 @@ Running a script file
 
 If your source code is contained in a file you can run it by passing
 its file name as an argument to the ``python`` command. For example,
-suppose you have a script named ``myscript.py``, then to run it you
-enter ``python myscript.py`` in the command line and press enter.
+suppose you have a script named ``myscript.py``, to run it you enter
+``python myscript.py`` in the command line and press enter.
 
 Let's create a simple script named ``myscript.py`` with a single
 line of Python code that issues a call to the built-in function
 ``print()`` to print a string to ``stdout`` and let's run it by
-passing its file name as an argument to the ``python`` command, ::
+passing its file name as an argument to the ``python`` command. The
+following shell commands accomplish these tasks, ::
 
-    # write a single line of source code to myscript.py file
-    echo 'print("invoked by passing filename as argument")' > myscript.py
+    # create myscript.py file and add a line
+    # of Python code to print a string
+    echo 'print("invoked with script filename")' > myscript.py
 
-    # run script by passing filename as an argument to python
+    # print line number
+    echo "$LINENO"
+
+    # run script by passing its filename
+    # as an argument to python command
     python myscript.py
+
+If your script accepts *command line arguments* you need to be able
+to do two things:
+
++ pass the arguments to your script when you run it
++ access the arguments from within your source code
+
+Suppose the script ``myscript.py`` takes two command line arguments,
+``foo`` and ``bar``.  You can pass these arguments to
+``myscript.py`` using the following command: ``python myscript.py
+foo bar``. That is, you pass any arguments to a script by placing
+the arguments in the right order after the script's file name in the
+``python`` command.
+
+To give your source code access to command line arguments Python
+makes them available in a list object named ``argv``. Individual
+elements in ``argv`` are accessed using their index in the list,
+starting at index 0. For instance, to reference an element with
+index ``i`` you apply the *index operator* ``[i]`` to list ``argv``
+by writing ``argv[i]``. Therefore, the first element in ``argv`` is
+``argv[0]``, the second is ``argv[1]`` and so on.
+
+The first element ``argv[0]`` is special. It contains the name of
+the script, including its path as specified at invocation.
+Therefore, ``argv[0]`` always exists and ``argv`` always contains at
+least one element. The rest of the list contains the *actual*
+command line arguments if any were passed to the script. The first
+argument is ``argv[1]``, the second ``argv[2]`` and so on.  The
+total number of actual arguments is, therefore, given by the total
+number of elements in ``argv`` minus 1 to exclude ``argv[0]``. In
+Python the number of elements in any list is obtained using the
+built-in function ``len()``, so the number of arguments passed in
+argv is given by ``len(argv) - 1``.
+
+The list ``argv`` is *not* directly accessible. It is contained in a
+module named ``sys`` that is part of the Python Standard
+Library. You need to explicitly load module ``sys`` in your script
+using the ``import sys`` statement. You can reference ``argv`` at
+any point in your source code *after* importing module ``sys`` by
+writing ``sys.argv`` and a specific argument at index ``i`` by
+writing ``sys.argv[i]``.
+
+The following shell commands create a script named ``myscript.py``
+and adds three Python statements. The first imports the ``sys``
+module to gain access to ``argv``.  The second prints the name of
+the script by referencing ``sys.argv[0]`` The third prints arguments
+1 and 2 by referencing ``sys.argv[1]`` and ``sys.argv[2]``. The
+script is then run with command line arguments ``foo`` and ``bar``,
+::
+
+    # create myscript.py file and add a line
+    # of Python code to import sys module
+    echo 'import sys' > myscript.py
+
+    # add a line of code to print sys.argv[0],
+    # the name of the script
+    echo 'print("script name:", sys.argv[0])' >> myscript.py
+
+    # add a line of code to print sys.argv[1] and sys.argv[2]
+    # containing the first and second command line arguments
+    echo 'print("arguments:", sys.argv[1], sys.argv[2])' >> myscript.py
+
+    # print line number
+    echo "$LINENO"
+
+    # invoke python to run myscript.py
+    # with arguments foo and bar
+    python myscript.py "foo" "bar"
+
+Accessing an argument by directly using its index into ``argv`` can
+fail if there is no argument with that index. Next we invoke
+``myscript.py`` as defined above but this time *without* passing the
+arguments ``foo`` and ``bar`` that it expects, ::
+
+    # print line number
+    echo "$LINENO"
+
+    # run myscript.py without expected arguments
+    python myscript.py 
+
+When the script runs the print statement references ``sys.argv[1]``
+but since there is no argument at index 1 the interpreter issues the
+error ``"IndexError: list index out of range"`` and stops the
+execution of the script. We cover accessing program arguments in
+later scripts but we'll finish this section by showing how using
+Python's ``for`` statement avoids this problem.
+
+Consider the following example of using Python's for statement::
+
+    for item in sys.argv: print(item)
+
+The ``for`` statement above iterates over the items in sys.argv and
+at the beginning of each iteration it assigns the next item in the
+list to the loop variable ``item``. Normally, the statements to be
+executed at each iteration are placed after the line containing the
+``for`` clause. In this case there is only one statement, the call
+to the ``print()`` function, so it can be placed in the same line as
+the ``for`` clause after the colon ``:``.
+
+In the following example we create a new version of ``myscript.py``
+that prints each argument in ``argv`` using the Python statement
+above, ::
+
+    # create myscript.py file and add import statement
+    echo 'import sys' > myscript.py
+
+    # add 'for' statement to print arguments safely
+    echo 'for item in sys.argv: print(item)' >> myscript.py
+
+When you invoke ``myscript.py`` with the two arguments ``foo`` and
+``bar``, it first prints the name of the script in ``sys.argv[0]``
+and then the two arguments in ``argv[1]`` and ``argv[2]``, ::
+
+    # print line number
+    echo "$LINENO"
+
+    # invoke myscript.py with arguments
+    python myscript.py "foo" "bar"
+
+Now let's invoke ``myscript.py`` *without* any arguments, ::
+
+    # invoke myscript.py without arguments
+    python myscript.py
+
+In this case ``myscript.py`` does not fail as before because the
+``for`` statement only executes the line of code with the
+``print()`` function if there is at least one more item in ``argv``.
 
 Running script as a shell command
 ---------------------------------
@@ -28,49 +161,51 @@ command*. This means you can run the script by entering its name
 directly on the command line without having to explicitly invoke the
 ``python`` command or specify the path of the script.
 
-To be able to invoke your script like a shell command you need to do
-three things:
+To be able to invoke your script as a shell command you need to
+follow these steps:
 
-+ You must make the first line of the script begin with the 'magic'
-  characters ``#!``, followed by the path of the Python interpreter
-  you want to invoke to run the script. The rest of the file
-  contains your Python source code.
++ Start the first line of your script with the 'magic' characters
+  ``#!``, followed by the path of the Python interpreter you want to
+  invoke to run the script. The rest of the file contains your
+  Python source code.
 
-+ You have to make the script file executable. You can do that using
-  the ``chmod`` shell command.
++ Make the script file *executable* using the shell command ``chmod``.
 
-+ To run the script from anywhere in the filesystem without having
-  to specify its path you have to place it in a directory that is in
-  the shell's command search path. 
++ Place your script file in a directory that is in the shell's
+  *command search path*. This step enables you to run the script from
+  anywhere in the filesystem without having to specify its path.
 
-The following example creates a script called ``myscript.sh``. The
+The following example creates a script named ``myscript.sh``. The
 first line of the script starts with the magic characters ``#!``
 followed by the path ``/usr/bin/python``, the path of the
 interpreter that will be invoked by the system to run the source
 code. In this simple example the source code consists of a single
-line of code, a call to the built-in function ``print()`` to print
-the string ``"invoked as a shell command"``, ::
+line of code, a call to the Python built-in function ``print()`` to
+print the string ``"invoked as a shell command"``, ::
 
-    # the first line in the script indicates which interpreter
-    # the system should invoke to run the source code
+    # create myscript.sh file starting first line with '#!' to tell
+    # the system which interpreter to invoke to run the source code
     echo "#! /usr/bin/python" > myscript.sh
 
-    # the source code is just a call to print
+    # add one line of Python code to print a string
     echo 'print("invoked as a shell command")' >> myscript.sh
 
-Now we have a script with the appropriate first line to invoke the
+We now have a script with the appropriate first line to invoke the
 Python interpreter. However, to run it as a shell command we must
 first make the script file executable. We can do that using the
-shell command ``chmod``, ::
+shell command ``chmod``, as showing in the following snippet, ::
 
     # make script file executable
     chmod u+x myscript.sh
 
 We can now run ``myscript.sh`` by specifying its path but without
-having to explicitly invoke the Python interpreter in the command
-line. If the script is located in our current working directory then
-its path is ``./myscript.sh`` and we can run it as shown in the
-following snippet, ::
+having to explicitly invoke the Python interpreter. If the script is
+located in our current working directory then we can run it by
+entering its path ``./myscript.sh`` in the command line and pressing
+enter, ::
+
+    # print line number
+    echo "$LINENO"
 
     # run script in current working directory
     ./myscript.sh
