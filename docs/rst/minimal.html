@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Minimal Python &#8212; Python to learn Python 0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Invoking Python" href="invoke.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="minimal-python">
+<h1>Minimal Python<a class="headerlink" href="#minimal-python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-to-define-and-print-a-string">
+<h2>How to define and print a string<a class="headerlink" href="#how-to-define-and-print-a-string" title="Permalink to this headline">¶</a></h2>
+<p>One of the first things you want to know when starting to learn a
+new programming language is how to define strings and how to print
+them to standard output. This allows you to display messages for
+immediate feedback when trying out new language constructs. You also
+want to know how to write comments in order to make notes about the
+code you are working on and language features you are exploring.</p>
+<p>In Python comments start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character. Everything on a
+line from the first <code class="docutils literal notranslate"><span class="pre">#</span></code> character to the end of the line is
+ignored by the interpreter. There are no multi-line comment
+delimeters like <code class="docutils literal notranslate"><span class="pre">/*</span></code> and <code class="docutils literal notranslate"><span class="pre">*/</span></code> in C and other languages. Each
+line of a multi-line comment must start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character. The
+following are examples of comments,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># everything after first # character is a comment</span>
+
+<span class="c1"># any # characters after the first are part of the comment</span>
+
+<span class="c1"># line 1 of multi-line comment</span>
+<span class="c1"># line 2 of multi-line comment</span>
+</pre></div>
+</div>
+<p>To define a string in the Python language you enclose the relevant
+text in double quotes. For example, if you want to define a string
+with the text <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">string</span> <span class="pre">defined</span> <span class="pre">with</span> <span class="pre">double</span> <span class="pre">quotes</span></code> you enclose
+the text in double quotes and the Python interpreter will recognize
+it as a <em>string literal expression</em> and evaluate it to a string
+object. The following is an example of a string literal expression
+defined with double quotes,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string literal defined with double quotes</span>
+<span class="s2">&quot;a string defined with double quotes&quot;</span>
+</pre></div>
+</div>
+<p>Note that the string expression above does not end with a statement
+termination character such as a semicolon. In the Python language
+statements are terminated by a <em>new line</em> character.</p>
+<p>However, the semicolon character <code class="docutils literal notranslate"><span class="pre">;</span></code> is used to separate multiple
+statements when they appear on the same line. For example, the two
+string expressions “foo” and “bar” can appear on the same line if
+separated by a semicolon,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;foo&quot;</span><span class="p">;</span> <span class="s2">&quot;bar&quot;</span>
+</pre></div>
+</div>
+<p>The string definitions above don’t produce any ouput. They are
+evaluated by the interpreter and then discarded. To print them to
+standard output you use Python’s built-in function <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">print()</span></code> function takes a <em>variable</em> number of string
+arguments separated by comas. It automatically separates mutliple
+arguments with a space and adds a new line character at the end.
+The following example shows invocations of <code class="docutils literal notranslate"><span class="pre">print()</span></code> with
+different number of arguments. Note again that the statements end
+with a new line character, no special statement termination
+character is required.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print a string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a string defined with double quotes&quot;</span><span class="p">)</span>
+
+<span class="c1"># print two strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">)</span>
+
+<span class="c1"># print three strings,</span>
+<span class="c1"># you can span multiple lines</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;second&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;third&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can easily <em>concatenate</em> multiple strings to create a new string
+using the addition <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, as shown in the following
+example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenating strings with + operator</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you can&quot;</span> <span class="o">+</span> <span class="s2">&quot; add strings &quot;</span> <span class="o">+</span> <span class="s2">&quot;using the + operator&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All the examples above show the use of double quotes to define
+strings. However, you can also define strings using <em>single quotes</em>.
+The following example defines similar strings as above but using
+single quotes,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string literal defined with single quotes</span>
+<span class="s1">&#39;a string defined with single quotes&#39;</span>
+
+<span class="c1"># print a string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a string defined with single quotes&#39;</span><span class="p">)</span>
+
+<span class="c1"># print two strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">)</span>
+
+<span class="c1"># print three strings,</span>
+<span class="c1"># you can span multiple lines</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;second&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;third&#39;</span><span class="p">)</span>
+
+<span class="c1"># concatenating strings with + operator</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you can&#39;</span> <span class="o">+</span> <span class="s1">&#39; add strings &#39;</span> <span class="o">+</span> <span class="s1">&#39;using the + operator&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In <em>both</em> double and single quoted strings the backslash character
+<code class="docutils literal notranslate"><span class="pre">\</span></code> is interpreted as the <em>escape character</em>. For example, the
+escape sequences for the tab and new line characters, <code class="docutils literal notranslate"><span class="pre">\t</span></code> and
+<code class="docutils literal notranslate"><span class="pre">\n</span></code> respectively, work in the same way in double and single
+quoted strings,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># new line &#39;\n&#39; character in double quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;line1</span><span class="se">\n</span><span class="s2">line2&quot;</span><span class="p">)</span>
+
+<span class="c1"># tab character &#39;\t&#39; in double quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">a tab character&quot;</span><span class="p">)</span>
+
+<span class="c1"># new line character &#39;\n&#39; in single quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;line1</span><span class="se">\n</span><span class="s1">line2&#39;</span><span class="p">)</span>
+
+<span class="c1"># tab character &#39;\t&#39; in single quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">a tab character&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> to escape double quotes
+within a double quoted string and single quotes within a single
+quoted string,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># escape double quotes in double quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">using double quotes in double quoted string</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># escape single quotes in single quoted string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">using single quotes in single quoted string</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Python to learn Python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Minimal Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="invoke.html">Invoking Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Program structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statements.html">Python statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Python data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="type_list.html">The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
+      <li>Next: <a href="invoke.html" title="next chapter">Invoking Python</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Ombuvirtual.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/rst/minimal.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

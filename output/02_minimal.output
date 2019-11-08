@@ -1,0 +1,16 @@
+a string defined with double quotes
+first second
+first second third
+you can add strings using the + operator
+a string defined with single quotes
+first second
+first second third
+you can add strings using the + operator
+line1
+line2
+	a tab character
+line1
+line2
+	a tab character
+"using double quotes in double quoted string"
+'using single quotes in single quoted string'
