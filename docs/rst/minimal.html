@@ -34,8 +34,66 @@
             
   <div class="section" id="minimal-python">
 <h1>Minimal Python<a class="headerlink" href="#minimal-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-define-and-print-a-string">
-<h2>How to define and print a string<a class="headerlink" href="#how-to-define-and-print-a-string" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><a class="reference internal" href="#preamble">Preamble</a></div>
+<div class="line"><a class="reference internal" href="#defining-and-printing-strings">Defining and printing strings</a></div>
+<div class="line"><a class="reference internal" href="#references">References</a></div>
+</div>
+<div class="section" id="preamble">
+<h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
+<p>This script introduces <em>minimal Python</em> or <em>minipy</em> for
+short. Minipy is the minimum of Python language syntax, data types,
+operators and language statements required to understand the
+explanations and examples presented in the scripts that make up
+<em>Python to learn Python</em> (PTLP). It is a very small subset of Python
+introduced at a very basic level and narrow scope, sufficient only
+to get started with a more detailed presentation.</p>
+<p>Minipy includes the following language elements:</p>
+<ul class="simple">
+<li><p>Essential syntax:</p>
+<ul>
+<li><p>Python statements end with a new line character, <em>not</em> a
+semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p></li>
+<li><p>Python statements are grouped using indentation, <em>not</em> opening
+and closing braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></li>
+<li><p>Comments start with the <code class="docutils literal notranslate"><span class="pre">#</span></code> character.</p></li>
+</ul>
+</li>
+<li><p>Four data types and some related operations:</p>
+<ul>
+<li><p><em>Strings</em> and the concatenation of strings using the addition
+operator <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+<li><p><em>Integers</em> and the usual arithmetic operations of addition
+<code class="docutils literal notranslate"><span class="pre">+</span></code>, subtraction <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>
+and power <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p></li>
+<li><p><em>Booleans</em> and the logical operations of conjunction <code class="docutils literal notranslate"><span class="pre">and</span></code>,
+disjunction <code class="docutils literal notranslate"><span class="pre">or</span></code> and negation <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p></li>
+<li><p><em>Lists</em> and the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method to add elements to lists,
+list membership operators <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> and list
+concatenation using the addition operator <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The built-in functions <code class="docutils literal notranslate"><span class="pre">print()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p></li>
+<li><p>The <em>assignment</em> statement and variable name <em>binding</em>.</p></li>
+<li><p>The comparison operators of equality <code class="docutils literal notranslate"><span class="pre">==</span></code> and inequality <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>
+and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement for conditional execution of groups of
+statements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement for repeated execution of groups of
+statements.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">try</span></code> statement for error handling. In PTLP the <code class="docutils literal notranslate"><span class="pre">try</span></code>
+statement is used to demonstrate causes of runtime errors.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement for confirming the outcome of
+computations during debugging. In PTLP the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is
+used to confirm the results of examples.</p></li>
+</ul>
+</div>
+<div class="section" id="defining-and-printing-strings">
+<h2>Defining and printing strings<a class="headerlink" href="#defining-and-printing-strings" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Defining and printing strings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>One of the first things you want to know when starting to learn a
 new programming language is how to define strings and how to print
 them to standard output. This allows you to display messages for
@@ -48,7 +106,7 @@ ignored by the interpreter. There are no multi-line comment
 delimeters like <code class="docutils literal notranslate"><span class="pre">/*</span></code> and <code class="docutils literal notranslate"><span class="pre">*/</span></code> in C and other languages. Each
 line of a multi-line comment must start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character. The
 following are examples of comments,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># everything after first # character is a comment</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># everything after the first # character is a comment</span>
 
 <span class="c1"># any # characters after the first are part of the comment</span>
 
@@ -94,23 +152,19 @@ character is required.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">)</span>
 
 <span class="c1"># print three strings,</span>
-<span class="c1"># you can span multiple lines</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;second&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;third&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can easily <em>concatenate</em> multiple strings to create a new string
 using the addition <code class="docutils literal notranslate"><span class="pre">+</span></code> operator, as shown in the following
 example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenating strings with + operator</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenate strings with + operator</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you can&quot;</span> <span class="o">+</span> <span class="s2">&quot; add strings &quot;</span> <span class="o">+</span> <span class="s2">&quot;using the + operator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>All the examples above show the use of double quotes to define
-strings. However, you can also define strings using <em>single quotes</em>.
-The following example defines similar strings as above but using
-single quotes,</p>
+<p>All the examples above use double quotes to define strings. However,
+you can also define strings using <em>single quotes</em>.  The following
+example defines similar strings as above but using single quotes,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string literal defined with single quotes</span>
 <span class="s1">&#39;a string defined with single quotes&#39;</span>
 
@@ -121,19 +175,16 @@ single quotes,</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">)</span>
 
 <span class="c1"># print three strings,</span>
-<span class="c1"># you can span multiple lines</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;second&#39;</span><span class="p">,</span>
-      <span class="s1">&#39;third&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="p">)</span>
 
-<span class="c1"># concatenating strings with + operator</span>
+<span class="c1"># concatenate strings with + operator</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you can&#39;</span> <span class="o">+</span> <span class="s1">&#39; add strings &#39;</span> <span class="o">+</span> <span class="s1">&#39;using the + operator&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In <em>both</em> double and single quoted strings the backslash character
-<code class="docutils literal notranslate"><span class="pre">\</span></code> is interpreted as the <em>escape character</em>. For example, the
-escape sequences for the tab and new line characters, <code class="docutils literal notranslate"><span class="pre">\t</span></code> and
-<code class="docutils literal notranslate"><span class="pre">\n</span></code> respectively, work in the same way in double and single
+<p>In strings defined with double <em>or</em> single quotes the backslash
+character <code class="docutils literal notranslate"><span class="pre">\</span></code> is interpreted as the <em>escape character</em>. For
+example, the escape sequences for the tab and new line characters,
+<code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> respectively, work in both double and single
 quoted strings,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># new line &#39;\n&#39; character in double quoted string</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;line1</span><span class="se">\n</span><span class="s2">line2&quot;</span><span class="p">)</span>
@@ -158,6 +209,15 @@ quoted string,</p>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\&#39;</span><span class="s1">using single quotes in single quoted string</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/">Python web site</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.7/reference/index.html">Language Reference</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.7/library/index.html">Standard Library</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3.7/tutorial/index.html">Python Tutorial</a></p></li>
+</ul>
 </div>
 </div>
 
