@@ -1,12 +1,17 @@
-Defining and printing strings
------------------------------
 a string defined with double quotes
-first second
-first second third
+foo bar
+foo bar gnu
+foobargnu
+foo-bar-gnu
+foo, bar, gnu
+foobar
+foo-bar
+foo,
+bar
 you can add strings using the + operator
 a string defined with single quotes
-first second
-first second third
+foo bar
+foo bar gnu
 you can add strings using the + operator
 line1
 line2
