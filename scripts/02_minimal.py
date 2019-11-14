@@ -3,6 +3,7 @@
 
 # | `Preamble`_
 # | `Defining and printing strings`_
+# | `Variables and assignment`_
 # | `References`_
 
 # Preamble
@@ -267,6 +268,83 @@ print('\'using single quotes in single quoted string\'')
 # function ``print()``. The next section shows how to *name* objects
 # so we can refer to them easily by their names in other parts of the
 # code.
+
+# Variables and assignment
+# ------------------------
+
+# Suppose you have defined the string ``"foo"`` at some point in your
+# program and you want to use the same string in other expressions and
+# statements by referring to it using the name ``x``.  You can
+# associate the name ``x`` with the string object ``"foo"`` by making
+# ``x`` the *target* of an *assignment statement*, as shown in the
+# following sample code, ::
+
+#: this assignment statement associates
+#: the name 'x' with string object "foo"
+x = "foo"
+
+# The statement consists of two operands on either side of the
+# assignment symbol ``=``. On the left is the name ``x`` that you want
+# to associate with the object ``"foo"`` specified on the right. Note
+# also that, like all statements in Python, the assignment statement
+# does not require an ending semicolon.
+
+# Once the association between ``x`` and ``"foo"`` has been made, you
+# can refer to the string ``"foo"`` by its name. The following calls
+# to ``print()`` and concatenation operation refer to ``"foo"`` by its
+# name ``x``, ::
+
+#: print string "foo"
+print("x =", x)
+
+#: concatenate string "foo" with
+#: string "bar" and print result
+print(x + "bar")
+
+# The names you associate with objects cannot be formed from just any
+# character. A valid name or identifier is formed from characters in
+# the following classes,
+
+# + lower case (a-z) or upper case (A-Z) letters
+# + the underscore character '_'
+# + digits 0-9 (except for the first character)
+
+# The following are examples of valid names: ``bar``, ``BAR``,
+# ``bar_1`` and ``_bar``. The name ``1_bar`` is *invalid* because it
+# starts with a digit.
+
+# In the Python documentation the process of associating a name with
+# an object is referred to as *binding*. In the example above we would
+# say that the name ``x`` has been *bound* to string object
+# ``"foo"``. The assignment statement is just one of several *binding*
+# operations in the Python language.
+
+# It is important to realize that in Python there is no such thing as
+# declaring a variable. A variable only comes into existence as the
+# result of binding a name to an object. In other words, variables are
+# the result of binding operations.
+
+# It is possible to reuse names or more precisely to *rebind* a name
+# to a different object. For example, suppose you bind ``x`` to the
+# string ``"foo"``. You can at a later point in your code rebind ``x``
+# to the string ``"bar"`` as shown in the following code, ::
+
+#: bind x to string "foo"
+x = "foo"
+
+#: refer to string "foo" using x
+print("x =", x)
+
+#: rebind x to string "bar"
+x = "bar"
+
+#: refer to string "bar" using x
+print("x =", x)
+
+# We now know how to define strings, print them and bind them to
+# suitable identifiers so we can conveniently refer to them in our
+# code. We will make use of this knowledge in the following sections
+# in examples designed to introduce other language features.
 
 # References
 # ----------

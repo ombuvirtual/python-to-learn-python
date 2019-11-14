@@ -37,6 +37,7 @@
 <div class="line-block">
 <div class="line"><a class="reference internal" href="#preamble">Preamble</a></div>
 <div class="line"><a class="reference internal" href="#defining-and-printing-strings">Defining and printing strings</a></div>
+<div class="line"><a class="reference internal" href="#variables-and-assignment">Variables and assignment</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -283,6 +284,78 @@ level) and showed how to print string objects using the built-in
 function <code class="docutils literal notranslate"><span class="pre">print()</span></code>. The next section shows how to <em>name</em> objects
 so we can refer to them easily by their names in other parts of the
 code.</p>
+</div>
+<div class="section" id="variables-and-assignment">
+<h2>Variables and assignment<a class="headerlink" href="#variables-and-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Suppose you have defined the string <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> at some point in your
+program and you want to use the same string in other expressions and
+statements by referring to it using the name <code class="docutils literal notranslate"><span class="pre">x</span></code>.  You can
+associate the name <code class="docutils literal notranslate"><span class="pre">x</span></code> with the string object <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by making
+<code class="docutils literal notranslate"><span class="pre">x</span></code> the <em>target</em> of an <em>assignment statement</em>, as shown in the
+following sample code,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># this assignment statement associates</span>
+<span class="c1"># the name &#39;x&#39; with string object &quot;foo&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+</pre></div>
+</div>
+<p>The statement consists of two operands on either side of the
+assignment symbol <code class="docutils literal notranslate"><span class="pre">=</span></code>. On the left is the name <code class="docutils literal notranslate"><span class="pre">x</span></code> that you want
+to associate with the object <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> specified on the right. Note
+also that, like all statements in Python, the assignment statement
+does not require an ending semicolon.</p>
+<p>Once the association between <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> has been made, you
+can refer to the string <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by its name. The following calls
+to <code class="docutils literal notranslate"><span class="pre">print()</span></code> and concatenation operation refer to <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by its
+name <code class="docutils literal notranslate"><span class="pre">x</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print string &quot;foo&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># concatenate string &quot;foo&quot; with</span>
+<span class="c1"># string &quot;bar&quot; and print result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The names you associate with objects cannot be formed from just any
+character. A valid name or identifier is formed from characters in
+the following classes,</p>
+<ul class="simple">
+<li><p>lower case (a-z) or upper case (A-Z) letters</p></li>
+<li><p>the underscore character ‘_’</p></li>
+<li><p>digits 0-9 (except for the first character)</p></li>
+</ul>
+<p>The following are examples of valid names: <code class="docutils literal notranslate"><span class="pre">bar</span></code>, <code class="docutils literal notranslate"><span class="pre">BAR</span></code>,
+<code class="docutils literal notranslate"><span class="pre">bar_1</span></code> and <code class="docutils literal notranslate"><span class="pre">_bar</span></code>. The name <code class="docutils literal notranslate"><span class="pre">1_bar</span></code> is <em>invalid</em> because it
+starts with a digit.</p>
+<p>In the Python documentation the process of associating a name with
+an object is referred to as <em>binding</em>. In the example above we would
+say that the name <code class="docutils literal notranslate"><span class="pre">x</span></code> has been <em>bound</em> to string object
+<code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code>. The assignment statement is just one of several <em>binding</em>
+operations in the Python language.</p>
+<p>It is important to realize that in Python there is no such thing as
+declaring a variable. A variable only comes into existence as the
+result of binding a name to an object. In other words, variables are
+the result of binding operations.</p>
+<p>It is possible to reuse names or more precisely to <em>rebind</em> a name
+to a different object. For example, suppose you bind <code class="docutils literal notranslate"><span class="pre">x</span></code> to the
+string <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code>. You can at a later point in your code rebind <code class="docutils literal notranslate"><span class="pre">x</span></code>
+to the string <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> as shown in the following code,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># bind x to string &quot;foo&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+
+<span class="c1"># refer to string &quot;foo&quot; using x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># rebind x to string &quot;bar&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;bar&quot;</span>
+
+<span class="c1"># refer to string &quot;bar&quot; using x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We now know how to define strings, print them and bind them to
+suitable identifiers so we can conveniently refer to them in our
+code. We will make use of this knowledge in the following sections
+in examples designed to introduce other language features.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

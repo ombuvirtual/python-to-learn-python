@@ -21,3 +21,7 @@ line2
 	a tab character
 "using double quotes in double quoted string"
 'using single quotes in single quoted string'
+x = foo
+foobar
+x = foo
+x = bar
