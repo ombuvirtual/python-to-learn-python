@@ -38,6 +38,7 @@
 <div class="line"><a class="reference internal" href="#preamble">Preamble</a></div>
 <div class="line"><a class="reference internal" href="#defining-and-printing-strings">Defining and printing strings</a></div>
 <div class="line"><a class="reference internal" href="#variables-and-assignment">Variables and assignment</a></div>
+<div class="line"><a class="reference internal" href="#introduction-to-numeric-types">Introduction to numeric types</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -354,8 +355,145 @@ to the string <code class="docutils literal notranslate"><span class="pre">&quot
 </div>
 <p>We now know how to define strings, print them and bind them to
 suitable identifiers so we can conveniently refer to them in our
-code. We will make use of this knowledge in the following sections
-in examples designed to introduce other language features.</p>
+code. We will make use of this knowledge in examples designed to
+introduce other language features.</p>
+</div>
+<div class="section" id="introduction-to-numeric-types">
+<h2>Introduction to numeric types<a class="headerlink" href="#introduction-to-numeric-types" title="Permalink to this headline">¶</a></h2>
+<p>Python has data types to represent integers, floating point numbers
+and even complex numbers. This section provides a very brief
+introduction to Python’s integer and floating point data types.</p>
+<p>Integers are represented by objects of type <code class="docutils literal notranslate"><span class="pre">int</span></code>.  To define a
+base 10 positive integer you just write the digits that make up the
+number. For example, to define the number <em>thirteen</em> you simply
+write the digits <code class="docutils literal notranslate"><span class="pre">13</span></code>. When the interpreter encounters the integer
+literal expression <code class="docutils literal notranslate"><span class="pre">13</span></code> it creates an object of type <code class="docutils literal notranslate"><span class="pre">int</span></code> that
+represents that number. The following are examples of positive
+integer literal expressions,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># positive integer literal expressions</span>
+<span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">99</span>
+</pre></div>
+</div>
+<p>You define negative integers by applying the unary <em>minus</em> <code class="docutils literal notranslate"><span class="pre">-</span></code>
+operator to the positive integer literal expression. For instance,
+negative thirteen is written as <code class="docutils literal notranslate"><span class="pre">-13</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">13</span></code>. The following
+are examples of negative integer literal expressions,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># negative integer literal expressions</span>
+<span class="o">-</span><span class="mi">99</span><span class="p">;</span> <span class="o">-</span><span class="mi">3</span><span class="p">;</span> <span class="o">-</span> <span class="mi">2</span><span class="p">;</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Floating point numbers are represented by objects of type
+<code class="docutils literal notranslate"><span class="pre">float</span></code>. To define a positive floating point number you just write
+the digits that make up the number, including the decimal point. For
+example, to define the floating point number <em>pi</em> to two decimal
+places you simply write <code class="docutils literal notranslate"><span class="pre">3.14</span></code>. When the interpreter encounters
+the floating point literal expression <code class="docutils literal notranslate"><span class="pre">3.14</span></code> it creates an object
+of type <code class="docutils literal notranslate"><span class="pre">float</span></code> that represents that number. The following code
+snippet shows examples of positive float literal expressions,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># positive float literal expressions</span>
+<span class="mf">0.0</span><span class="p">;</span> <span class="mf">0.01</span><span class="p">;</span> <span class="mf">0.5</span><span class="p">;</span> <span class="mf">2.718</span>
+</pre></div>
+</div>
+<p>You define negative floating point numbers by applying the unary
+<em>minus</em> <code class="docutils literal notranslate"><span class="pre">-</span></code> operator to the positive float literal expression. For
+instance, negative <em>pi</em> is written as <code class="docutils literal notranslate"><span class="pre">-3.14</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">3.14</span></code>. The
+following are examples of negative float literal expressions,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># negative float literal expressions</span>
+<span class="o">-</span><span class="mf">2.718</span><span class="p">;</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span> <span class="mf">0.01</span>
+</pre></div>
+</div>
+<p>To print an integer or floating point number you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code>
+function. It automatically converts objects of type <code class="docutils literal notranslate"><span class="pre">int</span></code> and
+<code class="docutils literal notranslate"><span class="pre">float</span></code> to strings and then prints the strings. The following are
+examples of printing integer and float literal expressions,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print integers</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># print floating point numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.718</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">2.718</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can bind names to numeric values using the assignment statement
+in the same way you bind names to string values. For example, to
+bind the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to integer <code class="docutils literal notranslate"><span class="pre">1</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code> and to
+rebind <code class="docutils literal notranslate"><span class="pre">x</span></code> to the floating point number <code class="docutils literal notranslate"><span class="pre">3.14</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span>
+<span class="pre">3.14</span></code>. The following sample code shows other examples,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># bind x to 0 and y to 99</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># rebind x to 0.0 and y to 99.0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">99.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python supports the usual arithmetic operations of addition <code class="docutils literal notranslate"><span class="pre">+</span></code>,
+subtraction <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code> and
+exponentiation <code class="docutils literal notranslate"><span class="pre">**</span></code>. It uses the familiar syntax and symbols for
+arithmetic operators used in many other languages.</p>
+<p>All the above arithmetic operations will produce a result of type
+<code class="docutils literal notranslate"><span class="pre">float</span></code> if <em>at least one</em> operand is of type float. Division
+<em>always</em> produces a result of type float even if all operands are
+integers and an integer result is expected.  The following sample
+code shows examples of arithmetic operations and the results they
+produce,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># all operands are integers</span>
+<span class="c1"># the result is integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># one operand is float</span>
+<span class="c1"># the result is float</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mf">2.0</span><span class="p">)</span>
+
+<span class="c1"># division always produces</span>
+<span class="c1"># a float result</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can use parentheses to group expressions when there are many
+terms involved or to specify clearly the grouping of operands and
+operators so you don’t have to rely on knowledge of operator
+precedence rules. Take for instance the following compound
+expression,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define some initial values</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="c1"># interpreting this compound expression</span>
+<span class="c1"># relies on knowledge of precedence rules</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="c1"># print result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is equivalent to the following expression which uses parentheses,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># using parentheses makes computational</span>
+<span class="c1"># intent more clear</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># print result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The two expressions above produce the same result but the second
+form shows much more clearly our intent.</p>
+<p>We now know how to create objects of type <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code> and
+<code class="docutils literal notranslate"><span class="pre">float</span></code> using literal expressions and we can bind names to these
+objects and perform some elementary operations on them. In the next
+section we show how to define Boolean values, how to print them,
+assign names to them and perform some elementary logical operations
+on them.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

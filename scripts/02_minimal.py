@@ -4,6 +4,7 @@
 # | `Preamble`_
 # | `Defining and printing strings`_
 # | `Variables and assignment`_
+# | `Introduction to numeric types`_
 # | `References`_
 
 # Preamble
@@ -343,8 +344,149 @@ print("x =", x)
 
 # We now know how to define strings, print them and bind them to
 # suitable identifiers so we can conveniently refer to them in our
-# code. We will make use of this knowledge in the following sections
-# in examples designed to introduce other language features.
+# code. We will make use of this knowledge in examples designed to
+# introduce other language features.
+
+# Introduction to numeric types
+# -----------------------------
+
+# Python has data types to represent integers, floating point numbers
+# and even complex numbers. This section provides a very brief
+# introduction to Python's integer and floating point data types.
+
+# Integers are represented by objects of type ``int``.  To define a
+# base 10 positive integer you just write the digits that make up the
+# number. For example, to define the number *thirteen* you simply
+# write the digits ``13``. When the interpreter encounters the integer
+# literal expression ``13`` it creates an object of type ``int`` that
+# represents that number. The following are examples of positive
+# integer literal expressions, ::
+
+#: positive integer literal expressions
+0; 1; 2; 3; 99
+
+# You define negative integers by applying the unary *minus* ``-``
+# operator to the positive integer literal expression. For instance,
+# negative thirteen is written as ``-13`` or ``- 13``. The following
+# are examples of negative integer literal expressions, ::
+
+#: negative integer literal expressions
+-99; -3; - 2; - 1
+
+# Floating point numbers are represented by objects of type
+# ``float``. To define a positive floating point number you just write
+# the digits that make up the number, including the decimal point. For
+# example, to define the floating point number *pi* to two decimal
+# places you simply write ``3.14``. When the interpreter encounters
+# the floating point literal expression ``3.14`` it creates an object
+# of type ``float`` that represents that number. The following code
+# snippet shows examples of positive float literal expressions, ::
+
+#: positive float literal expressions
+0.0; 0.01; 0.5; 2.718
+
+# You define negative floating point numbers by applying the unary
+# *minus* ``-`` operator to the positive float literal expression. For
+# instance, negative *pi* is written as ``-3.14`` or ``- 3.14``. The
+# following are examples of negative float literal expressions, ::
+
+#: negative float literal expressions
+-2.718; -0.5, - 0.01
+
+# To print an integer or floating point number you use the ``print()``
+# function. It automatically converts objects of type ``int`` and
+# ``float`` to strings and then prints the strings. The following are
+# examples of printing integer and float literal expressions, ::
+
+#: print integers
+print(0, 1, 2, 3, 99)
+print(-99, -3, - 2, - 1)
+
+#: print floating point numbers
+print(0.0, 0.01, 0.5, 2.718)
+print(-2.718, -0.5, - 0.01)
+
+# You can bind names to numeric values using the assignment statement
+# in the same way you bind names to string values. For example, to
+# bind the name ``x`` to integer ``1`` you write ``x = 1`` and to
+# rebind ``x`` to the floating point number ``3.14`` you write ``x =
+# 3.14``. The following sample code shows other examples, ::
+
+#: bind x to 0 and y to 99
+x = 0; y = 99
+print(x, y)
+
+#: rebind x to 0.0 and y to 99.0
+x = 0.0; y = 99.0
+print(x, y)
+
+# Python supports the usual arithmetic operations of addition ``+``,
+# subtraction ``-``, multiplication ``*``, division ``/`` and
+# exponentiation ``**``. It uses the familiar syntax and symbols for
+# arithmetic operators used in many other languages.
+
+# All the above arithmetic operations will produce a result of type
+# ``float`` if *at least one* operand is of type float. Division
+# *always* produces a result of type float even if all operands are
+# integers and an integer result is expected.  The following sample
+# code shows examples of arithmetic operations and the results they
+# produce, ::
+
+#: all operands are integers
+#: the result is integer
+print(1 + 2)
+print(3 - 1)
+print(3 * 2)
+print(3 ** 2)
+
+#: one operand is float
+#: the result is float
+print(1 + 2.0)
+print(3 - 1.0)
+print(3 * 2.0)
+print(3 ** 2.0)
+
+#: division always produces
+#: a float result
+print(2 / 1)
+print(2 / 1.0)
+print(3 / 2)
+print(4 / 2)
+
+# You can use parentheses to group expressions when there are many
+# terms involved or to specify clearly the grouping of operands and
+# operators so you don't have to rely on knowledge of operator
+# precedence rules. Take for instance the following compound
+# expression, ::
+
+#: define some initial values
+x = 2; y = 3; z = 4
+
+#: interpreting this compound expression
+#: relies on knowledge of precedence rules
+r = 10 * x ** 2 * y + z / 2 - 1
+
+#: print result
+print(r)
+
+# It is equivalent to the following expression which uses parentheses, ::
+
+#: using parentheses makes computational
+#: intent more clear
+r = 10 * (x ** 2) * y + (z / 2) -1
+
+#: print result
+print(r)
+
+# The two expressions above produce the same result but the second
+# form shows much more clearly our intent.
+
+# We now know how to create objects of type ``str``, ``int`` and
+# ``float`` using literal expressions and we can bind names to these
+# objects and perform some elementary operations on them. In the next
+# section we show how to define Boolean values, how to print them,
+# assign names to them and perform some elementary logical operations
+# on them.
 
 # References
 # ----------
