@@ -5,6 +5,7 @@ Minimal Python
 | `Defining and printing strings`_
 | `Variables and assignment`_
 | `Introduction to numeric types`_
+| `Logical values and operations`_
 | `References`_
 
 Preamble
@@ -487,6 +488,78 @@ objects and perform some elementary operations on them. In the next
 section we show how to define Boolean values, how to print them,
 assign names to them and perform some elementary logical operations
 on them.
+
+Logical values and operations
+-----------------------------
+
+Logical values and operations allow us to formulate truth conditions
+and test the results to perform alternative computations.
+
+The logical truth values of *true* and *false* are represented in
+Python by objects of type ``bool``. To define the logical value
+*true* you write ``True`` and to define the logical value *false*
+you write ``False``. When the interpreter encounters either of these
+Boolean expressions it creates an object of type ``bool`` to
+represent the corresponding logical value. This means that objects
+of type ``bool`` can have only two possible values, ``True`` or
+``False``. The following Boolean expressions create objects with the
+two possible truth values, ::
+
+    # create an object of type 'bool'
+    # with the value True
+    True
+
+    # create an object of type 'bool'
+    # with the value False
+    False
+
+You can print the values ``True`` and ``False`` using the
+``print()`` function. It automatically converts the Boolean values
+to the strings ``"True"`` and ``"False"``, ::
+
+    # print Boolean values
+    print(True, False)
+
+You can bind Boolean values to a name using the assignment
+statement. In the following code the names ``x`` and ``y`` are bound
+to the values ``True`` and ``False`` respectively and then rebound
+to ``False`` and ``True``, ::
+
+    # bind x to True and y to False
+    x = True; y = False
+    print(x, y)
+
+    # rebind x to False and y to True
+    x = False; y = True
+    print(x, y)
+
+Python supports the usual logical operations of *conjunction*,
+*disjunction* and *negation*. Conjunction or logical *and* is
+implemented using the ``and`` operator. The following sample code
+prints the truth table for the ``and`` operation, ::
+
+    # truth table for 'and' operation
+    print(True and True)
+    print(True and False)
+    print(False and True)
+    print(False and False)
+
+Disjunction or logical *or* is implemented using the ``or``
+operator. The following sample code prints the truth table for the
+``or`` operation, ::
+
+    # truth table for 'or' operation
+    print(True or True)
+    print(True or False)
+    print(False or True)
+    print(False or False)
+
+Negation is implemented using the ``not`` operator. The following
+sample code prints the truth table for the ``not`` operation, ::
+
+    # truth table for 'not' operation
+    print(not True)
+    print(not False)
 
 References
 ----------
