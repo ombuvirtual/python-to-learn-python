@@ -6,6 +6,7 @@ Minimal Python
 | `Variables and assignment`_
 | `Introduction to numeric types`_
 | `Logical values and operations`_
+| `Introduction to lists`_
 | `References`_
 
 Preamble
@@ -217,24 +218,47 @@ the resulting string object, ::
     # concatenate strings with + operator
     print("you can" + " add strings " + "using the + operator")
 
-All the examples above use double quotes to define strings. However,
-you can also define strings using *single quotes*.  The following
-example defines similar strings as above but using single quotes, ::
+A common requirement when dealing with a string is to determine how
+many characters it contains. The built-in function ``len()`` takes a
+*collection* object as an argument and returns the number of items
+in the collection.  A collection is an object that supports the
+concept of *number of items*, also known as its *length*. In this
+script we introduce two such collections, strings discussed in this
+section and lists discussed in a later section.
 
-    # a string literal defined with single quotes
-    'a string defined with single quotes'
+Suppose you have the string object ``"abc"``, then the function call
+``len("abc")`` returns 3, the number of characters in the
+string. The following are some examples of using the ``len()``
+function, ::
 
-    # print a string
-    print('a string defined with single quotes')
+    # length of null string
+    print(len(""))
+
+    # length of a string
+    print(len("0123456789"))
+
+In all the examples above we used double quotes to define strings,
+however, you can also use *single quotes*. For example, the string
+literal expression 'abc' produces the same result as
+"abc". Everything we've said so far about double quoted strings
+applies equally to single quoted strings. In the following examples
+single quotes are used to demonstrate the properties we discussed
+above for double quoted strings, ::
+
+    # define null string
+    print('')
+
+    # define a string
+    print('foo')
 
     # print two strings
     print('foo', 'bar')
 
-    # print three strings,
-    print('foo', 'bar', 'gnu')
+    # concatenate strings
+    print('foo' + 'bar' + 'gnu')
 
-    # concatenate strings with + operator
-    print('you can' + ' add strings ' + 'using the + operator')
+    # length of a string
+    print(len('foobargnu'))
 
 Whether a string is defined using double or single quotes the
 backslash character ``\`` is always interpreted as the *escape
@@ -560,6 +584,205 @@ sample code prints the truth table for the ``not`` operation, ::
     # truth table for 'not' operation
     print(not True)
     print(not False)
+
+Introduction to lists
+---------------------
+
+The *list* data type allows you to define and dynamically build an
+*ordered* collection of arbitrary elements that can then be
+processed in some way by iterating over the collection.
+
+In the Python language lists are represented by objects of type
+``list``. To explicitly define a list you enclose its elements in
+square brackets and separate them by comas. For example, to define a
+list containing the ordered sequence of strings ``"a"``, ``"b"`` and
+``"c"`` you write ``["a", "b", "c"]``. When the interpreter
+encounters this literal list expression it creates an object of type
+``list`` that represents the ordered sequence of strings ``"a"``,
+``"b"`` and ``"c"``.
+
+The following examples show definitions of *homogeneous* lists, that
+is, lists in which all elements are of the same type, ::
+
+    # define an empty list
+    []
+
+    # define a list with one string element
+    ["a"]
+
+    # define a list of strings
+    ["a", "b", "c"]
+
+    # define a list of integers
+    [1, 2, 3]
+
+    # define a list of lists
+    [[], [1], [1, 2]]
+
+The following examples show definitions of *heterogeneous* lists,
+that is, lists that contain elements of different types, ::
+
+    # a list of integers, floats and strings
+    [1, "1", 2.0, "2.0", 3, "3"]
+
+    # a list of integers, strings and lists
+    [0, '', [], 1, '1', [1]]
+
+To print a list object you use the ``print()`` function. It
+automatically converts a list object to a string, as shown in the
+following example, ::
+
+    # print the empty list
+    print([])
+
+    # print a list of strings
+    print(["a", "b", "c"])
+
+    # print a list of integers
+    print([1, 2, 3])
+
+    # print a list of lists
+    print([[], [1], [1, 2]])
+
+    # print a heterogeneous list
+    print([1, 3.14, "foo", ["bar"]])
+
+You can bind names to list objects using the assignment statement in
+the same way you do for strings, integers, floats and Boolean
+values. For example, to bind the name ``x`` to list ``[1, 2, 3]``
+you write ``x = [1, 2, 3]`` and to rebind ``x`` to list ``["a", "b",
+"c"]`` you write ``x = ["a", "b", "c"]``. The following sample code
+shows other examples, ::
+
+    # bind x to the empty list
+    x = []
+    print(x)
+
+    # rebind x to a list of floats
+    x = [0.01, 0.1, 1.0]
+    print(x)
+
+    # rebind x to a list of lists
+    x = [[], [1], [1, 2]]
+    print(x)
+
+To determine the number of elements in a list you use the built-in
+function ``len()`` which we introduced in the section on
+strings. Suppose ``x`` is bound to list object ``[1, 2, 3]``, then
+the function call ``len(x)`` returns 3, the number of elements in
+``x``. The following are some examples of using the ``len()``
+function, ::
+
+    # length of empty list
+    print(len([]))
+
+    # length of a list of strings
+    x = ["a", "b", "c"]
+    print(len(x))
+
+    # length of a list of lists
+    x = [[], [1], [1, 2]]
+    print(x)
+
+    # length of first element of a list of lists
+    x = [["a", "b"], ["c"]]
+    print(len(x[0]))
+
+The index of the last element of a non-empty list is given by
+``len(x) - 1``. You can use this fact to reference the last element
+of a list as in the following example, ::
+
+    # a list x
+    x = [1, 2, 3]
+
+    # print last element of x
+    print(x[len(x) - 1])
+
+Let's now consider three operations you can perform on list objects,
+concatenation, referencing its elements and adding elements to
+it. You can create a new list by concatenating two or more existing
+lists using the addition operator ``+``. For example, if you want to
+create a new list that contains all the elements in list ``[1, 2,
+3]`` followed by all the elements in list ``[4, 5, 6]``, you write
+``[1, 2, 3] + [4, 5, 6]``. The following code shows some examples of
+list concatenation, ::
+
+    # concatenate multiple lists
+    x = [1] + [2, 3] + [4, 5] + [6]
+    print(x)
+
+    # bind x and y to list objects
+    x = ["a", "b", "c"]
+    y = ["d", "e", "f"]
+
+    # concatenate lists x and y
+    z = x + y
+    print(z)
+
+    # concatenating a list with the empty list
+    # creates a new list with the same elements
+    x = [1, 2] + []
+    print(x)
+
+The elements of a list are indexed by integer values, starting at
+index 0. Consider, for example, the list ["a", "b", "c"], the index
+of element "a" is 0, the index of "b" is 1 and the index of "c" is
+2. To reference an element in a list you use the *index*
+operator. The index operator applied to a list named ``x`` has the
+form ``x[i]``, where ``i`` is the index of the element you want to
+reference. For example, if the list above was bound to the name
+``x``, element ``"a"`` would be referenced by ``x[0]``, element
+``"b"`` by ``x[1]`` and ``"c"`` by ``x[2]``. The following code
+snippet shows some examples of referencing list elements, ::
+
+    # a list x
+    x = ["foo", "bar", "gnu"]
+
+    # reference first element of x
+    print(x[0])
+
+    # reference second element of x
+    print(x[1])
+
+    # reference third element of x
+    print(x[2])
+
+    # you can apply the index operator to a
+    # literal list although it's not very useful,
+    # the following references the second
+    # element of a literal list
+    print([1, 2, 3][1])
+
+To add an element to the end of a list you can use the ``append()``
+method. The ``append()`` method takes as an argument the object you
+want to add to the list. Suppose ``x`` is bound to the empty list
+``[]``, to add the element ``"foo"`` to it you write
+``x.append("foo")``. To add another element to the end of list
+``x``, say the string ``"bar"``, you write ``x.append("bar")``. The
+following code provides more examples, ::
+
+    # start with an empty list x
+    x = []
+
+    # add strings "a", "b" and "c"
+    x.append("a")
+    x.append("b")
+    x.append("c")
+
+    # add a string bound to y
+    y = "foo"
+    x.append(y)
+
+    # print list x
+    print(x)
+
+We have now introduced all the data types in minimal Python,
+``str``, ``int``, ``float``, ``bool`` and ``list``. We have seen how
+to define objects of these types using literal expressions, how to
+bind names to them with the assignment statement and introduced some
+basic operations you can perform on these types of objects. In the
+next section we introduce equality and inequality operators that can
+be used to compare instances of these data types.
 
 References
 ----------

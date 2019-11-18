@@ -40,6 +40,7 @@
 <div class="line"><a class="reference internal" href="#variables-and-assignment">Variables and assignment</a></div>
 <div class="line"><a class="reference internal" href="#introduction-to-numeric-types">Introduction to numeric types</a></div>
 <div class="line"><a class="reference internal" href="#logical-values-and-operations">Logical values and operations</a></div>
+<div class="line"><a class="reference internal" href="#introduction-to-lists">Introduction to lists</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -233,23 +234,45 @@ the resulting string object,</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you can&quot;</span> <span class="o">+</span> <span class="s2">&quot; add strings &quot;</span> <span class="o">+</span> <span class="s2">&quot;using the + operator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>All the examples above use double quotes to define strings. However,
-you can also define strings using <em>single quotes</em>.  The following
-example defines similar strings as above but using single quotes,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string literal defined with single quotes</span>
-<span class="s1">&#39;a string defined with single quotes&#39;</span>
+<p>A common requirement when dealing with a string is to determine how
+many characters it contains. The built-in function <code class="docutils literal notranslate"><span class="pre">len()</span></code> takes a
+<em>collection</em> object as an argument and returns the number of items
+in the collection.  A collection is an object that supports the
+concept of <em>number of items</em>, also known as its <em>length</em>. In this
+script we introduce two such collections, strings discussed in this
+section and lists discussed in a later section.</p>
+<p>Suppose you have the string object <code class="docutils literal notranslate"><span class="pre">&quot;abc&quot;</span></code>, then the function call
+<code class="docutils literal notranslate"><span class="pre">len(&quot;abc&quot;)</span></code> returns 3, the number of characters in the
+string. The following are some examples of using the <code class="docutils literal notranslate"><span class="pre">len()</span></code>
+function,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># length of null string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
 
-<span class="c1"># print a string</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a string defined with single quotes&#39;</span><span class="p">)</span>
+<span class="c1"># length of a string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;0123456789&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In all the examples above we used double quotes to define strings,
+however, you can also use <em>single quotes</em>. For example, the string
+literal expression ‘abc’ produces the same result as
+“abc”. Everything we’ve said so far about double quoted strings
+applies equally to single quoted strings. In the following examples
+single quotes are used to demonstrate the properties we discussed
+above for double quoted strings,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define null string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c1"># define a string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
 
 <span class="c1"># print two strings</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 
-<span class="c1"># print three strings,</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;gnu&#39;</span><span class="p">)</span>
+<span class="c1"># concatenate strings</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span> <span class="o">+</span> <span class="s1">&#39;bar&#39;</span> <span class="o">+</span> <span class="s1">&#39;gnu&#39;</span><span class="p">)</span>
 
-<span class="c1"># concatenate strings with + operator</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you can&#39;</span> <span class="o">+</span> <span class="s1">&#39; add strings &#39;</span> <span class="o">+</span> <span class="s1">&#39;using the + operator&#39;</span><span class="p">)</span>
+<span class="c1"># length of a string</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;foobargnu&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>Whether a string is defined using double or single quotes the
@@ -566,6 +589,202 @@ sample code prints the truth table for the <code class="docutils literal notrans
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="introduction-to-lists">
+<h2>Introduction to lists<a class="headerlink" href="#introduction-to-lists" title="Permalink to this headline">¶</a></h2>
+<p>The <em>list</em> data type allows you to define and dynamically build an
+<em>ordered</em> collection of arbitrary elements that can then be
+processed in some way by iterating over the collection.</p>
+<p>In the Python language lists are represented by objects of type
+<code class="docutils literal notranslate"><span class="pre">list</span></code>. To explicitly define a list you enclose its elements in
+square brackets and separate them by comas. For example, to define a
+list containing the ordered sequence of strings <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code> you write <code class="docutils literal notranslate"><span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code>. When the interpreter
+encounters this literal list expression it creates an object of type
+<code class="docutils literal notranslate"><span class="pre">list</span></code> that represents the ordered sequence of strings <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code>.</p>
+<p>The following examples show definitions of <em>homogeneous</em> lists, that
+is, lists in which all elements are of the same type,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define an empty list</span>
+<span class="p">[]</span>
+
+<span class="c1"># define a list with one string element</span>
+<span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+
+<span class="c1"># define a list of strings</span>
+<span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+
+<span class="c1"># define a list of integers</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># define a list of lists</span>
+<span class="p">[[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>The following examples show definitions of <em>heterogeneous</em> lists,
+that is, lists that contain elements of different types,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of integers, floats and strings</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+
+<span class="c1"># a list of integers, strings and lists</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>To print a list object you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. It
+automatically converts a list object to a string, as shown in the
+following example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the empty list</span>
+<span class="nb">print</span><span class="p">([])</span>
+
+<span class="c1"># print a list of strings</span>
+<span class="nb">print</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+
+<span class="c1"># print a list of integers</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># print a list of lists</span>
+<span class="nb">print</span><span class="p">([[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+
+<span class="c1"># print a heterogeneous list</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;bar&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>You can bind names to list objects using the assignment statement in
+the same way you do for strings, integers, floats and Boolean
+values. For example, to bind the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>
+you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> and to rebind <code class="docutils literal notranslate"><span class="pre">x</span></code> to list <code class="docutils literal notranslate"><span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span>
+<span class="pre">&quot;c&quot;]</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code>. The following sample code
+shows other examples,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># bind x to the empty list</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># rebind x to a list of floats</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># rebind x to a list of lists</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To determine the number of elements in a list you use the built-in
+function <code class="docutils literal notranslate"><span class="pre">len()</span></code> which we introduced in the section on
+strings. Suppose <code class="docutils literal notranslate"><span class="pre">x</span></code> is bound to list object <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, then
+the function call <code class="docutils literal notranslate"><span class="pre">len(x)</span></code> returns 3, the number of elements in
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. The following are some examples of using the <code class="docutils literal notranslate"><span class="pre">len()</span></code>
+function,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># length of empty list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">([]))</span>
+
+<span class="c1"># length of a list of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># length of a list of lists</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># length of first element of a list of lists</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>The index of the last element of a non-empty list is given by
+<code class="docutils literal notranslate"><span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span></code>. You can use this fact to reference the last element
+of a list as in the following example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># print last element of x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Let’s now consider three operations you can perform on list objects,
+concatenation, referencing its elements and adding elements to
+it. You can create a new list by concatenating two or more existing
+lists using the addition operator <code class="docutils literal notranslate"><span class="pre">+</span></code>. For example, if you want to
+create a new list that contains all the elements in list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span>
+<span class="pre">3]</span></code> followed by all the elements in list <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>, you write
+<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span> <span class="pre">+</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>. The following code shows some examples of
+list concatenation,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenate multiple lists</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># bind x and y to list objects</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="c1"># concatenate lists x and y</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="c1"># concatenating a list with the empty list</span>
+<span class="c1"># creates a new list with the same elements</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The elements of a list are indexed by integer values, starting at
+index 0. Consider, for example, the list [“a”, “b”, “c”], the index
+of element “a” is 0, the index of “b” is 1 and the index of “c” is
+2. To reference an element in a list you use the <em>index</em>
+operator. The index operator applied to a list named <code class="docutils literal notranslate"><span class="pre">x</span></code> has the
+form <code class="docutils literal notranslate"><span class="pre">x[i]</span></code>, where <code class="docutils literal notranslate"><span class="pre">i</span></code> is the index of the element you want to
+reference. For example, if the list above was bound to the name
+<code class="docutils literal notranslate"><span class="pre">x</span></code>, element <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> would be referenced by <code class="docutils literal notranslate"><span class="pre">x[0]</span></code>, element
+<code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> by <code class="docutils literal notranslate"><span class="pre">x[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code> by <code class="docutils literal notranslate"><span class="pre">x[2]</span></code>. The following code
+snippet shows some examples of referencing list elements,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
+
+<span class="c1"># reference first element of x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># reference second element of x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># reference third element of x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># you can apply the index operator to a</span>
+<span class="c1"># literal list although it&#39;s not very useful,</span>
+<span class="c1"># the following references the second</span>
+<span class="c1"># element of a literal list</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To add an element to the end of a list you can use the <code class="docutils literal notranslate"><span class="pre">append()</span></code>
+method. The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method takes as an argument the object you
+want to add to the list. Suppose <code class="docutils literal notranslate"><span class="pre">x</span></code> is bound to the empty list
+<code class="docutils literal notranslate"><span class="pre">[]</span></code>, to add the element <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> to it you write
+<code class="docutils literal notranslate"><span class="pre">x.append(&quot;foo&quot;)</span></code>. To add another element to the end of list
+<code class="docutils literal notranslate"><span class="pre">x</span></code>, say the string <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>, you write <code class="docutils literal notranslate"><span class="pre">x.append(&quot;bar&quot;)</span></code>. The
+following code provides more examples,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># start with an empty list x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># add strings &quot;a&quot;, &quot;b&quot; and &quot;c&quot;</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
+
+<span class="c1"># add a string bound to y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># print list x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We have now introduced all the data types in minimal Python,
+<code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code> and <code class="docutils literal notranslate"><span class="pre">list</span></code>. We have seen how
+to define objects of these types using literal expressions, how to
+bind names to them with the assignment statement and introduced some
+basic operations you can perform on these types of objects. In the
+next section we introduce equality and inequality operators that can
+be used to compare instances of these data types.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
