@@ -7,6 +7,7 @@ Minimal Python
 | `Introduction to numeric types`_
 | `Logical values and operations`_
 | `Introduction to lists`_
+| `Comparison operations`_
 | `References`_
 
 Preamble
@@ -80,6 +81,13 @@ Minimal Python includes the following language elements:
 
 These topics will, of course, be covered in more detail in later
 scripts.
+
+Imports
+-------
+
+Import line number function::
+
+    from ptlp import l
 
 Defining and printing strings
 -----------------------------
@@ -780,9 +788,345 @@ We have now introduced all the data types in minimal Python,
 ``str``, ``int``, ``float``, ``bool`` and ``list``. We have seen how
 to define objects of these types using literal expressions, how to
 bind names to them with the assignment statement and introduced some
-basic operations you can perform on these types of objects. In the
-next section we introduce equality and inequality operators that can
-be used to compare instances of these data types.
+basic operations you can perform on these types of objects.
+
+Comparison operations
+---------------------
+
+This section is an introduction to the comparison operations of
+equality, identity and inequality as they apply to objects of type
+``int``, ``float``, ``bool``, ``str`` and ``list``.
+
+These operations are implemented using the following operators:
+
++ equality ``==`` and non-equality ``!=``
++ identity ``is`` and non-identity ``is not``
++ strict inequality *less than* ``<`` and *greater than* ``>``
++ non-strict inequality *less than or equal* ``<=`` and *greater
+  than or equal* ``>=``
+
+These are *binary* operators that operate on two operands. The
+expressions that can be constructed using these operators always
+evaluate to a Boolean value of ``True`` or ``False``.
+
+I describe first the equality and identity operators.  The equality
+operator ``==`` tests whether its two operands *represent* the same
+*value*. The identity ``is`` operator, on the other hand, tests
+whether the two operands *are* the same *object*. It is very
+important to understand this difference from the outset.
+
+Suppose you have an object of type ``int`` that represents the
+integer value ``1`` and an object of type ``float`` that represents
+the float value ``1.0``.  These are two different objects that
+represent the same mathematical number 1. Therefore, the equality
+expression ``1 == 1.0`` evaluates to ``True``, since the two objects
+represent the same value.  On the other hand, the identity
+expression ``1 is 1.0`` evaluates to ``False``, since the two
+objects involved are different. The following code confirms this
+result, ::
+
+    # equality evaluates to True,
+    # 1 and 1.0 represent the same value
+    print(l(), 1 == 1.0)
+
+    # identity evaluates to False,
+    # 1 and 1.0 are different objects
+    print(l(), 1 is 1.0)
+
+An example based on lists may serve to clarify the difference
+between equality and identity. Whenever the Python interpreter
+encounters the expression ``[]`` it creates a new object of type
+``list`` that represents the value *empty list*. The equality
+expression ``[] == []`` evaluates to ``True`` because the two
+operands are objects representing the same value *empty list*. On
+the other hand, the identity expression ``[] is []`` evaluates to
+``False`` because the two operands are different objects. This is
+confirmed in the following code,
+
+::
+
+    # equality evaluates to True,
+    # both operands represent the 'empty list'
+    print(l(), [] == [])
+
+    # identity evaluates to False,
+    # each list expression produces a different object
+    print(l(), [] is [])
+
+The same argument applies to non-empty lists, as show in the
+following code,
+
+::
+
+    # equality evaluates to True,
+    # the values represented are equal
+    print(l(), ["a", "b", "c"] == ["a", "b", "c"])
+
+    # identity evaluates to False,
+    # each list expression produces a different object
+    print(l(), ["a", "b", "c"] is ["a", "b", "c"])
+
+The examples above showed the difference between equality and
+identity. We now turn our attention to equality expressions that
+involve operands of *different* types.
+
+In this case equality fails when the types of the operands are such
+that they can't represent the same value. For instance, the
+expression ``1 == "1"`` evaluates to ``False`` because the integer 1
+is not equal to the string "1".  All the following expressions
+evaluate to ``False`` because the types involved can't be used to
+represent the same value,
+
+::
+
+    # int and str
+    print(l(), 1 == "1")
+
+    # int and list
+    print(l(), 1 == [1])
+
+    # float and str 
+    print(l(), 1.0 == "1.0")
+
+    # float and list
+    print(l(), 1.0 == [1.0])
+
+    # str and list 
+    print(l(), "a" == ["a"])
+
+    # bool and str
+    print(l(), True == "1")
+    print(l(), False == "0")
+
+The above argument does not apply to equality expressions in which
+the two operands are combinations of objects of type ``int``,
+``float`` or ``bool``. Objects of type ``int`` and ``float`` can be
+used to represent the same numeric value and in such cases the
+objects are considered equal, as they should.  For instance, the
+number 1 can be equally represented by the ``int`` object ``1`` or
+the float object ``1.0``. The equality expression ``1 == 1.0``
+evaluates to ``True`` because the two objects represent the same
+value. The following are examples in which ``int`` and ``float``
+objects are equal,
+
+::
+
+    # equality evaluates to True,
+    # int and float objects both represent 0
+    print(l(), 0 == 0.0)
+
+    # equality evaluates to True,
+    # int and float objects both represent 2
+    print(l(), 2 == 4 / 2)
+
+The Boolean values ``True`` and ``False`` are considered equal to
+the numeric values 1 and 0 respectively. Therefore, the following
+equality expressions evaluate to True,
+
+::
+
+    # equality evaluates to True,
+    # True and 1 are considered the same value
+    print(l(), True == 1)
+    print(l(), True == 1.0)
+
+    # equality evaluates to True,
+    # False and 0 are considered the same value
+    print(l(), False == 0)
+    print(l(), False == 0.0)
+
+The examples above considered equality of objects of different
+types. Let's now consider equality of objects of the *same* type.
+
+Equality of ``int`` and ``float`` objects follow the rules of
+equality of arithmetic. The following equality expressions with
+``int`` and ``float`` operands evaluate to ``True``,
+
+::
+
+    # both operands are int
+    print(l(), 1 == 2 - 1)
+
+    # both operands are float
+    print(l(), 1.5 == 3 / 2)
+
+    # one int and one float operand
+    print(l(), 2 == 4 / 2)
+
+Equality of objects of type ``bool`` is trivial. Two ``bool``
+objects are equal if they both represent the value ``True`` or
+``False``.
+
+Equality of strings is also straightforward. Two objects of type
+``str`` are equal if the string values they represent have the same
+number of characters and their corresponding characters are
+equal. The following equality expressions with ``str`` operands
+evaluate to ``True``, ::
+
+    # string equality expressions that evaluate to True
+    print(l(), "" == '')
+    print(l(), "foo" == "foo")
+    print(l(), "foo" == "f" + "o" + "o")
+    print(l(), '_*_' == '_' + '*' + '_')
+
+Finally, let's consider equality of lists. For two objects of type
+``list`` to compare equal, they must be of equal length and their
+corresponding elements must compare equal. The following are
+examples of list equality expressions,
+
+::
+
+    # expressions that evaluate to True
+    print(l(), [1] == [1])
+    print(l(), [1] == [1] + [])
+    print(l(), [1] == [1.0])
+    print(l(), ["ab"] == ["a" + "b"])
+
+    # expressions that evaluate to False
+    print(l(), [1] == [2])
+    print(l(), [1] == [1] + [2])
+    print(l(), [1] == ["1"])
+    print(l(), ["a"] == ["a", "b"])
+
+An understanding of non-equality and non-identity operators, ``!=``
+and ``is not``, follows trivially from an understanding of equality
+and identity so there is no need to cover them explicitly here.
+
+Let's now turn our attention to inequality comparison operations. I
+will restrict the discussion to the strict inequality *less than*
+``<`` operator.  There is no loss of generality because
+understanding the operation of the other inequality operators
+follows easily from knowledge of equality and *less than*
+inequality.
+
+The first thing to note is that applying inequality operators to
+operands of different types causes a ``TypeError`` run time error.
+For example, when the interpreter encounters the expression ``1 <
+[1]`` it generates the following error,
+
+::
+
+ Traceback (most recent call last):
+   File "myscript.py", line 10, in <module>
+     1 < [1]
+ TypeError: '<' not supported between instances of 'int' and 'list'
+
+The fourth line indicates the class of error, ``TypeError``,
+followed by a very precise explanatory message.
+
+Inequality of numeric types ``int`` and ``float`` follows the
+familiar rules of arithmetic. In this case the two numeric operands
+don't have to be of the same type. For example, the expression ``1 <
+2.0`` involving an ``int`` and ``float`` evaluates to ``True``, as
+expected from our understanding of numeric ordering in
+arithmetic. The following are some examples of numeric inequalities,
+
+::
+
+    # some numeric inequalities
+    # that evaluate to True
+    print(l(), 1 < 3.14)
+    print(l(), 0 < 1.0)  
+    print(l(), -1 < 0.0)
+    print(l(), -2.0 < -1)
+
+Inequality of strings is based on lexicographic ordering. The
+following are examples of inequality expressions with string
+operands,
+
+::
+
+    # some string inequalities
+    # that evaluate to True
+    print(l(), "" < "a")
+    print(l(), "a" < "b")
+    print(l(), "a" < "aa")
+    print(l(), "0a" < "a")
+    print(l(), "_a" < "a")
+    print(l(), "" < "abc")
+    print(l(), "abc" < "c")
+
+The comparison of lists is more involved than comparison of strings
+because the elements of a list can be arbitrary objects.
+
+Consider first the case of comparing two lists that contain elements
+of different types. The process of comparing two lists involves
+comparing their corresponding elements until the comparison
+evaluates to True or False. If the comparison of two lists involves
+comparing elements of different types the interpreter will generate
+a run time error . For example, the expression ``[1] < ["a"]``
+generates the following error,
+
+::
+
+ Traceback (most recent call last):
+   File "myscript.py", line 10, in <module>
+     print(l(), [1] < ["a"])
+ TypeError: '<' not supported between instances of 'int' and 'str'
+
+In some cases the comparison expression is resolved before elements
+of different type are compared and no run time error is generated,
+as shown in the following example,
+
+::
+
+    # evaluates to True
+    print(l(), [1] < [2, "a"])
+
+For the rest of the discussion let's assume the lists involved have
+elements that are comparable. Furthermore, let's consider first the
+case of lists that contain the same number of elements.
+
+Suppose you have two lists x and y and the inequality expression x <
+y.  To evaluate the expression the inequality operator ``<`` is
+applied to each pair of corresponding elements of x and y, one pair
+at a time from left to right.  If inequality of a given pair is
+``True``, then list inequality is ``True`` and comparison stops; if
+inequality of the given pair is ``False``, then list inequality is
+``False`` and comparison stops; if the pair of elements are equal
+then the inequality operator is applied to the next pair of
+corresponding elements; and if all elements compare equal list
+inequality is ``False``. The following examples illustrate each
+case,
+
+::
+
+    # evaluates to True
+    # because 2 < 3 is True
+    print(l(), [1, 2] < [1, 3])
+
+    # evaluates to False
+    # because 1 < 0 is False
+    print(l(), [1, 2] < [0, 3])
+
+    # evaluates to False
+    # because lists are equal
+    print(l(), [1, 2] < [1, 2])
+
+Comparison of lists that contain different number of elements
+operates in the same way as with lists of the same size with one
+addition. If the elements of the shorter list are equal to the
+corresponding elements of the longer list then the shorter list is
+considered less than the longer list. The following examples
+illustrate these cases,
+
+::
+
+    # evaluates to True
+    # empty list less than non-empty list
+    print(l(), [] < [1])
+
+    # evaluates to True
+    # shorter list is less than longer list
+    print(l(), [1, 2] < [1, 2, 3])
+
+    # evaluates to True
+    # because 1 < 2 is True
+    print(l(), [1, 2] < [2, 1, 0])
+
+    # evaluates to False
+    # because 2 < 1 is False
+    print(l(), [1,2] < [1, 1, 0])
 
 References
 ----------
