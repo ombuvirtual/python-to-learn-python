@@ -42,6 +42,7 @@
 <div class="line"><a class="reference internal" href="#logical-values-and-operations">Logical values and operations</a></div>
 <div class="line"><a class="reference internal" href="#introduction-to-lists">Introduction to lists</a></div>
 <div class="line"><a class="reference internal" href="#comparison-operations">Comparison operations</a></div>
+<div class="line"><a class="reference internal" href="#the-for-statement">The for statement</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -1068,8 +1069,8 @@ case,</p>
 </pre></div>
 </div>
 <p>Comparison of lists that contain different number of elements
-operates in the same way as with lists of the same size with one
-addition. If the elements of the shorter list are equal to the
+operates in the same way as with lists of the same size, with one
+extension. If the elements of the shorter list are equal to the
 corresponding elements of the longer list then the shorter list is
 considered less than the longer list. The following examples
 illustrate these cases,</p>
@@ -1088,6 +1089,123 @@ illustrate these cases,</p>
 <span class="c1"># evaluates to False</span>
 <span class="c1"># because 2 &lt; 1 is False</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-for-statement">
+<h2>The for statement<a class="headerlink" href="#the-for-statement" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement is designed to repeatedly execute a group of
+program statements, a common programming requirement often described
+as <em>executing a loop</em>.</p>
+<p>Suppose you have a list x containing strings and you want to print
+each string in a separate line. The following <code class="docutils literal notranslate"><span class="pre">for</span></code> statement
+would accomplish that task,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
+
+<span class="c1"># iterates over the elements of list x,</span>
+<span class="c1"># at each iteration binds &#39;item&#39; to next element,</span>
+<span class="c1"># then calls print() with &#39;item&#39; as an argument,</span>
+<span class="c1"># repeats until there is no next element</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement above iterates over the elements of list
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. At the start of each iteration it gets the <em>next</em> element in
+the list and binds it to the identifier <code class="docutils literal notranslate"><span class="pre">item</span></code>, it then executes
+the call to <code class="docutils literal notranslate"><span class="pre">print(item)</span></code>.  This process of iteration stops when
+the attempt to get the <em>next</em> element returns no element, signalling
+the end of the list. Once the string <code class="docutils literal notranslate"><span class="pre">&quot;gnu&quot;</span></code>, the last string in
+the list, is printed, the attempt to get the next element signals
+end of list and the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ends.</p>
+<p>Let’s focus now on the syntax of the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement. The
+statement consists of two parts: The <em>statement header</em> and the
+<em>statement group</em> that follows the header and is meant to be executed
+repeatedly.</p>
+<p>The statement header begins with the keyword <code class="docutils literal notranslate"><span class="pre">for</span></code> and is followed
+by the <em>loop variable</em> which can be any valid name, in this example
+the name <code class="docutils literal notranslate"><span class="pre">item</span></code>. The loop variable is followed by the keyword
+<code class="docutils literal notranslate"><span class="pre">in</span></code> which itself must be followed by an <em>iterable</em> object, in
+this example the list <code class="docutils literal notranslate"><span class="pre">x</span></code>. The header ends with a mandatory colon
+<code class="docutils literal notranslate"><span class="pre">:</span></code> character.</p>
+<p>In many programming languages a statement group is defined by
+explicitly enclosing the statements in braces <code class="docutils literal notranslate"><span class="pre">{}</span></code>. In Python a
+statement group is defined by <em>indenting</em> each statement in the
+group a consistent amount relative to the statement header. In the
+example above the call to the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function is indented four
+spaces relative to the statement header. This indentation is not
+optional, it is syntactically required. Suppose we rewrite the
+example above without indentation as in the following code,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When the Python interpreter encounters this statement it generates
+an <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and displays the following information,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;myscript.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        <span class="o">^</span>
+<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">expected</span> <span class="n">an</span> <span class="n">indented</span> <span class="n">block</span>
+</pre></div>
+</div>
+<p>The size of indentation does not matter but it must be consistent
+throughtout the same program.</p>
+<p>In the example above the statement group associated with the <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop contains only one statement, the call to <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
+<p>Let’s see another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop example.  Suppose as before you have
+a list of strings and you want to print each string in a separate
+line but this time also print in its own line the concatenation of
+all elements printed up to the current iteration. The following
+<code class="docutils literal notranslate"><span class="pre">for</span></code> statement would accomplish the task,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
+
+<span class="c1"># initial concatenation</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># prints &#39;item&#39; and the concatenation</span>
+<span class="c1"># of elements printed up to current</span>
+<span class="c1"># iteration</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">s</span> <span class="o">+</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The following example uses a string as the iterable object in the
+<code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+
+<span class="c1"># &#39;for&#39; loop with a string as</span>
+<span class="c1"># the iterable object</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">char</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You can also use a literal expression for the iterable object in a
+for loop, as show in the following example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># you can use a literal expression</span>
+<span class="c1"># for the iterable object in &#39;for&#39; loop</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">n</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is possible to nest <code class="docutils literal notranslate"><span class="pre">for</span></code> statements. In other words, a <code class="docutils literal notranslate"><span class="pre">for</span></code>
+loop can be part of the statement group of another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, as
+long as indentation is observed. The following example uses two
+nested for loops.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># two lists of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
+
+<span class="c1"># you can nest for loops</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

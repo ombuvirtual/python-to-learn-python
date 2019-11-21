@@ -8,6 +8,7 @@
 # | `Logical values and operations`_
 # | `Introduction to lists`_
 # | `Comparison operations`_
+# | `The for statement`_
 # | `References`_
 
 # Preamble
@@ -1127,6 +1128,143 @@ print(l(), [1, 2] < [2, 1, 0])
 #: evaluates to False
 #: because 2 < 1 is False
 print(l(), [1,2] < [1, 1, 0])
+
+# The for statement
+# -----------------
+
+# The ``for`` statement is designed to repeatedly execute a group of
+# program statements, a common programming requirement often described
+# as *executing a loop*.
+
+# Suppose you have a list x containing strings and you want to print
+# each string in a separate line. The following ``for`` statement
+# would accomplish that task,
+
+# ::
+
+#: a list of strings
+x = ["foo", "bar", "gnu"]
+
+#: iterates over the elements of list x,
+#: at each iteration binds 'item' to next element,
+#: then calls print() with 'item' as an argument,
+#: repeats until there is no next element
+for item in x:
+    print(item)
+
+# The ``for`` statement above iterates over the elements of list
+# ``x``. At the start of each iteration it gets the *next* element in
+# the list and binds it to the identifier ``item``, it then executes
+# the call to ``print(item)``.  This process of iteration stops when
+# the attempt to get the *next* element returns no element, signalling
+# the end of the list. Once the string ``"gnu"``, the last string in
+# the list, is printed, the attempt to get the next element signals
+# end of list and the ``for`` loop ends.
+
+# Let's focus now on the syntax of the ``for`` statement. The
+# statement consists of two parts: The *statement header* and the
+# *statement group* that follows the header and is meant to be executed
+# repeatedly.
+
+# The statement header begins with the keyword ``for`` and is followed
+# by the *loop variable* which can be any valid name, in this example
+# the name ``item``. The loop variable is followed by the keyword
+# ``in`` which itself must be followed by an *iterable* object, in
+# this example the list ``x``. The header ends with a mandatory colon
+# ``:`` character.
+
+# In many programming languages a statement group is defined by
+# explicitly enclosing the statements in braces ``{}``. In Python a
+# statement group is defined by *indenting* each statement in the
+# group a consistent amount relative to the statement header. In the
+# example above the call to the ``print()`` function is indented four
+# spaces relative to the statement header. This indentation is not
+# optional, it is syntactically required. Suppose we rewrite the
+# example above without indentation as in the following code,
+
+# ::
+
+#  for item in x:
+#  print(item)
+
+# When the Python interpreter encounters this statement it generates
+# an ``IndentationError`` and displays the following information,
+
+# ::
+
+#    File "myscript.py", line 10
+#      print(item)
+#          ^
+#  IndentationError: expected an indented block
+
+# The size of indentation does not matter but it must be consistent
+# throughtout the same program.
+
+# In the example above the statement group associated with the ``for``
+# loop contains only one statement, the call to ``print()``.
+
+# Let's see another ``for`` loop example.  Suppose as before you have
+# a list of strings and you want to print each string in a separate
+# line but this time also print in its own line the concatenation of
+# all elements printed up to the current iteration. The following
+# ``for`` statement would accomplish the task,
+
+# ::
+
+#: a list of strings
+x = ["foo", "bar", "gnu"]
+
+#: initial concatenation
+s = ""
+
+#: prints 'item' and the concatenation
+#: of elements printed up to current
+#: iteration
+for item in x:
+    print(l(), item)
+    print(l(), s + item)
+
+# The following example uses a string as the iterable object in the
+# ``for`` statement.
+
+# ::
+
+#: a string
+s = "abcdef"
+
+#: 'for' loop with a string as
+#: the iterable object
+for char in s:
+    print(l(), char)
+    print(l(), char.upper())
+
+# You can also use a literal expression for the iterable object in a
+# for loop, as show in the following example, 
+
+# ::
+
+#: you can use a literal expression
+#: for the iterable object in 'for' loop
+sum = 0
+for n in [1, 2, 3]:
+    sum = sum + n
+    print(l(), n, sum)
+
+# It is possible to nest ``for`` statements. In other words, a ``for``
+# loop can be part of the statement group of another ``for`` loop, as
+# long as indentation is observed. The following example uses two
+# nested for loops.
+
+# ::
+
+#: two lists of strings
+x = ["a", "b"]
+y = ["c", "d"]
+
+#: you can nest for loops
+for m in x:
+    for n in y:
+        print(l(), m + n)
 
 # References
 # ----------
