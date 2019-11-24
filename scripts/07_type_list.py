@@ -70,11 +70,10 @@
 
 # ::
 
-#: import line number function
-from ptlp import ln
-
 #: import maths module, used in some examples
 import math
+
+from ptlp import pl # import pl() function to print line numbers
 
 # Creating lists
 # ~~~~~~~~~~~~~~
@@ -87,15 +86,19 @@ import math
 # *list display*. A *list display* is simply a list of coma separated
 # expressions enclosed in square brackets. For example, suppose you
 # want to create a list containing the three integers 1, 2 and 3 in
-# that order. You define the list using the following list display, ::
+# that order. You define the list using the following list display,
+
+# ::
+
+pl()
 
 #: list display to create
 #: a list of integers
 x = [1, 2, 3]
-print(ln(), x)
+print(x)
 
 #: confirm x is a list
-print(ln(), type(x))
+print(type(x))
 
 # At run-time the interpreter evaluates the *list display* expression
 # to a new object of type ``list``. A list display expression is
@@ -105,23 +108,31 @@ print(ln(), type(x))
 # interpreter you want a list object.
 
 # To create an empty list you write a display list without any
-# enclosed expressions, ::
+# enclosed expressions,
+
+# ::
+
+pl()
 
 #: list display to create
 #: an empty list
 x = []
-print(ln(), x)
+print(x)
 
 #: confirm x is empty
 assert len(x) == 0
 
 # You can create a list containing a single element using the
-# following list display, ::
+# following list display,
+
+# ::
+
+pl()
 
 #: list display to create
 #: a singleton list
 x = [1]
-print(ln(), x)
+print(x)
 
 # Note that, unlike creating a singleton tuple, creating a singleton
 # list does not require a trailing comma.
@@ -129,12 +140,16 @@ print(ln(), x)
 # The expressions corresponding to the elements in a list display can
 # be as simple or as complex as your problem requires. In the
 # following list display the elements are arithmetic expressions
-# involving identifiers, function calls and arithmetic operators, ::
+# involving identifiers, function calls and arithmetic operators,
+
+# ::
+
+pl()
 
 #: list display with
 #: compound expressions
 x = [math.sqrt(3 ** 2 + 5 ** 2), math.pi * 7 ** 2]
-print(ln(), x)
+print(x)
 
 # You can use list displays to create lists with elements of any type
 # as shown in the following examples, ::
@@ -142,31 +157,39 @@ print(ln(), x)
 #: list display to create
 #: a list of strings
 x = ["", "a", "bc"]
-print(ln(), x)
+print(x)
 
 #: list display to create
 #: a list of tuples
 x = [(), (1,), (2, 3)]
-print(ln(), x)
+print(x)
 
 #: list display to create
 #: a list of lists
 x = [[], [1], [2, 3]]
-print(ln(), x)
+print(x)
 
 # As mentioned earlier, lists are most commonly used in cases in which
 # all elements are of the same type. However, the ``list`` type is not
 # limited to that case. A list can include elements of different
 # types. The following example shows a list display with elements of
-# type ``int``, ``float``, ``str``, ``list`` and ``tuple``, ::
+# type ``int``, ``float``, ``str``, ``list`` and ``tuple``,
+
+# ::
+
+pl()
 
 #: list display with elements
 #: of different types
 x = [0, math.pi, "abc", ["a", "b"], (1, 2)]
-print(ln(), x)
+print(x)
 
 # If you need to define a very long list you can make a list display
-# span multiple lines as show in the next example, ::
+# span multiple lines as show in the next example,
+
+# ::
+
+pl()
 
 #: list display spanning
 #: multiple lines
@@ -174,7 +197,7 @@ x = ["a", "b", "c",
      "d", "e", "f",
      "g", "h", "i",
      "j", "k", "l"]
-print(ln(), x)
+print(x)
 
 # Creating lists using ``list()`` constructor
 # ```````````````````````````````````````````
@@ -191,7 +214,9 @@ print(ln(), x)
 # Since sequences are iterable you can use sequence objects to create
 # new lists. For example, if you have the string "abc" and want to
 # create a list consisting of each letter of the string, you call the
-# ``list()`` constructor with the string as an argument, ::
+# ``list()`` constructor with the string as an argument,
+
+# ::
 
 #: invoke list constructor to create
 #: a list from a string
@@ -199,7 +224,9 @@ x = list("abc")
 assert x == ["a", "b", "c"]
 
 # In the following examples the ``list()`` constructor is used to
-# create a new list from different types of iterable objects, ::
+# create a new list from different types of iterable objects,
+
+# ::
 
 #: invoke list constructor to create
 #: a list from a range
@@ -222,7 +249,9 @@ assert x == y
 assert id(x) != id(y)
 
 # You can create an empty list by invoking the ``list()`` constructor
-# without an argument, ::
+# without an argument,
+
+# ::
 
 #: invoke list constructor to create
 #: an empty list
@@ -246,7 +275,9 @@ assert x == []
 # the next letter in the string and can be used to produce a new
 # element using a concatenation expression. The new element can then
 # be added to the list using the ``append()`` method as show in the
-# following snippet, ::
+# following snippet,
+
+# ::
 
 x = []
 for item in "abc":
@@ -280,7 +311,9 @@ assert x == ["_a", "_b", "_c"]
 # involving the loop variable (``item`` in this case) which is bound
 # to a new element of the given iterable object at the start of every
 # iteration. The following example uses the string method ``upper()``
-# to create a list of upper case letters from the string "abc", ::
+# to create a list of upper case letters from the string "abc",
+
+# ::
 
 #: list comprehension to create
 #: a list from a string by making
@@ -292,7 +325,9 @@ assert x == ["A", "B", "C"]
 # elements satisfying some condition. The list comprehension syntax
 # allows the use of an ``if`` statement for that purpose. The
 # following example creates a list by squaring the elements of the
-# range object but only if the element is even, ::
+# range object but only if the element is even,
+
+# ::
 
 #: list comprehension with conditional filtering
 x = [item ** 2 for item in range(0, 10) if item % 2 == 0]
@@ -303,14 +338,18 @@ assert x == [0, 4, 16, 36, 64]
 # in which the elements are the products of the elements in two tuples
 # of integers but only including products less than 10. You can do
 # that with a list comprehension with two ``for`` loops and an ``if``
-# statement, ::
+# statement,
+
+# ::
 
 #: list comprehension with multiple 'for' loops
 x = [m * n for m in (2, 2, 2) for n in (3, 4, 5) if m * n < 10]
 assert x == [6, 8, 6, 8, 6, 8]
 
 # If you need to write a long list comprehension you can make it span
-# multiple lines, ::
+# multiple lines,
+
+# ::
 
 #: list comprehension spanning
 #: multiple lines
@@ -330,7 +369,9 @@ assert x == ["ace", "acf",
 # If you want to create a new list by combining the elements of
 # existing lists you can use the addition operator ``+`` to
 # *concatenate* two or more lists. The following are examples of
-# creating new lists by *adding* existing lists, ::
+# creating new lists by *adding* existing lists,
+
+# ::
 
 #: create a list by 'adding' two existing lists 
 x = ["a"] + ["b", "c"]
@@ -342,7 +383,9 @@ z = x + y + [5, 6]
 assert z == [1, 2, 3, 4, 5, 6]
 
 # Adding the empty list to an existing list creates a new list object
-# that is a copy of the list, ::
+# that is a copy of the list,
+
+# ::
 
 #: 'adding' an empty list to an existing
 #: list creates a copy of the list
@@ -359,7 +402,9 @@ assert id(x) != id(y)
 # a specified number of times using the operator ``*=``. It is shorter
 # and more elegant than explicitly adding a list to itself a number of
 # times. The following example creates a new list by adding list ``x``
-# to itself three times, ::
+# to itself three times,
+
+# ::
 
 x = ["a", "b"]
 x *= 3
@@ -373,7 +418,9 @@ assert x == ["a", "b", "a", "b", "a", "b"]
 # first argument ``i`` is the index of the element of ``x`` that you
 # want to be the first element in the new list; and ``j`` is the index
 # of the last element you want included *plus* 1. For example, suppose
-# you have the following list of strings, ::
+# you have the following list of strings,
+
+# ::
 
 y = ["a", "b", "c", "d", "e", "f"]
 
@@ -381,7 +428,9 @@ y = ["a", "b", "c", "d", "e", "f"]
 # elements "c", "d" and "e". The index of "c" is 2 (counting from 0
 # from the the beginning of list ``y``). Therefore 2 is the first
 # argument of the slice operator. The index of "e" is 4 so you add 1
-# to it to get 5, the second argument of the slice operator, ::
+# to it to get 5, the second argument of the slice operator,
+
+# ::
 
 #: create a list by slicing
 #: an existing list
@@ -393,7 +442,9 @@ assert x == ["c", "d", "e"]
 # to be 0. For example, if you want to create a slice from ``y``
 # containing elements "a", "b" and "c", you only have to include the
 # second argument (the index of the last element you want to include
-# *plus* 1), ::
+# *plus* 1),
+
+# ::
 
 #: create a list by slicing
 #: from the beginning of existing list
@@ -401,7 +452,9 @@ x = y[:3]
 assert x == ["a", "b", "c"]
 
 # Similarly you can create a slice to the end of the list by omitting
-# the last argument, ::
+# the last argument,
+
+# ::
 
 #: create a list by slicing
 #: to the end of existing list
@@ -410,7 +463,9 @@ assert x == ["d", "e", "f"]
 
 # If you omit both arguments the slicing operation makes a shallow
 # copy of the list. In the following example ``x`` is a new list
-# containing references to the same objects as list ``y``, ::
+# containing references to the same objects as list ``y``,
+
+# ::
 
 #: create a copy of a list
 #: using slice operator
@@ -422,7 +477,9 @@ assert x == y
 # example, suppose you want to create slice ``["c", "d", "e"]`` from
 # list ``y`` above using negative indices. The first element "c" has
 # index -4 and the last element "e" has index -2, you add 1 to it to
-# get -1 for the second argument of the slice operator, ::
+# get -1 for the second argument of the slice operator,
+
+# ::
 
 x = y[-4:-1]
 assert x == ["c", "d", "e"]
@@ -440,13 +497,17 @@ assert x == ["c", "d", "e"]
 # Since a list is a sequence you can use the indexing operator
 # ``x[i]`` to reference an element of list ``x`` at a specific index
 # ``i``. The first element has index 0, the second index 1 and so on.
-# Suppose you have the following list of strings, ::
+# Suppose you have the following list of strings,
+
+# ::
 
 #: a list of strings
 x = ["a", "b", "c"]
 
 # The following examples show how to reference the elemens of list
-# ``x`` using the index operator, ::
+# ``x`` using the index operator,
+
+# ::
 
 #: reference first element of x
 assert x[0] == "a"
@@ -457,18 +518,22 @@ assert x[2] == "c"
 
 # If you specify an index that is out of range the interpreter raises
 # an ``IndexError`` exception with the error message "list index out of
-# range", as shown in the following example, ::
+# range", as shown in the following example,
+
+# ::
 
 #: attempt to reference an element
 #: with an index that is out of range
 try:
     x[3]
 except IndexError as e:
-    print(ln(), e)
+    print(e)
 
 # You can avoid this problem using the built-in function ``len()`` to
 # calculate the index of the last element, provided the list is not
-# empty, ::
+# empty,
+
+# ::
 
 #: reference last element
 #: calculating its index
@@ -481,7 +546,9 @@ assert x[len(x) - 1] == "c"
 # element of a list using its negative index rather than calculating
 # its positive index from the length of the list. In the following
 # snippet the elements of list ``x`` are referenced using negative
-# indices, ::
+# indices,
+
+# ::
 
 assert x[-1] == "c"
 assert x[-2] == "b"
@@ -492,13 +559,17 @@ assert x[-3] == "a"
 
 # A common requirement is to ask whether a given object is an element
 # of a specified list.  You can use the membership operators ``in``
-# and ``not in`` for this task. Suppose you have the following list, ::
+# and ``not in`` for this task. Suppose you have the following list,
+
+# ::
 
 x = ["a", "b", "c"]
 
 # Let ``item`` be an arbitrary object. The expression ``item in x``
 # evaluates to True if ``item`` is an element of list ``x``, otherwise
-# it evaluates to False, ::
+# it evaluates to False,
+
+# ::
 
 #: confirm "c" is an
 #: element of x
@@ -509,7 +580,9 @@ assert "c" in x
 assert ("d" in x) == False
 
 # The expression ``item not in x`` evaluates to True if ``item`` is
-# not an element of list ``x``, otherwise it evaluates to False, ::
+# not an element of list ``x``, otherwise it evaluates to False,
+
+# ::
 
 #: confirm "d" is not an
 #: element of x
@@ -524,11 +597,15 @@ assert ("c" not in x) == False
 
 # You can use the built-in functions ``max()`` and ``min()`` to
 # reference the largest and smallest elements of a list
-# respectively. Suppose you have the following list, ::
+# respectively. Suppose you have the following list,
+
+# ::
 
 x = ["a", "b", "c"]
 
-# the largest element is "c" and the smallest is "a", ::
+# the largest element is "c" and the smallest is "a",
+
+# ::
 
 #: confirm largest element is "c"
 assert max(x) == "c"
@@ -537,7 +614,9 @@ assert max(x) == "c"
 assert min(x) == "a"
 
 # If a list contains only one element or all the elements are the same
-# the functions ``max()`` and ``min()`` return the same value, ::
+# the functions ``max()`` and ``min()`` return the same value,
+
+# ::
 
 #: confirm largest = smallest
 x = ["a"]
@@ -549,7 +628,11 @@ assert max(x) == min(x)
 # If the elements of a list cannot be compared the interpreter raises
 # a ``TypeError`` exception. For example, the elements in the
 # following list cannot be compared because they are a mixture of
-# ``str`` and ``int`` types, ::
+# ``str`` and ``int`` types,
+
+# ::
+
+pl()
 
 #: attempt to compare 'int' and 'str'
 #: elements raises a TypeError exception
@@ -557,17 +640,21 @@ x = [1, "a"]
 try:
     max(x)
 except TypeError as e:
-    print(ln(), "TypeError", e)
+    print("TypeError", e)
 
 # If the list is empty the interpreter raises a ``ValueError``
-# exception, ::
+# exception,
+
+# ::
+
+pl()
 
 #: attempt to call 'max()' with an empty list
 #: raises a ValueError exception
 try:
     max([])
 except ValueError as e:
-    print(ln(), "ValueError", e)
+    print("ValueError", e)
 
 # Counting occurrences of an element
 # ``````````````````````````````````
@@ -576,13 +663,17 @@ except ValueError as e:
 # are situations in which you want to determine exactly how many times
 # a given element occurs in a list. The method ``count()`` can be used
 # for that purpose. As an example, suppose you have the following
-# list, ::
+# list,
+
+# ::
 
 x = ["a", "a", "c", "a"]
 
 # You want to determine how many times the elements "a" and "c" appear
 # in ``x``. You simply invoke ``x.count()`` with each element as an
-# argument in turn as show in the following snippet, ::
+# argument in turn as show in the following snippet,
+
+# ::
 
 #: element "a" occurs three times
 assert x.count("a") == 3
@@ -601,12 +692,16 @@ assert x.count("d") == 0
 # reference it using the index operator. Sometimes you need to do the
 # opposite. That is, you have an element and you want to get its
 # index. The method ``index()`` can be used for that purpose. Suppose
-# you have a list ``x`` as follows, ::
+# you have a list ``x`` as follows,
+
+# ::
 
 x = ["a", "b", "c"]
 
 # To get the index of one of its elements you invoke ``x.index()``
-# passing the element as an argument, the following are examples, ::
+# passing the element as an argument, the following are examples,
+
+# ::
 
 #: index of "a" is 0
 assert x.index("a") == 0
@@ -617,14 +712,16 @@ assert x.index("c") == 2
 
 # If the object you pass to the ``index()`` method is not an element
 # of the list the interpreter raises a ``ValueError`` exception, as
-# show in the following snippet ::
+# show in the following snippet
+
+# ::
 
 #: attempt to get index of an object
 #: that is not an element of x
 try:
     x.index("d")
 except ValueError as e:
-    print(ln(), "ValueError", e)
+    print("ValueError", e)
 
 # Modifying lists
 # ~~~~~~~~~~~~~~~
@@ -654,12 +751,16 @@ except ValueError as e:
 # You can use the ``append()`` and ``extend()`` methods to add
 # elements to the end of a list. The ``append()`` method takes a
 # single object as an argument and adds it to the end of the
-# list. Suppose you have the following list, ::
+# list. Suppose you have the following list,
+
+# ::
 
 x = ["a"]
 
 # You can add the strings "b" and "c" to the end of list ``x`` using
-# the ``append()`` method twice, ::
+# the ``append()`` method twice,
+
+# ::
 
 #: add "b" to end of list x
 x.append("b")
@@ -672,7 +773,9 @@ assert x == ["a", "b", "c"]
 # It is important to note that the ``append()`` method does not return
 # the modified list, it returns the value ``None``. The following
 # snippet adds string "d" to list ``x`` and confirms that the call to
-# ``append()`` evaluates to ``None``, ::
+# ``append()`` evaluates to ``None``,
+
+# ::
 
 #: append() method returns None
 assert x.append("d") == None
@@ -686,7 +789,9 @@ assert x.append("d") == None
 # the list on which it is invoked. Since sequences are iterable you
 # can use any sequence object to extend an existing list. The
 # following example shows how a list can be extended using a string, a
-# tuple and another list, ::
+# tuple and another list,
+
+# ::
 
 #: extend list x using a string
 x = ["a"]
@@ -704,7 +809,9 @@ x.extend(["b", "c"])
 assert x == ["a", "b", "c"]
 
 # Like the ``append()`` method, the ``extend()`` method returns
-# ``None`` instead of the modified list, ::
+# ``None`` instead of the modified list,
+
+# ::
 
 #: extend() method returns None
 x = ["a"]
@@ -717,7 +824,9 @@ x = ["a"]
 
 # To add elements to ``x`` using an iterable object, say the string
 # "bc", you make ``x`` the target of the *assignment with addition*
-# statement ``+=``, ::
+# statement ``+=``,
+
+# ::
 
 x += "bc"
 
@@ -725,7 +834,9 @@ x += "bc"
 # way: it evaluates list ``x``, it evaluates the iterable object "bc",
 # it iterates over "bc" adding each element to the end of list ``x``
 # and finally rebinds the resulting list to ``x``. This is illustrated
-# in the following snippet, ::
+# in the following snippet,
+
+# ::
 
 #: a list
 x = ["a"]
@@ -742,7 +853,9 @@ assert x == ["a", "b", "c"]
 #: confirm x is bound to the original list object
 assert id(x) == idx
 
-# The following examples extend a list using a tuple and another list, ::
+# The following examples extend a list using a tuple and another list,
+
+# ::
 
 #: add elements of tuple to list x 
 x = ["a"]
@@ -758,7 +871,9 @@ x += ["b", "c"]
 # object. Firstly, the second form only works if ``iterable`` is of
 # type ``list``. In addition, the second form is a concatenation
 # operation which creates a new object and binds it to ``x``, as shown
-# in the following snippet, ::
+# in the following snippet,
+
+# ::
 
 #: a list
 x = ["a"]
@@ -789,6 +904,7 @@ assert id(x) != idx
 # The following examples illustrate how to insert an element in a list
 # ``x`` at index 0 (index of first element), at index ``len(x) - 1``
 # (index of last element) and at an index between these two locations,
+
 # ::
 
 #: a list x
@@ -816,7 +932,9 @@ x.insert(1, "b")
 assert x == ["a", "b", "c", "d"]
 
 # You can insert an element at the end of a list by specifying an
-# index *greater* than the index of the last element in the list, ::
+# index *greater* than the index of the last element in the list,
+
+# ::
 
 #: a list x
 x = ["a"]
@@ -832,7 +950,9 @@ x.insert(10, "c")
 assert x == ["a", "b", "c"]
 
 # The ``insert()`` method accepts negative indices counting from the
-# end of the list. For example, ::
+# end of the list. For example,
+
+# ::
 
 #: a list x
 x = ["b", "c"]
@@ -850,7 +970,9 @@ assert x == ["a", "b", "c"]
 
 # If you specify a negative index that is less than the negative index
 # of the first element, the ``insert()`` method simply inserts the
-# element at the beginning of the list, ::
+# element at the beginning of the list,
+
+# ::
 
 #: a list x
 x = ["b", "c"]
@@ -861,7 +983,9 @@ x.insert(-10, "a")
 assert x == ["a", "b", "c"]
 
 # You can also use the ``insert()`` method to add an element to an
-# empty list by specifying any integer value as the index, ::
+# empty list by specifying any integer value as the index,
+
+# ::
 
 #: an empty list x
 x = []
@@ -885,7 +1009,9 @@ x.insert(-1, "a")
 assert x == ["a"]
 
 # Finally, note that the ``insert()`` method also returns ``None``
-# rather than the modified list, ::
+# rather than the modified list,
+
+# ::
 
 #: insert() method returns None
 x = ["b"]
@@ -897,7 +1023,9 @@ assert x.insert(0, "a") == None
 # To remove elements from a list you can use the ``clear()``,
 # ``remove()`` and ``pop()`` methods and the ``del`` statement.
 
-# You use the ``clear()`` method to remove *all* elements from a list, ::
+# You use the ``clear()`` method to remove *all* elements from a list,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -910,12 +1038,16 @@ assert x == []
 
 # You use the ``remove()`` method to remove the *first* element in a
 # list that is *equal* to a given object.  For example, suppose you
-# have a list in which the string "b" occurs serveral times, ::
+# have a list in which the string "b" occurs serveral times,
+
+# ::
 
 x = ["a", "b", "c", "b", "b"]
 
 # To remove the first occurrence of "b" you invoke the ``remove()``
-# method with the string object "b" as an argument, ::
+# method with the string object "b" as an argument,
+
+# ::
 
 #: remove first element equal to "b"
 x.remove("b")
@@ -924,7 +1056,11 @@ x.remove("b")
 assert x == ["a", "c", "b", "b"]
 
 # If no element in the list is equal to the object passed to
-# ``remove()`` the interpreter raises an exception, ::
+# ``remove()`` the interpreter raises an exception,
+
+# ::
+
+pl()
 
 #: a list x
 x = ["a", "b", "c"]
@@ -934,10 +1070,12 @@ x = ["a", "b", "c"]
 try:
     x.remove("d")
 except ValueError as e:
-    print(ln(), "ValueError", e)
+    print("ValueError", e)
 
 # Like other list modification methods ``clear()`` and ``remove()``
-# return ``None``, not the modified list, ::
+# return ``None``, not the modified list,
+
+# ::
 
 #: confirm clear() returns None
 x = ["a", "b", "c"]
@@ -948,7 +1086,9 @@ x = ["a", "b", "c"]
 assert x.remove("b") == None
 
 # You use the ``pop()`` method to retrieve *and* remove an element at
-# a specified index, ::
+# a specified index,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -963,7 +1103,9 @@ assert y == "a"
 assert x == ["b", "c"]
 
 # Invoking the ``pop()`` method without arguments retrieves and
-# removes the last element in the list, ::
+# removes the last element in the list,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -978,7 +1120,9 @@ assert y == "c"
 assert x == ["a", "b"]
 
 # You can use the ``del`` statement with the index operator to remove
-# an element from a list at a specified index, ::
+# an element from a list at a specified index,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -993,7 +1137,9 @@ assert x == ["b", "c"]
 # ````````````````````````````
 
 # You can replace elements in a list using the index operator as a
-# target of an assigment statement, ::
+# target of an assigment statement,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -1038,7 +1184,9 @@ assert x == ["d", "b", "c"]
 # Note that the first argument ``i`` is the index of the first element
 # of the slice while the second argument ``j+1`` points to an element
 # immediately after the last element of the slice. The following are
-# some examples of list slices, ::
+# some examples of list slices,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c" ,"d", "e", "f"]
@@ -1063,7 +1211,9 @@ assert x[2:3] == ["c"]
 # the *slice step* to use when producing the slice. A slice step
 # indicates how much you have to add to the index of the current
 # element in the slice to obtain the index of the next element in the
-# slice. For example, suppose you have the following list, ::
+# slice. For example, suppose you have the following list,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c", "d", "e", "f"]
@@ -1074,14 +1224,18 @@ x = ["a", "b", "c", "d", "e", "f"]
 # element in the slice. You now add the slice step to index 2 to get
 # index 4, the index of "e", the next and last element in the
 # slice. The following snippet shows the invocation of the slice
-# operator for this example, ::
+# operator for this example,
+
+# ::
 
 #: create a slice of x using a slice step of 2
 assert x[0:len(x):2] == ["a", "c", "e"]
 
 # Note that a slice step of 1 is equivalent to the standard case in
 # which we omit the third argument to the slice operator. The
-# following snippet shows this equivalence, ::
+# following snippet shows this equivalence,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c", "d", "e", "f"]
@@ -1092,7 +1246,9 @@ assert x[0:len(x)] == x[0:len(x):1]
 
 # When a list slice is used as the 'target' of an assignment statement
 # with an iterable object as the 'source', the statement is
-# interpreted as a replacement operation. ::
+# interpreted as a replacement operation.
+
+# ::
 
 #: a list x
 x = ["a", "d", "e", "f"]
@@ -1132,7 +1288,9 @@ assert x == []
 
 # If you set the two arguments of the slice operator to the same value
 # the operator evaluates to the empty list ``[]``. This is shown in the
-# next example, ::
+# next example,
+
+# ::
 
 #: a list x
 x = ["a", "b" ,"c"]
@@ -1146,7 +1304,9 @@ assert x[len(x):len(x)] == []
 
 # Using a list slice with two arguments set to the same value, in the
 # context of an assignment statement, is interpreted as an
-# insertion operation. ::
+# insertion operation.
+
+# ::
 
 #: a list x
 x = ["d", "e", "f"]
@@ -1168,7 +1328,9 @@ x[len(x):len(x)] = ["d", "e", "f"]
 #: confirm elements added
 assert x == ["a", "b", "c", "d", "e", "f"]
 
-# Note that if the empty list is assigned nothing happens, ::
+# Note that if the empty list is assigned nothing happens,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c"]
@@ -1184,7 +1346,9 @@ assert x == ["a", "b", "c"]
 # points *past* the last element in the list. The first index that
 # points past the last element is equal to the length of the list
 # which is conveniently obtained using the built-in function
-# ``len()``. The following is an example, ::
+# ``len()``. The following is an example,
+
+# ::
 
 #: a list x
 x = ["a"]
@@ -1200,7 +1364,9 @@ assert x == ["a", "b"]
 # elements of a given iterable object. You set both arguments of the
 # slice operator to the length of the list so it 'points' past the
 # last element and 'assign' the iterable object using the assignment
-# statement. This is shown in the following example, ::
+# statement. This is shown in the following example,
+
+# ::
 
 #: a list x
 x = ["a"]
@@ -1222,7 +1388,9 @@ assert x == ["a", "b", "c"]
 
 # You can extend an empty list by setting both arguments of the slice
 # operator to 0 or by omitting both arguments as shown in the next
-# example, ::
+# example,
+
+# ::
 
 #: an empty list x
 x = []
@@ -1236,7 +1404,9 @@ assert x == ["a", "b", "c"]
 # You can **insert elements** at a specified index by setting both
 # arguments of the slice operator to the desired index.  The left hand
 # side of the assignment statement must be an interable object. The
-# following are examples list insert operations, ::
+# following are examples list insert operations,
+
+# ::
 
 #: a list x
 x = [3]
@@ -1258,7 +1428,9 @@ assert x == ["a", "b", "c", "d"]
 
 # You can conveniently insert elements at the last index of the list
 # using the length of the list or the negative index of the last
-# element, -1, ::
+# element, -1,
+
+# ::
 
 #: a list x
 x = ["a", "d"]
@@ -1282,7 +1454,9 @@ assert x == ["a", "b", "c", "d"]
 
 # You can also remove elements using a list slice as the target of the
 # ``del`` statement. This is an alternative to assigning the empty
-# list to a list slice. The following examples illustrate, ::
+# list to a list slice. The following examples illustrate,
+
+# ::
 
 #: a list x
 x = ["a", "b", "c", "d", "e", "f"]
@@ -1309,7 +1483,9 @@ assert x == []
 # the ``sort()`` method to sort the elements of a list *in place*. The
 # elements of the list must be of the same type and support the less
 # than '<' operation. For example, you can sort the following list of
-# integers, ::
+# integers,
+
+# ::
 
 x = [3, 1, 2]
 assert x.sort() == None
@@ -1325,7 +1501,9 @@ assert x == [1, 2, 3]
 # ``reverse()`` method for that task. Like the ``sort()`` method above
 # reversing modifies the original list and returns ``None``. For
 # example, suppose you want to reverse the order of the following list
-# of strings, ::
+# of strings,
+
+# ::
 
 x = ["a", "b", "c"]
 assert x.reverse() == None
@@ -1337,28 +1515,36 @@ assert x == ["c", "b", "a"]
 # You can compare lists with elements of the same type and the same
 # number of elements using the comparison operator ``==``.
 
-# Two lists with the same elements, ::
+# Two lists with the same elements,
+
+# ::
 
 x = list("abc")
 y = list("abc")
 assert id(x) != id(y)
 assert x == y
 
-# Two empty lists, ::
+# Two empty lists,
+
+# ::
 
 x = list()
 y = list()
 assert id(x) != id(y)
 assert x == y
 
-# Two lists with different elements of the same type, ::
+# Two lists with different elements of the same type,
+
+# ::
 
 x = ["a", "b"]
 y = ["a", "c"]
 assert x != y
 
 # Two lists with elements of the same type with different number of
-# elements, ::
+# elements,
+
+# ::
 
 x = ["a", "b", "c"]
 y = ["a", "c"]
@@ -1377,7 +1563,9 @@ assert x != y
 # iterable object is valid. In particular, you can use a list as the
 # iterable in a ``for`` loop. In the following example a ``for`` loop
 # is used to iterate over a list of integers to produce the sum of its
-# elements, ::
+# elements,
+
+# ::
 
 x = [1, 2, 3]; sum = 0
 
@@ -1389,7 +1577,9 @@ assert sum == 6
 # You can't iterate over a list and modify the list at the same time.
 
 # You can, of course, use the traditional method of iterating using a
-# ``while`` statement, ::
+# ``while`` statement,
+
+# ::
 
 x = [1, 2, 3]; i = 0; sum = 0
 

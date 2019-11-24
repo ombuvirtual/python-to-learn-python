@@ -98,10 +98,7 @@ a slice of the list.</p></li>
 </div>
 <div class="section" id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import line number function</span>
-<span class="kn">from</span> <span class="nn">ptlp</span> <span class="k">import</span> <span class="n">ln</span>
-
-<span class="c1"># import maths module, used in some examples</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import maths module, used in some examples</span>
 <span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 </div>
@@ -119,10 +116,10 @@ that order. You define the list using the following list display,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
 <span class="c1"># a list of integers</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># confirm x is a list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>At run-time the interpreter evaluates the <em>list display</em> expression
@@ -136,7 +133,7 @@ enclosed expressions,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
 <span class="c1"># an empty list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># confirm x is empty</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
@@ -147,7 +144,7 @@ following list display,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
 <span class="c1"># a singleton list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that, unlike creating a singleton tuple, creating a singleton
@@ -159,7 +156,7 @@ involving identifiers, function calls and arithmetic operators,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display with</span>
 <span class="c1"># compound expressions</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can use list displays to create lists with elements of any type
@@ -167,17 +164,17 @@ as shown in the following examples,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
 <span class="c1"># a list of strings</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;bc&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># list display to create</span>
 <span class="c1"># a list of tuples</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[(),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># list display to create</span>
 <span class="c1"># a list of lists</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As mentioned earlier, lists are most commonly used in cases in which
@@ -188,7 +185,7 @@ type <code class="docutils literal notranslate"><span class="pre">int</span></co
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display with elements</span>
 <span class="c1"># of different types</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If you need to define a very long list you can make a list display
@@ -199,7 +196,7 @@ span multiple lines as show in the next example,</p>
      <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span>
      <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span>
      <span class="s2">&quot;j&quot;</span><span class="p">,</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -482,7 +479,7 @@ range”, as shown in the following example,</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can avoid this problem using the built-in function <code class="docutils literal notranslate"><span class="pre">len()</span></code> to
@@ -575,7 +572,7 @@ following list cannot be compared because they are a mixture of
 <span class="k">try</span><span class="p">:</span>
     <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="s2">&quot;TypeError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TypeError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If the list is empty the interpreter raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>
@@ -585,7 +582,7 @@ exception,</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="nb">max</span><span class="p">([])</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -642,7 +639,7 @@ show in the following snippet</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -947,7 +944,7 @@ method with the string object “b” as an argument,</p>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ln</span><span class="p">(),</span> <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ValueError&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Like other list modification methods <code class="docutils literal notranslate"><span class="pre">clear()</span></code> and <code class="docutils literal notranslate"><span class="pre">remove()</span></code>
