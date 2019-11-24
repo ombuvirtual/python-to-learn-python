@@ -1,39 +1,65 @@
+
+example at line 177:
 a string defined with double quotes
 foo bar
 foo bar gnu
+
+example at line 196:
 foobargnu
 foo-bar-gnu
 foo, bar, gnu
+
+example at line 216:
 foobar
 foo-bar
 foo,
 bar
+
+example at line 239:
 you can add strings using the + operator
+
+example at line 259:
 0
 10
+
+example at line 277:
 
 foo
 foo bar
 foobargnu
 9
+
+example at line 303:
 line1
 line2
 	a tab character
 line1
 line2
 	a tab character
+
+example at line 323:
 "using double quotes in double quoted string"
 'using single quotes in single quoted string'
+
+example at line 366:
 x = foo
 foobar
+
+example at line 405:
 x = foo
 x = bar
+
+example at line 485:
 0 1 2 3 99
 -99 -3 -2 -1
 0.0 0.01 0.5 2.718
 -2.718 -0.5 -0.01
+
+example at line 503:
 0 99
 0.0 99.0
+
+example at line 527:
 3
 2
 6
@@ -46,120 +72,207 @@ x = bar
 2.0
 1.5
 2.0
+
+example at line 558:
 121.0
+
+example at line 574:
 121.0
+
+example at line 625:
 True False
+
+example at line 637:
 True False
 False True
+
+example at line 654:
 True
 False
 False
 False
+
+example at line 668:
 True
 True
 True
 False
+
+example at line 681:
 False
 True
+
+example at line 740:
 []
 ['a', 'b', 'c']
 [1, 2, 3]
 [[], [1], [1, 2]]
 [1, 3.14, 'foo', ['bar']]
+
+example at line 766:
 []
 [0.01, 0.1, 1.0]
 [[], [1], [1, 2]]
+
+example at line 789:
 0
 3
 [[], [1], [1, 2]]
 2
+
+example at line 812:
 3
+
+example at line 831:
 [1, 2, 3, 4, 5, 6]
 ['a', 'b', 'c', 'd', 'e', 'f']
 [1, 2]
+
+example at line 863:
 foo
 bar
 gnu
 2
+
+example at line 893:
 ['a', 'b', 'c', 'foo']
-831> True
-835> False
-851> True
-855> False
-864> True
-868> False
-884> False
-887> False
-890> False
-893> False
-896> False
-899> False
-900> False
-917> True
-921> True
-931> True
-932> True
-936> True
-937> True
-949> True
-952> True
-955> True
-968> True
-969> True
-970> True
-971> True
-981> True
-982> True
-983> True
-984> True
-987> False
-988> False
-989> False
-990> False
-1029> True
-1030> True
-1031> True
-1032> True
-1042> True
-1043> True
-1044> True
-1045> True
-1046> True
-1047> True
-1048> True
-1075> True
-1097> True
-1101> False
-1105> False
-1118> True
-1122> True
-1126> True
-1130> False
+
+example at line 953:
+True
+False
+
+example at line 975:
+True
+False
+
+example at line 990:
+True
+False
+
+example at line 1013:
+False
+False
+False
+False
+False
+False
+False
+
+example at line 1047:
+True
+True
+
+example at line 1063:
+True
+True
+True
+True
+
+example at line 1084:
+True
+True
+True
+
+example at line 1107:
+True
+True
+True
+True
+
+example at line 1122:
+True
+True
+True
+True
+False
+False
+False
+False
+
+example at line 1171:
+True
+True
+True
+True
+
+example at line 1186:
+True
+True
+True
+True
+True
+True
+True
+
+example at line 1222:
+True
+
+example at line 1245:
+True
+False
+False
+
+example at line 1268:
+True
+True
+True
+False
+
+example at line 1299:
 foo
 bar
 gnu
-1224> foo
-1225> foo
-1224> bar
-1225> bar
-1224> gnu
-1225> gnu
-1238> a
-1239> A
-1238> b
-1239> B
-1238> c
-1239> C
-1238> d
-1239> D
-1238> e
-1239> E
-1238> f
-1239> F
-1251> 1 1
-1251> 2 3
-1251> 3 6
-1267> ac
-1267> ad
-1267> bc
-1267> bd
+
+example at line 1370:
+foo
+foo
+bar
+bar
+gnu
+gnu
+
+example at line 1390:
+a
+A
+b
+B
+c
+C
+d
+D
+e
+E
+f
+F
+
+example at line 1406:
+1 1
+2 3
+3 6
+
+example at line 1422:
+ac
+ad
+bc
+bd
+
+example at line 1449:
+B
+D
+
+example at line 1519:
+foo
+
+example at line 1553:
+even = 2 odd = 3
+
+example at line 1588:
+even = 2 odd = 3
+
+example at line 1622:
+freq0 = 2 freq1 = 1
+freq2 = 3 freq = 1
+
+example at line 1670:
+freq0 = 2 freq1 = 1
+freq2 = 3 freq = 1

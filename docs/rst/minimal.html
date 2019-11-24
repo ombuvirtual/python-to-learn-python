@@ -43,6 +43,7 @@
 <div class="line"><a class="reference internal" href="#introduction-to-lists">Introduction to lists</a></div>
 <div class="line"><a class="reference internal" href="#comparison-operations">Comparison operations</a></div>
 <div class="line"><a class="reference internal" href="#the-for-statement">The for statement</a></div>
+<div class="line"><a class="reference internal" href="#the-if-statement">The if statement</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -107,13 +108,6 @@ is used to confirm the results of examples.</p></li>
 </ul>
 <p>These topics will, of course, be covered in more detail in later
 scripts.</p>
-</div>
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
-<p>Import line number function:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ptlp</span> <span class="k">import</span> <span class="n">l</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="defining-and-printing-strings">
 <h2>Defining and printing strings<a class="headerlink" href="#defining-and-printing-strings" title="Permalink to this headline">¶</a></h2>
@@ -825,11 +819,11 @@ objects involved are different. The following code confirms this
 result,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equality evaluates to True,</span>
 <span class="c1"># 1 and 1.0 represent the same value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
 
 <span class="c1"># identity evaluates to False,</span>
 <span class="c1"># 1 and 1.0 are different objects</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="ow">is</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">is</span> <span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>An example based on lists may serve to clarify the difference
@@ -843,22 +837,22 @@ the other hand, the identity expression <code class="docutils literal notranslat
 confirmed in the following code,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equality evaluates to True,</span>
 <span class="c1"># both operands represent the &#39;empty list&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[]</span> <span class="o">==</span> <span class="p">[])</span>
+<span class="nb">print</span><span class="p">([]</span> <span class="o">==</span> <span class="p">[])</span>
 
 <span class="c1"># identity evaluates to False,</span>
 <span class="c1"># each list expression produces a different object</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[]</span> <span class="ow">is</span> <span class="p">[])</span>
+<span class="nb">print</span><span class="p">([]</span> <span class="ow">is</span> <span class="p">[])</span>
 </pre></div>
 </div>
 <p>The same argument applies to non-empty lists, as show in the
 following code,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equality evaluates to True,</span>
 <span class="c1"># the values represented are equal</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
 
 <span class="c1"># identity evaluates to False,</span>
 <span class="c1"># each list expression produces a different object</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>The examples above showed the difference between equality and
@@ -871,23 +865,23 @@ is not equal to the string “1”.  All the following expressions
 evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code> because the types involved can’t be used to
 represent the same value,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># int and str</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
 
 <span class="c1"># int and list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># float and str</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mf">1.0</span> <span class="o">==</span> <span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">==</span> <span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
 
 <span class="c1"># float and list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mf">1.0</span> <span class="o">==</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">==</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
 
 <span class="c1"># str and list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;a&quot;</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
 
 <span class="c1"># bool and str</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">True</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">False</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The above argument does not apply to equality expressions in which
@@ -902,11 +896,11 @@ value. The following are examples in which <code class="docutils literal notrans
 objects are equal,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equality evaluates to True,</span>
 <span class="c1"># int and float objects both represent 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">0</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
 
 <span class="c1"># equality evaluates to True,</span>
 <span class="c1"># int and float objects both represent 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The Boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are considered equal to
@@ -914,13 +908,13 @@ the numeric values 1 and 0 respectively. Therefore, the following
 equality expressions evaluate to True,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># equality evaluates to True,</span>
 <span class="c1"># True and 1 are considered the same value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">True</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
 
 <span class="c1"># equality evaluates to True,</span>
 <span class="c1"># False and 0 are considered the same value</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="kc">False</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The examples above considered equality of objects of different
@@ -929,13 +923,13 @@ types. Let’s now consider equality of objects of the <em>same</em> type.</p>
 equality of arithmetic. The following equality expressions with
 <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> operands evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># both operands are int</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># both operands are float</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mf">1.5</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># one int and one float operand</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Equality of objects of type <code class="docutils literal notranslate"><span class="pre">bool</span></code> is trivial. Two <code class="docutils literal notranslate"><span class="pre">bool</span></code>
@@ -947,10 +941,10 @@ number of characters and their corresponding characters are
 equal. The following equality expressions with <code class="docutils literal notranslate"><span class="pre">str</span></code> operands
 evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># string equality expressions that evaluate to True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;&quot;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s1">&#39;_*_&#39;</span> <span class="o">==</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;_*_&#39;</span> <span class="o">==</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Finally, let’s consider equality of lists. For two objects of type
@@ -958,16 +952,16 @@ evaluate to <code class="docutils literal notranslate"><span class="pre">True</s
 corresponding elements must compare equal. The following are
 examples of list equality expressions,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># expressions that evaluate to True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;ab&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="s2">&quot;ab&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
 
 <span class="c1"># expressions that evaluate to False</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>An understanding of non-equality and non-identity operators, <code class="docutils literal notranslate"><span class="pre">!=</span></code>
@@ -999,10 +993,10 @@ expected from our understanding of numeric ordering in
 arithmetic. The following are some examples of numeric inequalities,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># some numeric inequalities</span>
 <span class="c1"># that evaluate to True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mf">3.14</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="o">-</span><span class="mf">2.0</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mf">3.14</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Inequality of strings is based on lexicographic ordering. The
@@ -1010,13 +1004,13 @@ following are examples of inequality expressions with string
 operands,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># some string inequalities</span>
 <span class="c1"># that evaluate to True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;aa&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;0a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;_a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;abc&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="s2">&quot;abc&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;aa&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;_a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The comparison of lists is more involved than comparison of strings
@@ -1030,7 +1024,7 @@ a run time error . For example, the expression <code class="docutils literal not
 generates the following error,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;myscript.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
 <span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span>
 </pre></div>
 </div>
@@ -1038,7 +1032,7 @@ generates the following error,</p>
 of different type are compared and no run time error is generated,
 as shown in the following example,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluates to True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>For the rest of the discussion let’s assume the lists involved have
@@ -1057,15 +1051,15 @@ inequality is <code class="docutils literal notranslate"><span class="pre">False
 case,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluates to True</span>
 <span class="c1"># because 2 &lt; 3 is True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># evaluates to False</span>
 <span class="c1"># because 1 &lt; 0 is False</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># evaluates to False</span>
 <span class="c1"># because lists are equal</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>Comparison of lists that contain different number of elements
@@ -1076,19 +1070,19 @@ considered less than the longer list. The following examples
 illustrate these cases,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluates to True</span>
 <span class="c1"># empty list less than non-empty list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># evaluates to True</span>
 <span class="c1"># shorter list is less than longer list</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
 <span class="c1"># evaluates to True</span>
 <span class="c1"># because 1 &lt; 2 is True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># evaluates to False</span>
 <span class="c1"># because 2 &lt; 1 is False</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1168,8 +1162,8 @@ all elements printed up to the current iteration. The following
 <span class="c1"># of elements printed up to current</span>
 <span class="c1"># iteration</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">item</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">s</span> <span class="o">+</span> <span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">item</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The following example uses a string as the iterable object in the
@@ -1180,8 +1174,8 @@ all elements printed up to the current iteration. The following
 <span class="c1"># &#39;for&#39; loop with a string as</span>
 <span class="c1"># the iterable object</span>
 <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">char</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>You can also use a literal expression for the iterable object in a
@@ -1191,7 +1185,7 @@ for loop, as show in the following example,</p>
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">n</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">n</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It is possible to nest <code class="docutils literal notranslate"><span class="pre">for</span></code> statements. In other words, a <code class="docutils literal notranslate"><span class="pre">for</span></code>
@@ -1205,9 +1199,246 @@ nested for loops.</p>
 <span class="c1"># you can nest for loops</span>
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">y</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">(),</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="the-if-statement">
+<h2>The if statement<a class="headerlink" href="#the-if-statement" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is designed to allow the execution of
+alternative groups of program statements based on the result of
+testing the truth value of an expression.</p>
+<p>Suppose you have a list of lower case and upper case letters and you
+want to print only those that are upper case. To accomplish this
+task you can use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate over the letters in the
+list and use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to test whether a letter is upper
+case and only execute a statement to print it if the result of the
+test is <code class="docutils literal notranslate"><span class="pre">True</span></code>. The following code implements this example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of letters</span>
+<span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+
+<span class="c1"># prints upper case letters in list</span>
+<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">letter</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+        <span class="c1"># this statement is only executed</span>
+        <span class="c1"># if letter.isupper() returns True</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For each iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement tests
+whether the expression <code class="docutils literal notranslate"><span class="pre">letter.isupper()</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> or
+<code class="docutils literal notranslate"><span class="pre">False</span></code>. If the expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> the function call
+<code class="docutils literal notranslate"><span class="pre">print(letter)</span></code> is executed. If it evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> the
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement ends and executation continues with the next
+iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of two parts, the statement header and
+the group of statements to be <em>conditionally</em> executed. The
+statement header begins with the keyword <code class="docutils literal notranslate"><span class="pre">if</span></code> and is followed by
+the <em>conditional expression</em> used to decide whether to execute the
+group of statements following the statement header.  The end of the
+statement header is indicated by a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> character followed by
+a new line character.  In the example above the conditional
+expression is <code class="docutils literal notranslate"><span class="pre">letter.isupper()</span></code>.</p>
+<p>The header line is followed by the group of statements to be
+executed if the condional expression evaluates to True. In the
+simple example above there is one statement in the group,
+<code class="docutils literal notranslate"><span class="pre">print(letter)</span></code>, usually there would be more than one. It is very
+important to understand that the group of statements to be
+conditionally executed is defined by their <em>indentation</em> relative to
+the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement header.</p>
+<p>In the example above the condition for executing the
+<code class="docutils literal notranslate"><span class="pre">print(letter)</span></code> statement is provided by the Boolean expression
+<code class="docutils literal notranslate"><span class="pre">letter.ispupper()</span></code>, a function call that returns either <code class="docutils literal notranslate"><span class="pre">True</span></code>
+of <code class="docutils literal notranslate"><span class="pre">False</span></code>. However, you can use any valid expression as the
+condition of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, not just Boolean expressions . The
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement provides a <em>Boolean context</em> in which the result of
+any expression is <em>interpreted</em> as either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. If
+an expression evaluates to any of the following values it is
+interpreted as <code class="docutils literal notranslate"><span class="pre">False</span></code>,</p>
+<ul class="simple">
+<li><p>the number zero</p></li>
+<li><p>the value <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+<li><p>an <em>empty</em> collection such as a null string or empty list</p></li>
+</ul>
+<p><em>Any</em> other value is interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>. Of course if the
+conditional expression is a Boolean expression there is no need for
+any intepretation because the result <em>is</em> a Boolean value. Let’s
+illustrate this point with an example. Suppose you have the
+following list,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>According to the above rule all the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> would be
+interpreted as <code class="docutils literal notranslate"><span class="pre">False</span></code> by an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, except for the
+string “foo” which would be interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>. In the
+following code sample a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iterates over the elements in
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement tests each the value of each element
+and only prints it when the value is intepreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>, so only
+the string “foo” is printed,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># iterates over list x defined above,</span>
+<span class="c1"># it only prints &quot;foo&quot; because all other</span>
+<span class="c1"># elements in x are interpreted as False</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So far we have used the simplest form of the if statement. In this
+form a group of statements is executed only if the conditional
+expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>.  Sometimes you also need to
+execute a particular group of statements when the conditional
+expression evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>. In these cases you can use the
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code> form of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>Let’s illustrate with an example. Suppose you have a list of
+integers and you want to count how many are even and how many are
+odd. You can determine whether an element in the list is even or odd
+by testing whether the remainder after division by 2 is either 0 or
+1 respectively. Therefore, if <code class="docutils literal notranslate"><span class="pre">n</span></code> denotes an element in the list,
+you can test that <code class="docutils literal notranslate"><span class="pre">n</span></code> is even using the conditional expression <code class="docutils literal notranslate"><span class="pre">n</span>
+<span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> and you can test that it is odd using the expression <code class="docutils literal notranslate"><span class="pre">n</span>
+<span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">1</span></code>.</p>
+<p>The following code implements the example above using a conditional
+expression that tests whether <code class="docutils literal notranslate"><span class="pre">n</span></code> is even. If the condition is
+<code class="docutils literal notranslate"><span class="pre">True</span></code> the statement to count the number of even elements in the
+list is excecuted.  If the condition is <code class="docutils literal notranslate"><span class="pre">False</span></code> the statement
+after the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed to count the number of odd
+elements,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of integers</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># initialize even and odd counts</span>
+<span class="n">even</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">odd</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="c1"># test if n is even</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="n">even</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">odd</span> <span class="o">=</span> <span class="n">odd</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># print counts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;even =&quot;</span><span class="p">,</span> <span class="n">even</span><span class="p">,</span> <span class="s2">&quot;odd =&quot;</span><span class="p">,</span> <span class="n">odd</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see from this example that the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is very
+simple, it consists of the keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> followed by a colon
+<code class="docutils literal notranslate"><span class="pre">:</span></code> and a new line character marking the end of the clause. There
+is no conditional expression in an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause because its group
+of statements is meant to be always executed whenever the
+conditional expression of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The above example can be rewritten to take advantage of the fact
+that an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement interprets a non-zero number as the Boolean
+value <code class="docutils literal notranslate"><span class="pre">True</span></code>. Rather than using the conditional expression <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span>
+<span class="pre">==</span> <span class="pre">0</span></code> we can use the more succinct expression <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%</span> <span class="pre">2</span></code>. This
+expression evaluates to 1 when <code class="docutils literal notranslate"><span class="pre">n</span></code> is odd which is interpreted as
+True by the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. The following code implements this
+alternative solution,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of integers</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># initialize even and odd counts</span>
+<span class="n">even</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">odd</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="c1"># test if n is odd</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">odd</span> <span class="o">=</span> <span class="n">odd</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">even</span> <span class="o">=</span> <span class="n">even</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># print counts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;even =&quot;</span><span class="p">,</span> <span class="n">even</span><span class="p">,</span> <span class="s2">&quot;odd =&quot;</span><span class="p">,</span> <span class="n">odd</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sometimes you need to be able to execute different groups of
+statements, where <em>each</em> group is associated with a different
+conditional expression. In these cases using the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code> form is
+not the best solution. For example, suppose you have a list of
+strings and you want to know the frequency of strings that are 0, 1
+and 2 characters long as well as the frequency of those with lengths
+greater than 2 characters. This problem requires multiple
+conditional expressions to test for strings of different lengths and
+requires multiple groups of statements to count the number of
+strings in each category.</p>
+<p>One solution to the above problem is to use nested <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code>
+statements, as shown in the following sample code,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">,</span> <span class="s2">&quot;ef&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
+
+<span class="c1"># initialize frequency counts</span>
+<span class="n">freq0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># calculate frequency of strings</span>
+<span class="c1"># of different sizes</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+
+    <span class="c1"># nesting of groups of statements</span>
+    <span class="c1"># and the conditional expressions</span>
+    <span class="c1"># to execute them</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">freq0</span> <span class="o">=</span> <span class="n">freq0</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">freq1</span> <span class="o">=</span> <span class="n">freq1</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">freq2</span> <span class="o">=</span> <span class="n">freq2</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># print frequencies</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;freq0 =&quot;</span><span class="p">,</span> <span class="n">freq0</span><span class="p">,</span> <span class="s2">&quot;freq1 =&quot;</span><span class="p">,</span> <span class="n">freq1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;freq2 =&quot;</span><span class="p">,</span> <span class="n">freq2</span><span class="p">,</span> <span class="s2">&quot;freq =&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One problem with this solution is that the code becomes less
+readable as the level of nesting increases. Another problem is that
+it requires three <em>separate</em> <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. A more satisfactory
+approach is to use the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">elif</span></code> form of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>You can visualize the motivation for implementing the <code class="docutils literal notranslate"><span class="pre">elif</span></code>
+clause if you look carefully at the sample code above.  If it were
+possible to extend the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause to include a conditional
+expression, as in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement header, you could avoid all
+that nesting.</p>
+<p>That is precisely what the <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause does. It requires a
+conditional expression and a group of statements to be executed when
+the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>. The following code re-implements the
+example above using <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of strings</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">,</span> <span class="s2">&quot;ef&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
+
+<span class="c1"># initialize frequency counts</span>
+<span class="n">freq0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">freq</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># calculate frequency of strings</span>
+<span class="c1"># of different sizes</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+
+    <span class="c1"># one &#39;if&#39; statement to conditionally</span>
+    <span class="c1"># execute multiple groups of statements</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">freq0</span> <span class="o">=</span> <span class="n">freq0</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">freq1</span> <span class="o">=</span> <span class="n">freq1</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">freq2</span> <span class="o">=</span> <span class="n">freq2</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># print frequencies</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;freq0 =&quot;</span><span class="p">,</span> <span class="n">freq0</span><span class="p">,</span> <span class="s2">&quot;freq1 =&quot;</span><span class="p">,</span> <span class="n">freq1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;freq2 =&quot;</span><span class="p">,</span> <span class="n">freq2</span><span class="p">,</span> <span class="s2">&quot;freq =&quot;</span><span class="p">,</span> <span class="n">freq</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can see from this example that an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can have as
+many <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses as are required by the problem you are trying
+to solve. In this case we needed to test two expressions in addition
+to the one in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement header. The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">elif</span></code> form
+allows you to define in a single <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, a chain of
+conditions and their associated groups of statements. Furthermore,
+you can end the whole chain with an optional <code class="docutils literal notranslate"><span class="pre">else</span></code> clause if you
+need to execute a <em>default</em> group of statements for the case in
+which all conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

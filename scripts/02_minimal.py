@@ -9,6 +9,7 @@
 # | `Introduction to lists`_
 # | `Comparison operations`_
 # | `The for statement`_
+# | `The if statement`_
 # | `References`_
 
 # Preamble
@@ -83,12 +84,7 @@
 # These topics will, of course, be covered in more detail in later
 # scripts.
 
-# Imports
-# -------
-
-# Import line number function::
-
-from ptlp import l
+from ptlp import pl # import pl() function to print line numbers
 
 # Defining and printing strings
 # -----------------------------
@@ -135,7 +131,9 @@ from ptlp import l
 # quotes`` you enclose the text in double quotes and the Python
 # interpreter will recognise it as a *string literal expression* and
 # create an object of type ``str``. The following is an example of a
-# string literal expression defined with double quotes, ::
+# string literal expression defined with double quotes,
+
+# ::
 
 #: a string literal defined with double quotes,
 "a string defined with double quotes"
@@ -172,7 +170,11 @@ from ptlp import l
 # separates multiple arguments with a space and adds a new line
 # character at the end.  The following example shows invocations of
 # ``print()`` with different number of arguments. Note again that the
-# statements end with a new line character and not a semicolon, ::
+# statements end with a new line character and not a semicolon,
+
+# ::
+
+pl()
 
 #: print a string
 print("a string defined with double quotes")
@@ -187,7 +189,11 @@ print("foo", "bar", "gnu")
 # with a string other than a single space. Use the keyword parameter
 # ``sep=`` to specify what string to print between arguments. The
 # following code prints the strings "foo", "bar" and "gnu" using
-# different separators, ::
+# different separators,
+
+# ::
+
+pl()
 
 #: don't separate printed arguments
 #: so they are printed contiguously
@@ -203,7 +209,11 @@ print("foo", "bar", "gnu", sep=", ")
 # other than a single new line character. Use the keyword parameter
 # ``end=`` to specify what string to print at the end of a line. The
 # following code shows two examples of ending with a string that
-# doesn't contain a new line character, ::
+# doesn't contain a new line character,
+
+# ::
+
+pl()
 
 #: don't end printed line with a new line
 #: so next call to print() will print
@@ -222,7 +232,11 @@ print("bar")
 # Now that we know how to print strings we can easily test the result
 # of concatenating two or more strings using the addition ``+``
 # operator. The following code concatenates three strings and prints
-# the resulting string object, ::
+# the resulting string object,
+
+# ::
+
+pl()
 
 #: concatenate strings with + operator
 print("you can" + " add strings " + "using the + operator")
@@ -238,7 +252,11 @@ print("you can" + " add strings " + "using the + operator")
 # Suppose you have the string object ``"abc"``, then the function call
 # ``len("abc")`` returns 3, the number of characters in the
 # string. The following are some examples of using the ``len()``
-# function, ::
+# function,
+
+# ::
+
+pl()
 
 #: length of null string
 print(len(""))
@@ -252,7 +270,11 @@ print(len("0123456789"))
 # "abc". Everything we've said so far about double quoted strings
 # applies equally to single quoted strings. In the following examples
 # single quotes are used to demonstrate the properties we discussed
-# above for double quoted strings, ::
+# above for double quoted strings,
+
+# ::
+
+pl()
 
 #: define null string
 print('')
@@ -274,7 +296,11 @@ print(len('foobargnu'))
 # character* and can be used to insert non-printable characters such
 # as tabs and new lines. For example, you can use the escape sequences
 # ``\t`` and ``\n`` to insert tab and new line characters in both
-# double *and* single quoted strings, ::
+# double *and* single quoted strings,
+
+# ::
+
+pl()
 
 #: new line '\n' character in double quoted string
 print("line1\nline2")
@@ -290,7 +316,11 @@ print('\ta tab character')
 
 # You can also use the backslash character ``\`` to escape double quotes
 # within a double quoted string and single quotes within a single
-# quoted string, as shown in the following example, ::
+# quoted string, as shown in the following example,
+
+# ::
+
+pl()
 
 #: escape double quotes in double quoted string
 print("\"using double quotes in double quoted string\"")
@@ -312,7 +342,9 @@ print('\'using single quotes in single quoted string\'')
 # statements by referring to it using the name ``x``.  You can
 # associate the name ``x`` with the string object ``"foo"`` by making
 # ``x`` the *target* of an *assignment statement*, as shown in the
-# following sample code, ::
+# following sample code,
+
+# ::
 
 #: this assignment statement associates
 #: the name 'x' with string object "foo"
@@ -327,7 +359,11 @@ x = "foo"
 # Once the association between ``x`` and ``"foo"`` has been made, you
 # can refer to the string ``"foo"`` by its name. The following calls
 # to ``print()`` and concatenation operation refer to ``"foo"`` by its
-# name ``x``, ::
+# name ``x``,
+
+# ::
+
+pl()
 
 #: print string "foo"
 print("x =", x)
@@ -362,7 +398,11 @@ print(x + "bar")
 # It is possible to reuse names or more precisely to *rebind* a name
 # to a different object. For example, suppose you bind ``x`` to the
 # string ``"foo"``. You can at a later point in your code rebind ``x``
-# to the string ``"bar"`` as shown in the following code, ::
+# to the string ``"bar"`` as shown in the following code,
+
+# ::
+
+pl()
 
 #: bind x to string "foo"
 x = "foo"
@@ -394,7 +434,9 @@ print("x =", x)
 # write the digits ``13``. When the interpreter encounters the integer
 # literal expression ``13`` it creates an object of type ``int`` that
 # represents that number. The following are examples of positive
-# integer literal expressions, ::
+# integer literal expressions,
+
+# ::
 
 #: positive integer literal expressions
 0; 1; 2; 3; 99
@@ -402,7 +444,9 @@ print("x =", x)
 # You define negative integers by applying the unary *minus* ``-``
 # operator to the positive integer literal expression. For instance,
 # negative thirteen is written as ``-13`` or ``- 13``. The following
-# are examples of negative integer literal expressions, ::
+# are examples of negative integer literal expressions,
+
+# ::
 
 #: negative integer literal expressions
 -99; -3; - 2; - 1
@@ -414,7 +458,9 @@ print("x =", x)
 # places you simply write ``3.14``. When the interpreter encounters
 # the floating point literal expression ``3.14`` it creates an object
 # of type ``float`` that represents that number. The following code
-# snippet shows examples of positive float literal expressions, ::
+# snippet shows examples of positive float literal expressions,
+
+# ::
 
 #: positive float literal expressions
 0.0; 0.01; 0.5; 2.718
@@ -422,7 +468,9 @@ print("x =", x)
 # You define negative floating point numbers by applying the unary
 # *minus* ``-`` operator to the positive float literal expression. For
 # instance, negative *pi* is written as ``-3.14`` or ``- 3.14``. The
-# following are examples of negative float literal expressions, ::
+# following are examples of negative float literal expressions,
+
+# ::
 
 #: negative float literal expressions
 -2.718; -0.5, - 0.01
@@ -430,7 +478,11 @@ print("x =", x)
 # To print an integer or floating point number you use the ``print()``
 # function. It automatically converts objects of type ``int`` and
 # ``float`` to strings and then prints the strings. The following are
-# examples of printing integer and float literal expressions, ::
+# examples of printing integer and float literal expressions,
+
+# ::
+
+pl()
 
 #: print integers
 print(0, 1, 2, 3, 99)
@@ -444,7 +496,11 @@ print(-2.718, -0.5, - 0.01)
 # in the same way you bind names to string values. For example, to
 # bind the name ``x`` to integer ``1`` you write ``x = 1`` and to
 # rebind ``x`` to the floating point number ``3.14`` you write ``x =
-# 3.14``. The following sample code shows other examples, ::
+# 3.14``. The following sample code shows other examples,
+
+# ::
+
+pl()
 
 #: bind x to 0 and y to 99
 x = 0; y = 99
@@ -464,7 +520,11 @@ print(x, y)
 # *always* produces a result of type float even if all operands are
 # integers and an integer result is expected.  The following sample
 # code shows examples of arithmetic operations and the results they
-# produce, ::
+# produce,
+
+# ::
+
+pl()
 
 #: all operands are integers
 #: the result is integer
@@ -491,7 +551,11 @@ print(4 / 2)
 # terms involved or to specify clearly the grouping of operands and
 # operators so you don't have to rely on knowledge of operator
 # precedence rules. Take for instance the following compound
-# expression, ::
+# expression,
+
+# ::
+
+pl()
 
 #: define some initial values
 x = 2; y = 3; z = 4
@@ -503,7 +567,11 @@ r = 10 * x ** 2 * y + z / 2 - 1
 #: print result
 print(r)
 
-# It is equivalent to the following expression which uses parentheses, ::
+# It is equivalent to the following expression which uses parentheses,
+
+# ::
+
+pl()
 
 #: using parentheses makes computational
 #: intent more clear
@@ -536,7 +604,9 @@ print(r)
 # represent the corresponding logical value. This means that objects
 # of type ``bool`` can have only two possible values, ``True`` or
 # ``False``. The following Boolean expressions create objects with the
-# two possible truth values, ::
+# two possible truth values,
+
+# ::
 
 #: create an object of type 'bool'
 #: with the value True
@@ -548,7 +618,11 @@ False
 
 # You can print the values ``True`` and ``False`` using the
 # ``print()`` function. It automatically converts the Boolean values
-# to the strings ``"True"`` and ``"False"``, ::
+# to the strings ``"True"`` and ``"False"``,
+
+# ::
+
+pl()
 
 #: print Boolean values
 print(True, False)
@@ -556,7 +630,11 @@ print(True, False)
 # You can bind Boolean values to a name using the assignment
 # statement. In the following code the names ``x`` and ``y`` are bound
 # to the values ``True`` and ``False`` respectively and then rebound
-# to ``False`` and ``True``, ::
+# to ``False`` and ``True``,
+
+# ::
+
+pl()
 
 #: bind x to True and y to False
 x = True; y = False
@@ -569,7 +647,11 @@ print(x, y)
 # Python supports the usual logical operations of *conjunction*,
 # *disjunction* and *negation*. Conjunction or logical *and* is
 # implemented using the ``and`` operator. The following sample code
-# prints the truth table for the ``and`` operation, ::
+# prints the truth table for the ``and`` operation,
+
+# ::
+
+pl()
 
 #: truth table for 'and' operation
 print(True and True)
@@ -579,7 +661,11 @@ print(False and False)
 
 # Disjunction or logical *or* is implemented using the ``or``
 # operator. The following sample code prints the truth table for the
-# ``or`` operation, ::
+# ``or`` operation,
+
+# ::
+
+pl()
 
 #: truth table for 'or' operation
 print(True or True)
@@ -588,7 +674,11 @@ print(False or True)
 print(False or False)
 
 # Negation is implemented using the ``not`` operator. The following
-# sample code prints the truth table for the ``not`` operation, ::
+# sample code prints the truth table for the ``not`` operation,
+
+# ::
+
+pl()
 
 #: truth table for 'not' operation
 print(not True)
@@ -611,7 +701,9 @@ print(not False)
 # ``"b"`` and ``"c"``.
 
 # The following examples show definitions of *homogeneous* lists, that
-# is, lists in which all elements are of the same type, ::
+# is, lists in which all elements are of the same type,
+
+# ::
 
 #: define an empty list
 []
@@ -629,7 +721,9 @@ print(not False)
 [[], [1], [1, 2]]
 
 # The following examples show definitions of *heterogeneous* lists,
-# that is, lists that contain elements of different types, ::
+# that is, lists that contain elements of different types,
+
+# ::
 
 #: a list of integers, floats and strings
 [1, "1", 2.0, "2.0", 3, "3"]
@@ -639,7 +733,11 @@ print(not False)
 
 # To print a list object you use the ``print()`` function. It
 # automatically converts a list object to a string, as shown in the
-# following example, ::
+# following example,
+
+# ::
+
+pl()
 
 #: print the empty list
 print([])
@@ -661,7 +759,11 @@ print([1, 3.14, "foo", ["bar"]])
 # values. For example, to bind the name ``x`` to list ``[1, 2, 3]``
 # you write ``x = [1, 2, 3]`` and to rebind ``x`` to list ``["a", "b",
 # "c"]`` you write ``x = ["a", "b", "c"]``. The following sample code
-# shows other examples, ::
+# shows other examples,
+
+# ::
+
+pl()
 
 #: bind x to the empty list
 x = []
@@ -680,7 +782,11 @@ print(x)
 # strings. Suppose ``x`` is bound to list object ``[1, 2, 3]``, then
 # the function call ``len(x)`` returns 3, the number of elements in
 # ``x``. The following are some examples of using the ``len()``
-# function, ::
+# function,
+
+# ::
+
+pl()
 
 #: length of empty list
 print(len([]))
@@ -699,7 +805,11 @@ print(len(x[0]))
 
 # The index of the last element of a non-empty list is given by
 # ``len(x) - 1``. You can use this fact to reference the last element
-# of a list as in the following example, ::
+# of a list as in the following example,
+
+# ::
+
+pl()
 
 #: a list x
 x = [1, 2, 3]
@@ -714,7 +824,11 @@ print(x[len(x) - 1])
 # create a new list that contains all the elements in list ``[1, 2,
 # 3]`` followed by all the elements in list ``[4, 5, 6]``, you write
 # ``[1, 2, 3] + [4, 5, 6]``. The following code shows some examples of
-# list concatenation, ::
+# list concatenation,
+
+# ::
+
+pl()
 
 #: concatenate multiple lists
 x = [1] + [2, 3] + [4, 5] + [6]
@@ -742,7 +856,11 @@ print(x)
 # reference. For example, if the list above was bound to the name
 # ``x``, element ``"a"`` would be referenced by ``x[0]``, element
 # ``"b"`` by ``x[1]`` and ``"c"`` by ``x[2]``. The following code
-# snippet shows some examples of referencing list elements, ::
+# snippet shows some examples of referencing list elements,
+
+# ::
+
+pl()
 
 #: a list x
 x = ["foo", "bar", "gnu"]
@@ -768,7 +886,11 @@ print([1, 2, 3][1])
 # ``[]``, to add the element ``"foo"`` to it you write
 # ``x.append("foo")``. To add another element to the end of list
 # ``x``, say the string ``"bar"``, you write ``x.append("bar")``. The
-# following code provides more examples, ::
+# following code provides more examples,
+
+# ::
+
+pl()
 
 #: start with an empty list x
 x = []
@@ -824,15 +946,19 @@ print(x)
 # represent the same value.  On the other hand, the identity
 # expression ``1 is 1.0`` evaluates to ``False``, since the two
 # objects involved are different. The following code confirms this
-# result, ::
+# result,
+
+# ::
+
+pl()
 
 #: equality evaluates to True,
 #: 1 and 1.0 represent the same value
-print(l(), 1 == 1.0)
+print(1 == 1.0)
 
 #: identity evaluates to False,
 #: 1 and 1.0 are different objects
-print(l(), 1 is 1.0)
+print(1 is 1.0)
 
 # An example based on lists may serve to clarify the difference
 # between equality and identity. Whenever the Python interpreter
@@ -846,26 +972,30 @@ print(l(), 1 is 1.0)
 
 # ::
 
+pl()
+
 #: equality evaluates to True,
 #: both operands represent the 'empty list'
-print(l(), [] == [])
+print([] == [])
 
 #: identity evaluates to False,
 #: each list expression produces a different object
-print(l(), [] is [])
+print([] is [])
 
 # The same argument applies to non-empty lists, as show in the
 # following code,
 
 # ::
 
+pl()
+
 #: equality evaluates to True,
 #: the values represented are equal
-print(l(), ["a", "b", "c"] == ["a", "b", "c"])
+print(["a", "b", "c"] == ["a", "b", "c"])
 
 #: identity evaluates to False,
 #: each list expression produces a different object
-print(l(), ["a", "b", "c"] is ["a", "b", "c"])
+print(["a", "b", "c"] is ["a", "b", "c"])
 
 # The examples above showed the difference between equality and
 # identity. We now turn our attention to equality expressions that
@@ -880,24 +1010,26 @@ print(l(), ["a", "b", "c"] is ["a", "b", "c"])
 
 # ::
 
+pl()
+
 #: int and str
-print(l(), 1 == "1")
+print(1 == "1")
 
 #: int and list
-print(l(), 1 == [1])
+print(1 == [1])
 
 #: float and str
-print(l(), 1.0 == "1.0")
+print(1.0 == "1.0")
 
 #: float and list
-print(l(), 1.0 == [1.0])
+print(1.0 == [1.0])
 
 #: str and list
-print(l(), "a" == ["a"])
+print("a" == ["a"])
 
 #: bool and str
-print(l(), True == "1")
-print(l(), False == "0")
+print(True == "1")
+print(False == "0")
 
 # The above argument does not apply to equality expressions in which
 # the two operands are combinations of objects of type ``int``,
@@ -912,13 +1044,15 @@ print(l(), False == "0")
 
 # ::
 
+pl()
+
 #: equality evaluates to True,
 #: int and float objects both represent 0
-print(l(), 0 == 0.0)
+print(0 == 0.0)
 
 #: equality evaluates to True,
 #: int and float objects both represent 2
-print(l(), 2 == 4 / 2)
+print(2 == 4 / 2)
 
 # The Boolean values ``True`` and ``False`` are considered equal to
 # the numeric values 1 and 0 respectively. Therefore, the following
@@ -926,15 +1060,17 @@ print(l(), 2 == 4 / 2)
 
 # ::
 
+pl()
+
 #: equality evaluates to True,
 #: True and 1 are considered the same value
-print(l(), True == 1)
-print(l(), True == 1.0)
+print(True == 1)
+print(True == 1.0)
 
 #: equality evaluates to True,
 #: False and 0 are considered the same value
-print(l(), False == 0)
-print(l(), False == 0.0)
+print(False == 0)
+print(False == 0.0)
 
 # The examples above considered equality of objects of different
 # types. Let's now consider equality of objects of the *same* type.
@@ -945,14 +1081,16 @@ print(l(), False == 0.0)
 
 # ::
 
+pl()
+
 #: both operands are int
-print(l(), 1 == 2 - 1)
+print(1 == 2 - 1)
 
 #: both operands are float
-print(l(), 1.5 == 3 / 2)
+print(1.5 == 3 / 2)
 
 #: one int and one float operand
-print(l(), 2 == 4 / 2)
+print(2 == 4 / 2)
 
 # Equality of objects of type ``bool`` is trivial. Two ``bool``
 # objects are equal if they both represent the value ``True`` or
@@ -962,13 +1100,17 @@ print(l(), 2 == 4 / 2)
 # ``str`` are equal if the string values they represent have the same
 # number of characters and their corresponding characters are
 # equal. The following equality expressions with ``str`` operands
-# evaluate to ``True``, ::
+# evaluate to ``True``,
+
+# ::
+
+pl()
 
 #: string equality expressions that evaluate to True
-print(l(), "" == '')
-print(l(), "foo" == "foo")
-print(l(), "foo" == "f" + "o" + "o")
-print(l(), '_*_' == '_' + '*' + '_')
+print("" == '')
+print("foo" == "foo")
+print("foo" == "f" + "o" + "o")
+print('_*_' == '_' + '*' + '_')
 
 # Finally, let's consider equality of lists. For two objects of type
 # ``list`` to compare equal, they must be of equal length and their
@@ -977,17 +1119,19 @@ print(l(), '_*_' == '_' + '*' + '_')
 
 # ::
 
+pl()
+
 #: expressions that evaluate to True
-print(l(), [1] == [1])
-print(l(), [1] == [1] + [])
-print(l(), [1] == [1.0])
-print(l(), ["ab"] == ["a" + "b"])
+print([1] == [1])
+print([1] == [1] + [])
+print([1] == [1.0])
+print(["ab"] == ["a" + "b"])
 
 #: expressions that evaluate to False
-print(l(), [1] == [2])
-print(l(), [1] == [1] + [2])
-print(l(), [1] == ["1"])
-print(l(), ["a"] == ["a", "b"])
+print([1] == [2])
+print([1] == [1] + [2])
+print([1] == ["1"])
+print(["a"] == ["a", "b"])
 
 # An understanding of non-equality and non-identity operators, ``!=``
 # and ``is not``, follows trivially from an understanding of equality
@@ -1024,12 +1168,14 @@ print(l(), ["a"] == ["a", "b"])
 
 # ::
 
+pl()
+
 #: some numeric inequalities
 #: that evaluate to True
-print(l(), 1 < 3.14)
-print(l(), 0 < 1.0)
-print(l(), -1 < 0.0)
-print(l(), -2.0 < -1)
+print(1 < 3.14)
+print(0 < 1.0)
+print(-1 < 0.0)
+print(-2.0 < -1)
 
 # Inequality of strings is based on lexicographic ordering. The
 # following are examples of inequality expressions with string
@@ -1037,15 +1183,17 @@ print(l(), -2.0 < -1)
 
 # ::
 
+pl()
+
 #: some string inequalities
 #: that evaluate to True
-print(l(), "" < "a")
-print(l(), "a" < "b")
-print(l(), "a" < "aa")
-print(l(), "0a" < "a")
-print(l(), "_a" < "a")
-print(l(), "" < "abc")
-print(l(), "abc" < "c")
+print("" < "a")
+print("a" < "b")
+print("a" < "aa")
+print("0a" < "a")
+print("_a" < "a")
+print("" < "abc")
+print("abc" < "c")
 
 # The comparison of lists is more involved than comparison of strings
 # because the elements of a list can be arbitrary objects.
@@ -1062,7 +1210,7 @@ print(l(), "abc" < "c")
 
 #  Traceback (most recent call last):
 #    File "myscript.py", line 10, in <module>
-#      print(l(), [1] < ["a"])
+#      print([1] < ["a"])
 #  TypeError: '<' not supported between instances of 'int' and 'str'
 
 # In some cases the comparison expression is resolved before elements
@@ -1071,8 +1219,10 @@ print(l(), "abc" < "c")
 
 # ::
 
+pl()
+
 #: evaluates to True
-print(l(), [1] < [2, "a"])
+print([1] < [2, "a"])
 
 # For the rest of the discussion let's assume the lists involved have
 # elements that are comparable. Furthermore, let's consider first the
@@ -1092,17 +1242,19 @@ print(l(), [1] < [2, "a"])
 
 # ::
 
+pl()
+
 #: evaluates to True
 #: because 2 < 3 is True
-print(l(), [1, 2] < [1, 3])
+print([1, 2] < [1, 3])
 
 #: evaluates to False
 #: because 1 < 0 is False
-print(l(), [1, 2] < [0, 3])
+print([1, 2] < [0, 3])
 
 #: evaluates to False
 #: because lists are equal
-print(l(), [1, 2] < [1, 2])
+print([1, 2] < [1, 2])
 
 # Comparison of lists that contain different number of elements
 # operates in the same way as with lists of the same size, with one
@@ -1113,21 +1265,23 @@ print(l(), [1, 2] < [1, 2])
 
 # ::
 
+pl()
+
 #: evaluates to True
 #: empty list less than non-empty list
-print(l(), [] < [1])
+print([] < [1])
 
 #: evaluates to True
 #: shorter list is less than longer list
-print(l(), [1, 2] < [1, 2, 3])
+print([1, 2] < [1, 2, 3])
 
 #: evaluates to True
 #: because 1 < 2 is True
-print(l(), [1, 2] < [2, 1, 0])
+print([1, 2] < [2, 1, 0])
 
 #: evaluates to False
 #: because 2 < 1 is False
-print(l(), [1,2] < [1, 1, 0])
+print([1,2] < [1, 1, 0])
 
 # The for statement
 # -----------------
@@ -1141,6 +1295,8 @@ print(l(), [1,2] < [1, 1, 0])
 # would accomplish that task,
 
 # ::
+
+pl()
 
 #: a list of strings
 x = ["foo", "bar", "gnu"]
@@ -1211,6 +1367,8 @@ for item in x:
 
 # ::
 
+pl()
+
 #: a list of strings
 x = ["foo", "bar", "gnu"]
 
@@ -1221,13 +1379,15 @@ s = ""
 #: of elements printed up to current
 #: iteration
 for item in x:
-    print(l(), item)
-    print(l(), s + item)
+    print(item)
+    print(s + item)
 
 # The following example uses a string as the iterable object in the
 # ``for`` statement.
 
 # ::
+
+pl()
 
 #: a string
 s = "abcdef"
@@ -1235,20 +1395,22 @@ s = "abcdef"
 #: 'for' loop with a string as
 #: the iterable object
 for char in s:
-    print(l(), char)
-    print(l(), char.upper())
+    print(char)
+    print(char.upper())
 
 # You can also use a literal expression for the iterable object in a
-# for loop, as show in the following example, 
+# for loop, as show in the following example,
 
 # ::
+
+pl()
 
 #: you can use a literal expression
 #: for the iterable object in 'for' loop
 sum = 0
 for n in [1, 2, 3]:
     sum = sum + n
-    print(l(), n, sum)
+    print(n, sum)
 
 # It is possible to nest ``for`` statements. In other words, a ``for``
 # loop can be part of the statement group of another ``for`` loop, as
@@ -1257,6 +1419,8 @@ for n in [1, 2, 3]:
 
 # ::
 
+pl()
+
 #: two lists of strings
 x = ["a", "b"]
 y = ["c", "d"]
@@ -1264,7 +1428,281 @@ y = ["c", "d"]
 #: you can nest for loops
 for m in x:
     for n in y:
-        print(l(), m + n)
+        print(m + n)
+
+# The if statement
+# ----------------
+
+# The ``if`` statement is designed to allow the execution of
+# alternative groups of program statements based on the result of
+# testing the truth value of an expression.
+
+# Suppose you have a list of lower case and upper case letters and you
+# want to print only those that are upper case. To accomplish this
+# task you can use a ``for`` loop to iterate over the letters in the
+# list and use an ``if`` statement to test whether a letter is upper
+# case and only execute a statement to print it if the result of the
+# test is ``True``. The following code implements this example,
+
+# ::
+
+pl()
+
+#: a list of letters
+letters = ["a", "B", "c", "D"]
+
+#: prints upper case letters in list
+for letter in letters:
+    if letter.isupper():
+        # this statement is only executed
+        # if letter.isupper() returns True
+        print(letter)
+
+# For each iteration of the ``for`` loop the ``if`` statement tests
+# whether the expression ``letter.isupper()`` evaluates to ``True`` or
+# ``False``. If the expression evaluates to ``True`` the function call
+# ``print(letter)`` is executed. If it evaluates to ``False`` the
+# ``if`` statement ends and executation continues with the next
+# iteration of the ``for`` loop.
+
+# The ``if`` statement consists of two parts, the statement header and
+# the group of statements to be *conditionally* executed. The
+# statement header begins with the keyword ``if`` and is followed by
+# the *conditional expression* used to decide whether to execute the
+# group of statements following the statement header.  The end of the
+# statement header is indicated by a colon ``:`` character followed by
+# a new line character.  In the example above the conditional
+# expression is ``letter.isupper()``.
+
+# The header line is followed by the group of statements to be
+# executed if the condional expression evaluates to True. In the
+# simple example above there is one statement in the group,
+# ``print(letter)``, usually there would be more than one. It is very
+# important to understand that the group of statements to be
+# conditionally executed is defined by their *indentation* relative to
+# the ``if`` statement header.
+
+# In the example above the condition for executing the
+# ``print(letter)`` statement is provided by the Boolean expression
+# ``letter.ispupper()``, a function call that returns either ``True``
+# of ``False``. However, you can use any valid expression as the
+# condition of an ``if`` statement, not just Boolean expressions . The
+# ``if`` statement provides a *Boolean context* in which the result of
+# any expression is *interpreted* as either ``True`` or ``False``. If
+# an expression evaluates to any of the following values it is
+# interpreted as ``False``,
+
+# + the number zero
+# + the value ``None``
+# + an *empty* collection such as a null string or empty list
+
+# *Any* other value is interpreted as ``True``. Of course if the
+# conditional expression is a Boolean expression there is no need for
+# any intepretation because the result *is* a Boolean value. Let's
+# illustrate this point with an example. Suppose you have the
+# following list,
+
+# ::
+
+x = ['', "", 0, 0.0, [], None, "foo"]
+
+# According to the above rule all the values in ``x`` would be
+# interpreted as ``False`` by an ``if`` statement, except for the
+# string "foo" which would be interpreted as ``True``. In the
+# following code sample a ``for`` loop iterates over the elements in
+# ``x`` and an ``if`` statement tests each the value of each element
+# and only prints it when the value is intepreted as ``True``, so only
+# the string "foo" is printed,
+
+# ::
+
+pl()
+
+#: iterates over list x defined above,
+#: it only prints "foo" because all other
+#: elements in x are interpreted as False
+for item in x:
+    if item:
+        print(item)
+
+# So far we have used the simplest form of the if statement. In this
+# form a group of statements is executed only if the conditional
+# expression evaluates to ``True``.  Sometimes you also need to
+# execute a particular group of statements when the conditional
+# expression evaluates to ``False``. In these cases you can use the
+# ``if else`` form of the ``if`` statement.
+
+# Let's illustrate with an example. Suppose you have a list of
+# integers and you want to count how many are even and how many are
+# odd. You can determine whether an element in the list is even or odd
+# by testing whether the remainder after division by 2 is either 0 or
+# 1 respectively. Therefore, if ``n`` denotes an element in the list,
+# you can test that ``n`` is even using the conditional expression ``n
+# % 2 == 0`` and you can test that it is odd using the expression ``n
+# % 2 == 1``.
+
+# The following code implements the example above using a conditional
+# expression that tests whether ``n`` is even. If the condition is
+# ``True`` the statement to count the number of even elements in the
+# list is excecuted.  If the condition is ``False`` the statement
+# after the ``else`` clause is executed to count the number of odd
+# elements,
+
+# ::
+
+pl()
+
+#: a list of integers
+x = [2, 5, 4, -1, 3]
+
+#: initialize even and odd counts
+even = 0; odd = 0
+
+for n in x:
+    # test if n is even
+    if n % 2 == 0:
+        even = even + 1
+    else:
+        odd = odd + 1
+
+#: print counts
+print("even =", even, "odd =", odd)
+
+# You can see from this example that the ``else`` clause is very
+# simple, it consists of the keyword ``else`` followed by a colon
+# ``:`` and a new line character marking the end of the clause. There
+# is no conditional expression in an ``else`` clause because its group
+# of statements is meant to be always executed whenever the
+# conditional expression of the ``if`` statement is ``False``.
+
+# The above example can be rewritten to take advantage of the fact
+# that an ``if`` statement interprets a non-zero number as the Boolean
+# value ``True``. Rather than using the conditional expression ``n % 2
+# == 0`` we can use the more succinct expression ``n % 2``. This
+# expression evaluates to 1 when ``n`` is odd which is interpreted as
+# True by the ``if`` statement. The following code implements this
+# alternative solution,
+
+# ::
+
+pl()
+
+#: a list of integers
+x = [2, 5, 4, -1, 3]
+
+#: initialize even and odd counts
+even = 0; odd = 0
+
+for n in x:
+    # test if n is odd
+    if n % 2:
+        odd = odd + 1
+    else:
+        even = even + 1
+
+#: print counts
+print("even =", even, "odd =", odd)
+
+# Sometimes you need to be able to execute different groups of
+# statements, where *each* group is associated with a different
+# conditional expression. In these cases using the ``if else`` form is
+# not the best solution. For example, suppose you have a list of
+# strings and you want to know the frequency of strings that are 0, 1
+# and 2 characters long as well as the frequency of those with lengths
+# greater than 2 characters. This problem requires multiple
+# conditional expressions to test for strings of different lengths and
+# requires multiple groups of statements to count the number of
+# strings in each category.
+
+# One solution to the above problem is to use nested ``if else``
+# statements, as shown in the following sample code,
+
+# ::
+
+pl()
+
+#: a list of strings
+x = ["", "", "b", "ab", "cd", "ef", "foo"]
+
+#: initialize frequency counts
+freq0 = 0; freq1 = 0; freq2 = 0; freq = 0
+
+#: calculate frequency of strings
+#: of different sizes
+for s in x:
+
+    # nesting of groups of statements
+    # and the conditional expressions
+    # to execute them
+    if len(s) == 0:
+        freq0 = freq0 + 1
+    else:
+        if len(s) == 1:
+            freq1 = freq1 + 1
+        else:
+            if len(s) == 2:
+                freq2 = freq2 + 1
+            else:
+                freq = freq + 1
+
+#: print frequencies
+print("freq0 =", freq0, "freq1 =", freq1)
+print("freq2 =", freq2, "freq =", freq)
+
+# One problem with this solution is that the code becomes less
+# readable as the level of nesting increases. Another problem is that
+# it requires three *separate* ``if`` statements. A more satisfactory
+# approach is to use the ``if elif`` form of the ``if`` statement.
+
+# You can visualize the motivation for implementing the ``elif``
+# clause if you look carefully at the sample code above.  If it were
+# possible to extend the ``else`` clause to include a conditional
+# expression, as in the ``if`` statement header, you could avoid all
+# that nesting.
+
+# That is precisely what the ``elif`` clause does. It requires a
+# conditional expression and a group of statements to be executed when
+# the expression is ``True``. The following code re-implements the
+# example above using ``elif`` clauses,
+
+# ::
+
+pl()
+
+#: a list of strings
+x = ["", "", "b", "ab", "cd", "ef", "foo"]
+
+#: initialize frequency counts
+freq0 = 0; freq1 = 0; freq2 = 0; freq = 0
+
+#: calculate frequency of strings
+#: of different sizes
+for s in x:
+
+    # one 'if' statement to conditionally
+    # execute multiple groups of statements
+    if len(s) == 0:
+        freq0 = freq0 + 1
+    elif len(s) == 1:
+        freq1 = freq1 + 1
+    elif len(s) == 2:
+        freq2 = freq2 + 1
+    else:
+        freq = freq + 1
+
+#: print frequencies
+print("freq0 =", freq0, "freq1 =", freq1)
+print("freq2 =", freq2, "freq =", freq)
+
+# You can see from this example that an ``if`` statement can have as
+# many ``elif`` clauses as are required by the problem you are trying
+# to solve. In this case we needed to test two expressions in addition
+# to the one in the ``if`` statement header. The ``if elif`` form
+# allows you to define in a single ``if`` statement, a chain of
+# conditions and their associated groups of statements. Furthermore,
+# you can end the whole chain with an optional ``else`` clause if you
+# need to execute a *default* group of statements for the case in
+# which all conditions are ``False``.
 
 # References
 # ----------
