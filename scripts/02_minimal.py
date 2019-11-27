@@ -10,6 +10,7 @@
 # | `Comparison operations`_
 # | `The for statement`_
 # | `The if statement`_
+# | `Introduction to exceptions`_
 # | `References`_
 
 # Preamble
@@ -84,7 +85,7 @@
 # These topics will, of course, be covered in more detail in later
 # scripts.
 
-from ptlp import pl # import pl() function to print line numbers
+from ptlp import pl  # import pl() function to print line numbers
 
 # Defining and printing strings
 # -----------------------------
@@ -111,12 +112,12 @@ from ptlp import pl # import pl() function to print line numbers
 # line of a multi-line comment must start with a ``#`` character. The
 # following are examples of comments, ::
 
-#: everything after the first # character is a comment
+#: Everything after the first # character is a comment.
 
-#: any # characters after the first are part of the comment
+#: Any # characters after the first are part of the comment.
 
-#: this is line 1 of a multi-line comment
-#: this is line 2 of a multi-line comment
+#: This is line 1 of a multi-line comment.
+#: This is line 2 of a multi-line comment.
 
 # Another feature of a programming language you need to know from the
 # outset is how to define strings and how to print them to standard
@@ -135,7 +136,7 @@ from ptlp import pl # import pl() function to print line numbers
 
 # ::
 
-#: a string literal defined with double quotes,
+#: A string literal defined with double quotes.
 "a string defined with double quotes"
 
 # Note carefully the second line of code above. It does not end with
@@ -176,13 +177,13 @@ from ptlp import pl # import pl() function to print line numbers
 
 pl()
 
-#: print a string
+#: Print a string to stdout.
 print("a string defined with double quotes")
 
-#: print two strings
+#: Print two strings to stdout.
 print("foo", "bar")
 
-#: print three strings,
+#: Print three strings to stdout.
 print("foo", "bar", "gnu")
 
 # You can tell the ``print()`` function to separate printed arguments
@@ -195,14 +196,14 @@ print("foo", "bar", "gnu")
 
 pl()
 
-#: don't separate printed arguments
-#: so they are printed contiguously
+#: Don't separate printed arguments
+#: so they are printed contiguously.
 print("foo", "bar", "gnu", sep="")
 
-#: separate printed arguments with a dash
+#: Separate printed arguments with a dash.
 print("foo", "bar", "gnu", sep="-")
 
-#: separate printed arguments with a coma and space
+#: Separate printed arguments with a coma and space.
 print("foo", "bar", "gnu", sep=", ")
 
 # You can also tell ``print()`` to end the printed line with a string
@@ -215,17 +216,17 @@ print("foo", "bar", "gnu", sep=", ")
 
 pl()
 
-#: don't end printed line with a new line
+#: Don't end printed line with a new line
 #: so next call to print() will print
-#: on the same line in stdout
+#: on the same line in stdout.
 print("foo", end="")
 print("bar")
 
-#: end printed line with dash
+#: End printed line with dash.
 print("foo", end="-")
 print("bar")
 
-#: end printed line with coma and new line
+#: End printed line with coma and new line.
 print("foo", end=",\n")
 print("bar")
 
@@ -238,7 +239,7 @@ print("bar")
 
 pl()
 
-#: concatenate strings with + operator
+#: Concatenate strings with + operator.
 print("you can" + " add strings " + "using the + operator")
 
 # A common requirement when dealing with a string is to determine how
@@ -258,10 +259,10 @@ print("you can" + " add strings " + "using the + operator")
 
 pl()
 
-#: length of null string
+#: Print length of null string.
 print(len(""))
 
-#: length of a string
+#: Print length of a string.
 print(len("0123456789"))
 
 # In all the examples above we used double quotes to define strings,
@@ -276,19 +277,19 @@ print(len("0123456789"))
 
 pl()
 
-#: define null string
+#: Define null string with single quotes.
 print('')
 
-#: define a string
+#: Define a string with single quotes.
 print('foo')
 
-#: print two strings
+#: Print two single quoted strings.
 print('foo', 'bar')
 
-#: concatenate strings
+#: Concatenate single quoted strings.
 print('foo' + 'bar' + 'gnu')
 
-#: length of a string
+#: Print length of a single quoted string.
 print(len('foobargnu'))
 
 # Whether a string is defined using double or single quotes the
@@ -302,16 +303,16 @@ print(len('foobargnu'))
 
 pl()
 
-#: new line '\n' character in double quoted string
+#: New line '\n' character in double quoted string.
 print("line1\nline2")
 
-#: tab character '\t' in double quoted string
+#: Tab character '\t' in double quoted string.
 print("\ta tab character")
 
-#: new line character '\n' in single quoted string
+#: New line character '\n' in single quoted string.
 print('line1\nline2')
 
-#: tab character '\t' in single quoted string
+#: Tab character '\t' in single quoted string.
 print('\ta tab character')
 
 # You can also use the backslash character ``\`` to escape double quotes
@@ -322,10 +323,10 @@ print('\ta tab character')
 
 pl()
 
-#: escape double quotes in double quoted string
+#: Escape double quotes in double quoted string.
 print("\"using double quotes in double quoted string\"")
 
-#: escape single quotes in single quoted string
+#: Escape single quotes in single quoted string.
 print('\'using single quotes in single quoted string\'')
 
 # This section introduced Python's string data type (at a very basic
@@ -346,8 +347,8 @@ print('\'using single quotes in single quoted string\'')
 
 # ::
 
-#: this assignment statement associates
-#: the name 'x' with string object "foo"
+#: This assignment statement associates
+#: the name 'x' with string object "foo".
 x = "foo"
 
 # The statement consists of two operands on either side of the
@@ -365,11 +366,11 @@ x = "foo"
 
 pl()
 
-#: print string "foo"
+#: Print string "foo".
 print("x =", x)
 
-#: concatenate string "foo" with
-#: string "bar" and print result
+#: Concatenate string "foo" with
+#: string "bar" and print result.
 print(x + "bar")
 
 # The names you associate with objects cannot be formed from just any
@@ -404,16 +405,16 @@ print(x + "bar")
 
 pl()
 
-#: bind x to string "foo"
+#: Bind x to string "foo".
 x = "foo"
 
-#: refer to string "foo" using x
+#: Refer to string "foo" using x.
 print("x =", x)
 
-#: rebind x to string "bar"
+#: Rebind x to string "bar".
 x = "bar"
 
-#: refer to string "bar" using x
+#: Refer to string "bar" using x.
 print("x =", x)
 
 # We now know how to define strings, print them and bind them to
@@ -438,8 +439,8 @@ print("x =", x)
 
 # ::
 
-#: positive integer literal expressions
-0; 1; 2; 3; 99
+#: Positive integer literal expressions.
+0; 3; 99
 
 # You define negative integers by applying the unary *minus* ``-``
 # operator to the positive integer literal expression. For instance,
@@ -448,8 +449,8 @@ print("x =", x)
 
 # ::
 
-#: negative integer literal expressions
--99; -3; - 2; - 1
+#: Negative integer literal expressions.
+-99; -3
 
 # Floating point numbers are represented by objects of type
 # ``float``. To define a positive floating point number you just write
@@ -462,8 +463,8 @@ print("x =", x)
 
 # ::
 
-#: positive float literal expressions
-0.0; 0.01; 0.5; 2.718
+#: Positive float literal expressions.
+0.0; 0.5; 2.718
 
 # You define negative floating point numbers by applying the unary
 # *minus* ``-`` operator to the positive float literal expression. For
@@ -472,8 +473,8 @@ print("x =", x)
 
 # ::
 
-#: negative float literal expressions
--2.718; -0.5, - 0.01
+#: Negative float literal expressions.
+-2.718; -0.5; -0.01
 
 # To print an integer or floating point number you use the ``print()``
 # function. It automatically converts objects of type ``int`` and
@@ -484,11 +485,11 @@ print("x =", x)
 
 pl()
 
-#: print integers
+#: Print integers.
 print(0, 1, 2, 3, 99)
 print(-99, -3, - 2, - 1)
 
-#: print floating point numbers
+#: Print floating point numbers.
 print(0.0, 0.01, 0.5, 2.718)
 print(-2.718, -0.5, - 0.01)
 
@@ -502,12 +503,14 @@ print(-2.718, -0.5, - 0.01)
 
 pl()
 
-#: bind x to 0 and y to 99
-x = 0; y = 99
+#: Bind x to 0 and y to 99.
+x = 0
+y = 99
 print(x, y)
 
-#: rebind x to 0.0 and y to 99.0
-x = 0.0; y = 99.0
+#: Rebind x to 0.0 and y to 99.0.
+x = 0.0
+y = 99.0
 print(x, y)
 
 # Python supports the usual arithmetic operations of addition ``+``,
@@ -526,22 +529,22 @@ print(x, y)
 
 pl()
 
-#: all operands are integers
-#: the result is integer
+#: All operands are integers so
+#: the result is integer.
 print(1 + 2)
 print(3 - 1)
 print(3 * 2)
 print(3 ** 2)
 
-#: one operand is float
-#: the result is float
+#: One operand is float so
+#: the result is float.
 print(1 + 2.0)
 print(3 - 1.0)
 print(3 * 2.0)
 print(3 ** 2.0)
 
-#: division always produces
-#: a float result
+#: Division always produces
+#: a float result.
 print(2 / 1)
 print(2 / 1.0)
 print(3 / 2)
@@ -557,14 +560,14 @@ print(4 / 2)
 
 pl()
 
-#: define some initial values
+#: Define some initial values.
 x = 2; y = 3; z = 4
 
-#: interpreting this compound expression
-#: relies on knowledge of precedence rules
+#: Interpreting this compound expression
+#: relies on knowledge of precedence rules.
 r = 10 * x ** 2 * y + z / 2 - 1
 
-#: print result
+#: Print result.
 print(r)
 
 # It is equivalent to the following expression which uses parentheses,
@@ -573,9 +576,9 @@ print(r)
 
 pl()
 
-#: using parentheses makes computational
-#: intent more clear
-r = 10 * (x ** 2) * y + (z / 2) -1
+#: Using parentheses makes computational
+#: intent more clear.
+r = 10 * (x ** 2) * y + (z / 2) - 1
 
 #: print result
 print(r)
@@ -608,12 +611,12 @@ print(r)
 
 # ::
 
-#: create an object of type 'bool'
-#: with the value True
+#: Create an object of type 'bool'
+#: with the value True.
 True
 
-#: create an object of type 'bool'
-#: with the value False
+#: Create an object of type 'bool'
+#: with the value False.
 False
 
 # You can print the values ``True`` and ``False`` using the
@@ -624,7 +627,7 @@ False
 
 pl()
 
-#: print Boolean values
+#: Print Boolean values.
 print(True, False)
 
 # You can bind Boolean values to a name using the assignment
@@ -636,12 +639,14 @@ print(True, False)
 
 pl()
 
-#: bind x to True and y to False
-x = True; y = False
+#: Bind x to True and y to False.
+x = True
+y = False
 print(x, y)
 
-#: rebind x to False and y to True
-x = False; y = True
+#: Rebind x to False and y to True.
+x = False
+y = True
 print(x, y)
 
 # Python supports the usual logical operations of *conjunction*,
@@ -653,7 +658,7 @@ print(x, y)
 
 pl()
 
-#: truth table for 'and' operation
+#: Truth table for 'and' operation.
 print(True and True)
 print(True and False)
 print(False and True)
@@ -667,7 +672,7 @@ print(False and False)
 
 pl()
 
-#: truth table for 'or' operation
+#: Truth table for 'or' operation.
 print(True or True)
 print(True or False)
 print(False or True)
@@ -680,7 +685,7 @@ print(False or False)
 
 pl()
 
-#: truth table for 'not' operation
+#: Truth table for 'not' operation.
 print(not True)
 print(not False)
 
@@ -705,19 +710,19 @@ print(not False)
 
 # ::
 
-#: define an empty list
+#: Define an empty list.
 []
 
-#: define a list with one string element
+#: Define a list with one string element.
 ["a"]
 
-#: define a list of strings
+#: Define a list of strings.
 ["a", "b", "c"]
 
-#: define a list of integers
+#: Define a list of integers.
 [1, 2, 3]
 
-#: define a list of lists
+#: Define a list of lists.
 [[], [1], [1, 2]]
 
 # The following examples show definitions of *heterogeneous* lists,
@@ -725,10 +730,10 @@ print(not False)
 
 # ::
 
-#: a list of integers, floats and strings
+#: A list of integers, floats and strings.
 [1, "1", 2.0, "2.0", 3, "3"]
 
-#: a list of integers, strings and lists
+#: A list of integers, strings and lists.
 [0, '', [], 1, '1', [1]]
 
 # To print a list object you use the ``print()`` function. It
@@ -739,19 +744,19 @@ print(not False)
 
 pl()
 
-#: print the empty list
+#: Print the empty list.
 print([])
 
-#: print a list of strings
+#: Print a list of strings.
 print(["a", "b", "c"])
 
-#: print a list of integers
+#: Print a list of integers.
 print([1, 2, 3])
 
-#: print a list of lists
+#: Print a list of lists.
 print([[], [1], [1, 2]])
 
-#: print a heterogeneous list
+#: Print a heterogeneous list.
 print([1, 3.14, "foo", ["bar"]])
 
 # You can bind names to list objects using the assignment statement in
@@ -765,15 +770,15 @@ print([1, 3.14, "foo", ["bar"]])
 
 pl()
 
-#: bind x to the empty list
+#: Bind x to the empty list.
 x = []
 print(x)
 
-#: rebind x to a list of floats
+#: Rebind x to a list of floats.
 x = [0.01, 0.1, 1.0]
 print(x)
 
-#: rebind x to a list of lists
+#: Rebind x to a list of lists.
 x = [[], [1], [1, 2]]
 print(x)
 
@@ -788,18 +793,18 @@ print(x)
 
 pl()
 
-#: length of empty list
+#: Print length of empty list.
 print(len([]))
 
-#: length of a list of strings
+#: Length of a list of strings.
 x = ["a", "b", "c"]
 print(len(x))
 
-#: length of a list of lists
+#: Length of a list of lists.
 x = [[], [1], [1, 2]]
 print(x)
 
-#: length of first element of a list of lists
+#: Length of first element of a list of lists.
 x = [["a", "b"], ["c"]]
 print(len(x[0]))
 
@@ -811,10 +816,10 @@ print(len(x[0]))
 
 pl()
 
-#: a list x
+#: A list x.
 x = [1, 2, 3]
 
-#: print last element of x
+#: Print last element of x.
 print(x[len(x) - 1])
 
 # Let's now consider three operations you can perform on list objects,
@@ -830,20 +835,20 @@ print(x[len(x) - 1])
 
 pl()
 
-#: concatenate multiple lists
+#: Concatenate multiple lists.
 x = [1] + [2, 3] + [4, 5] + [6]
 print(x)
 
-#: bind x and y to list objects
+#: Bind x and y to list objects.
 x = ["a", "b", "c"]
 y = ["d", "e", "f"]
 
-#: concatenate lists x and y
+#: Concatenate lists x and y.
 z = x + y
 print(z)
 
-#: concatenating a list with the empty list
-#: creates a new list with the same elements
+#: Concatenating a list with the empty list
+#: creates a new list with the same elements.
 x = [1, 2] + []
 print(x)
 
@@ -862,22 +867,22 @@ print(x)
 
 pl()
 
-#: a list x
+#: A list x.
 x = ["foo", "bar", "gnu"]
 
-#: reference first element of x
+#: Reference first element of x.
 print(x[0])
 
-#: reference second element of x
+#: Reference second element of x.
 print(x[1])
 
-#: reference third element of x
+#: Reference third element of x.
 print(x[2])
 
-#: you can apply the index operator to a
+#: You can apply the index operator to a
 #: literal list although it's not very useful,
 #: the following references the second
-#: element of a literal list
+#: element of a literal list.
 print([1, 2, 3][1])
 
 # To add an element to the end of a list you can use the ``append()``
@@ -892,19 +897,19 @@ print([1, 2, 3][1])
 
 pl()
 
-#: start with an empty list x
+#: Start with an empty list x.
 x = []
 
-#: add strings "a", "b" and "c"
+#: Add strings "a", "b" and "c".
 x.append("a")
 x.append("b")
 x.append("c")
 
-#: add a string bound to y
+#: Add a string bound to y.
 y = "foo"
 x.append(y)
 
-#: print list x
+#: Print list x.
 print(x)
 
 # We have now introduced all the data types in minimal Python,
@@ -952,12 +957,12 @@ print(x)
 
 pl()
 
-#: equality evaluates to True,
-#: 1 and 1.0 represent the same value
+#: Equality evaluates to True,
+#: 1 and 1.0 represent the same value.
 print(1 == 1.0)
 
-#: identity evaluates to False,
-#: 1 and 1.0 are different objects
+#: Identity evaluates to False,
+#: 1 and 1.0 are different objects.
 print(1 is 1.0)
 
 # An example based on lists may serve to clarify the difference
@@ -974,12 +979,12 @@ print(1 is 1.0)
 
 pl()
 
-#: equality evaluates to True,
-#: both operands represent the 'empty list'
+#: Equality evaluates to True,
+#: both operands represent the 'empty list'.
 print([] == [])
 
-#: identity evaluates to False,
-#: each list expression produces a different object
+#: Identity evaluates to False,
+#: each list expression produces a different object.
 print([] is [])
 
 # The same argument applies to non-empty lists, as show in the
@@ -989,12 +994,12 @@ print([] is [])
 
 pl()
 
-#: equality evaluates to True,
-#: the values represented are equal
+#: Equality evaluates to True,
+#: the values represented are equal.
 print(["a", "b", "c"] == ["a", "b", "c"])
 
-#: identity evaluates to False,
-#: each list expression produces a different object
+#: Identity evaluates to False,
+#: each list expression produces a different object.
 print(["a", "b", "c"] is ["a", "b", "c"])
 
 # The examples above showed the difference between equality and
@@ -1046,12 +1051,12 @@ print(False == "0")
 
 pl()
 
-#: equality evaluates to True,
-#: int and float objects both represent 0
+#: Equality evaluates to True,
+#: int and float objects both represent 0.
 print(0 == 0.0)
 
-#: equality evaluates to True,
-#: int and float objects both represent 2
+#: Equality evaluates to True,
+#: int and float objects both represent 2.
 print(2 == 4 / 2)
 
 # The Boolean values ``True`` and ``False`` are considered equal to
@@ -1062,13 +1067,13 @@ print(2 == 4 / 2)
 
 pl()
 
-#: equality evaluates to True,
-#: True and 1 are considered the same value
+#: Equality evaluates to True,
+#: True and 1 are considered the same value.
 print(True == 1)
 print(True == 1.0)
 
-#: equality evaluates to True,
-#: False and 0 are considered the same value
+#: Equality evaluates to True,
+#: False and 0 are considered the same value.
 print(False == 0)
 print(False == 0.0)
 
@@ -1083,13 +1088,13 @@ print(False == 0.0)
 
 pl()
 
-#: both operands are int
+#: Both operands are int.
 print(1 == 2 - 1)
 
-#: both operands are float
+#: Both operands are float.
 print(1.5 == 3 / 2)
 
-#: one int and one float operand
+#: One int and one float operand.
 print(2 == 4 / 2)
 
 # Equality of objects of type ``bool`` is trivial. Two ``bool``
@@ -1106,7 +1111,7 @@ print(2 == 4 / 2)
 
 pl()
 
-#: string equality expressions that evaluate to True
+#: String equality expressions that evaluate to True.
 print("" == '')
 print("foo" == "foo")
 print("foo" == "f" + "o" + "o")
@@ -1121,13 +1126,13 @@ print('_*_' == '_' + '*' + '_')
 
 pl()
 
-#: expressions that evaluate to True
+#: Expressions that evaluate to True.
 print([1] == [1])
 print([1] == [1] + [])
 print([1] == [1.0])
 print(["ab"] == ["a" + "b"])
 
-#: expressions that evaluate to False
+#: Expressions that evaluate to False.
 print([1] == [2])
 print([1] == [1] + [2])
 print([1] == ["1"])
@@ -1170,8 +1175,8 @@ print(["a"] == ["a", "b"])
 
 pl()
 
-#: some numeric inequalities
-#: that evaluate to True
+#: Some numeric inequalities
+#: that evaluate to True.
 print(1 < 3.14)
 print(0 < 1.0)
 print(-1 < 0.0)
@@ -1185,8 +1190,8 @@ print(-2.0 < -1)
 
 pl()
 
-#: some string inequalities
-#: that evaluate to True
+#: Some string inequalities
+#: that evaluate to True.
 print("" < "a")
 print("a" < "b")
 print("a" < "aa")
@@ -1244,16 +1249,16 @@ print([1] < [2, "a"])
 
 pl()
 
-#: evaluates to True
-#: because 2 < 3 is True
+#: Evaluates to True
+#: because 2 < 3 is True.
 print([1, 2] < [1, 3])
 
-#: evaluates to False
-#: because 1 < 0 is False
+#: Evaluates to False
+#: because 1 < 0 is False.
 print([1, 2] < [0, 3])
 
-#: evaluates to False
-#: because lists are equal
+#: Evaluates to False
+#: because lists are equal.
 print([1, 2] < [1, 2])
 
 # Comparison of lists that contain different number of elements
@@ -1267,21 +1272,21 @@ print([1, 2] < [1, 2])
 
 pl()
 
-#: evaluates to True
-#: empty list less than non-empty list
+#: Evaluates to True
+#: empty list less than non-empty list.
 print([] < [1])
 
-#: evaluates to True
-#: shorter list is less than longer list
+#: Evaluates to True
+#: shorter list is less than longer list.
 print([1, 2] < [1, 2, 3])
 
-#: evaluates to True
-#: because 1 < 2 is True
+#: Evaluates to True
+#: because 1 < 2 is True.
 print([1, 2] < [2, 1, 0])
 
-#: evaluates to False
-#: because 2 < 1 is False
-print([1,2] < [1, 1, 0])
+#: Evaluates to False
+#: because 2 < 1 is False.
+print([1, 2] < [1, 1, 0])
 
 # The for statement
 # -----------------
@@ -1298,13 +1303,13 @@ print([1,2] < [1, 1, 0])
 
 pl()
 
-#: a list of strings
+#: A list of strings.
 x = ["foo", "bar", "gnu"]
 
-#: iterates over the elements of list x,
+#: Iterates over the elements of list x,
 #: at each iteration binds 'item' to next element,
 #: then calls print() with 'item' as an argument,
-#: repeats until there is no next element
+#: repeats until there is no next element.
 for item in x:
     print(item)
 
@@ -1369,15 +1374,15 @@ for item in x:
 
 pl()
 
-#: a list of strings
+#: A list of strings.
 x = ["foo", "bar", "gnu"]
 
-#: initial concatenation
+#: Initial concatenation.
 s = ""
 
-#: prints 'item' and the concatenation
+#: Prints 'item' and the concatenation
 #: of elements printed up to current
-#: iteration
+#: iteration.
 for item in x:
     print(item)
     print(s + item)
@@ -1393,7 +1398,7 @@ pl()
 s = "abcdef"
 
 #: 'for' loop with a string as
-#: the iterable object
+#: the iterable object.
 for char in s:
     print(char)
     print(char.upper())
@@ -1405,8 +1410,8 @@ for char in s:
 
 pl()
 
-#: you can use a literal expression
-#: for the iterable object in 'for' loop
+#: You can use a literal expression
+#: for the iterable object in 'for' loop.
 sum = 0
 for n in [1, 2, 3]:
     sum = sum + n
@@ -1421,11 +1426,11 @@ for n in [1, 2, 3]:
 
 pl()
 
-#: two lists of strings
+#: Two lists of strings.
 x = ["a", "b"]
 y = ["c", "d"]
 
-#: you can nest for loops
+#: You can nest for loops.
 for m in x:
     for n in y:
         print(m + n)
@@ -1448,14 +1453,15 @@ for m in x:
 
 pl()
 
-#: a list of letters
+#: A list of letters.
 letters = ["a", "B", "c", "D"]
 
-#: prints upper case letters in list
+#: Prints upper case letters in list.
 for letter in letters:
+
     if letter.isupper():
-        # this statement is only executed
-        # if letter.isupper() returns True
+        # This statement is only executed
+        # if letter.isupper() returns True.
         print(letter)
 
 # For each iteration of the ``for`` loop the ``if`` statement tests
@@ -1518,9 +1524,9 @@ x = ['', "", 0, 0.0, [], None, "foo"]
 
 pl()
 
-#: iterates over list x defined above,
+#: Iterates over list x defined above,
 #: it only prints "foo" because all other
-#: elements in x are interpreted as False
+#: elements in x are interpreted as False.
 for item in x:
     if item:
         print(item)
@@ -1552,20 +1558,21 @@ for item in x:
 
 pl()
 
-#: a list of integers
+#: A list of integers.
 x = [2, 5, 4, -1, 3]
 
-#: initialize even and odd counts
-even = 0; odd = 0
+#: Initialize even and odd counts.
+even = 0
+odd = 0
 
 for n in x:
-    # test if n is even
+    # Test if n is even.
     if n % 2 == 0:
         even = even + 1
     else:
         odd = odd + 1
 
-#: print counts
+#: Print counts.
 print("even =", even, "odd =", odd)
 
 # You can see from this example that the ``else`` clause is very
@@ -1587,20 +1594,22 @@ print("even =", even, "odd =", odd)
 
 pl()
 
-#: a list of integers
+#: A list of integers.
 x = [2, 5, 4, -1, 3]
 
-#: initialize even and odd counts
-even = 0; odd = 0
+#: Initialize even and odd counts.
+even = 0
+odd = 0
 
 for n in x:
-    # test if n is odd
+
+    # Test if n is odd.
     if n % 2:
         odd = odd + 1
     else:
         even = even + 1
 
-#: print counts
+#: Print counts.
 print("even =", even, "odd =", odd)
 
 # Sometimes you need to be able to execute different groups of
@@ -1621,19 +1630,19 @@ print("even =", even, "odd =", odd)
 
 pl()
 
-#: a list of strings
+#: A list of strings.
 x = ["", "", "b", "ab", "cd", "ef", "foo"]
 
-#: initialize frequency counts
+#: Initialize frequency counts.
 freq0 = 0; freq1 = 0; freq2 = 0; freq = 0
 
-#: calculate frequency of strings
-#: of different sizes
+#: Calculate frequency of strings
+#: of different sizes.
 for s in x:
 
-    # nesting of groups of statements
+    # Nesting of groups of statements
     # and the conditional expressions
-    # to execute them
+    # to execute them.
     if len(s) == 0:
         freq0 = freq0 + 1
     else:
@@ -1645,7 +1654,7 @@ for s in x:
             else:
                 freq = freq + 1
 
-#: print frequencies
+#: Print frequencies.
 print("freq0 =", freq0, "freq1 =", freq1)
 print("freq2 =", freq2, "freq =", freq)
 
@@ -1669,18 +1678,18 @@ print("freq2 =", freq2, "freq =", freq)
 
 pl()
 
-#: a list of strings
+#: A list of strings.
 x = ["", "", "b", "ab", "cd", "ef", "foo"]
 
-#: initialize frequency counts
+#: Initialize frequency counts.
 freq0 = 0; freq1 = 0; freq2 = 0; freq = 0
 
-#: calculate frequency of strings
-#: of different sizes
+#: Calculate frequency of strings
+#: of different sizes.
 for s in x:
 
-    # one 'if' statement to conditionally
-    # execute multiple groups of statements
+    # One 'if' statement to conditionally
+    # execute multiple groups of statements.
     if len(s) == 0:
         freq0 = freq0 + 1
     elif len(s) == 1:
@@ -1690,7 +1699,7 @@ for s in x:
     else:
         freq = freq + 1
 
-#: print frequencies
+#: Print frequencies.
 print("freq0 =", freq0, "freq1 =", freq1)
 print("freq2 =", freq2, "freq =", freq)
 
@@ -1703,6 +1712,33 @@ print("freq2 =", freq2, "freq =", freq)
 # you can end the whole chain with an optional ``else`` clause if you
 # need to execute a *default* group of statements for the case in
 # which all conditions are ``False``.
+
+# Introduction to exceptions
+# --------------------------
+
+# A Python program may be syntactically valid and generate no parsing
+# errors but it can still generate a run-time error during its
+# execution and terminate abnormally as a result. A *run-time* error
+# is an exceptional condition encountered by a program during program
+# execution and preventing its normal termination. An *exceptional
+# condition* is a condition that is an *exception* to the normal
+# conditions expected by the program during execution. Suppose for
+# example that, during a normal run, a program expects a specific file
+# to exist so it can read the data it was designed to process.  If the
+# file does not exist the program can't run to normal completion and
+# has to terminate abnormally.
+
+# A well-designed program must have a predefined mechanism for
+# handling such exceptional conditions. One simple mechanism is to
+# exit the program with an application defined return code indicating
+# the type of error. However, most modern programming languages,
+# including Python, have an elegant mechanism specifically designed to
+# handle exceptional conditions. It is called, not surprisingly,
+# *exception handling*. This section provides an introduction to the
+# topic of exception handling, more of its features will be examined
+# in a later script.
+
+
 
 # References
 # ----------

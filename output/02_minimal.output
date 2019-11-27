@@ -1,35 +1,35 @@
 
-example at line 177:
+example at line 178:
 a string defined with double quotes
 foo bar
 foo bar gnu
 
-example at line 196:
+example at line 197:
 foobargnu
 foo-bar-gnu
 foo, bar, gnu
 
-example at line 216:
+example at line 217:
 foobar
 foo-bar
 foo,
 bar
 
-example at line 239:
+example at line 240:
 you can add strings using the + operator
 
-example at line 259:
+example at line 260:
 0
 10
 
-example at line 277:
+example at line 278:
 
 foo
 foo bar
 foobargnu
 9
 
-example at line 303:
+example at line 304:
 line1
 line2
 	a tab character
@@ -37,29 +37,29 @@ line1
 line2
 	a tab character
 
-example at line 323:
+example at line 324:
 "using double quotes in double quoted string"
 'using single quotes in single quoted string'
 
-example at line 366:
+example at line 367:
 x = foo
 foobar
 
-example at line 405:
+example at line 406:
 x = foo
 x = bar
 
-example at line 485:
+example at line 486:
 0 1 2 3 99
 -99 -3 -2 -1
 0.0 0.01 0.5 2.718
 -2.718 -0.5 -0.01
 
-example at line 503:
+example at line 504:
 0 99
 0.0 99.0
 
-example at line 527:
+example at line 530:
 3
 2
 6
@@ -73,129 +73,129 @@ example at line 527:
 1.5
 2.0
 
-example at line 558:
+example at line 561:
 121.0
 
-example at line 574:
+example at line 577:
 121.0
 
-example at line 625:
+example at line 628:
 True False
 
-example at line 637:
+example at line 640:
 True False
 False True
 
-example at line 654:
+example at line 659:
 True
 False
 False
 False
 
-example at line 668:
+example at line 673:
 True
 True
 True
 False
 
-example at line 681:
+example at line 686:
 False
 True
 
-example at line 740:
+example at line 745:
 []
 ['a', 'b', 'c']
 [1, 2, 3]
 [[], [1], [1, 2]]
 [1, 3.14, 'foo', ['bar']]
 
-example at line 766:
+example at line 771:
 []
 [0.01, 0.1, 1.0]
 [[], [1], [1, 2]]
 
-example at line 789:
+example at line 794:
 0
 3
 [[], [1], [1, 2]]
 2
 
-example at line 812:
+example at line 817:
 3
 
-example at line 831:
+example at line 836:
 [1, 2, 3, 4, 5, 6]
 ['a', 'b', 'c', 'd', 'e', 'f']
 [1, 2]
 
-example at line 863:
+example at line 868:
 foo
 bar
 gnu
 2
 
-example at line 893:
+example at line 898:
 ['a', 'b', 'c', 'foo']
 
-example at line 953:
+example at line 958:
 True
 False
 
-example at line 975:
+example at line 980:
 True
 False
 
-example at line 990:
+example at line 995:
 True
 False
 
-example at line 1013:
+example at line 1018:
 False
 False
 False
-False
-False
-False
-False
-
-example at line 1047:
-True
-True
-
-example at line 1063:
-True
-True
-True
-True
-
-example at line 1084:
-True
-True
-True
-
-example at line 1107:
-True
-True
-True
-True
-
-example at line 1122:
-True
-True
-True
-True
 False
 False
 False
 False
 
-example at line 1171:
+example at line 1052:
+True
+True
+
+example at line 1068:
 True
 True
 True
 True
 
-example at line 1186:
+example at line 1089:
+True
+True
+True
+
+example at line 1112:
+True
+True
+True
+True
+
+example at line 1127:
+True
+True
+True
+True
+False
+False
+False
+False
+
+example at line 1176:
+True
+True
+True
+True
+
+example at line 1191:
 True
 True
 True
@@ -204,26 +204,26 @@ True
 True
 True
 
-example at line 1222:
+example at line 1227:
 True
 
-example at line 1245:
+example at line 1250:
 True
 False
 False
 
-example at line 1268:
+example at line 1273:
 True
 True
 True
 False
 
-example at line 1299:
+example at line 1304:
 foo
 bar
 gnu
 
-example at line 1370:
+example at line 1375:
 foo
 foo
 bar
@@ -231,7 +231,7 @@ bar
 gnu
 gnu
 
-example at line 1390:
+example at line 1395:
 a
 A
 b
@@ -245,34 +245,34 @@ E
 f
 F
 
-example at line 1406:
+example at line 1411:
 1 1
 2 3
 3 6
 
-example at line 1422:
+example at line 1427:
 ac
 ad
 bc
 bd
 
-example at line 1449:
+example at line 1454:
 B
 D
 
-example at line 1519:
+example at line 1525:
 foo
 
-example at line 1553:
+example at line 1559:
 even = 2 odd = 3
 
-example at line 1588:
+example at line 1595:
 even = 2 odd = 3
 
-example at line 1622:
+example at line 1631:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
 
-example at line 1670:
+example at line 1679:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
