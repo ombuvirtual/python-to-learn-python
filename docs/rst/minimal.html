@@ -45,6 +45,7 @@
 <div class="line"><a class="reference internal" href="#the-for-statement">The for statement</a></div>
 <div class="line"><a class="reference internal" href="#the-if-statement">The if statement</a></div>
 <div class="line"><a class="reference internal" href="#introduction-to-exceptions">Introduction to exceptions</a></div>
+<div class="line"><a class="reference internal" href="#the-assert-statement">The assert statement</a></div>
 <div class="line"><a class="reference internal" href="#references">References</a></div>
 </div>
 <div class="section" id="preamble">
@@ -75,7 +76,7 @@ comments.</p></li>
 <li><p><em>Integers</em> and the usual arithmetic operations of addition
 <code class="docutils literal notranslate"><span class="pre">+</span></code>, subtraction <code class="docutils literal notranslate"><span class="pre">-</span></code>, multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>
 and exponentiation <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p></li>
-<li><p><em>Booleans</em> and the logical operations of conjunction (<code class="docutils literal notranslate"><span class="pre">and</span></code>),
+<li><p><em>Boolean</em> and the logical operations of conjunction (<code class="docutils literal notranslate"><span class="pre">and</span></code>),
 disjunction (<code class="docutils literal notranslate"><span class="pre">or</span></code>) and negation (<code class="docutils literal notranslate"><span class="pre">not</span></code>).</p></li>
 <li><p><em>Lists</em> and the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method to add elements to lists,
 list membership operators <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> and list
@@ -149,7 +150,7 @@ of type <code class="docutils literal notranslate"><span class="pre">str</span><
 you enclose the relevant text in double quotes. For example, if you
 want to define a string with the text <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">string</span> <span class="pre">defined</span> <span class="pre">with</span> <span class="pre">double</span>
 <span class="pre">quotes</span></code> you enclose the text in double quotes and the Python
-interpreter will recognise it as a <em>string literal expression</em> and
+interpreter will recognize it as a <em>string literal expression</em> and
 create an object of type <code class="docutils literal notranslate"><span class="pre">str</span></code>. The following is an example of a
 string literal expression defined with double quotes,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A string literal defined with double quotes.</span>
@@ -168,7 +169,7 @@ the string expressions <code class="docutils literal notranslate"><span class="p
 </pre></div>
 </div>
 <p>The last expression “bar” does not need to end in a semicolon
-because the interpreter recognises the new line character as the
+because the interpreter recognizes the new line character as the
 end of the expression.</p>
 <p>The statements above don’t have any useful side effects such as
 assigning the string to a variable or printing the string to
@@ -1114,7 +1115,7 @@ would accomplish that task,</p>
 <code class="docutils literal notranslate"><span class="pre">x</span></code>. At the start of each iteration it gets the <em>next</em> element in
 the list and binds it to the identifier <code class="docutils literal notranslate"><span class="pre">item</span></code>, it then executes
 the call to <code class="docutils literal notranslate"><span class="pre">print(item)</span></code>.  This process of iteration stops when
-the attempt to get the <em>next</em> element returns no element, signalling
+the attempt to get the <em>next</em> element returns no element, signaling
 the end of the list. Once the string <code class="docutils literal notranslate"><span class="pre">&quot;gnu&quot;</span></code>, the last string in
 the list, is printed, the attempt to get the next element signals
 end of list and the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop ends.</p>
@@ -1149,7 +1150,7 @@ an <code class="docutils literal notranslate"><span class="pre">IndentationError
 </pre></div>
 </div>
 <p>The size of indentation does not matter but it must be consistent
-throughtout the same program.</p>
+throughout the same program.</p>
 <p>In the example above the statement group associated with the <code class="docutils literal notranslate"><span class="pre">for</span></code>
 loop contains only one statement, the call to <code class="docutils literal notranslate"><span class="pre">print()</span></code>.</p>
 <p>Let’s see another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop example.  Suppose as before you have
@@ -1235,7 +1236,7 @@ test is <code class="docutils literal notranslate"><span class="pre">True</span>
 whether the expression <code class="docutils literal notranslate"><span class="pre">letter.isupper()</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> or
 <code class="docutils literal notranslate"><span class="pre">False</span></code>. If the expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> the function call
 <code class="docutils literal notranslate"><span class="pre">print(letter)</span></code> is executed. If it evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> the
-<code class="docutils literal notranslate"><span class="pre">if</span></code> statement ends and executation continues with the next
+<code class="docutils literal notranslate"><span class="pre">if</span></code> statement ends and execution continues with the next
 iteration of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">if</span></code> statement consists of two parts, the statement header and
 the group of statements to be <em>conditionally</em> executed. The
@@ -1246,7 +1247,7 @@ statement header is indicated by a colon <code class="docutils literal notransla
 a new line character.  In the example above the conditional
 expression is <code class="docutils literal notranslate"><span class="pre">letter.isupper()</span></code>.</p>
 <p>The header line is followed by the group of statements to be
-executed if the condional expression evaluates to True. In the
+executed if the conditional expression evaluates to True. In the
 simple example above there is one statement in the group,
 <code class="docutils literal notranslate"><span class="pre">print(letter)</span></code>, usually there would be more than one. It is very
 important to understand that the group of statements to be
@@ -1268,7 +1269,7 @@ interpreted as <code class="docutils literal notranslate"><span class="pre">Fals
 </ul>
 <p><em>Any</em> other value is interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>. Of course if the
 conditional expression is a Boolean expression there is no need for
-any intepretation because the result <em>is</em> a Boolean value. Let’s
+any interpretation because the result <em>is</em> a Boolean value. Let’s
 illustrate this point with an example. Suppose you have the
 following list,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
@@ -1279,7 +1280,7 @@ interpreted as <code class="docutils literal notranslate"><span class="pre">Fals
 string “foo” which would be interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>. In the
 following code sample a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iterates over the elements in
 <code class="docutils literal notranslate"><span class="pre">x</span></code> and an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement tests each the value of each element
-and only prints it when the value is intepreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>, so only
+and only prints it when the value is interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>, so only
 the string “foo” is printed,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterates over list x defined above,</span>
 <span class="c1"># it only prints &quot;foo&quot; because all other</span>
@@ -1306,7 +1307,7 @@ you can test that <code class="docutils literal notranslate"><span class="pre">n
 <p>The following code implements the example above using a conditional
 expression that tests whether <code class="docutils literal notranslate"><span class="pre">n</span></code> is even. If the condition is
 <code class="docutils literal notranslate"><span class="pre">True</span></code> the statement to count the number of even elements in the
-list is excecuted.  If the condition is <code class="docutils literal notranslate"><span class="pre">False</span></code> the statement
+list is executed.  If the condition is <code class="docutils literal notranslate"><span class="pre">False</span></code> the statement
 after the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed to count the number of odd
 elements,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of integers.</span>
@@ -1453,24 +1454,305 @@ which all conditions are <code class="docutils literal notranslate"><span class=
 <h2>Introduction to exceptions<a class="headerlink" href="#introduction-to-exceptions" title="Permalink to this headline">¶</a></h2>
 <p>A Python program may be syntactically valid and generate no parsing
 errors but it can still generate a run-time error during its
-execution and terminate abnormally as a result. A <em>run-time</em> error
-is an exceptional condition encountered by a program during program
-execution and preventing its normal termination. An <em>exceptional
-condition</em> is a condition that is an <em>exception</em> to the normal
-conditions expected by the program during execution. Suppose for
-example that, during a normal run, a program expects a specific file
-to exist so it can read the data it was designed to process.  If the
-file does not exist the program can’t run to normal completion and
-has to terminate abnormally.</p>
+execution and terminate abnormally as a result.  A <em>run-time</em> error
+is an exceptional condition that a program encounters during its
+execution and that prevents its normal termination.  An <em>exceptional
+condition</em> is an exception to the normal conditions expected by the
+program during execution.</p>
+<p>For example, suppose that during a normal run a program expects a
+specific file to exist so it can read the data it was designed to
+process.  If the program attempts to read the file and the file
+doesn’t exist, then the program has encountered an exceptional
+condition that prevents it from terminating normally.  We can
+identify this type of exceptional condition as a <em>file not found</em>
+exception and describe the program’s failure by saying that it
+failed with a <em>file not found</em> exception.</p>
 <p>A well-designed program must have a predefined mechanism for
-handling such exceptional conditions. One simple mechanism is to
-exit the program with an application defined return code indicating
-the type of error. However, most modern programming languages,
-including Python, have an elegant mechanism specifically designed to
-handle exceptional conditions. It is called, not surprisingly,
-<em>exception handling</em>. This section provides an introduction to the
-topic of exception handling, more of its features will be examined
-in a later script.</p>
+handling such exceptions.  One simple mechanism is to exit the
+program with an application defined return code indicating the type
+of error.  However, most modern programming languages, including
+Python, have an elegant mechanism specifically designed to handle
+exceptions.  It is called, not surprisingly, <em>exception handling</em>.
+This section provides a brief introduction to the topic of
+exceptions and exception handling, more of its features will be
+examined in a later script.</p>
+<p>At a general level, an exception handling mechanism must provide
+three important features.  First, it must provide a way of
+<em>representing</em> exceptions.  Once a program detects an exception it
+must be able to define the type of exception that occurred, such as
+<em>file not found</em>, as well as the details specific to the particular
+occurrence of the exception, for example <em>failed to read file
+‘foo’</em>.</p>
+<p>The second feature is the ability to initiate the exception handling
+process.  Once a program has detected and defined the type of
+exception and its contextual details it must be able to initiate the
+process of exception handling for the defined exception.  Initiating
+the process of handling an exception is called <em>raising</em> or
+<em>throwing</em> an exception. For example, once a program creates a
+representation of a <em>file not found</em> exception it needs to <em>raise</em>
+the exception using that representation.</p>
+<p>The third feature is the ability to relate normal logic code with
+exception handling code.  The exception handling mechanism must
+provide a way to relate the normal logic code that can potentially
+raise an exception to the exception handling code that can handle
+the exception.  The code that is invoked to handle an exception is
+called an <em>exception handler</em>.  The code that can potentially raise
+an exception is often referred to as the <em>try</em> code because it
+<em>tries</em> to execute normal program logic.  When the <em>try</em> code
+detects and raises an exception the exception handling mechanism is
+responsible for making sure that the right exception handler is
+invoked to processes the exception.</p>
+<p>Let’s use an example to illustrate how these features are
+implemented in Python.  Suppose we need to write a program that
+reads a file named <code class="docutils literal notranslate"><span class="pre">foo</span></code>.  If the file <code class="docutils literal notranslate"><span class="pre">foo</span></code> does not exist the
+program should invoke the exception handling mechanism for the error
+condition <em>file not found</em>, including the error message “failed to
+read file ‘foo’”.  To write this program we first need to know how
+to define the exception <em>file not found</em> in the Python language and
+how to represent a particular occurrence of that exception which
+includes the message “failed to read file ‘foo’”.</p>
+<p>In the Python language a type of exception is defined as a <em>class</em>
+and a particular occurrence of that type of exception is represented
+by an <em>instance</em> of that class.  Python classes will be covered
+later but for now it is sufficient to think of classes as a language
+feature that allows you to define a new data type to represent,
+among other things, a concept such as ‘type of exception’.  Once you
+define a class to represent a type of exception you can create
+instances of the class to represent the different <em>occurrences</em> of
+that exception type.</p>
+<p>For example, to represent the type of exception we have described so
+far as <em>file not found</em>, Python defines a class named
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>.  To represent a particular occurrence of
+<em>file not found</em> you create an instance of class
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>.  You create instances of a class using the
+class constructor which is the name of the class followed by
+parentheses. For example, to create an instance of the exception
+class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> you would write,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an instance of exception class</span>
+<span class="c1"># FileNotFoundError and bind it to &#39;e&#39;.</span>
+<span class="n">e</span> <span class="o">=</span> <span class="ne">FileNotFoundError</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The function call expression above invokes the class constructor for
+exception class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> and returns an object of that
+type.  You can pass a string argument to the constructor of an
+exception class to include an error message relevant to the specific
+occurrence of the exception.  For example, to create an instance of
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> that includes the error message “Failed to
+read file ‘foo’” you would write,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an instance of exception class</span>
+<span class="c1"># including an error message.</span>
+<span class="n">e</span> <span class="o">=</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Printing the exception object</span>
+<span class="c1"># prints the error message included.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default action when printing an exception object is to print the
+error message, if one is included.</p>
+<p>Now that we know how to represent an occurrence of the error
+condition <em>file not found</em>, we can turn our attention to the way our
+program can invoke exception handling using that representation.  In
+the Python language you invoke exception handling using the
+<code class="docutils literal notranslate"><span class="pre">raise</span></code> statement with an instance of the relevant exception class
+as argument.  For example, at the point in our program where the
+error condition <em>file not found</em> is detected we would write,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When the exception class constructor is invoked without any
+arguments, as in the example above, you can omit the parentheses.
+In that case the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement itself will issue the call to
+the constructor to create an instance of the exception. The
+following statement is equivalent to the statement above,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span>
+</pre></div>
+</div>
+<p>Our example program requires including an error message in the
+exception object.  The following statement raises an exception with
+an instance of <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> that includes the required
+error message,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The purpose of raising an exception is to invoke an exception
+handler to process the error condition appropriately.  Returning to
+our example, suppose we want to write an initial version of our
+exception handler that handles the <em>file not found</em> error condition
+by simply printing the error message included in the exception
+object.  How do we specify in our code that raising the
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> exception should invoke our exception handler?
+In other words, we need a way of specifying that the code that
+raises an exception should have that exception handled by a
+particular exception handler.</p>
+<p>In Python you use the <code class="docutils literal notranslate"><span class="pre">try</span></code> statement to establish this
+relationship between <em>exception raising</em> code and <em>exception
+handling</em> code.  The <code class="docutils literal notranslate"><span class="pre">try</span></code> statement has a <code class="docutils literal notranslate"><span class="pre">try</span></code> clause and an
+<code class="docutils literal notranslate"><span class="pre">except</span></code> clause.  You use the <code class="docutils literal notranslate"><span class="pre">try</span></code> clause to define the group
+of statements that can potentially raise a given type of exception
+and the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause to define the code that should be invoked
+to handle that type of exception.  Turning back to our example once
+again, the code that can potentially raise <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> is
+enclosed in a <code class="docutils literal notranslate"><span class="pre">try</span></code> clause and the code that is invoked when that
+exception is raised is enclosed in an <code class="docutils literal notranslate"><span class="pre">except</span></code> clause, as shown in
+the following snippet,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Let’s examine the code above in more detail.  The <code class="docutils literal notranslate"><span class="pre">try</span></code> clause
+defines the group of statements that can potentially raise a
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> exception and have that exception handled by
+the group of statements defined in the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause.  The
+<code class="docutils literal notranslate"><span class="pre">try</span></code> clause encloses the code that runs during normal execution.
+Normal execution stops at the point the program issues the <code class="docutils literal notranslate"><span class="pre">raise</span></code>
+statement and control passes to the exception handling mechanism.
+The exception handling mechanism invokes the code enclosed in the
+<code class="docutils literal notranslate"><span class="pre">except</span></code> clause if the class name stated after the <code class="docutils literal notranslate"><span class="pre">except</span></code>
+keyword matches the class of the exception used in the <code class="docutils literal notranslate"><span class="pre">raise</span></code>
+statement, the class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> in the example above.</p>
+<p>If the class of the raised exception does not match the class stated
+in the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause, the code enclosed by the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause
+is not run.  In that case the exception handling system will attempt
+to find a match in the except clause of any enclosing try
+statements.  In our simple example there are no further enclosing
+try statements so the exception would not be handled by the
+program. In that case the exception is ultimately handled by the
+Python interpreter which terminates the script and prints a stack
+traceback.</p>
+<p>In our example the code to handle the <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>
+exception is simply a statement to print the error message included
+in the exception object.  An exception handler would normally
+include other code to handle the <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> error
+condition, such as releasing any resources before ending.</p>
+<p>If an exception handler needs to refer to the instance of the
+exception that was used to invoke it, you can use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword
+followed by a name to bind the name to the exception object.  In the
+example above an the of <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> used to invoke the
+exception handler is bound to the name <code class="docutils literal notranslate"><span class="pre">e</span></code> which is then used in
+the print statement.</p>
+<p>It’s important to realize that the code that raises an exception
+does not necessarily reside in the script that handles the
+exception.  In most cases it resides in one of Python’s built-in
+functions, in a module from Python’s standard library, a third party
+module or another module in the same application. For example, a
+program would normally call the built-in function <code class="docutils literal notranslate"><span class="pre">open()</span></code> to open
+a file it needs to read. If the file does not exist it is the
+<code class="docutils literal notranslate"><span class="pre">open()</span></code> function that raises the <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> exception
+rather than the program. The program’s code is responsible for
+<em>protecting</em> the call to <code class="docutils literal notranslate"><span class="pre">open()</span></code> if it raises the
+<code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> exception by catching and handling it using
+the <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">except</span></code> statement, as shown in the following snippet,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The exception class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> which we have been using
+to illustrate exception handling is just one example of the many
+predefined exception classes in Python. Python’s <a class="reference external" href="https://docs.python.org/3.7/html/library/exceptions.html">built-in exception
+classes</a> are used by the Python interpreter and Python’s built-in
+functions to represent the types of exceptional conditions they may
+encounter.</p>
+<p>Three common run-time errors when writing a script, see <a class="reference external" href="https://docs.python.org/3.7/html/library/exceptions.html#concrete-exceptions">Concrete
+exceptions</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code> - raised when applying an operation to operands of
+inappropriate types,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="mi">1</span> <span class="o">&lt;</span> <span class="s2">&quot;2&quot;</span>
+<span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">NameError</span></code> - raised when attempting to use a name that is not
+bound to an object,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">unbound_name</span>
+<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">IndexError</span></code> - raised when applying an index operation with an
+index that is out of range,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Two common syntax errors when learning Python are <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>,
+<code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>, see <a class="reference external" href="https://docs.python.org/3.7/html/library/exceptions.html#concrete-exceptions">Concrete exceptions</a>.</p>
+<p>Note: syntax errors caused by code in a script can’t be caught using
+a try except statement within the same script. This is because
+Python first parses the whole file to find syntax errors before
+executing the script. Therefore a syntax error, in this situation,
+is not strictly speaking a run-time error. When the interpreter
+finds a syntax error it stops parsing and displays an error message.</p>
+<p>For example, a syntax error in a script is an exceptional condition
+from the perspective of the Python interpreter which prevents it
+from successfully executing the script. When the interpreter detects
+a syntax error when parsing a script it represents it using the
+built-in exception class <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code> and raises an exception
+with an instance of that class.</p>
+<p>In addition to built-in exception classes Python provides the ability
+for scripts to define their own application specific exception
+classes by extending the base class <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, a topic that will
+be covered later. However, it is possible for a script to reuse a
+built-in exception class if it describes the type of exceptional
+condition it needs to handle, as we did above in our example program
+with the class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>.</p>
+</div>
+<div class="section" id="the-assert-statement">
+<h2>The assert statement<a class="headerlink" href="#the-assert-statement" title="Permalink to this headline">¶</a></h2>
+<p>The last language feature we introduce as part of Minimal Python is
+the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement.</p>
+<ul class="simple">
+<li><p>it is useful when debugging a script.</p></li>
+<li><p>It is essential when writing test scripts.</p></li>
+<li><p>It provides a convenient way to demonstrate that an example of
+Python code produces the expected result without having to resort
+to printing.</p></li>
+</ul>
+<p>The general form of the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<p>Where the result of <code class="docutils literal notranslate"><span class="pre">expression</span></code> is interpreted as a Boolean
+value.  If the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> no action is taken and the
+program continues normal execution.  If the <code class="docutils literal notranslate"><span class="pre">expression</span></code> is
+<code class="docutils literal notranslate"><span class="pre">False</span></code> the interpreter raises an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> exception and
+stops program execution unless the exception is handled.</p>
+<p>The following trivial example has no effect and the script continues
+as normal,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The following example causes an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="k">assert</span> <span class="kc">False</span>
+<span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>In the following example the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is used to confirm
+that two empty list literals produce distinct objects of type
+<code class="docutils literal notranslate"><span class="pre">list</span></code>, that the numeric literals <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> also produce
+distinct objects but the values they represent are equal,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm distinct objects</span>
+<span class="k">assert</span> <span class="p">[]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="p">[]</span>
+<span class="k">assert</span> <span class="mi">1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mf">1.0</span>
+
+<span class="c1"># confirm equal values</span>
+<span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>If any of these assertion were wrong the script would terminate
+abnormally with an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

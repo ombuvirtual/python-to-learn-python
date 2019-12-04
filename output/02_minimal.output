@@ -1,35 +1,35 @@
 
-example at line 178:
+example at line 179:
 a string defined with double quotes
 foo bar
 foo bar gnu
 
-example at line 197:
+example at line 198:
 foobargnu
 foo-bar-gnu
 foo, bar, gnu
 
-example at line 217:
+example at line 218:
 foobar
 foo-bar
 foo,
 bar
 
-example at line 240:
+example at line 241:
 you can add strings using the + operator
 
-example at line 260:
+example at line 261:
 0
 10
 
-example at line 278:
+example at line 279:
 
 foo
 foo bar
 foobargnu
 9
 
-example at line 304:
+example at line 305:
 line1
 line2
 	a tab character
@@ -37,29 +37,29 @@ line1
 line2
 	a tab character
 
-example at line 324:
+example at line 325:
 "using double quotes in double quoted string"
 'using single quotes in single quoted string'
 
-example at line 367:
+example at line 368:
 x = foo
 foobar
 
-example at line 406:
+example at line 407:
 x = foo
 x = bar
 
-example at line 486:
+example at line 487:
 0 1 2 3 99
 -99 -3 -2 -1
 0.0 0.01 0.5 2.718
 -2.718 -0.5 -0.01
 
-example at line 504:
+example at line 505:
 0 99
 0.0 99.0
 
-example at line 530:
+example at line 531:
 3
 2
 6
@@ -73,129 +73,129 @@ example at line 530:
 1.5
 2.0
 
-example at line 561:
+example at line 562:
 121.0
 
-example at line 577:
+example at line 578:
 121.0
 
-example at line 628:
+example at line 629:
 True False
 
-example at line 640:
+example at line 641:
 True False
 False True
 
-example at line 659:
+example at line 660:
 True
 False
 False
 False
 
-example at line 673:
+example at line 674:
 True
 True
 True
 False
 
-example at line 686:
+example at line 687:
 False
 True
 
-example at line 745:
+example at line 746:
 []
 ['a', 'b', 'c']
 [1, 2, 3]
 [[], [1], [1, 2]]
 [1, 3.14, 'foo', ['bar']]
 
-example at line 771:
+example at line 772:
 []
 [0.01, 0.1, 1.0]
 [[], [1], [1, 2]]
 
-example at line 794:
+example at line 795:
 0
 3
 [[], [1], [1, 2]]
 2
 
-example at line 817:
+example at line 818:
 3
 
-example at line 836:
+example at line 837:
 [1, 2, 3, 4, 5, 6]
 ['a', 'b', 'c', 'd', 'e', 'f']
 [1, 2]
 
-example at line 868:
+example at line 869:
 foo
 bar
 gnu
 2
 
-example at line 898:
+example at line 899:
 ['a', 'b', 'c', 'foo']
 
-example at line 958:
+example at line 959:
 True
 False
 
-example at line 980:
+example at line 981:
 True
 False
 
-example at line 995:
+example at line 996:
 True
 False
 
-example at line 1018:
+example at line 1019:
 False
 False
 False
-False
-False
-False
-False
-
-example at line 1052:
-True
-True
-
-example at line 1068:
-True
-True
-True
-True
-
-example at line 1089:
-True
-True
-True
-
-example at line 1112:
-True
-True
-True
-True
-
-example at line 1127:
-True
-True
-True
-True
 False
 False
 False
 False
 
-example at line 1176:
+example at line 1053:
+True
+True
+
+example at line 1069:
 True
 True
 True
 True
 
-example at line 1191:
+example at line 1090:
+True
+True
+True
+
+example at line 1113:
+True
+True
+True
+True
+
+example at line 1128:
+True
+True
+True
+True
+False
+False
+False
+False
+
+example at line 1177:
+True
+True
+True
+True
+
+example at line 1192:
 True
 True
 True
@@ -204,26 +204,26 @@ True
 True
 True
 
-example at line 1227:
+example at line 1228:
 True
 
-example at line 1250:
+example at line 1251:
 True
 False
 False
 
-example at line 1273:
+example at line 1274:
 True
 True
 True
 False
 
-example at line 1304:
+example at line 1305:
 foo
 bar
 gnu
 
-example at line 1375:
+example at line 1376:
 foo
 foo
 bar
@@ -231,7 +231,7 @@ bar
 gnu
 gnu
 
-example at line 1395:
+example at line 1396:
 a
 A
 b
@@ -245,34 +245,48 @@ E
 f
 F
 
-example at line 1411:
+example at line 1412:
 1 1
 2 3
 3 6
 
-example at line 1427:
+example at line 1428:
 ac
 ad
 bc
 bd
 
-example at line 1454:
+example at line 1455:
 B
 D
 
-example at line 1525:
+example at line 1526:
 foo
 
-example at line 1559:
+example at line 1560:
 even = 2 odd = 3
 
-example at line 1595:
+example at line 1596:
 even = 2 odd = 3
 
-example at line 1631:
+example at line 1632:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
 
-example at line 1679:
+example at line 1680:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
+
+example at line 1821:
+Failed to read file 'foo'.
+Failed to read file 'foo'.
+
+example at line 1945:
+[Errno 2] No such file or directory: 'foo'
+'<' not supported between instances of 'int' and 'str'
+
+example at line 1977:
+name 'unbound_name' is not defined
+
+example at line 1989:
+list index out of range

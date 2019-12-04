@@ -11,6 +11,7 @@
 # | `The for statement`_
 # | `The if statement`_
 # | `Introduction to exceptions`_
+# | `The assert statement`_
 # | `References`_
 
 # Preamble
@@ -46,7 +47,7 @@
 #     ``+``, subtraction ``-``, multiplication ``*``, division ``/``
 #     and exponentiation ``**``.
 
-#   - *Booleans* and the logical operations of conjunction (``and``),
+#   - *Boolean* and the logical operations of conjunction (``and``),
 #     disjunction (``or``) and negation (``not``).
 
 #   - *Lists* and the ``append()`` method to add elements to lists,
@@ -130,7 +131,7 @@ from ptlp import pl  # import pl() function to print line numbers
 # you enclose the relevant text in double quotes. For example, if you
 # want to define a string with the text ``a string defined with double
 # quotes`` you enclose the text in double quotes and the Python
-# interpreter will recognise it as a *string literal expression* and
+# interpreter will recognize it as a *string literal expression* and
 # create an object of type ``str``. The following is an example of a
 # string literal expression defined with double quotes,
 
@@ -154,7 +155,7 @@ from ptlp import pl  # import pl() function to print line numbers
 "foo"; "bar"
 
 # The last expression "bar" does not need to end in a semicolon
-# because the interpreter recognises the new line character as the
+# because the interpreter recognizes the new line character as the
 # end of the expression.
 
 # The statements above don't have any useful side effects such as
@@ -1317,7 +1318,7 @@ for item in x:
 # ``x``. At the start of each iteration it gets the *next* element in
 # the list and binds it to the identifier ``item``, it then executes
 # the call to ``print(item)``.  This process of iteration stops when
-# the attempt to get the *next* element returns no element, signalling
+# the attempt to get the *next* element returns no element, signaling
 # the end of the list. Once the string ``"gnu"``, the last string in
 # the list, is printed, the attempt to get the next element signals
 # end of list and the ``for`` loop ends.
@@ -1359,7 +1360,7 @@ for item in x:
 #  IndentationError: expected an indented block
 
 # The size of indentation does not matter but it must be consistent
-# throughtout the same program.
+# throughout the same program.
 
 # In the example above the statement group associated with the ``for``
 # loop contains only one statement, the call to ``print()``.
@@ -1468,7 +1469,7 @@ for letter in letters:
 # whether the expression ``letter.isupper()`` evaluates to ``True`` or
 # ``False``. If the expression evaluates to ``True`` the function call
 # ``print(letter)`` is executed. If it evaluates to ``False`` the
-# ``if`` statement ends and executation continues with the next
+# ``if`` statement ends and execution continues with the next
 # iteration of the ``for`` loop.
 
 # The ``if`` statement consists of two parts, the statement header and
@@ -1481,7 +1482,7 @@ for letter in letters:
 # expression is ``letter.isupper()``.
 
 # The header line is followed by the group of statements to be
-# executed if the condional expression evaluates to True. In the
+# executed if the conditional expression evaluates to True. In the
 # simple example above there is one statement in the group,
 # ``print(letter)``, usually there would be more than one. It is very
 # important to understand that the group of statements to be
@@ -1504,7 +1505,7 @@ for letter in letters:
 
 # *Any* other value is interpreted as ``True``. Of course if the
 # conditional expression is a Boolean expression there is no need for
-# any intepretation because the result *is* a Boolean value. Let's
+# any interpretation because the result *is* a Boolean value. Let's
 # illustrate this point with an example. Suppose you have the
 # following list,
 
@@ -1517,7 +1518,7 @@ x = ['', "", 0, 0.0, [], None, "foo"]
 # string "foo" which would be interpreted as ``True``. In the
 # following code sample a ``for`` loop iterates over the elements in
 # ``x`` and an ``if`` statement tests each the value of each element
-# and only prints it when the value is intepreted as ``True``, so only
+# and only prints it when the value is interpreted as ``True``, so only
 # the string "foo" is printed,
 
 # ::
@@ -1550,7 +1551,7 @@ for item in x:
 # The following code implements the example above using a conditional
 # expression that tests whether ``n`` is even. If the condition is
 # ``True`` the statement to count the number of even elements in the
-# list is excecuted.  If the condition is ``False`` the statement
+# list is executed.  If the condition is ``False`` the statement
 # after the ``else`` clause is executed to count the number of odd
 # elements,
 
@@ -1718,27 +1719,364 @@ print("freq2 =", freq2, "freq =", freq)
 
 # A Python program may be syntactically valid and generate no parsing
 # errors but it can still generate a run-time error during its
-# execution and terminate abnormally as a result. A *run-time* error
-# is an exceptional condition encountered by a program during program
-# execution and preventing its normal termination. An *exceptional
-# condition* is a condition that is an *exception* to the normal
-# conditions expected by the program during execution. Suppose for
-# example that, during a normal run, a program expects a specific file
-# to exist so it can read the data it was designed to process.  If the
-# file does not exist the program can't run to normal completion and
-# has to terminate abnormally.
+# execution and terminate abnormally as a result.  A *run-time* error
+# is an exceptional condition that a program encounters during its
+# execution and that prevents its normal termination.  An *exceptional
+# condition* is an exception to the normal conditions expected by the
+# program during execution.
+
+# For example, suppose that during a normal run a program expects a
+# specific file to exist so it can read the data it was designed to
+# process.  If the program attempts to read the file and the file
+# doesn't exist, then the program has encountered an exceptional
+# condition that prevents it from terminating normally.  We can
+# identify this type of exceptional condition as a *file not found*
+# exception and describe the program's failure by saying that it
+# failed with a *file not found* exception.
 
 # A well-designed program must have a predefined mechanism for
-# handling such exceptional conditions. One simple mechanism is to
-# exit the program with an application defined return code indicating
-# the type of error. However, most modern programming languages,
-# including Python, have an elegant mechanism specifically designed to
-# handle exceptional conditions. It is called, not surprisingly,
-# *exception handling*. This section provides an introduction to the
-# topic of exception handling, more of its features will be examined
-# in a later script.
+# handling such exceptions.  One simple mechanism is to exit the
+# program with an application defined return code indicating the type
+# of error.  However, most modern programming languages, including
+# Python, have an elegant mechanism specifically designed to handle
+# exceptions.  It is called, not surprisingly, *exception handling*.
+# This section provides a brief introduction to the topic of
+# exceptions and exception handling, more of its features will be
+# examined in a later script.
 
+# At a general level, an exception handling mechanism must provide
+# three important features.  First, it must provide a way of
+# *representing* exceptions.  Once a program detects an exception it
+# must be able to define the type of exception that occurred, such as
+# *file not found*, as well as the details specific to the particular
+# occurrence of the exception, for example *failed to read file
+# 'foo'*.
 
+# The second feature is the ability to initiate the exception handling
+# process.  Once a program has detected and defined the type of
+# exception and its contextual details it must be able to initiate the
+# process of exception handling for the defined exception.  Initiating
+# the process of handling an exception is called *raising* or
+# *throwing* an exception. For example, once a program creates a
+# representation of a *file not found* exception it needs to *raise*
+# the exception using that representation.
+
+# The third feature is the ability to relate normal logic code with
+# exception handling code.  The exception handling mechanism must
+# provide a way to relate the normal logic code that can potentially
+# raise an exception to the exception handling code that can handle
+# the exception.  The code that is invoked to handle an exception is
+# called an *exception handler*.  The code that can potentially raise
+# an exception is often referred to as the *try* code because it
+# *tries* to execute normal program logic.  When the *try* code
+# detects and raises an exception the exception handling mechanism is
+# responsible for making sure that the right exception handler is
+# invoked to processes the exception.
+
+# Let's use an example to illustrate how these features are
+# implemented in Python.  Suppose we need to write a program that
+# reads a file named ``foo``.  If the file ``foo`` does not exist the
+# program should invoke the exception handling mechanism for the error
+# condition *file not found*, including the error message "failed to
+# read file 'foo'".  To write this program we first need to know how
+# to define the exception *file not found* in the Python language and
+# how to represent a particular occurrence of that exception which
+# includes the message "failed to read file 'foo'".
+
+# In the Python language a type of exception is defined as a *class*
+# and a particular occurrence of that type of exception is represented
+# by an *instance* of that class.  Python classes will be covered
+# later but for now it is sufficient to think of classes as a language
+# feature that allows you to define a new data type to represent,
+# among other things, a concept such as 'type of exception'.  Once you
+# define a class to represent a type of exception you can create
+# instances of the class to represent the different *occurrences* of
+# that exception type.
+
+# For example, to represent the type of exception we have described so
+# far as *file not found*, Python defines a class named
+# ``FileNotFoundError``.  To represent a particular occurrence of
+# *file not found* you create an instance of class
+# ``FileNotFoundError``.  You create instances of a class using the
+# class constructor which is the name of the class followed by
+# parentheses. For example, to create an instance of the exception
+# class ``FileNotFoundError`` you would write,
+
+# ::
+
+#: Create an instance of exception class
+#: FileNotFoundError and bind it to 'e'.
+e = FileNotFoundError()
+
+# The function call expression above invokes the class constructor for
+# exception class ``FileNotFoundError`` and returns an object of that
+# type.  You can pass a string argument to the constructor of an
+# exception class to include an error message relevant to the specific
+# occurrence of the exception.  For example, to create an instance of
+# ``FileNotFoundError`` that includes the error message "Failed to
+# read file 'foo'" you would write,
+
+# ::
+
+pl()
+
+#: Create an instance of exception class
+#: including an error message.
+e = FileNotFoundError("Failed to read file 'foo'.")
+
+#: Printing the exception object
+#: prints the error message included.
+print(e)
+
+# The default action when printing an exception object is to print the
+# error message, if one is included.
+
+# Now that we know how to represent an occurrence of the error
+# condition *file not found*, we can turn our attention to the way our
+# program can invoke exception handling using that representation.  In
+# the Python language you invoke exception handling using the
+# ``raise`` statement with an instance of the relevant exception class
+# as argument.  For example, at the point in our program where the
+# error condition *file not found* is detected we would write,
+
+# ::
+
+#    raise FileNotFoundError()
+
+# When the exception class constructor is invoked without any
+# arguments, as in the example above, you can omit the parentheses.
+# In that case the ``raise`` statement itself will issue the call to
+# the constructor to create an instance of the exception. The
+# following statement is equivalent to the statement above,
+
+# ::
+
+#    raise FileNotFoundError
+
+# Our example program requires including an error message in the
+# exception object.  The following statement raises an exception with
+# an instance of ``FileNotFoundError`` that includes the required
+# error message,
+
+# ::
+
+#    raise FileNotFoundError("Failed to read file 'foo'.")
+
+# The purpose of raising an exception is to invoke an exception
+# handler to process the error condition appropriately.  Returning to
+# our example, suppose we want to write an initial version of our
+# exception handler that handles the *file not found* error condition
+# by simply printing the error message included in the exception
+# object.  How do we specify in our code that raising the
+# ``FileNotFoundError`` exception should invoke our exception handler?
+# In other words, we need a way of specifying that the code that
+# raises an exception should have that exception handled by a
+# particular exception handler.
+
+# In Python you use the ``try`` statement to establish this
+# relationship between *exception raising* code and *exception
+# handling* code.  The ``try`` statement has a ``try`` clause and an
+# ``except`` clause.  You use the ``try`` clause to define the group
+# of statements that can potentially raise a given type of exception
+# and the ``except`` clause to define the code that should be invoked
+# to handle that type of exception.  Turning back to our example once
+# again, the code that can potentially raise ``FileNotFoundError`` is
+# enclosed in a ``try`` clause and the code that is invoked when that
+# exception is raised is enclosed in an ``except`` clause, as shown in
+# the following snippet,
+
+# ::
+
+try:
+    raise FileNotFoundError("Failed to read file 'foo'.")
+except FileNotFoundError as e:
+    print(e)
+
+# Let's examine the code above in more detail.  The ``try`` clause
+# defines the group of statements that can potentially raise a
+# ``FileNotFoundError`` exception and have that exception handled by
+# the group of statements defined in the ``except`` clause.  The
+# ``try`` clause encloses the code that runs during normal execution.
+# Normal execution stops at the point the program issues the ``raise``
+# statement and control passes to the exception handling mechanism.
+# The exception handling mechanism invokes the code enclosed in the
+# ``except`` clause if the class name stated after the ``except``
+# keyword matches the class of the exception used in the ``raise``
+# statement, the class ``FileNotFoundError`` in the example above.
+
+# If the class of the raised exception does not match the class stated
+# in the ``except`` clause, the code enclosed by the ``except`` clause
+# is not run.  In that case the exception handling system will attempt
+# to find a match in the except clause of any enclosing try
+# statements.  In our simple example there are no further enclosing
+# try statements so the exception would not be handled by the
+# program. In that case the exception is ultimately handled by the
+# Python interpreter which terminates the script and prints a stack
+# traceback.
+
+# In our example the code to handle the ``FileNotFoundError``
+# exception is simply a statement to print the error message included
+# in the exception object.  An exception handler would normally
+# include other code to handle the ``FileNotFoundError`` error
+# condition, such as releasing any resources before ending.
+
+# If an exception handler needs to refer to the instance of the
+# exception that was used to invoke it, you can use the ``as`` keyword
+# followed by a name to bind the name to the exception object.  In the
+# example above an the of ``FileNotFoundError`` used to invoke the
+# exception handler is bound to the name ``e`` which is then used in
+# the print statement.
+
+# It's important to realize that the code that raises an exception
+# does not necessarily reside in the script that handles the
+# exception.  In most cases it resides in one of Python's built-in
+# functions, in a module from Python's standard library, a third party
+# module or another module in the same application. For example, a
+# program would normally call the built-in function ``open()`` to open
+# a file it needs to read. If the file does not exist it is the
+# ``open()`` function that raises the ``FileNotFoundError`` exception
+# rather than the program. The program's code is responsible for
+# *protecting* the call to ``open()`` if it raises the
+# ``FileNotFoundError`` exception by catching and handling it using
+# the ``try except`` statement, as shown in the following snippet,
+
+# ::
+
+pl()
+
+try:
+    f = open("foo", 'r')
+except FileNotFoundError as e:
+    print(e)
+
+# The exception class ``FileNotFoundError`` which we have been using
+# to illustrate exception handling is just one example of the many
+# predefined exception classes in Python. Python's `built-in exception
+# classes`_ are used by the Python interpreter and Python's built-in
+# functions to represent the types of exceptional conditions they may
+# encounter.
+
+# Three common run-time errors when writing a script, see `Concrete
+# exceptions`_.
+
+# ``TypeError`` - raised when applying an operation to operands of
+# inappropriate types,
+
+# ::
+
+try:
+    1 < "2"
+except TypeError as e:
+    print(e)
+
+# ``NameError`` - raised when attempting to use a name that is not
+# bound to an object,
+
+# ::
+
+pl()
+
+try:
+    x = unbound_name
+except NameError as e:
+    print(e)
+
+# ``IndexError`` - raised when applying an index operation with an
+# index that is out of range,
+
+# ::
+
+pl()
+
+try:
+    alist = ["a"]
+    x = alist[1]
+except IndexError as e:
+    print(e)
+
+# Two common syntax errors when learning Python are ``SyntaxError``,
+# ``IndentationError``, see `Concrete exceptions`_.
+
+# Note: syntax errors caused by code in a script can't be caught using
+# a try except statement within the same script. This is because
+# Python first parses the whole file to find syntax errors before
+# executing the script. Therefore a syntax error, in this situation,
+# is not strictly speaking a run-time error. When the interpreter
+# finds a syntax error it stops parsing and displays an error message.
+
+# For example, a syntax error in a script is an exceptional condition
+# from the perspective of the Python interpreter which prevents it
+# from successfully executing the script. When the interpreter detects
+# a syntax error when parsing a script it represents it using the
+# built-in exception class ``SyntaxError`` and raises an exception
+# with an instance of that class.
+
+# In addition to built-in exception classes Python provides the ability
+# for scripts to define their own application specific exception
+# classes by extending the base class ``Exception``, a topic that will
+# be covered later. However, it is possible for a script to reuse a
+# built-in exception class if it describes the type of exceptional
+# condition it needs to handle, as we did above in our example program
+# with the class ``FileNotFoundError``.
+
+# The assert statement
+# --------------------
+
+# The last language feature we introduce as part of Minimal Python is
+# the ``assert`` statement.
+
+# + it is useful when debugging a script.
+
+# + It is essential when writing test scripts.
+
+# + It provides a convenient way to demonstrate that an example of
+#   Python code produces the expected result without having to resort
+#   to printing.
+
+# The general form of the ``assert`` statement is,
+
+# ::
+
+#    assert expression
+
+# Where the result of ``expression`` is interpreted as a Boolean
+# value.  If the expression is ``True`` no action is taken and the
+# program continues normal execution.  If the ``expression`` is
+# ``False`` the interpreter raises an ``AssertionError`` exception and
+# stops program execution unless the exception is handled.
+
+# The following trivial example has no effect and the script continues
+# as normal,
+
+# ::
+
+assert True
+
+# The following example causes an ``AssertionError``,
+
+# ::
+
+try:
+    assert False
+except AssertionError:
+    pass
+
+# In the following example the ``assert`` statement is used to confirm
+# that two empty list literals produce distinct objects of type
+# ``list``, that the numeric literals ``1`` and ``1.0`` also produce
+# distinct objects but the values they represent are equal,
+
+# ::
+
+#: confirm distinct objects
+assert [] is not []
+assert 1 is not 1.0
+
+#: confirm equal values
+assert 1 == 1.0
+
+# If any of these assertion were wrong the script would terminate
+# abnormally with an ``AssertionError``.
 
 # References
 # ----------
@@ -1750,3 +2088,7 @@ print("freq2 =", freq2, "freq =", freq)
 # .. _Language Reference: https://docs.python.org/3.7/reference/index.html
 # .. _Standard Library: https://docs.python.org/3.7/library/index.html
 # .. _Python Tutorial: https://docs.python.org/3.7/tutorial/index.html
+
+# .. The following are cited in the text:
+# .. _Built-in exception classes: https://docs.python.org/3.7/html/library/exceptions.html
+# .. _Concrete exceptions: https://docs.python.org/3.7/html/library/exceptions.html#concrete-exceptions
