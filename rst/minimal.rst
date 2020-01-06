@@ -1,18 +1,10 @@
 Minimal Python
 ==============
 
-| `Preamble`_
-| `Defining and printing strings`_
-| `Variables and assignment`_
-| `Introduction to numeric types`_
-| `Logical values and operations`_
-| `Introduction to lists`_
-| `Comparison operations`_
-| `The for statement`_
-| `The if statement`_
-| `Introduction to exceptions`_
-| `The assert statement`_
-| `References`_
+.. contents::
+   :local:
+   :depth: 1
+   :backlinks: none
 
 Preamble
 --------
@@ -86,7 +78,6 @@ Minimal Python includes the following language elements:
 These topics will, of course, be covered in more detail in later
 scripts.
 
-
 Defining and printing strings
 -----------------------------
 
@@ -110,7 +101,11 @@ line from the first ``#`` character to the end of the line is
 ignored by the interpreter. There are no multi-line comment
 delimiters like ``/*`` and ``*/`` in C and other languages. Each
 line of a multi-line comment must start with a ``#`` character. The
-following are examples of comments, ::
+following are examples of comments,
+
+::
+
+    # Example 1:
 
     # Everything after the first # character is a comment.
 
@@ -136,6 +131,8 @@ string literal expression defined with double quotes,
 
 ::
 
+    # Example 2:
+
     # A string literal defined with double quotes.
     "a string defined with double quotes"
 
@@ -150,6 +147,8 @@ you want to write them on the same line. For example, you can write
 the string expressions ``"foo"`` and ``"bar"`` in one line of code,
 
 ::
+
+    # Example 3:
 
     "foo"; "bar"
 
@@ -175,6 +174,7 @@ statements end with a new line character and not a semicolon,
 
 ::
 
+    # Example 4:
 
     # Print a string to stdout.
     print("a string defined with double quotes")
@@ -193,6 +193,7 @@ different separators,
 
 ::
 
+    # Example 5:
 
     # Don't separate printed arguments
     # so they are printed contiguously.
@@ -212,6 +213,7 @@ doesn't contain a new line character,
 
 ::
 
+    # Example 6:
 
     # Don't end printed line with a new line
     # so next call to print() will print
@@ -234,6 +236,7 @@ the resulting string object,
 
 ::
 
+    # Example 7:
 
     # Concatenate strings with + operator.
     print("you can" + " add strings " + "using the + operator")
@@ -253,6 +256,7 @@ function,
 
 ::
 
+    # Example 8:
 
     # Print length of null string.
     print(len(""))
@@ -270,6 +274,7 @@ above for double quoted strings,
 
 ::
 
+    # Example 9:
 
     # Define null string with single quotes.
     print('')
@@ -295,6 +300,7 @@ double *and* single quoted strings,
 
 ::
 
+    # Example 10:
 
     # New line '\n' character in double quoted string.
     print("line1\nline2")
@@ -314,6 +320,7 @@ quoted string, as shown in the following example,
 
 ::
 
+    # Example 11:
 
     # Escape double quotes in double quoted string.
     print("\"using double quotes in double quoted string\"")
@@ -339,6 +346,8 @@ following sample code,
 
 ::
 
+    # Example 12:
+
     # This assignment statement associates
     # the name 'x' with string object "foo".
     x = "foo"
@@ -356,6 +365,7 @@ name ``x``,
 
 ::
 
+    # Example 13:
 
     # Print string "foo".
     print("x =", x)
@@ -394,6 +404,7 @@ to the string ``"bar"`` as shown in the following code,
 
 ::
 
+    # Example 14:
 
     # Bind x to string "foo".
     x = "foo"
@@ -429,6 +440,8 @@ integer literal expressions,
 
 ::
 
+    # Example 15:
+
     # Positive integer literal expressions.
     0; 3; 99
 
@@ -438,6 +451,8 @@ negative thirteen is written as ``-13`` or ``- 13``. The following
 are examples of negative integer literal expressions,
 
 ::
+
+    # Example 16:
 
     # Negative integer literal expressions.
     -99; -3
@@ -453,6 +468,8 @@ snippet shows examples of positive float literal expressions,
 
 ::
 
+    # Example 17:
+
     # Positive float literal expressions.
     0.0; 0.5; 2.718
 
@@ -462,6 +479,8 @@ instance, negative *pi* is written as ``-3.14`` or ``- 3.14``. The
 following are examples of negative float literal expressions,
 
 ::
+
+    # Example 18:
 
     # Negative float literal expressions.
     -2.718; -0.5; -0.01
@@ -473,6 +492,7 @@ examples of printing integer and float literal expressions,
 
 ::
 
+    # Example 19:
 
     # Print integers.
     print(0, 1, 2, 3, 99)
@@ -490,6 +510,7 @@ rebind ``x`` to the floating point number ``3.14`` you write ``x =
 
 ::
 
+    # Example 20:
 
     # Bind x to 0 and y to 99.
     x = 0
@@ -515,6 +536,7 @@ produce,
 
 ::
 
+    # Example 21:
 
     # All operands are integers so
     # the result is integer.
@@ -545,6 +567,7 @@ expression,
 
 ::
 
+    # Example 22:
 
     # Define some initial values.
     x = 2; y = 3; z = 4
@@ -560,6 +583,7 @@ It is equivalent to the following expression which uses parentheses,
 
 ::
 
+    # Example 23:
 
     # Using parentheses makes computational
     # intent more clear.
@@ -596,6 +620,8 @@ two possible truth values,
 
 ::
 
+    # Example 24:
+
     # Create an object of type 'bool'
     # with the value True.
     True
@@ -610,6 +636,7 @@ to the strings ``"True"`` and ``"False"``,
 
 ::
 
+    # Example 25:
 
     # Print Boolean values.
     print(True, False)
@@ -621,6 +648,7 @@ to ``False`` and ``True``,
 
 ::
 
+    # Example 26:
 
     # Bind x to True and y to False.
     x = True
@@ -639,6 +667,7 @@ prints the truth table for the ``and`` operation,
 
 ::
 
+    # Example 27:
 
     # Truth table for 'and' operation.
     print(True and True)
@@ -652,6 +681,7 @@ operator. The following sample code prints the truth table for the
 
 ::
 
+    # Example 28:
 
     # Truth table for 'or' operation.
     print(True or True)
@@ -664,6 +694,7 @@ sample code prints the truth table for the ``not`` operation,
 
 ::
 
+    # Example 29:
 
     # Truth table for 'not' operation.
     print(not True)
@@ -690,6 +721,8 @@ is, lists in which all elements are of the same type,
 
 ::
 
+    # Example 30:
+
     # Define an empty list.
     []
 
@@ -710,6 +743,8 @@ that is, lists that contain elements of different types,
 
 ::
 
+    # Example 31:
+
     # A list of integers, floats and strings.
     [1, "1", 2.0, "2.0", 3, "3"]
 
@@ -722,6 +757,7 @@ following example,
 
 ::
 
+    # Example 32:
 
     # Print the empty list.
     print([])
@@ -747,6 +783,7 @@ shows other examples,
 
 ::
 
+    # Example 33:
 
     # Bind x to the empty list.
     x = []
@@ -760,6 +797,8 @@ shows other examples,
     x = [[], [1], [1, 2]]
     print(x)
 
+.. rubric:: Determining the length of a list
+
 To determine the number of elements in a list you use the built-in
 function ``len()`` which we introduced in the section on
 strings. Suppose ``x`` is bound to list object ``[1, 2, 3]``, then
@@ -769,6 +808,7 @@ function,
 
 ::
 
+    # Example 34:
 
     # Print length of empty list.
     print(len([]))
@@ -791,12 +831,15 @@ of a list as in the following example,
 
 ::
 
+    # Example 35:
 
     # A list x.
     x = [1, 2, 3]
 
     # Print last element of x.
     print(x[len(x) - 1])
+
+.. rubric:: Operations on lists
 
 Let's now consider three operations you can perform on list objects,
 concatenation, referencing its elements and adding elements to
@@ -809,6 +852,7 @@ list concatenation,
 
 ::
 
+    # Example 36:
 
     # Concatenate multiple lists.
     x = [1] + [2, 3] + [4, 5] + [6]
@@ -840,6 +884,7 @@ snippet shows some examples of referencing list elements,
 
 ::
 
+    # Example 37:
 
     # A list x.
     x = ["foo", "bar", "gnu"]
@@ -869,6 +914,7 @@ following code provides more examples,
 
 ::
 
+    # Example 38:
 
     # Start with an empty list x.
     x = []
@@ -928,6 +974,7 @@ result,
 
 ::
 
+    # Example 39:
 
     # Equality evaluates to True,
     # 1 and 1.0 represent the same value.
@@ -949,6 +996,7 @@ confirmed in the following code,
 
 ::
 
+    # Example 40:
 
     # Equality evaluates to True,
     # both operands represent the 'empty list'.
@@ -963,6 +1011,7 @@ following code,
 
 ::
 
+    # Example 41:
 
     # Equality evaluates to True,
     # the values represented are equal.
@@ -985,6 +1034,7 @@ represent the same value,
 
 ::
 
+    # Example 42:
 
     # int and str
     print(1 == "1")
@@ -1018,6 +1068,7 @@ objects are equal,
 
 ::
 
+    # Example 43:
 
     # Equality evaluates to True,
     # int and float objects both represent 0.
@@ -1033,6 +1084,7 @@ equality expressions evaluate to True,
 
 ::
 
+    # Example 44:
 
     # Equality evaluates to True,
     # True and 1 are considered the same value.
@@ -1053,6 +1105,7 @@ equality of arithmetic. The following equality expressions with
 
 ::
 
+    # Example 45:
 
     # Both operands are int.
     print(1 == 2 - 1)
@@ -1075,6 +1128,7 @@ evaluate to ``True``,
 
 ::
 
+    # Example 46:
 
     # String equality expressions that evaluate to True.
     print("" == '')
@@ -1089,6 +1143,7 @@ examples of list equality expressions,
 
 ::
 
+    # Example 47:
 
     # Expressions that evaluate to True.
     print([1] == [1])
@@ -1120,10 +1175,12 @@ For example, when the interpreter encounters the expression ``1 <
 
 ::
 
- Traceback (most recent call last):
-   File "myscript.py", line 10, in <module>
-     1 < [1]
- TypeError: '<' not supported between instances of 'int' and 'list'
+    # Example 48:
+
+    #  Traceback (most recent call last):
+    #    File "myscript.py", line 10, in <module>
+    #      1 < [1]
+    #  TypeError: '<' not supported between instances of 'int' and 'list'
 
 The fourth line indicates the class of error, ``TypeError``,
 followed by a very precise explanatory message.
@@ -1137,6 +1194,7 @@ arithmetic. The following are some examples of numeric inequalities,
 
 ::
 
+    # Example 49:
 
     # Some numeric inequalities
     # that evaluate to True.
@@ -1151,6 +1209,7 @@ operands,
 
 ::
 
+    # Example 50:
 
     # Some string inequalities
     # that evaluate to True.
@@ -1175,10 +1234,12 @@ generates the following error,
 
 ::
 
- Traceback (most recent call last):
-   File "myscript.py", line 10, in <module>
-     print([1] < ["a"])
- TypeError: '<' not supported between instances of 'int' and 'str'
+    # Example 51:
+
+    #  Traceback (most recent call last):
+    #    File "myscript.py", line 10, in <module>
+    #      print([1] < ["a"])
+    #  TypeError: '<' not supported between instances of 'int' and 'str'
 
 In some cases the comparison expression is resolved before elements
 of different type are compared and no run time error is generated,
@@ -1186,6 +1247,7 @@ as shown in the following example,
 
 ::
 
+    # Example 52:
 
     # evaluates to True
     print([1] < [2, "a"])
@@ -1208,6 +1270,7 @@ case,
 
 ::
 
+    # Example 53:
 
     # Evaluates to True
     # because 2 < 3 is True.
@@ -1230,6 +1293,7 @@ illustrate these cases,
 
 ::
 
+    # Example 54:
 
     # Evaluates to True
     # empty list less than non-empty list.
@@ -1260,6 +1324,7 @@ would accomplish that task,
 
 ::
 
+    # Example 55:
 
     # A list of strings.
     x = ["foo", "bar", "gnu"]
@@ -1303,18 +1368,22 @@ example above without indentation as in the following code,
 
 ::
 
- for item in x:
- print(item)
+    # Example 56:
+
+    #  for item in x:
+    #  print(item)
 
 When the Python interpreter encounters this statement it generates
 an ``IndentationError`` and displays the following information,
 
 ::
 
-   File "myscript.py", line 10
-     print(item)
-         ^
- IndentationError: expected an indented block
+    # Example 57:
+
+    #    File "myscript.py", line 10
+    #      print(item)
+    #          ^
+    #  IndentationError: expected an indented block
 
 The size of indentation does not matter but it must be consistent
 throughout the same program.
@@ -1330,6 +1399,7 @@ all elements printed up to the current iteration. The following
 
 ::
 
+    # Example 58:
 
     # A list of strings.
     x = ["foo", "bar", "gnu"]
@@ -1349,6 +1419,7 @@ The following example uses a string as the iterable object in the
 
 ::
 
+    # Example 59:
 
     # a string
     s = "abcdef"
@@ -1364,6 +1435,7 @@ for loop, as show in the following example,
 
 ::
 
+    # Example 60:
 
     # You can use a literal expression
     # for the iterable object in 'for' loop.
@@ -1379,6 +1451,7 @@ nested for loops.
 
 ::
 
+    # Example 61:
 
     # Two lists of strings.
     x = ["a", "b"]
@@ -1405,6 +1478,7 @@ test is ``True``. The following code implements this example,
 
 ::
 
+    # Example 62:
 
     # A list of letters.
     letters = ["a", "B", "c", "D"]
@@ -1463,6 +1537,8 @@ following list,
 
 ::
 
+    # Example 63:
+
     x = ['', "", 0, 0.0, [], None, "foo"]
 
 According to the above rule all the values in ``x`` would be
@@ -1475,6 +1551,7 @@ the string "foo" is printed,
 
 ::
 
+    # Example 64:
 
     # Iterates over list x defined above,
     # it only prints "foo" because all other
@@ -1508,6 +1585,7 @@ elements,
 
 ::
 
+    # Example 65:
 
     # A list of integers.
     x = [2, 5, 4, -1, 3]
@@ -1543,6 +1621,7 @@ alternative solution,
 
 ::
 
+    # Example 66:
 
     # A list of integers.
     x = [2, 5, 4, -1, 3]
@@ -1578,6 +1657,7 @@ statements, as shown in the following sample code,
 
 ::
 
+    # Example 67:
 
     # A list of strings.
     x = ["", "", "b", "ab", "cd", "ef", "foo"]
@@ -1625,6 +1705,7 @@ example above using ``elif`` clauses,
 
 ::
 
+    # Example 68:
 
     # A list of strings.
     x = ["", "", "b", "ab", "cd", "ef", "foo"]
@@ -1751,6 +1832,8 @@ class ``FileNotFoundError`` you would write,
 
 ::
 
+    # Example 69:
+
     # Create an instance of exception class
     # FileNotFoundError and bind it to 'e'.
     e = FileNotFoundError()
@@ -1765,6 +1848,7 @@ read file 'foo'" you would write,
 
 ::
 
+    # Example 70:
 
     # Create an instance of exception class
     # including an error message.
@@ -1787,7 +1871,9 @@ error condition *file not found* is detected we would write,
 
 ::
 
-   raise FileNotFoundError()
+    # Example 71:
+
+    #    raise FileNotFoundError()
 
 When the exception class constructor is invoked without any
 arguments, as in the example above, you can omit the parentheses.
@@ -1797,7 +1883,9 @@ following statement is equivalent to the statement above,
 
 ::
 
-   raise FileNotFoundError
+    # Example 72:
+
+    #    raise FileNotFoundError
 
 Our example program requires including an error message in the
 exception object.  The following statement raises an exception with
@@ -1806,7 +1894,9 @@ error message,
 
 ::
 
-   raise FileNotFoundError("Failed to read file 'foo'.")
+    # Example 73:
+
+    #    raise FileNotFoundError("Failed to read file 'foo'.")
 
 The purpose of raising an exception is to invoke an exception
 handler to process the error condition appropriately.  Returning to
@@ -1832,6 +1922,8 @@ exception is raised is enclosed in an ``except`` clause, as shown in
 the following snippet,
 
 ::
+
+    # Example 74:
 
     try:
         raise FileNotFoundError("Failed to read file 'foo'.")
@@ -1888,6 +1980,7 @@ the ``try except`` statement, as shown in the following snippet,
 
 ::
 
+    # Example 75:
 
     try:
         f = open("foo", 'r')
@@ -1909,6 +2002,8 @@ inappropriate types,
 
 ::
 
+    # Example 76:
+
     try:
         1 < "2"
     except TypeError as e:
@@ -1919,6 +2014,7 @@ bound to an object,
 
 ::
 
+    # Example 77:
 
     try:
         x = unbound_name
@@ -1930,6 +2026,7 @@ index that is out of range,
 
 ::
 
+    # Example 78:
 
     try:
         alist = ["a"]
@@ -1980,7 +2077,9 @@ The general form of the ``assert`` statement is,
 
 ::
 
-   assert expression
+    # Example 79:
+
+    #    assert expression
 
 Where the result of ``expression`` is interpreted as a Boolean
 value.  If the expression is ``True`` no action is taken and the
@@ -1993,11 +2092,15 @@ as normal,
 
 ::
 
+    # Example 80:
+
     assert True
 
 The following example causes an ``AssertionError``,
 
 ::
+
+    # Example 81:
 
     try:
         assert False
@@ -2010,6 +2113,8 @@ that two empty list literals produce distinct objects of type
 distinct objects but the values they represent are equal,
 
 ::
+
+    # Example 82:
 
     # confirm distinct objects
     assert [] is not []

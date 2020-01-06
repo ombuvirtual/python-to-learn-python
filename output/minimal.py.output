@@ -1,65 +1,60 @@
-
-example at line 179:
+Example 1:
+Example 2:
+Example 3:
+Example 4:
 a string defined with double quotes
 foo bar
 foo bar gnu
-
-example at line 198:
+Example 5:
 foobargnu
 foo-bar-gnu
 foo, bar, gnu
-
-example at line 218:
+Example 6:
 foobar
 foo-bar
 foo,
 bar
-
-example at line 241:
+Example 7:
 you can add strings using the + operator
-
-example at line 261:
+Example 8:
 0
 10
-
-example at line 279:
+Example 9:
 
 foo
 foo bar
 foobargnu
 9
-
-example at line 305:
+Example 10:
 line1
 line2
 	a tab character
 line1
 line2
 	a tab character
-
-example at line 325:
+Example 11:
 "using double quotes in double quoted string"
 'using single quotes in single quoted string'
-
-example at line 368:
+Example 12:
+Example 13:
 x = foo
 foobar
-
-example at line 407:
+Example 14:
 x = foo
 x = bar
-
-example at line 487:
+Example 15:
+Example 16:
+Example 17:
+Example 18:
+Example 19:
 0 1 2 3 99
 -99 -3 -2 -1
 0.0 0.01 0.5 2.718
 -2.718 -0.5 -0.01
-
-example at line 505:
+Example 20:
 0 99
 0.0 99.0
-
-example at line 531:
+Example 21:
 3
 2
 6
@@ -72,84 +67,69 @@ example at line 531:
 2.0
 1.5
 2.0
-
-example at line 562:
+Example 22:
 121.0
-
-example at line 578:
+Example 23:
 121.0
-
-example at line 629:
+Example 24:
+Example 25:
 True False
-
-example at line 641:
+Example 26:
 True False
 False True
-
-example at line 660:
+Example 27:
 True
 False
 False
 False
-
-example at line 674:
+Example 28:
 True
 True
 True
 False
-
-example at line 687:
+Example 29:
 False
 True
-
-example at line 746:
+Example 30:
+Example 31:
+Example 32:
 []
 ['a', 'b', 'c']
 [1, 2, 3]
 [[], [1], [1, 2]]
 [1, 3.14, 'foo', ['bar']]
-
-example at line 772:
+Example 33:
 []
 [0.01, 0.1, 1.0]
 [[], [1], [1, 2]]
-
-example at line 795:
+Example 34:
 0
 3
 [[], [1], [1, 2]]
 2
-
-example at line 818:
+Example 35:
 3
-
-example at line 837:
+Example 36:
 [1, 2, 3, 4, 5, 6]
 ['a', 'b', 'c', 'd', 'e', 'f']
 [1, 2]
-
-example at line 869:
+Example 37:
 foo
 bar
 gnu
 2
-
-example at line 899:
+Example 38:
 ['a', 'b', 'c', 'foo']
-
-example at line 959:
+Example 39:
 True
 False
-
-example at line 981:
+Example 40:
 True
 False
-
-example at line 996:
+Example 41:
 True
 False
-
-example at line 1019:
+Example 42:
 False
 False
 False
@@ -157,29 +137,24 @@ False
 False
 False
 False
-
-example at line 1053:
+Example 43:
 True
 True
-
-example at line 1069:
-True
-True
-True
-True
-
-example at line 1090:
-True
-True
-True
-
-example at line 1113:
+Example 44:
 True
 True
 True
 True
-
-example at line 1128:
+Example 45:
+True
+True
+True
+Example 46:
+True
+True
+True
+True
+Example 47:
 True
 True
 True
@@ -188,14 +163,13 @@ False
 False
 False
 False
-
-example at line 1177:
+Example 48:
+Example 49:
 True
 True
 True
 True
-
-example at line 1192:
+Example 50:
 True
 True
 True
@@ -203,35 +177,32 @@ True
 True
 True
 True
-
-example at line 1228:
+Example 51:
+Example 52:
 True
-
-example at line 1251:
+Example 53:
 True
 False
 False
-
-example at line 1274:
+Example 54:
 True
 True
 True
 False
-
-example at line 1305:
+Example 55:
 foo
 bar
 gnu
-
-example at line 1376:
+Example 56:
+Example 57:
+Example 58:
 foo
 foo
 bar
 bar
 gnu
 gnu
-
-example at line 1396:
+Example 59:
 a
 A
 b
@@ -244,49 +215,48 @@ e
 E
 f
 F
-
-example at line 1412:
+Example 60:
 1 1
 2 3
 3 6
-
-example at line 1428:
+Example 61:
 ac
 ad
 bc
 bd
-
-example at line 1455:
+Example 62:
 B
 D
-
-example at line 1526:
+Example 63:
+Example 64:
 foo
-
-example at line 1560:
+Example 65:
 even = 2 odd = 3
-
-example at line 1596:
+Example 66:
 even = 2 odd = 3
-
-example at line 1632:
+Example 67:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
-
-example at line 1680:
+Example 68:
 freq0 = 2 freq1 = 1
 freq2 = 3 freq = 1
-
-example at line 1821:
+Example 69:
+Example 70:
 Failed to read file 'foo'.
+Example 71:
+Example 72:
+Example 73:
+Example 74:
 Failed to read file 'foo'.
-
-example at line 1945:
+Example 75:
 [Errno 2] No such file or directory: 'foo'
+Example 76:
 '<' not supported between instances of 'int' and 'str'
-
-example at line 1977:
+Example 77:
 name 'unbound_name' is not defined
-
-example at line 1989:
+Example 78:
 list index out of range
+Example 79:
+Example 80:
+Example 81:
+Example 82:

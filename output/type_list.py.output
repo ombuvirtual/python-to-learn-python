@@ -1,0 +1,107 @@
+Example 1:
+Example 2:
+[1, 2, 3]
+<class 'list'>
+Example 3:
+[]
+Example 4:
+[1]
+Example 5:
+[5.830951894845301, 153.93804002589985]
+Example 6:
+['', 'a', 'bc']
+[(), (1,), (2, 3)]
+[[], [1], [2, 3]]
+Example 7:
+[0, 3.141592653589793, 'abc', ['a', 'b'], (1, 2)]
+Example 8:
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l']
+Example 9:
+Example 10:
+Example 11:
+Example 12:
+Example 13:
+Example 14:
+Example 15:
+Example 16:
+Example 17:
+Example 18:
+Example 19:
+Example 20:
+Example 21:
+Example 22:
+Example 23:
+Example 24:
+Example 25:
+Example 26:
+Example 27:
+Example 28:
+Example 29:
+list index out of range
+Example 30:
+Example 31:
+Example 32:
+Example 33:
+Example 34:
+Example 35:
+Example 36:
+Example 37:
+Example 38:
+TypeError '>' not supported between instances of 'str' and 'int'
+Example 39:
+ValueError max() arg is an empty sequence
+Example 40:
+Example 41:
+Example 42:
+Example 43:
+Example 44:
+ValueError 'd' is not in list
+Example 45:
+Example 46:
+Example 47:
+Example 48:
+Example 49:
+Example 50:
+Example 51:
+Example 52:
+Example 53:
+Example 54:
+Example 55:
+Example 56:
+Example 57:
+Example 58:
+Example 59:
+Example 60:
+Example 61:
+Example 62:
+Example 63:
+Example 64:
+ValueError list.remove(x): x not in list
+Example 65:
+Example 66:
+Example 67:
+Example 68:
+Example 69:
+Example 70:
+Example 71:
+Example 72:
+Example 73:
+Example 74:
+Example 75:
+Example 76:
+Example 77:
+Example 78:
+Example 79:
+Example 80:
+Example 81:
+Example 82:
+Example 83:
+Example 84:
+Example 85:
+Example 86:
+Example 87:
+Example 88:
+Example 89:
+Example 90:
+Example 91:
+Example 92:

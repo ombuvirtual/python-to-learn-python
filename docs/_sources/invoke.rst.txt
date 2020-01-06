@@ -15,16 +15,16 @@ line of Python code that issues a call to the built-in function
 passing its file name as an argument to the ``python`` command. The
 following shell commands accomplish these tasks, ::
 
-    # create myscript.py file and add a line
-    # of Python code to print a string
-    echo 'print("invoked with script filename")' > myscript.py
+: create myscript.py file and add a line
+: of Python code to print a string
+echo 'print("invoked with script filename")' > myscript.py
 
-    # print line number
-    echo "$LINENO"
+: print line number
+echo "$LINENO"
 
-    # run script by passing its filename
-    # as an argument to python command
-    python myscript.py
+: run script by passing its filename
+: as an argument to python command
+python myscript.py
 
 If your script accepts *command line arguments* you need to be able
 to do two things:
@@ -75,35 +75,35 @@ the script by referencing ``sys.argv[0]`` The third prints arguments
 script is then run with command line arguments ``foo`` and ``bar``,
 ::
 
-    # create myscript.py file and add a line
-    # of Python code to import sys module
-    echo 'import sys' > myscript.py
+: create myscript.py file and add a line
+: of Python code to import sys module
+echo 'import sys' > myscript.py
 
-    # add a line of code to print sys.argv[0],
-    # the name of the script
-    echo 'print("script name:", sys.argv[0])' >> myscript.py
+: add a line of code to print sys.argv[0],
+: the name of the script
+echo 'print("script name:", sys.argv[0])' >> myscript.py
 
-    # add a line of code to print sys.argv[1] and sys.argv[2]
-    # containing the first and second command line arguments
-    echo 'print("arguments:", sys.argv[1], sys.argv[2])' >> myscript.py
+: add a line of code to print sys.argv[1] and sys.argv[2]
+: containing the first and second command line arguments
+echo 'print("arguments:", sys.argv[1], sys.argv[2])' >> myscript.py
 
-    # print line number
-    echo "$LINENO"
+: print line number
+echo "$LINENO"
 
-    # invoke python to run myscript.py
-    # with arguments foo and bar
-    python myscript.py "foo" "bar"
+: invoke python to run myscript.py
+: with arguments foo and bar
+python myscript.py "foo" "bar"
 
 Accessing an argument by directly using its index into ``argv`` can
 fail if there is no argument with that index. Next we invoke
 ``myscript.py`` as defined above but this time *without* passing the
 arguments ``foo`` and ``bar`` that it expects, ::
 
-    # print line number
-    echo "$LINENO"
+: print line number
+echo "$LINENO"
 
-    # run myscript.py without expected arguments
-    python myscript.py 
+: run myscript.py without expected arguments
+python myscript.py 
 
 When the script runs the print statement references ``sys.argv[1]``
 but since there is no argument at index 1 the interpreter issues the
@@ -128,26 +128,26 @@ In the following example we create a new version of ``myscript.py``
 that prints each argument in ``argv`` using the Python statement
 above, ::
 
-    # create myscript.py file and add import statement
-    echo 'import sys' > myscript.py
+: create myscript.py file and add import statement
+echo 'import sys' > myscript.py
 
-    # add 'for' statement to print arguments safely
-    echo 'for item in sys.argv: print(item)' >> myscript.py
+: add 'for' statement to print arguments safely
+echo 'for item in sys.argv: print(item)' >> myscript.py
 
 When you invoke ``myscript.py`` with the two arguments ``foo`` and
 ``bar``, it first prints the name of the script in ``sys.argv[0]``
 and then the two arguments in ``argv[1]`` and ``argv[2]``, ::
 
-    # print line number
-    echo "$LINENO"
+: print line number
+echo "$LINENO"
 
-    # invoke myscript.py with arguments
-    python myscript.py "foo" "bar"
+: invoke myscript.py with arguments
+python myscript.py "foo" "bar"
 
 Now let's invoke ``myscript.py`` *without* any arguments, ::
 
-    # invoke myscript.py without arguments
-    python myscript.py
+: invoke myscript.py without arguments
+python myscript.py
 
 In this case ``myscript.py`` does not fail as before because the
 ``for`` statement only executes the line of code with the
@@ -183,20 +183,20 @@ code. In this simple example the source code consists of a single
 line of code, a call to the Python built-in function ``print()`` to
 print the string ``"invoked as a shell command"``, ::
 
-    # create myscript.sh file starting first line with '#!' to tell
-    # the system which interpreter to invoke to run the source code
-    echo "#! /usr/bin/python" > myscript.sh
+: create myscript.sh file starting first line with '#!' to tell
+: the system which interpreter to invoke to run the source code
+echo "#! /usr/bin/python" > myscript.sh
 
-    # add one line of Python code to print a string
-    echo 'print("invoked as a shell command")' >> myscript.sh
+: add one line of Python code to print a string
+echo 'print("invoked as a shell command")' >> myscript.sh
 
 We now have a script with the appropriate first line to invoke the
 Python interpreter. However, to run it as a shell command we must
 first make the script file executable. We can do that using the
 shell command ``chmod``, as showing in the following snippet, ::
 
-    # make script file executable
-    chmod u+x myscript.sh
+: make script file executable
+chmod u+x myscript.sh
 
 We can now run ``myscript.sh`` by specifying its path but without
 having to explicitly invoke the Python interpreter. If the script is
@@ -204,11 +204,11 @@ located in our current working directory then we can run it by
 entering its path ``./myscript.sh`` in the command line and pressing
 enter, ::
 
-    # print line number
-    echo "$LINENO"
+: print line number
+echo "$LINENO"
 
-    # run script in current working directory
-    ./myscript.sh
+: run script in current working directory
+./myscript.sh
 
 To be able to run the script without having to specify its path you
 have to place it in a directory that is in the shell's command

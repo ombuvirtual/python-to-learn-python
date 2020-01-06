@@ -7,11 +7,9 @@ early stage of development and not ready for general use. See the
 README.md file in the project's repository for details and status.
 
 .. _`Python to learn Python`: https://github.com/ombuvirtual/python-to-learn-python
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents
-   :name: masterdoc
+Table of Contents
+-----------------
 
-   introduction
-   minimal
-   type_list
+1. Introduction - ``introduction.rst``
+2. Minimal Python - ``minimal.rst``
+3. The ``list`` data type - ``type_list.rst``

@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Minimal Python &#8212; Python to learn Python 0 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Invoking Python" href="invoke.html" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The list data type" href="type_list.html" />
     <link rel="prev" title="Introduction" href="introduction.html" />
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -34,19 +34,21 @@
             
   <div class="section" id="minimal-python">
 <h1>Minimal Python<a class="headerlink" href="#minimal-python" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="#preamble">Preamble</a></div>
-<div class="line"><a class="reference internal" href="#defining-and-printing-strings">Defining and printing strings</a></div>
-<div class="line"><a class="reference internal" href="#variables-and-assignment">Variables and assignment</a></div>
-<div class="line"><a class="reference internal" href="#introduction-to-numeric-types">Introduction to numeric types</a></div>
-<div class="line"><a class="reference internal" href="#logical-values-and-operations">Logical values and operations</a></div>
-<div class="line"><a class="reference internal" href="#introduction-to-lists">Introduction to lists</a></div>
-<div class="line"><a class="reference internal" href="#comparison-operations">Comparison operations</a></div>
-<div class="line"><a class="reference internal" href="#the-for-statement">The for statement</a></div>
-<div class="line"><a class="reference internal" href="#the-if-statement">The if statement</a></div>
-<div class="line"><a class="reference internal" href="#introduction-to-exceptions">Introduction to exceptions</a></div>
-<div class="line"><a class="reference internal" href="#the-assert-statement">The assert statement</a></div>
-<div class="line"><a class="reference internal" href="#references">References</a></div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#preamble" id="id1">Preamble</a></p></li>
+<li><p><a class="reference internal" href="#defining-and-printing-strings" id="id2">Defining and printing strings</a></p></li>
+<li><p><a class="reference internal" href="#variables-and-assignment" id="id3">Variables and assignment</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-numeric-types" id="id4">Introduction to numeric types</a></p></li>
+<li><p><a class="reference internal" href="#logical-values-and-operations" id="id5">Logical values and operations</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-lists" id="id6">Introduction to lists</a></p></li>
+<li><p><a class="reference internal" href="#comparison-operations" id="id7">Comparison operations</a></p></li>
+<li><p><a class="reference internal" href="#the-for-statement" id="id8">The for statement</a></p></li>
+<li><p><a class="reference internal" href="#the-if-statement" id="id9">The if statement</a></p></li>
+<li><p><a class="reference internal" href="#introduction-to-exceptions" id="id10">Introduction to exceptions</a></p></li>
+<li><p><a class="reference internal" href="#the-assert-statement" id="id11">The assert statement</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id12">References</a></p></li>
+</ul>
 </div>
 <div class="section" id="preamble">
 <h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
@@ -132,7 +134,9 @@ ignored by the interpreter. There are no multi-line comment
 delimiters like <code class="docutils literal notranslate"><span class="pre">/*</span></code> and <code class="docutils literal notranslate"><span class="pre">*/</span></code> in C and other languages. Each
 line of a multi-line comment must start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> character. The
 following are examples of comments,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Everything after the first # character is a comment.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1:</span>
+
+<span class="c1"># Everything after the first # character is a comment.</span>
 
 <span class="c1"># Any # characters after the first are part of the comment.</span>
 
@@ -153,7 +157,9 @@ want to define a string with the text <code class="docutils literal notranslate"
 interpreter will recognize it as a <em>string literal expression</em> and
 create an object of type <code class="docutils literal notranslate"><span class="pre">str</span></code>. The following is an example of a
 string literal expression defined with double quotes,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A string literal defined with double quotes.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2:</span>
+
+<span class="c1"># A string literal defined with double quotes.</span>
 <span class="s2">&quot;a string defined with double quotes&quot;</span>
 </pre></div>
 </div>
@@ -165,7 +171,9 @@ semicolon but it is not required and is normally left out.</p>
 <p>However, you do need to use a semicolon to separate statements if
 you want to write them on the same line. For example, you can write
 the string expressions <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> in one line of code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;foo&quot;</span><span class="p">;</span> <span class="s2">&quot;bar&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 3:</span>
+
+<span class="s2">&quot;foo&quot;</span><span class="p">;</span> <span class="s2">&quot;bar&quot;</span>
 </pre></div>
 </div>
 <p>The last expression “bar” does not need to end in a semicolon
@@ -185,7 +193,9 @@ separates multiple arguments with a space and adds a new line
 character at the end.  The following example shows invocations of
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> with different number of arguments. Note again that the
 statements end with a new line character and not a semicolon,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print a string to stdout.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 4:</span>
+
+<span class="c1"># Print a string to stdout.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a string defined with double quotes&quot;</span><span class="p">)</span>
 
 <span class="c1"># Print two strings to stdout.</span>
@@ -200,7 +210,9 @@ with a string other than a single space. Use the keyword parameter
 <code class="docutils literal notranslate"><span class="pre">sep=</span></code> to specify what string to print between arguments. The
 following code prints the strings “foo”, “bar” and “gnu” using
 different separators,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t separate printed arguments</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 5:</span>
+
+<span class="c1"># Don&#39;t separate printed arguments</span>
 <span class="c1"># so they are printed contiguously.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
@@ -216,7 +228,9 @@ other than a single new line character. Use the keyword parameter
 <code class="docutils literal notranslate"><span class="pre">end=</span></code> to specify what string to print at the end of a line. The
 following code shows two examples of ending with a string that
 doesn’t contain a new line character,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Don&#39;t end printed line with a new line</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 6:</span>
+
+<span class="c1"># Don&#39;t end printed line with a new line</span>
 <span class="c1"># so next call to print() will print</span>
 <span class="c1"># on the same line in stdout.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
@@ -235,7 +249,9 @@ doesn’t contain a new line character,</p>
 of concatenating two or more strings using the addition <code class="docutils literal notranslate"><span class="pre">+</span></code>
 operator. The following code concatenates three strings and prints
 the resulting string object,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate strings with + operator.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 7:</span>
+
+<span class="c1"># Concatenate strings with + operator.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you can&quot;</span> <span class="o">+</span> <span class="s2">&quot; add strings &quot;</span> <span class="o">+</span> <span class="s2">&quot;using the + operator&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -250,7 +266,9 @@ section and lists discussed in a later section.</p>
 <code class="docutils literal notranslate"><span class="pre">len(&quot;abc&quot;)</span></code> returns 3, the number of characters in the
 string. The following are some examples of using the <code class="docutils literal notranslate"><span class="pre">len()</span></code>
 function,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print length of null string.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 8:</span>
+
+<span class="c1"># Print length of null string.</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">))</span>
 
 <span class="c1"># Print length of a string.</span>
@@ -264,7 +282,9 @@ literal expression ‘abc’ produces the same result as
 applies equally to single quoted strings. In the following examples
 single quotes are used to demonstrate the properties we discussed
 above for double quoted strings,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define null string with single quotes.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 9:</span>
+
+<span class="c1"># Define null string with single quotes.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># Define a string with single quotes.</span>
@@ -286,7 +306,9 @@ character</em> and can be used to insert non-printable characters such
 as tabs and new lines. For example, you can use the escape sequences
 <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> to insert tab and new line characters in both
 double <em>and</em> single quoted strings,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># New line &#39;\n&#39; character in double quoted string.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 10:</span>
+
+<span class="c1"># New line &#39;\n&#39; character in double quoted string.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;line1</span><span class="se">\n</span><span class="s2">line2&quot;</span><span class="p">)</span>
 
 <span class="c1"># Tab character &#39;\t&#39; in double quoted string.</span>
@@ -302,7 +324,9 @@ double <em>and</em> single quoted strings,</p>
 <p>You can also use the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> to escape double quotes
 within a double quoted string and single quotes within a single
 quoted string, as shown in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escape double quotes in double quoted string.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 11:</span>
+
+<span class="c1"># Escape double quotes in double quoted string.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">using double quotes in double quoted string</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># Escape single quotes in single quoted string.</span>
@@ -323,7 +347,9 @@ statements by referring to it using the name <code class="docutils literal notra
 associate the name <code class="docutils literal notranslate"><span class="pre">x</span></code> with the string object <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by making
 <code class="docutils literal notranslate"><span class="pre">x</span></code> the <em>target</em> of an <em>assignment statement</em>, as shown in the
 following sample code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This assignment statement associates</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 12:</span>
+
+<span class="c1"># This assignment statement associates</span>
 <span class="c1"># the name &#39;x&#39; with string object &quot;foo&quot;.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
 </pre></div>
@@ -337,7 +363,9 @@ does not require an ending semicolon.</p>
 can refer to the string <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by its name. The following calls
 to <code class="docutils literal notranslate"><span class="pre">print()</span></code> and concatenation operation refer to <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code> by its
 name <code class="docutils literal notranslate"><span class="pre">x</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print string &quot;foo&quot;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 13:</span>
+
+<span class="c1"># Print string &quot;foo&quot;.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 
 <span class="c1"># Concatenate string &quot;foo&quot; with</span>
@@ -369,7 +397,9 @@ the result of binding operations.</p>
 to a different object. For example, suppose you bind <code class="docutils literal notranslate"><span class="pre">x</span></code> to the
 string <code class="docutils literal notranslate"><span class="pre">&quot;foo&quot;</span></code>. You can at a later point in your code rebind <code class="docutils literal notranslate"><span class="pre">x</span></code>
 to the string <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code> as shown in the following code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bind x to string &quot;foo&quot;.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 14:</span>
+
+<span class="c1"># Bind x to string &quot;foo&quot;.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
 
 <span class="c1"># Refer to string &quot;foo&quot; using x.</span>
@@ -399,7 +429,9 @@ write the digits <code class="docutils literal notranslate"><span class="pre">13
 literal expression <code class="docutils literal notranslate"><span class="pre">13</span></code> it creates an object of type <code class="docutils literal notranslate"><span class="pre">int</span></code> that
 represents that number. The following are examples of positive
 integer literal expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Positive integer literal expressions.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 15:</span>
+
+<span class="c1"># Positive integer literal expressions.</span>
 <span class="mi">0</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">99</span>
 </pre></div>
 </div>
@@ -407,7 +439,9 @@ integer literal expressions,</p>
 operator to the positive integer literal expression. For instance,
 negative thirteen is written as <code class="docutils literal notranslate"><span class="pre">-13</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">13</span></code>. The following
 are examples of negative integer literal expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Negative integer literal expressions.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 16:</span>
+
+<span class="c1"># Negative integer literal expressions.</span>
 <span class="o">-</span><span class="mi">99</span><span class="p">;</span> <span class="o">-</span><span class="mi">3</span>
 </pre></div>
 </div>
@@ -419,7 +453,9 @@ places you simply write <code class="docutils literal notranslate"><span class="
 the floating point literal expression <code class="docutils literal notranslate"><span class="pre">3.14</span></code> it creates an object
 of type <code class="docutils literal notranslate"><span class="pre">float</span></code> that represents that number. The following code
 snippet shows examples of positive float literal expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Positive float literal expressions.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 17:</span>
+
+<span class="c1"># Positive float literal expressions.</span>
 <span class="mf">0.0</span><span class="p">;</span> <span class="mf">0.5</span><span class="p">;</span> <span class="mf">2.718</span>
 </pre></div>
 </div>
@@ -427,7 +463,9 @@ snippet shows examples of positive float literal expressions,</p>
 <em>minus</em> <code class="docutils literal notranslate"><span class="pre">-</span></code> operator to the positive float literal expression. For
 instance, negative <em>pi</em> is written as <code class="docutils literal notranslate"><span class="pre">-3.14</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">3.14</span></code>. The
 following are examples of negative float literal expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Negative float literal expressions.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 18:</span>
+
+<span class="c1"># Negative float literal expressions.</span>
 <span class="o">-</span><span class="mf">2.718</span><span class="p">;</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">;</span> <span class="o">-</span><span class="mf">0.01</span>
 </pre></div>
 </div>
@@ -435,7 +473,9 @@ following are examples of negative float literal expressions,</p>
 function. It automatically converts objects of type <code class="docutils literal notranslate"><span class="pre">int</span></code> and
 <code class="docutils literal notranslate"><span class="pre">float</span></code> to strings and then prints the strings. The following are
 examples of printing integer and float literal expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print integers.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 19:</span>
+
+<span class="c1"># Print integers.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">99</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -449,7 +489,9 @@ in the same way you bind names to string values. For example, to
 bind the name <code class="docutils literal notranslate"><span class="pre">x</span></code> to integer <code class="docutils literal notranslate"><span class="pre">1</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span></code> and to
 rebind <code class="docutils literal notranslate"><span class="pre">x</span></code> to the floating point number <code class="docutils literal notranslate"><span class="pre">3.14</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span>
 <span class="pre">3.14</span></code>. The following sample code shows other examples,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bind x to 0 and y to 99.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 20:</span>
+
+<span class="c1"># Bind x to 0 and y to 99.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">99</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -470,7 +512,9 @@ arithmetic operators used in many other languages.</p>
 integers and an integer result is expected.  The following sample
 code shows examples of arithmetic operations and the results they
 produce,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># All operands are integers so</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 21:</span>
+
+<span class="c1"># All operands are integers so</span>
 <span class="c1"># the result is integer.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
@@ -497,7 +541,9 @@ terms involved or to specify clearly the grouping of operands and
 operators so you don’t have to rely on knowledge of operator
 precedence rules. Take for instance the following compound
 expression,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some initial values.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 22:</span>
+
+<span class="c1"># Define some initial values.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">4</span>
 
 <span class="c1"># Interpreting this compound expression</span>
@@ -509,7 +555,9 @@ expression,</p>
 </pre></div>
 </div>
 <p>It is equivalent to the following expression which uses parentheses,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using parentheses makes computational</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 23:</span>
+
+<span class="c1"># Using parentheses makes computational</span>
 <span class="c1"># intent more clear.</span>
 <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 
@@ -539,7 +587,9 @@ represent the corresponding logical value. This means that objects
 of type <code class="docutils literal notranslate"><span class="pre">bool</span></code> can have only two possible values, <code class="docutils literal notranslate"><span class="pre">True</span></code> or
 <code class="docutils literal notranslate"><span class="pre">False</span></code>. The following Boolean expressions create objects with the
 two possible truth values,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an object of type &#39;bool&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 24:</span>
+
+<span class="c1"># Create an object of type &#39;bool&#39;</span>
 <span class="c1"># with the value True.</span>
 <span class="kc">True</span>
 
@@ -551,7 +601,9 @@ two possible truth values,</p>
 <p>You can print the values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> using the
 <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. It automatically converts the Boolean values
 to the strings <code class="docutils literal notranslate"><span class="pre">&quot;True&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;False&quot;</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print Boolean values.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 25:</span>
+
+<span class="c1"># Print Boolean values.</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -559,7 +611,9 @@ to the strings <code class="docutils literal notranslate"><span class="pre">&quo
 statement. In the following code the names <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are bound
 to the values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> respectively and then rebound
 to <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bind x to True and y to False.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 26:</span>
+
+<span class="c1"># Bind x to True and y to False.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">y</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -574,7 +628,9 @@ to <code class="docutils literal notranslate"><span class="pre">False</span></co
 <em>disjunction</em> and <em>negation</em>. Conjunction or logical <em>and</em> is
 implemented using the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator. The following sample code
 prints the truth table for the <code class="docutils literal notranslate"><span class="pre">and</span></code> operation,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truth table for &#39;and&#39; operation.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 27:</span>
+
+<span class="c1"># Truth table for &#39;and&#39; operation.</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
@@ -584,7 +640,9 @@ prints the truth table for the <code class="docutils literal notranslate"><span 
 <p>Disjunction or logical <em>or</em> is implemented using the <code class="docutils literal notranslate"><span class="pre">or</span></code>
 operator. The following sample code prints the truth table for the
 <code class="docutils literal notranslate"><span class="pre">or</span></code> operation,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truth table for &#39;or&#39; operation.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 28:</span>
+
+<span class="c1"># Truth table for &#39;or&#39; operation.</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
@@ -593,7 +651,9 @@ operator. The following sample code prints the truth table for the
 </div>
 <p>Negation is implemented using the <code class="docutils literal notranslate"><span class="pre">not</span></code> operator. The following
 sample code prints the truth table for the <code class="docutils literal notranslate"><span class="pre">not</span></code> operation,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truth table for &#39;not&#39; operation.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 29:</span>
+
+<span class="c1"># Truth table for &#39;not&#39; operation.</span>
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -614,7 +674,9 @@ encounters this literal list expression it creates an object of type
 <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code>.</p>
 <p>The following examples show definitions of <em>homogeneous</em> lists, that
 is, lists in which all elements are of the same type,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define an empty list.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 30:</span>
+
+<span class="c1"># Define an empty list.</span>
 <span class="p">[]</span>
 
 <span class="c1"># Define a list with one string element.</span>
@@ -632,7 +694,9 @@ is, lists in which all elements are of the same type,</p>
 </div>
 <p>The following examples show definitions of <em>heterogeneous</em> lists,
 that is, lists that contain elements of different types,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of integers, floats and strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 31:</span>
+
+<span class="c1"># A list of integers, floats and strings.</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;2.0&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
 
 <span class="c1"># A list of integers, strings and lists.</span>
@@ -642,7 +706,9 @@ that is, lists that contain elements of different types,</p>
 <p>To print a list object you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function. It
 automatically converts a list object to a string, as shown in the
 following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the empty list.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 32:</span>
+
+<span class="c1"># Print the empty list.</span>
 <span class="nb">print</span><span class="p">([])</span>
 
 <span class="c1"># Print a list of strings.</span>
@@ -664,7 +730,9 @@ values. For example, to bind the name <code class="docutils literal notranslate"
 you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> and to rebind <code class="docutils literal notranslate"><span class="pre">x</span></code> to list <code class="docutils literal notranslate"><span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span>
 <span class="pre">&quot;c&quot;]</span></code> you write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;b&quot;,</span> <span class="pre">&quot;c&quot;]</span></code>. The following sample code
 shows other examples,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bind x to the empty list.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 33:</span>
+
+<span class="c1"># Bind x to the empty list.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -677,13 +745,16 @@ shows other examples,</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+<p class="rubric">Determining the length of a list</p>
 <p>To determine the number of elements in a list you use the built-in
 function <code class="docutils literal notranslate"><span class="pre">len()</span></code> which we introduced in the section on
 strings. Suppose <code class="docutils literal notranslate"><span class="pre">x</span></code> is bound to list object <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, then
 the function call <code class="docutils literal notranslate"><span class="pre">len(x)</span></code> returns 3, the number of elements in
 <code class="docutils literal notranslate"><span class="pre">x</span></code>. The following are some examples of using the <code class="docutils literal notranslate"><span class="pre">len()</span></code>
 function,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print length of empty list.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 34:</span>
+
+<span class="c1"># Print length of empty list.</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">([]))</span>
 
 <span class="c1"># Length of a list of strings.</span>
@@ -702,13 +773,16 @@ function,</p>
 <p>The index of the last element of a non-empty list is given by
 <code class="docutils literal notranslate"><span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span></code>. You can use this fact to reference the last element
 of a list as in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list x.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 35:</span>
+
+<span class="c1"># A list x.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="c1"># Print last element of x.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+<p class="rubric">Operations on lists</p>
 <p>Let’s now consider three operations you can perform on list objects,
 concatenation, referencing its elements and adding elements to
 it. You can create a new list by concatenating two or more existing
@@ -717,7 +791,9 @@ create a new list that contains all the elements in list <code class="docutils l
 <span class="pre">3]</span></code> followed by all the elements in list <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>, you write
 <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span> <span class="pre">+</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>. The following code shows some examples of
 list concatenation,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate multiple lists.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 36:</span>
+
+<span class="c1"># Concatenate multiple lists.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -745,7 +821,9 @@ reference. For example, if the list above was bound to the name
 <code class="docutils literal notranslate"><span class="pre">x</span></code>, element <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> would be referenced by <code class="docutils literal notranslate"><span class="pre">x[0]</span></code>, element
 <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code> by <code class="docutils literal notranslate"><span class="pre">x[1]</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;c&quot;</span></code> by <code class="docutils literal notranslate"><span class="pre">x[2]</span></code>. The following code
 snippet shows some examples of referencing list elements,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list x.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 37:</span>
+
+<span class="c1"># A list x.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
 
 <span class="c1"># Reference first element of x.</span>
@@ -771,7 +849,9 @@ want to add to the list. Suppose <code class="docutils literal notranslate"><spa
 <code class="docutils literal notranslate"><span class="pre">x.append(&quot;foo&quot;)</span></code>. To add another element to the end of list
 <code class="docutils literal notranslate"><span class="pre">x</span></code>, say the string <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>, you write <code class="docutils literal notranslate"><span class="pre">x.append(&quot;bar&quot;)</span></code>. The
 following code provides more examples,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with an empty list x.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 38:</span>
+
+<span class="c1"># Start with an empty list x.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># Add strings &quot;a&quot;, &quot;b&quot; and &quot;c&quot;.</span>
@@ -823,7 +903,9 @@ represent the same value.  On the other hand, the identity
 expression <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">is</span> <span class="pre">1.0</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>, since the two
 objects involved are different. The following code confirms this
 result,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality evaluates to True,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 39:</span>
+
+<span class="c1"># Equality evaluates to True,</span>
 <span class="c1"># 1 and 1.0 represent the same value.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
 
@@ -841,7 +923,9 @@ operands are objects representing the same value <em>empty list</em>. On
 the other hand, the identity expression <code class="docutils literal notranslate"><span class="pre">[]</span> <span class="pre">is</span> <span class="pre">[]</span></code> evaluates to
 <code class="docutils literal notranslate"><span class="pre">False</span></code> because the two operands are different objects. This is
 confirmed in the following code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality evaluates to True,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 40:</span>
+
+<span class="c1"># Equality evaluates to True,</span>
 <span class="c1"># both operands represent the &#39;empty list&#39;.</span>
 <span class="nb">print</span><span class="p">([]</span> <span class="o">==</span> <span class="p">[])</span>
 
@@ -852,7 +936,9 @@ confirmed in the following code,</p>
 </div>
 <p>The same argument applies to non-empty lists, as show in the
 following code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality evaluates to True,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 41:</span>
+
+<span class="c1"># Equality evaluates to True,</span>
 <span class="c1"># the values represented are equal.</span>
 <span class="nb">print</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span>
 
@@ -870,7 +956,9 @@ expression <code class="docutils literal notranslate"><span class="pre">1</span>
 is not equal to the string “1”.  All the following expressions
 evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code> because the types involved can’t be used to
 represent the same value,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># int and str</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 42:</span>
+
+<span class="c1"># int and str</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
 
 <span class="c1"># int and list</span>
@@ -900,7 +988,9 @@ the float object <code class="docutils literal notranslate"><span class="pre">1.
 evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> because the two objects represent the same
 value. The following are examples in which <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code>
 objects are equal,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality evaluates to True,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 43:</span>
+
+<span class="c1"># Equality evaluates to True,</span>
 <span class="c1"># int and float objects both represent 0.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)</span>
 
@@ -912,7 +1002,9 @@ objects are equal,</p>
 <p>The Boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are considered equal to
 the numeric values 1 and 0 respectively. Therefore, the following
 equality expressions evaluate to True,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality evaluates to True,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 44:</span>
+
+<span class="c1"># Equality evaluates to True,</span>
 <span class="c1"># True and 1 are considered the same value.</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -928,7 +1020,9 @@ types. Let’s now consider equality of objects of the <em>same</em> type.</p>
 <p>Equality of <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> objects follow the rules of
 equality of arithmetic. The following equality expressions with
 <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> operands evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Both operands are int.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 45:</span>
+
+<span class="c1"># Both operands are int.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Both operands are float.</span>
@@ -946,7 +1040,9 @@ objects are equal if they both represent the value <code class="docutils literal
 number of characters and their corresponding characters are
 equal. The following equality expressions with <code class="docutils literal notranslate"><span class="pre">str</span></code> operands
 evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># String equality expressions that evaluate to True.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 46:</span>
+
+<span class="c1"># String equality expressions that evaluate to True.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span>
@@ -957,7 +1053,9 @@ evaluate to <code class="docutils literal notranslate"><span class="pre">True</s
 <code class="docutils literal notranslate"><span class="pre">list</span></code> to compare equal, they must be of equal length and their
 corresponding elements must compare equal. The following are
 examples of list equality expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Expressions that evaluate to True.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 47:</span>
+
+<span class="c1"># Expressions that evaluate to True.</span>
 <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[])</span>
 <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
@@ -983,10 +1081,12 @@ inequality.</p>
 operands of different types causes a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> run time error.
 For example, when the interpreter encounters the expression <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span>
 <span class="pre">[1]</span></code> it generates the following error,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;myscript.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="mi">1</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;list&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 48:</span>
+
+<span class="c1">#  Traceback (most recent call last):</span>
+<span class="c1">#    File &quot;myscript.py&quot;, line 10, in &lt;module&gt;</span>
+<span class="c1">#      1 &lt; [1]</span>
+<span class="c1">#  TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;list&#39;</span>
 </pre></div>
 </div>
 <p>The fourth line indicates the class of error, <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>,
@@ -997,7 +1097,9 @@ don’t have to be of the same type. For example, the expression <code class="do
 <span class="pre">2.0</span></code> involving an <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, as
 expected from our understanding of numeric ordering in
 arithmetic. The following are some examples of numeric inequalities,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some numeric inequalities</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 49:</span>
+
+<span class="c1"># Some numeric inequalities</span>
 <span class="c1"># that evaluate to True.</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mf">3.14</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">)</span>
@@ -1008,7 +1110,9 @@ arithmetic. The following are some examples of numeric inequalities,</p>
 <p>Inequality of strings is based on lexicographic ordering. The
 following are examples of inequality expressions with string
 operands,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Some string inequalities</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 50:</span>
+
+<span class="c1"># Some string inequalities</span>
 <span class="c1"># that evaluate to True.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">&lt;</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
@@ -1028,16 +1132,20 @@ evaluates to True or False. If the comparison of two lists involves
 comparing elements of different types the interpreter will generate
 a run time error . For example, the expression <code class="docutils literal notranslate"><span class="pre">[1]</span> <span class="pre">&lt;</span> <span class="pre">[&quot;a&quot;]</span></code>
 generates the following error,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-  <span class="n">File</span> <span class="s2">&quot;myscript.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-    <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
-<span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;&lt;&#39;</span> <span class="ow">not</span> <span class="n">supported</span> <span class="n">between</span> <span class="n">instances</span> <span class="n">of</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 51:</span>
+
+<span class="c1">#  Traceback (most recent call last):</span>
+<span class="c1">#    File &quot;myscript.py&quot;, line 10, in &lt;module&gt;</span>
+<span class="c1">#      print([1] &lt; [&quot;a&quot;])</span>
+<span class="c1">#  TypeError: &#39;&lt;&#39; not supported between instances of &#39;int&#39; and &#39;str&#39;</span>
 </pre></div>
 </div>
 <p>In some cases the comparison expression is resolved before elements
 of different type are compared and no run time error is generated,
 as shown in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluates to True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 52:</span>
+
+<span class="c1"># evaluates to True</span>
 <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1055,7 +1163,9 @@ then the inequality operator is applied to the next pair of
 corresponding elements; and if all elements compare equal list
 inequality is <code class="docutils literal notranslate"><span class="pre">False</span></code>. The following examples illustrate each
 case,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluates to True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 53:</span>
+
+<span class="c1"># Evaluates to True</span>
 <span class="c1"># because 2 &lt; 3 is True.</span>
 <span class="nb">print</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 
@@ -1074,7 +1184,9 @@ extension. If the elements of the shorter list are equal to the
 corresponding elements of the longer list then the shorter list is
 considered less than the longer list. The following examples
 illustrate these cases,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evaluates to True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 54:</span>
+
+<span class="c1"># Evaluates to True</span>
 <span class="c1"># empty list less than non-empty list.</span>
 <span class="nb">print</span><span class="p">([]</span> <span class="o">&lt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
@@ -1100,7 +1212,9 @@ as <em>executing a loop</em>.</p>
 <p>Suppose you have a list x containing strings and you want to print
 each string in a separate line. The following <code class="docutils literal notranslate"><span class="pre">for</span></code> statement
 would accomplish that task,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 55:</span>
+
+<span class="c1"># A list of strings.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
 
 <span class="c1"># Iterates over the elements of list x,</span>
@@ -1137,16 +1251,20 @@ example above the call to the <code class="docutils literal notranslate"><span c
 spaces relative to the statement header. This indentation is not
 optional, it is syntactically required. Suppose we rewrite the
 example above without indentation as in the following code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 56:</span>
+
+<span class="c1">#  for item in x:</span>
+<span class="c1">#  print(item)</span>
 </pre></div>
 </div>
 <p>When the Python interpreter encounters this statement it generates
 an <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and displays the following information,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;myscript.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-        <span class="o">^</span>
-<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">expected</span> <span class="n">an</span> <span class="n">indented</span> <span class="n">block</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 57:</span>
+
+<span class="c1">#    File &quot;myscript.py&quot;, line 10</span>
+<span class="c1">#      print(item)</span>
+<span class="c1">#          ^</span>
+<span class="c1">#  IndentationError: expected an indented block</span>
 </pre></div>
 </div>
 <p>The size of indentation does not matter but it must be consistent
@@ -1158,7 +1276,9 @@ a list of strings and you want to print each string in a separate
 line but this time also print in its own line the concatenation of
 all elements printed up to the current iteration. The following
 <code class="docutils literal notranslate"><span class="pre">for</span></code> statement would accomplish the task,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 58:</span>
+
+<span class="c1"># A list of strings.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="s2">&quot;gnu&quot;</span><span class="p">]</span>
 
 <span class="c1"># Initial concatenation.</span>
@@ -1174,7 +1294,9 @@ all elements printed up to the current iteration. The following
 </div>
 <p>The following example uses a string as the iterable object in the
 <code class="docutils literal notranslate"><span class="pre">for</span></code> statement.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a string</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 59:</span>
+
+<span class="c1"># a string</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
 
 <span class="c1"># &#39;for&#39; loop with a string as</span>
@@ -1186,7 +1308,9 @@ all elements printed up to the current iteration. The following
 </div>
 <p>You can also use a literal expression for the iterable object in a
 for loop, as show in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can use a literal expression</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 60:</span>
+
+<span class="c1"># You can use a literal expression</span>
 <span class="c1"># for the iterable object in &#39;for&#39; loop.</span>
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
@@ -1198,7 +1322,9 @@ for loop, as show in the following example,</p>
 loop can be part of the statement group of another <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, as
 long as indentation is observed. The following example uses two
 nested for loops.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two lists of strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 61:</span>
+
+<span class="c1"># Two lists of strings.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
@@ -1220,7 +1346,9 @@ task you can use a <code class="docutils literal notranslate"><span class="pre">
 list and use an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to test whether a letter is upper
 case and only execute a statement to print it if the result of the
 test is <code class="docutils literal notranslate"><span class="pre">True</span></code>. The following code implements this example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of letters.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 62:</span>
+
+<span class="c1"># A list of letters.</span>
 <span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
 
 <span class="c1"># Prints upper case letters in list.</span>
@@ -1272,7 +1400,9 @@ conditional expression is a Boolean expression there is no need for
 any interpretation because the result <em>is</em> a Boolean value. Let’s
 illustrate this point with an example. Suppose you have the
 following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 63:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">[],</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>According to the above rule all the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> would be
@@ -1282,7 +1412,9 @@ following code sample a <code class="docutils literal notranslate"><span class="
 <code class="docutils literal notranslate"><span class="pre">x</span></code> and an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement tests each the value of each element
 and only prints it when the value is interpreted as <code class="docutils literal notranslate"><span class="pre">True</span></code>, so only
 the string “foo” is printed,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Iterates over list x defined above,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 64:</span>
+
+<span class="c1"># Iterates over list x defined above,</span>
 <span class="c1"># it only prints &quot;foo&quot; because all other</span>
 <span class="c1"># elements in x are interpreted as False.</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
@@ -1310,7 +1442,9 @@ expression that tests whether <code class="docutils literal notranslate"><span c
 list is executed.  If the condition is <code class="docutils literal notranslate"><span class="pre">False</span></code> the statement
 after the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed to count the number of odd
 elements,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of integers.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 65:</span>
+
+<span class="c1"># A list of integers.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="c1"># Initialize even and odd counts.</span>
@@ -1341,7 +1475,9 @@ value <code class="docutils literal notranslate"><span class="pre">True</span></
 expression evaluates to 1 when <code class="docutils literal notranslate"><span class="pre">n</span></code> is odd which is interpreted as
 True by the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. The following code implements this
 alternative solution,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of integers.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 66:</span>
+
+<span class="c1"># A list of integers.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 
 <span class="c1"># Initialize even and odd counts.</span>
@@ -1372,7 +1508,9 @@ requires multiple groups of statements to count the number of
 strings in each category.</p>
 <p>One solution to the above problem is to use nested <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">else</span></code>
 statements, as shown in the following sample code,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 67:</span>
+
+<span class="c1"># A list of strings.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">,</span> <span class="s2">&quot;ef&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
 
 <span class="c1"># Initialize frequency counts.</span>
@@ -1414,7 +1552,9 @@ that nesting.</p>
 conditional expression and a group of statements to be executed when
 the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code>. The following code re-implements the
 example above using <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A list of strings.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 68:</span>
+
+<span class="c1"># A list of strings.</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="s2">&quot;cd&quot;</span><span class="p">,</span> <span class="s2">&quot;ef&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
 
 <span class="c1"># Initialize frequency counts.</span>
@@ -1528,7 +1668,9 @@ far as <em>file not found</em>, Python defines a class named
 class constructor which is the name of the class followed by
 parentheses. For example, to create an instance of the exception
 class <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> you would write,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an instance of exception class</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 69:</span>
+
+<span class="c1"># Create an instance of exception class</span>
 <span class="c1"># FileNotFoundError and bind it to &#39;e&#39;.</span>
 <span class="n">e</span> <span class="o">=</span> <span class="ne">FileNotFoundError</span><span class="p">()</span>
 </pre></div>
@@ -1540,7 +1682,9 @@ exception class to include an error message relevant to the specific
 occurrence of the exception.  For example, to create an instance of
 <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> that includes the error message “Failed to
 read file ‘foo’” you would write,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create an instance of exception class</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 70:</span>
+
+<span class="c1"># Create an instance of exception class</span>
 <span class="c1"># including an error message.</span>
 <span class="n">e</span> <span class="o">=</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
 
@@ -1558,7 +1702,9 @@ the Python language you invoke exception handling using the
 <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement with an instance of the relevant exception class
 as argument.  For example, at the point in our program where the
 error condition <em>file not found</em> is detected we would write,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 71:</span>
+
+<span class="c1">#    raise FileNotFoundError()</span>
 </pre></div>
 </div>
 <p>When the exception class constructor is invoked without any
@@ -1566,14 +1712,18 @@ arguments, as in the example above, you can omit the parentheses.
 In that case the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement itself will issue the call to
 the constructor to create an instance of the exception. The
 following statement is equivalent to the statement above,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 72:</span>
+
+<span class="c1">#    raise FileNotFoundError</span>
 </pre></div>
 </div>
 <p>Our example program requires including an error message in the
 exception object.  The following statement raises an exception with
 an instance of <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> that includes the required
 error message,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 73:</span>
+
+<span class="c1">#    raise FileNotFoundError(&quot;Failed to read file &#39;foo&#39;.&quot;)</span>
 </pre></div>
 </div>
 <p>The purpose of raising an exception is to invoke an exception
@@ -1597,7 +1747,9 @@ again, the code that can potentially raise <code class="docutils literal notrans
 enclosed in a <code class="docutils literal notranslate"><span class="pre">try</span></code> clause and the code that is invoked when that
 exception is raised is enclosed in an <code class="docutils literal notranslate"><span class="pre">except</span></code> clause, as shown in
 the following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 74:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to read file &#39;foo&#39;.&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -1646,7 +1798,9 @@ rather than the program. The program’s code is responsible for
 <em>protecting</em> the call to <code class="docutils literal notranslate"><span class="pre">open()</span></code> if it raises the
 <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> exception by catching and handling it using
 the <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">except</span></code> statement, as shown in the following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 75:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -1662,7 +1816,9 @@ encounter.</p>
 exceptions</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code> - raised when applying an operation to operands of
 inappropriate types,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 76:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="mi">1</span> <span class="o">&lt;</span> <span class="s2">&quot;2&quot;</span>
 <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -1670,7 +1826,9 @@ inappropriate types,</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">NameError</span></code> - raised when attempting to use a name that is not
 bound to an object,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 77:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">unbound_name</span>
 <span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -1678,7 +1836,9 @@ bound to an object,</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">IndexError</span></code> - raised when applying an index operation with an
 index that is out of range,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 78:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="n">alist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">alist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1719,7 +1879,9 @@ Python code produces the expected result without having to resort
 to printing.</p></li>
 </ul>
 <p>The general form of the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement is,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">expression</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 79:</span>
+
+<span class="c1">#    assert expression</span>
 </pre></div>
 </div>
 <p>Where the result of <code class="docutils literal notranslate"><span class="pre">expression</span></code> is interpreted as a Boolean
@@ -1729,11 +1891,15 @@ program continues normal execution.  If the <code class="docutils literal notran
 stops program execution unless the exception is handled.</p>
 <p>The following trivial example has no effect and the script continues
 as normal,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="kc">True</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 80:</span>
+
+<span class="k">assert</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>The following example causes an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 81:</span>
+
+<span class="k">try</span><span class="p">:</span>
     <span class="k">assert</span> <span class="kc">False</span>
 <span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
     <span class="k">pass</span>
@@ -1743,7 +1909,9 @@ as normal,</p>
 that two empty list literals produce distinct objects of type
 <code class="docutils literal notranslate"><span class="pre">list</span></code>, that the numeric literals <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> also produce
 distinct objects but the values they represent are equal,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm distinct objects</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 82:</span>
+
+<span class="c1"># confirm distinct objects</span>
 <span class="k">assert</span> <span class="p">[]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="p">[]</span>
 <span class="k">assert</span> <span class="mi">1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="mf">1.0</span>
 
@@ -1771,7 +1939,7 @@ abnormally with an <code class="docutils literal notranslate"><span class="pre">
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Python to learn Python</a></h1>
+<h1 class="logo"><a href="index.html">Python to learn Python</a></h1>
 
 
 
@@ -1781,30 +1949,26 @@ abnormally with an <code class="docutils literal notranslate"><span class="pre">
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Minimal Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="invoke.html">Invoking Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Program structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statements.html">Python statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Python data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="type_list.html">The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="introduction.html" title="previous chapter">Introduction</a></li>
-      <li>Next: <a href="invoke.html" title="next chapter">Invoking Python</a></li>
+      <li>Next: <a href="type_list.html" title="next chapter">The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
@@ -1824,14 +1988,14 @@ abnormally with an <code class="docutils literal notranslate"><span class="pre">
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Ombuvirtual.
+      &copy;2019, OmbuVirtual.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/rst/minimal.rst.txt"
+      <a href="_sources/minimal.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

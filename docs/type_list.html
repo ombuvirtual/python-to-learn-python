@@ -5,18 +5,18 @@
   <head>
     <meta charset="utf-8" />
     <title>The list data type &#8212; Python to learn Python 0 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Python data types" href="datatypes.html" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Minimal Python" href="minimal.html" />
    
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
@@ -33,15 +33,17 @@
             
   <div class="section" id="the-list-data-type">
 <h1>The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type<a class="headerlink" href="#the-list-data-type" title="Permalink to this headline">¶</a></h1>
-<div class="line-block">
-<div class="line"><a class="reference internal" href="#overview">Overview</a></div>
-<div class="line"><a class="reference internal" href="#imports">Imports</a></div>
-<div class="line"><a class="reference internal" href="#creating-lists">Creating lists</a></div>
-<div class="line"><a class="reference internal" href="#querying-lists">Querying lists</a></div>
-<div class="line"><a class="reference internal" href="#modifying-lists">Modifying lists</a></div>
-<div class="line"><a class="reference internal" href="#comparing-lists">Comparing lists</a></div>
-<div class="line"><a class="reference internal" href="#iterating-lists">Iterating lists</a></div>
-<div class="line"><a class="reference internal" href="#references">References</a></div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview" id="id1">Overview</a></p></li>
+<li><p><a class="reference internal" href="#imports" id="id2">Imports</a></p></li>
+<li><p><a class="reference internal" href="#creating-lists" id="id3">Creating lists</a></p></li>
+<li><p><a class="reference internal" href="#querying-lists" id="id4">Querying lists</a></p></li>
+<li><p><a class="reference internal" href="#modifying-lists" id="id5">Modifying lists</a></p></li>
+<li><p><a class="reference internal" href="#comparing-lists" id="id6">Comparing lists</a></p></li>
+<li><p><a class="reference internal" href="#iterating-lists" id="id7">Iterating lists</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id8">References</a></p></li>
+</ul>
 </div>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
@@ -98,7 +100,9 @@ a slice of the list.</p></li>
 </div>
 <div class="section" id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import maths module, used in some examples</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 1:</span>
+
+<span class="c1"># import maths module, used in some examples</span>
 <span class="kn">import</span> <span class="nn">math</span>
 </pre></div>
 </div>
@@ -113,7 +117,9 @@ you can write down the elements using a special syntax called a
 expressions enclosed in square brackets. For example, suppose you
 want to create a list containing the three integers 1, 2 and 3 in
 that order. You define the list using the following list display,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 2:</span>
+
+<span class="c1"># list display to create</span>
 <span class="c1"># a list of integers</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -130,7 +136,9 @@ object, a list display is special notation for telling the
 interpreter you want a list object.</p>
 <p>To create an empty list you write a display list without any
 enclosed expressions,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 3:</span>
+
+<span class="c1"># list display to create</span>
 <span class="c1"># an empty list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -141,7 +149,9 @@ enclosed expressions,</p>
 </div>
 <p>You can create a list containing a single element using the
 following list display,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 4:</span>
+
+<span class="c1"># list display to create</span>
 <span class="c1"># a singleton list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -153,7 +163,9 @@ list does not require a trailing comma.</p>
 be as simple or as complex as your problem requires. In the
 following list display the elements are arithmetic expressions
 involving identifiers, function calls and arithmetic operators,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display with</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 5:</span>
+
+<span class="c1"># list display with</span>
 <span class="c1"># compound expressions</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">**</span> <span class="mi">2</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -161,7 +173,9 @@ involving identifiers, function calls and arithmetic operators,</p>
 </div>
 <p>You can use list displays to create lists with elements of any type
 as shown in the following examples,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 6:</span>
+
+<span class="c1"># list display to create</span>
 <span class="c1"># a list of strings</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;bc&quot;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -182,7 +196,9 @@ all elements are of the same type. However, the <code class="docutils literal no
 limited to that case. A list can include elements of different
 types. The following example shows a list display with elements of
 type <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code> and <code class="docutils literal notranslate"><span class="pre">tuple</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display with elements</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 7:</span>
+
+<span class="c1"># list display with elements</span>
 <span class="c1"># of different types</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -190,7 +206,9 @@ type <code class="docutils literal notranslate"><span class="pre">int</span></co
 </div>
 <p>If you need to define a very long list you can make a list display
 span multiple lines as show in the next example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list display spanning</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 8:</span>
+
+<span class="c1"># list display spanning</span>
 <span class="c1"># multiple lines</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
      <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">,</span>
@@ -214,7 +232,9 @@ ordering as that of its argument.</p>
 new lists. For example, if you have the string “abc” and want to
 create a list consisting of each letter of the string, you call the
 <code class="docutils literal notranslate"><span class="pre">list()</span></code> constructor with the string as an argument,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># invoke list constructor to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 9:</span>
+
+<span class="c1"># invoke list constructor to create</span>
 <span class="c1"># a list from a string</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
@@ -222,7 +242,9 @@ create a list consisting of each letter of the string, you call the
 </div>
 <p>In the following examples the <code class="docutils literal notranslate"><span class="pre">list()</span></code> constructor is used to
 create a new list from different types of iterable objects,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># invoke list constructor to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 10:</span>
+
+<span class="c1"># invoke list constructor to create</span>
 <span class="c1"># a list from a range</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -245,7 +267,9 @@ create a new list from different types of iterable objects,</p>
 </div>
 <p>You can create an empty list by invoking the <code class="docutils literal notranslate"><span class="pre">list()</span></code> constructor
 without an argument,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># invoke list constructor to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 11:</span>
+
+<span class="c1"># invoke list constructor to create</span>
 <span class="c1"># an empty list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[]</span>
@@ -268,7 +292,9 @@ the next letter in the string and can be used to produce a new
 element using a concatenation expression. The new element can then
 be added to the list using the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method as show in the
 following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 12:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="s2">&quot;abc&quot;</span><span class="p">:</span>
     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;_a&quot;</span><span class="p">,</span> <span class="s2">&quot;_b&quot;</span><span class="p">,</span> <span class="s2">&quot;_c&quot;</span><span class="p">]</span>
@@ -286,7 +312,9 @@ statement that loops over the elements of the given iterable
 object.</p>
 <p>You can use the following list comprehension to create the list
 above in a more succinct and convenient way in a single expression,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list comprehension to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 13:</span>
+
+<span class="c1"># list comprehension to create</span>
 <span class="c1"># a list from a string by prefixing</span>
 <span class="c1"># each element with underscore</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span> <span class="o">+</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="s2">&quot;abc&quot;</span><span class="p">]</span>
@@ -298,7 +326,9 @@ involving the loop variable (<code class="docutils literal notranslate"><span cl
 to a new element of the given iterable object at the start of every
 iteration. The following example uses the string method <code class="docutils literal notranslate"><span class="pre">upper()</span></code>
 to create a list of upper case letters from the string “abc”,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list comprehension to create</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 14:</span>
+
+<span class="c1"># list comprehension to create</span>
 <span class="c1"># a list from a string by making</span>
 <span class="c1"># each element upper case</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="s2">&quot;abc&quot;</span><span class="p">]</span>
@@ -310,7 +340,9 @@ elements satisfying some condition. The list comprehension syntax
 allows the use of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement for that purpose. The
 following example creates a list by squaring the elements of the
 range object but only if the element is even,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list comprehension with conditional filtering</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 15:</span>
+
+<span class="c1"># list comprehension with conditional filtering</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">item</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">64</span><span class="p">]</span>
 </pre></div>
@@ -321,14 +353,18 @@ in which the elements are the products of the elements in two tuples
 of integers but only including products less than 10. You can do
 that with a list comprehension with two <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and an <code class="docutils literal notranslate"><span class="pre">if</span></code>
 statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list comprehension with multiple &#39;for&#39; loops</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 16:</span>
+
+<span class="c1"># list comprehension with multiple &#39;for&#39; loops</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="o">*</span> <span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="o">*</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>If you need to write a long list comprehension you can make it span
 multiple lines,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list comprehension spanning</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 17:</span>
+
+<span class="c1"># list comprehension spanning</span>
 <span class="c1"># multiple lines</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span>
      <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
@@ -348,7 +384,9 @@ multiple lines,</p>
 existing lists you can use the addition operator <code class="docutils literal notranslate"><span class="pre">+</span></code> to
 <em>concatenate</em> two or more lists. The following are examples of
 creating new lists by <em>adding</em> existing lists,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list by &#39;adding&#39; two existing lists</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 18:</span>
+
+<span class="c1"># create a list by &#39;adding&#39; two existing lists</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
@@ -360,7 +398,9 @@ creating new lists by <em>adding</em> existing lists,</p>
 </div>
 <p>Adding the empty list to an existing list creates a new list object
 that is a copy of the list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;adding&#39; an empty list to an existing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 19:</span>
+
+<span class="c1"># &#39;adding&#39; an empty list to an existing</span>
 <span class="c1"># list creates a copy of the list</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span> <span class="o">+</span> <span class="n">y</span>
@@ -377,7 +417,9 @@ a specified number of times using the operator <code class="docutils literal not
 and more elegant than explicitly adding a list to itself a number of
 times. The following example creates a new list by adding list <code class="docutils literal notranslate"><span class="pre">x</span></code>
 to itself three times,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 20:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">*=</span> <span class="mi">3</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 </pre></div>
@@ -391,7 +433,9 @@ first argument <code class="docutils literal notranslate"><span class="pre">i</s
 want to be the first element in the new list; and <code class="docutils literal notranslate"><span class="pre">j</span></code> is the index
 of the last element you want included <em>plus</em> 1. For example, suppose
 you have the following list of strings,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 21:</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>You want to create a new list from a slice of <code class="docutils literal notranslate"><span class="pre">y</span></code> containing the
@@ -399,7 +443,9 @@ elements “c”, “d” and “e”. The index of “c” is 2 (counting from 
 from the the beginning of list <code class="docutils literal notranslate"><span class="pre">y</span></code>). Therefore 2 is the first
 argument of the slice operator. The index of “e” is 4 so you add 1
 to it to get 5, the second argument of the slice operator,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list by slicing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 22:</span>
+
+<span class="c1"># create a list by slicing</span>
 <span class="c1"># an existing list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
@@ -411,7 +457,9 @@ to be 0. For example, if you want to create a slice from <code class="docutils l
 containing elements “a”, “b” and “c”, you only have to include the
 second argument (the index of the last element you want to include
 <em>plus</em> 1),</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list by slicing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 23:</span>
+
+<span class="c1"># create a list by slicing</span>
 <span class="c1"># from the beginning of existing list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
@@ -419,7 +467,9 @@ second argument (the index of the last element you want to include
 </div>
 <p>Similarly you can create a slice to the end of the list by omitting
 the last argument,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a list by slicing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 24:</span>
+
+<span class="c1"># create a list by slicing</span>
 <span class="c1"># to the end of existing list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
@@ -428,7 +478,9 @@ the last argument,</p>
 <p>If you omit both arguments the slicing operation makes a shallow
 copy of the list. In the following example <code class="docutils literal notranslate"><span class="pre">x</span></code> is a new list
 containing references to the same objects as list <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a copy of a list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 25:</span>
+
+<span class="c1"># create a copy of a list</span>
 <span class="c1"># using slice operator</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
@@ -440,7 +492,9 @@ example, suppose you want to create slice <code class="docutils literal notransl
 list <code class="docutils literal notranslate"><span class="pre">y</span></code> above using negative indices. The first element “c” has
 index -4 and the last element “e” has index -2, you add 1 to it to
 get -1 for the second argument of the slice operator,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 26:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -457,13 +511,17 @@ sequence operations on list objects.</p>
 <code class="docutils literal notranslate"><span class="pre">x[i]</span></code> to reference an element of list <code class="docutils literal notranslate"><span class="pre">x</span></code> at a specific index
 <code class="docutils literal notranslate"><span class="pre">i</span></code>. The first element has index 0, the second index 1 and so on.
 Suppose you have the following list of strings,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list of strings</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 27:</span>
+
+<span class="c1"># a list of strings</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>The following examples show how to reference the elemens of list
 <code class="docutils literal notranslate"><span class="pre">x</span></code> using the index operator,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># reference first element of x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 28:</span>
+
+<span class="c1"># reference first element of x</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span>
 <span class="c1"># reference second element of x</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span>
@@ -474,7 +532,9 @@ Suppose you have the following list of strings,</p>
 <p>If you specify an index that is out of range the interpreter raises
 an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> exception with the error message “list index out of
 range”, as shown in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attempt to reference an element</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 29:</span>
+
+<span class="c1"># attempt to reference an element</span>
 <span class="c1"># with an index that is out of range</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -485,7 +545,9 @@ range”, as shown in the following example,</p>
 <p>You can avoid this problem using the built-in function <code class="docutils literal notranslate"><span class="pre">len()</span></code> to
 calculate the index of the last element, provided the list is not
 empty,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># reference last element</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 30:</span>
+
+<span class="c1"># reference last element</span>
 <span class="c1"># calculating its index</span>
 <span class="c1"># from list length</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
@@ -498,7 +560,9 @@ element of a list using its negative index rather than calculating
 its positive index from the length of the list. In the following
 snippet the elements of list <code class="docutils literal notranslate"><span class="pre">x</span></code> are referenced using negative
 indices,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 31:</span>
+
+<span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span>
 </pre></div>
@@ -509,13 +573,17 @@ indices,</p>
 <p>A common requirement is to ask whether a given object is an element
 of a specified list.  You can use the membership operators <code class="docutils literal notranslate"><span class="pre">in</span></code>
 and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> for this task. Suppose you have the following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 32:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Let <code class="docutils literal notranslate"><span class="pre">item</span></code> be an arbitrary object. The expression <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">in</span> <span class="pre">x</span></code>
 evaluates to True if <code class="docutils literal notranslate"><span class="pre">item</span></code> is an element of list <code class="docutils literal notranslate"><span class="pre">x</span></code>, otherwise
 it evaluates to False,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm &quot;c&quot; is an</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 33:</span>
+
+<span class="c1"># confirm &quot;c&quot; is an</span>
 <span class="c1"># element of x</span>
 <span class="k">assert</span> <span class="s2">&quot;c&quot;</span> <span class="ow">in</span> <span class="n">x</span>
 
@@ -526,7 +594,9 @@ it evaluates to False,</p>
 </div>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">x</span></code> evaluates to True if <code class="docutils literal notranslate"><span class="pre">item</span></code> is
 not an element of list <code class="docutils literal notranslate"><span class="pre">x</span></code>, otherwise it evaluates to False,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm &quot;d&quot; is not an</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 34:</span>
+
+<span class="c1"># confirm &quot;d&quot; is not an</span>
 <span class="c1"># element of x</span>
 <span class="k">assert</span> <span class="s2">&quot;d&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">x</span>
 
@@ -541,11 +611,15 @@ not an element of list <code class="docutils literal notranslate"><span class="p
 <p>You can use the built-in functions <code class="docutils literal notranslate"><span class="pre">max()</span></code> and <code class="docutils literal notranslate"><span class="pre">min()</span></code> to
 reference the largest and smallest elements of a list
 respectively. Suppose you have the following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 35:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>the largest element is “c” and the smallest is “a”,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm largest element is &quot;c&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 36:</span>
+
+<span class="c1"># confirm largest element is &quot;c&quot;</span>
 <span class="k">assert</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;c&quot;</span>
 
 <span class="c1"># confirm smallest element is &quot;a&quot;</span>
@@ -554,7 +628,9 @@ respectively. Suppose you have the following list,</p>
 </div>
 <p>If a list contains only one element or all the elements are the same
 the functions <code class="docutils literal notranslate"><span class="pre">max()</span></code> and <code class="docutils literal notranslate"><span class="pre">min()</span></code> return the same value,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm largest = smallest</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 37:</span>
+
+<span class="c1"># confirm largest = smallest</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
@@ -566,7 +642,9 @@ the functions <code class="docutils literal notranslate"><span class="pre">max()
 a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> exception. For example, the elements in the
 following list cannot be compared because they are a mixture of
 <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code> types,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attempt to compare &#39;int&#39; and &#39;str&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 38:</span>
+
+<span class="c1"># attempt to compare &#39;int&#39; and &#39;str&#39;</span>
 <span class="c1"># elements raises a TypeError exception</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="k">try</span><span class="p">:</span>
@@ -577,7 +655,9 @@ following list cannot be compared because they are a mixture of
 </div>
 <p>If the list is empty the interpreter raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>
 exception,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attempt to call &#39;max()&#39; with an empty list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 39:</span>
+
+<span class="c1"># attempt to call &#39;max()&#39; with an empty list</span>
 <span class="c1"># raises a ValueError exception</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="nb">max</span><span class="p">([])</span>
@@ -593,13 +673,17 @@ are situations in which you want to determine exactly how many times
 a given element occurs in a list. The method <code class="docutils literal notranslate"><span class="pre">count()</span></code> can be used
 for that purpose. As an example, suppose you have the following
 list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 40:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>You want to determine how many times the elements “a” and “c” appear
 in <code class="docutils literal notranslate"><span class="pre">x</span></code>. You simply invoke <code class="docutils literal notranslate"><span class="pre">x.count()</span></code> with each element as an
 argument in turn as show in the following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># element &quot;a&quot; occurs three times</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 41:</span>
+
+<span class="c1"># element &quot;a&quot; occurs three times</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
 
 <span class="c1"># element &quot;c&quot; occurs 1 time</span>
@@ -618,12 +702,16 @@ reference it using the index operator. Sometimes you need to do the
 opposite. That is, you have an element and you want to get its
 index. The method <code class="docutils literal notranslate"><span class="pre">index()</span></code> can be used for that purpose. Suppose
 you have a list <code class="docutils literal notranslate"><span class="pre">x</span></code> as follows,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 42:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>To get the index of one of its elements you invoke <code class="docutils literal notranslate"><span class="pre">x.index()</span></code>
 passing the element as an argument, the following are examples,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># index of &quot;a&quot; is 0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 43:</span>
+
+<span class="c1"># index of &quot;a&quot; is 0</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 <span class="c1"># index of &quot;b&quot; is 1</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
@@ -634,7 +722,9 @@ passing the element as an argument, the following are examples,</p>
 <p>If the object you pass to the <code class="docutils literal notranslate"><span class="pre">index()</span></code> method is not an element
 of the list the interpreter raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> exception, as
 show in the following snippet</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># attempt to get index of an object</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 44:</span>
+
+<span class="c1"># attempt to get index of an object</span>
 <span class="c1"># that is not an element of x</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">x</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
@@ -669,12 +759,16 @@ the elements of a list.</p>
 elements to the end of a list. The <code class="docutils literal notranslate"><span class="pre">append()</span></code> method takes a
 single object as an argument and adds it to the end of the
 list. Suppose you have the following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 45:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>You can add the strings “b” and “c” to the end of list <code class="docutils literal notranslate"><span class="pre">x</span></code> using
 the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method twice,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add &quot;b&quot; to end of list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 46:</span>
+
+<span class="c1"># add &quot;b&quot; to end of list x</span>
 <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 
@@ -687,7 +781,9 @@ the <code class="docutils literal notranslate"><span class="pre">append()</span>
 the modified list, it returns the value <code class="docutils literal notranslate"><span class="pre">None</span></code>. The following
 snippet adds string “d” to list <code class="docutils literal notranslate"><span class="pre">x</span></code> and confirms that the call to
 <code class="docutils literal notranslate"><span class="pre">append()</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">None</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># append() method returns None</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 47:</span>
+
+<span class="c1"># append() method returns None</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
 </pre></div>
 </div>
@@ -700,7 +796,9 @@ the list on which it is invoked. Since sequences are iterable you
 can use any sequence object to extend an existing list. The
 following example shows how a list can be extended using a string, a
 tuple and another list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># extend list x using a string</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 48:</span>
+
+<span class="c1"># extend list x using a string</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
@@ -718,20 +816,26 @@ tuple and another list,</p>
 </div>
 <p>Like the <code class="docutils literal notranslate"><span class="pre">append()</span></code> method, the <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method returns
 <code class="docutils literal notranslate"><span class="pre">None</span></code> instead of the modified list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># extend() method returns None</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 49:</span>
+
+<span class="c1"># extend() method returns None</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s2">&quot;bc&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
 </pre></div>
 </div>
 <p>An alternative to the <code class="docutils literal notranslate"><span class="pre">extend()</span></code> method is the <em>assignment with
 addition</em> statement <code class="docutils literal notranslate"><span class="pre">+=</span></code>. Suppose you have the following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 50:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>To add elements to <code class="docutils literal notranslate"><span class="pre">x</span></code> using an iterable object, say the string
 “bc”, you make <code class="docutils literal notranslate"><span class="pre">x</span></code> the target of the <em>assignment with addition</em>
 statement <code class="docutils literal notranslate"><span class="pre">+=</span></code>,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="s2">&quot;bc&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 51:</span>
+
+<span class="n">x</span> <span class="o">+=</span> <span class="s2">&quot;bc&quot;</span>
 </pre></div>
 </div>
 <p>The interpreter evaluates this statement (roughly) in the following
@@ -739,7 +843,9 @@ way: it evaluates list <code class="docutils literal notranslate"><span class="p
 it iterates over “bc” adding each element to the end of list <code class="docutils literal notranslate"><span class="pre">x</span></code>
 and finally rebinds the resulting list to <code class="docutils literal notranslate"><span class="pre">x</span></code>. This is illustrated
 in the following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 52:</span>
+
+<span class="c1"># a list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
 <span class="c1"># save its object id</span>
@@ -756,7 +862,9 @@ in the following snippet,</p>
 </pre></div>
 </div>
 <p>The following examples extend a list using a tuple and another list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add elements of tuple to list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 53:</span>
+
+<span class="c1"># add elements of tuple to list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">)</span>
 
@@ -772,7 +880,9 @@ object. Firstly, the second form only works if <code class="docutils literal not
 type <code class="docutils literal notranslate"><span class="pre">list</span></code>. In addition, the second form is a concatenation
 operation which creates a new object and binds it to <code class="docutils literal notranslate"><span class="pre">x</span></code>, as shown
 in the following snippet,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 54:</span>
+
+<span class="c1"># a list</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
 <span class="c1"># save its object id</span>
@@ -801,7 +911,9 @@ to insert.</p>
 <p>The following examples illustrate how to insert an element in a list
 <code class="docutils literal notranslate"><span class="pre">x</span></code> at index 0 (index of first element), at index <code class="docutils literal notranslate"><span class="pre">len(x)</span> <span class="pre">-</span> <span class="pre">1</span></code>
 (index of last element) and at an index between these two locations,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 55:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert &quot;a&quot; at index 0,</span>
@@ -828,7 +940,9 @@ to insert.</p>
 </div>
 <p>You can insert an element at the end of a list by specifying an
 index <em>greater</em> than the index of the last element in the list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 56:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert &quot;b&quot; at end of list using</span>
@@ -844,7 +958,9 @@ index <em>greater</em> than the index of the last element in the list,</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">insert()</span></code> method accepts negative indices counting from the
 end of the list. For example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 57:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert &quot;a&quot; at index -2</span>
@@ -862,7 +978,9 @@ end of the list. For example,</p>
 <p>If you specify a negative index that is less than the negative index
 of the first element, the <code class="docutils literal notranslate"><span class="pre">insert()</span></code> method simply inserts the
 element at the beginning of the list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 58:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert &quot;a&quot; at start of list using</span>
@@ -873,7 +991,9 @@ element at the beginning of the list,</p>
 </div>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">insert()</span></code> method to add an element to an
 empty list by specifying any integer value as the index,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># an empty list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 59:</span>
+
+<span class="c1"># an empty list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># add element using index 0</span>
@@ -897,7 +1017,9 @@ empty list by specifying any integer value as the index,</p>
 </div>
 <p>Finally, note that the <code class="docutils literal notranslate"><span class="pre">insert()</span></code> method also returns <code class="docutils literal notranslate"><span class="pre">None</span></code>
 rather than the modified list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert() method returns None</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 60:</span>
+
+<span class="c1"># insert() method returns None</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
 </pre></div>
@@ -909,7 +1031,9 @@ rather than the modified list,</p>
 <p>To remove elements from a list you can use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">remove()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code> methods and the <code class="docutils literal notranslate"><span class="pre">del</span></code> statement.</p>
 <p>You use the <code class="docutils literal notranslate"><span class="pre">clear()</span></code> method to remove <em>all</em> elements from a list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 61:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># remove all elements from x</span>
@@ -922,12 +1046,17 @@ rather than the modified list,</p>
 <p>You use the <code class="docutils literal notranslate"><span class="pre">remove()</span></code> method to remove the <em>first</em> element in a
 list that is <em>equal</em> to a given object.  For example, suppose you
 have a list in which the string “b” occurs serveral times,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 62:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+
+<span class="c1"># To remove the first occurrence of &quot;b&quot; you invoke the ``remove()``</span>
+<span class="c1"># method with the string object &quot;b&quot; as an argument,</span>
 </pre></div>
 </div>
-<p>To remove the first occurrence of “b” you invoke the <code class="docutils literal notranslate"><span class="pre">remove()</span></code>
-method with the string object “b” as an argument,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove first element equal to &quot;b&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 63:</span>
+
+<span class="c1"># remove first element equal to &quot;b&quot;</span>
 <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
 
 <span class="c1"># confirm first occurrence of &quot;b&quot; was removed</span>
@@ -936,7 +1065,9 @@ method with the string object “b” as an argument,</p>
 </div>
 <p>If no element in the list is equal to the object passed to
 <code class="docutils literal notranslate"><span class="pre">remove()</span></code> the interpreter raises an exception,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 64:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># attempt to remove element not in x</span>
@@ -949,7 +1080,9 @@ method with the string object “b” as an argument,</p>
 </div>
 <p>Like other list modification methods <code class="docutils literal notranslate"><span class="pre">clear()</span></code> and <code class="docutils literal notranslate"><span class="pre">remove()</span></code>
 return <code class="docutils literal notranslate"><span class="pre">None</span></code>, not the modified list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># confirm clear() returns None</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 65:</span>
+
+<span class="c1"># confirm clear() returns None</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span>
 
@@ -960,7 +1093,9 @@ return <code class="docutils literal notranslate"><span class="pre">None</span><
 </div>
 <p>You use the <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method to retrieve <em>and</em> remove an element at
 a specified index,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 66:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># retrieve and remove element at index 0</span>
@@ -975,7 +1110,9 @@ a specified index,</p>
 </div>
 <p>Invoking the <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method without arguments retrieves and
 removes the last element in the list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 67:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># retrieve and remove last element</span>
@@ -990,7 +1127,9 @@ removes the last element in the list,</p>
 </div>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">del</span></code> statement with the index operator to remove
 an element from a list at a specified index,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 68:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># remove element at index 0</span>
@@ -1005,7 +1144,9 @@ an element from a list at a specified index,</p>
 <h3>Replacing elements in a list<a class="headerlink" href="#replacing-elements-in-a-list" title="Permalink to this headline">¶</a></h3>
 <p>You can replace elements in a list using the index operator as a
 target of an assigment statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 69:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># replace first element</span>
@@ -1046,7 +1187,9 @@ index of the last element to be included is <code class="docutils literal notran
 of the slice while the second argument <code class="docutils literal notranslate"><span class="pre">j+1</span></code> points to an element
 immediately after the last element of the slice. The following are
 some examples of list slices,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 70:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="p">,</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
 <span class="c1"># create a slice of x starting at index 0</span>
@@ -1071,7 +1214,9 @@ the <em>slice step</em> to use when producing the slice. A slice step
 indicates how much you have to add to the index of the current
 element in the slice to obtain the index of the next element in the
 slice. For example, suppose you have the following list,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 71:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1082,14 +1227,18 @@ element in the slice. You now add the slice step to index 2 to get
 index 4, the index of “e”, the next and last element in the
 slice. The following snippet shows the invocation of the slice
 operator for this example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a slice of x using a slice step of 2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 72:</span>
+
+<span class="c1"># create a slice of x using a slice step of 2</span>
 <span class="k">assert</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Note that a slice step of 1 is equivalent to the standard case in
 which we omit the third argument to the slice operator. The
 following snippet shows this equivalence,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 73:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
 <span class="c1"># confirm a slice step of 1 is the same</span>
@@ -1100,7 +1249,9 @@ following snippet shows this equivalence,</p>
 <p>When a list slice is used as the ‘target’ of an assignment statement
 with an iterable object as the ‘source’, the statement is
 interpreted as a replacement operation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 74:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
 <span class="c1"># replace from &quot;d&quot; to &quot;f&quot;</span>
@@ -1140,7 +1291,9 @@ interpreted as a replacement operation.</p>
 <p>If you set the two arguments of the slice operator to the same value
 the operator evaluates to the empty list <code class="docutils literal notranslate"><span class="pre">[]</span></code>. This is shown in the
 next example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 75:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span> <span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># a slice of x with both arguments set to</span>
@@ -1154,7 +1307,9 @@ next example,</p>
 <p>Using a list slice with two arguments set to the same value, in the
 context of an assignment statement, is interpreted as an
 insertion operation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 76:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert elements at index 0</span>
@@ -1176,7 +1331,9 @@ insertion operation.</p>
 </pre></div>
 </div>
 <p>Note that if the empty list is assigned nothing happens,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 77:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 
 <span class="c1"># assign empty list</span>
@@ -1192,7 +1349,9 @@ points <em>past</em> the last element in the list. The first index that
 points past the last element is equal to the length of the list
 which is conveniently obtained using the built-in function
 <code class="docutils literal notranslate"><span class="pre">len()</span></code>. The following is an example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 78:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
 <span class="c1"># add string &quot;b&quot; to end of list x  using length</span>
@@ -1208,7 +1367,9 @@ elements of a given iterable object. You set both arguments of the
 slice operator to the length of the list so it ‘points’ past the
 last element and ‘assign’ the iterable object using the assignment
 statement. This is shown in the following example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 79:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
 
 <span class="c1"># extend list using a string</span>
@@ -1230,7 +1391,9 @@ statement. This is shown in the following example,</p>
 <p>You can extend an empty list by setting both arguments of the slice
 operator to 0 or by omitting both arguments as shown in the next
 example,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># an empty list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 80:</span>
+
+<span class="c1"># an empty list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="c1"># extend list using another list</span>
@@ -1244,7 +1407,9 @@ example,</p>
 arguments of the slice operator to the desired index.  The left hand
 side of the assignment statement must be an interable object. The
 following are examples list insert operations,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 81:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
 <span class="c1"># insert at index 0 using another list</span>
@@ -1266,7 +1431,9 @@ following are examples list insert operations,</p>
 <p>You can conveniently insert elements at the last index of the list
 using the length of the list or the negative index of the last
 element, -1,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 82:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]</span>
 
 <span class="c1"># insert at last index using list length</span>
@@ -1290,7 +1457,9 @@ element, -1,</p>
 <p>You can also remove elements using a list slice as the target of the
 <code class="docutils literal notranslate"><span class="pre">del</span></code> statement. This is an alternative to assigning the empty
 list to a list slice. The following examples illustrate,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a list x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 83:</span>
+
+<span class="c1"># a list x</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]</span>
 
 <span class="c1"># remove element &quot;b&quot; to &quot;e&quot;</span>
@@ -1317,7 +1486,9 @@ the <code class="docutils literal notranslate"><span class="pre">sort()</span></
 elements of the list must be of the same type and support the less
 than ‘&lt;’ operation. For example, you can sort the following list of
 integers,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 84:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
@@ -1332,7 +1503,9 @@ of an existing list but in the <em>reverse order</em>. You can you use the
 reversing modifies the original list and returns <code class="docutils literal notranslate"><span class="pre">None</span></code>. For
 example, suppose you want to reverse the order of the following list
 of strings,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 85:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="o">==</span> <span class="kc">None</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
 </pre></div>
@@ -1344,34 +1517,45 @@ of strings,</p>
 <p>You can compare lists with elements of the same type and the same
 number of elements using the comparison operator <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
 <p>Two lists with the same elements,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 86:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>Two empty lists,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 87:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>Two lists with different elements of the same type,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 88:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
+
+<span class="c1"># Two lists with elements of the same type with different number of</span>
+<span class="c1"># elements,</span>
 </pre></div>
 </div>
-<p>Two lists with elements of the same type with different number of
-elements,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 89:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
 </pre></div>
 </div>
 <p>Two lists with elements of different types,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 90:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="k">assert</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
 </pre></div>
@@ -1384,7 +1568,9 @@ iterable object is valid. In particular, you can use a list as the
 iterable in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. In the following example a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop
 is used to iterate over a list of integers to produce the sum of its
 elements,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 91:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">item</span>
@@ -1395,7 +1581,9 @@ elements,</p>
 <p>You can’t iterate over a list and modify the list at the same time.</p>
 <p>You can, of course, use the traditional method of iterating using a
 <code class="docutils literal notranslate"><span class="pre">while</span></code> statement,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example 92:</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
@@ -1423,7 +1611,7 @@ elements,</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Python to learn Python</a></h1>
+<h1 class="logo"><a href="index.html">Python to learn Python</a></h1>
 
 
 
@@ -1433,29 +1621,25 @@ elements,</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="minimal.html">Minimal Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="invoke.html">Invoking Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="structure.html">Program structure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="statements.html">Python statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datatypes.html">Python data types</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The <code class="docutils literal notranslate"><span class="pre">list</span></code> data type</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="datatypes.html" title="previous chapter">Python data types</a></li>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="minimal.html" title="previous chapter">Minimal Python</a></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
+    <form class="search" action="search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
@@ -1475,14 +1659,14 @@ elements,</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Ombuvirtual.
+      &copy;2019, OmbuVirtual.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/rst/type_list.rst.txt"
+      <a href="_sources/type_list.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

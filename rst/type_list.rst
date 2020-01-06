@@ -1,14 +1,10 @@
 The ``list`` data type
 ======================
 
-| `Overview`_
-| `Imports`_
-| `Creating lists`_
-| `Querying lists`_
-| `Modifying lists`_
-| `Comparing lists`_
-| `Iterating lists`_
-| `References`_
+.. contents::
+   :local:
+   :depth: 1
+   :backlinks: none
 
 Overview
 ~~~~~~~~
@@ -70,9 +66,10 @@ Imports
 
 ::
 
+    # Example 1:
+
     # import maths module, used in some examples
     import math
-
 
 Creating lists
 ~~~~~~~~~~~~~~
@@ -89,6 +86,7 @@ that order. You define the list using the following list display,
 
 ::
 
+    # Example 2:
 
     # list display to create
     # a list of integers
@@ -110,6 +108,7 @@ enclosed expressions,
 
 ::
 
+    # Example 3:
 
     # list display to create
     # an empty list
@@ -124,6 +123,7 @@ following list display,
 
 ::
 
+    # Example 4:
 
     # list display to create
     # a singleton list
@@ -140,6 +140,7 @@ involving identifiers, function calls and arithmetic operators,
 
 ::
 
+    # Example 5:
 
     # list display with
     # compound expressions
@@ -147,7 +148,11 @@ involving identifiers, function calls and arithmetic operators,
     print(x)
 
 You can use list displays to create lists with elements of any type
-as shown in the following examples, ::
+as shown in the following examples,
+
+::
+
+    # Example 6:
 
     # list display to create
     # a list of strings
@@ -172,6 +177,7 @@ type ``int``, ``float``, ``str``, ``list`` and ``tuple``,
 
 ::
 
+    # Example 7:
 
     # list display with elements
     # of different types
@@ -183,6 +189,7 @@ span multiple lines as show in the next example,
 
 ::
 
+    # Example 8:
 
     # list display spanning
     # multiple lines
@@ -211,6 +218,8 @@ create a list consisting of each letter of the string, you call the
 
 ::
 
+    # Example 9:
+
     # invoke list constructor to create
     # a list from a string
     x = list("abc")
@@ -220,6 +229,8 @@ In the following examples the ``list()`` constructor is used to
 create a new list from different types of iterable objects,
 
 ::
+
+    # Example 10:
 
     # invoke list constructor to create
     # a list from a range
@@ -245,6 +256,8 @@ You can create an empty list by invoking the ``list()`` constructor
 without an argument,
 
 ::
+
+    # Example 11:
 
     # invoke list constructor to create
     # an empty list
@@ -272,6 +285,8 @@ following snippet,
 
 ::
 
+    # Example 12:
+
     x = []
     for item in "abc":
         x.append("_" + item)
@@ -294,6 +309,8 @@ above in a more succinct and convenient way in a single expression,
 
 ::
 
+    # Example 13:
+
     # list comprehension to create
     # a list from a string by prefixing
     # each element with underscore
@@ -307,6 +324,8 @@ iteration. The following example uses the string method ``upper()``
 to create a list of upper case letters from the string "abc",
 
 ::
+
+    # Example 14:
 
     # list comprehension to create
     # a list from a string by making
@@ -322,6 +341,8 @@ range object but only if the element is even,
 
 ::
 
+    # Example 15:
+
     # list comprehension with conditional filtering
     x = [item ** 2 for item in range(0, 10) if item % 2 == 0]
     assert x == [0, 4, 16, 36, 64]
@@ -335,6 +356,8 @@ statement,
 
 ::
 
+    # Example 16:
+
     # list comprehension with multiple 'for' loops
     x = [m * n for m in (2, 2, 2) for n in (3, 4, 5) if m * n < 10]
     assert x == [6, 8, 6, 8, 6, 8]
@@ -343,6 +366,8 @@ If you need to write a long list comprehension you can make it span
 multiple lines,
 
 ::
+
+    # Example 17:
 
     # list comprehension spanning
     # multiple lines
@@ -366,6 +391,8 @@ creating new lists by *adding* existing lists,
 
 ::
 
+    # Example 18:
+
     # create a list by 'adding' two existing lists 
     x = ["a"] + ["b", "c"]
     assert x == ["a", "b", "c"]
@@ -379,6 +406,8 @@ Adding the empty list to an existing list creates a new list object
 that is a copy of the list,
 
 ::
+
+    # Example 19:
 
     # 'adding' an empty list to an existing
     # list creates a copy of the list
@@ -399,6 +428,8 @@ to itself three times,
 
 ::
 
+    # Example 20:
+
     x = ["a", "b"]
     x *= 3
     assert x == ["a", "b", "a", "b", "a", "b"]
@@ -415,6 +446,8 @@ you have the following list of strings,
 
 ::
 
+    # Example 21:
+
     y = ["a", "b", "c", "d", "e", "f"]
 
 You want to create a new list from a slice of ``y`` containing the
@@ -424,6 +457,8 @@ argument of the slice operator. The index of "e" is 4 so you add 1
 to it to get 5, the second argument of the slice operator,
 
 ::
+
+    # Example 22:
 
     # create a list by slicing
     # an existing list
@@ -439,6 +474,8 @@ second argument (the index of the last element you want to include
 
 ::
 
+    # Example 23:
+
     # create a list by slicing
     # from the beginning of existing list
     x = y[:3]
@@ -448,6 +485,8 @@ Similarly you can create a slice to the end of the list by omitting
 the last argument,
 
 ::
+
+    # Example 24:
 
     # create a list by slicing
     # to the end of existing list
@@ -459,6 +498,8 @@ copy of the list. In the following example ``x`` is a new list
 containing references to the same objects as list ``y``,
 
 ::
+
+    # Example 25:
 
     # create a copy of a list
     # using slice operator
@@ -473,6 +514,8 @@ index -4 and the last element "e" has index -2, you add 1 to it to
 get -1 for the second argument of the slice operator,
 
 ::
+
+    # Example 26:
 
     x = y[-4:-1]
     assert x == ["c", "d", "e"]
@@ -494,6 +537,8 @@ Suppose you have the following list of strings,
 
 ::
 
+    # Example 27:
+
     # a list of strings
     x = ["a", "b", "c"]
 
@@ -501,6 +546,8 @@ The following examples show how to reference the elemens of list
 ``x`` using the index operator,
 
 ::
+
+    # Example 28:
 
     # reference first element of x
     assert x[0] == "a"
@@ -515,6 +562,8 @@ range", as shown in the following example,
 
 ::
 
+    # Example 29:
+
     # attempt to reference an element
     # with an index that is out of range
     try:
@@ -527,6 +576,8 @@ calculate the index of the last element, provided the list is not
 empty,
 
 ::
+
+    # Example 30:
 
     # reference last element
     # calculating its index
@@ -543,6 +594,8 @@ indices,
 
 ::
 
+    # Example 31:
+
     assert x[-1] == "c"
     assert x[-2] == "b"
     assert x[-3] == "a"
@@ -556,6 +609,8 @@ and ``not in`` for this task. Suppose you have the following list,
 
 ::
 
+    # Example 32:
+
     x = ["a", "b", "c"]
 
 Let ``item`` be an arbitrary object. The expression ``item in x``
@@ -563,6 +618,8 @@ evaluates to True if ``item`` is an element of list ``x``, otherwise
 it evaluates to False,
 
 ::
+
+    # Example 33:
 
     # confirm "c" is an
     # element of x
@@ -576,6 +633,8 @@ The expression ``item not in x`` evaluates to True if ``item`` is
 not an element of list ``x``, otherwise it evaluates to False,
 
 ::
+
+    # Example 34:
 
     # confirm "d" is not an
     # element of x
@@ -594,11 +653,15 @@ respectively. Suppose you have the following list,
 
 ::
 
+    # Example 35:
+
     x = ["a", "b", "c"]
 
 the largest element is "c" and the smallest is "a",
 
 ::
+
+    # Example 36:
 
     # confirm largest element is "c"
     assert max(x) == "c"
@@ -610,6 +673,8 @@ If a list contains only one element or all the elements are the same
 the functions ``max()`` and ``min()`` return the same value,
 
 ::
+
+    # Example 37:
 
     # confirm largest = smallest
     x = ["a"]
@@ -625,6 +690,7 @@ following list cannot be compared because they are a mixture of
 
 ::
 
+    # Example 38:
 
     # attempt to compare 'int' and 'str'
     # elements raises a TypeError exception
@@ -639,6 +705,7 @@ exception,
 
 ::
 
+    # Example 39:
 
     # attempt to call 'max()' with an empty list
     # raises a ValueError exception
@@ -658,6 +725,8 @@ list,
 
 ::
 
+    # Example 40:
+
     x = ["a", "a", "c", "a"]
 
 You want to determine how many times the elements "a" and "c" appear
@@ -665,6 +734,8 @@ in ``x``. You simply invoke ``x.count()`` with each element as an
 argument in turn as show in the following snippet,
 
 ::
+
+    # Example 41:
 
     # element "a" occurs three times
     assert x.count("a") == 3
@@ -687,12 +758,16 @@ you have a list ``x`` as follows,
 
 ::
 
+    # Example 42:
+
     x = ["a", "b", "c"]
 
 To get the index of one of its elements you invoke ``x.index()``
 passing the element as an argument, the following are examples,
 
 ::
+
+    # Example 43:
 
     # index of "a" is 0
     assert x.index("a") == 0
@@ -706,6 +781,8 @@ of the list the interpreter raises a ``ValueError`` exception, as
 show in the following snippet
 
 ::
+
+    # Example 44:
 
     # attempt to get index of an object
     # that is not an element of x
@@ -746,12 +823,16 @@ list. Suppose you have the following list,
 
 ::
 
+    # Example 45:
+
     x = ["a"]
 
 You can add the strings "b" and "c" to the end of list ``x`` using
 the ``append()`` method twice,
 
 ::
+
+    # Example 46:
 
     # add "b" to end of list x
     x.append("b")
@@ -768,6 +849,8 @@ snippet adds string "d" to list ``x`` and confirms that the call to
 
 ::
 
+    # Example 47:
+
     # append() method returns None
     assert x.append("d") == None
 
@@ -783,6 +866,8 @@ following example shows how a list can be extended using a string, a
 tuple and another list,
 
 ::
+
+    # Example 48:
 
     # extend list x using a string
     x = ["a"]
@@ -804,12 +889,18 @@ Like the ``append()`` method, the ``extend()`` method returns
 
 ::
 
+    # Example 49:
+
     # extend() method returns None
     x = ["a"]
     assert x.extend("bc") == None
 
 An alternative to the ``extend()`` method is the *assignment with
-addition* statement ``+=``. Suppose you have the following list, ::
+addition* statement ``+=``. Suppose you have the following list,
+
+::
+
+    # Example 50:
 
     x = ["a"]
 
@@ -818,6 +909,8 @@ To add elements to ``x`` using an iterable object, say the string
 statement ``+=``,
 
 ::
+
+    # Example 51:
 
     x += "bc"
 
@@ -828,6 +921,8 @@ and finally rebinds the resulting list to ``x``. This is illustrated
 in the following snippet,
 
 ::
+
+    # Example 52:
 
     # a list
     x = ["a"]
@@ -848,6 +943,8 @@ The following examples extend a list using a tuple and another list,
 
 ::
 
+    # Example 53:
+
     # add elements of tuple to list x 
     x = ["a"]
     x += ("b", "c")
@@ -865,6 +962,8 @@ operation which creates a new object and binds it to ``x``, as shown
 in the following snippet,
 
 ::
+
+    # Example 54:
 
     # a list
     x = ["a"]
@@ -898,6 +997,8 @@ The following examples illustrate how to insert an element in a list
 
 ::
 
+    # Example 55:
+
     # a list x
     x = ["b", "c", "d"]
 
@@ -927,6 +1028,8 @@ index *greater* than the index of the last element in the list,
 
 ::
 
+    # Example 56:
+
     # a list x
     x = ["a"]
 
@@ -944,6 +1047,8 @@ The ``insert()`` method accepts negative indices counting from the
 end of the list. For example,
 
 ::
+
+    # Example 57:
 
     # a list x
     x = ["b", "c"]
@@ -965,6 +1070,8 @@ element at the beginning of the list,
 
 ::
 
+    # Example 58:
+
     # a list x
     x = ["b", "c"]
 
@@ -977,6 +1084,8 @@ You can also use the ``insert()`` method to add an element to an
 empty list by specifying any integer value as the index,
 
 ::
+
+    # Example 59:
 
     # an empty list x
     x = []
@@ -1004,6 +1113,8 @@ rather than the modified list,
 
 ::
 
+    # Example 60:
+
     # insert() method returns None
     x = ["b"]
     assert x.insert(0, "a") == None
@@ -1017,6 +1128,8 @@ To remove elements from a list you can use the ``clear()``,
 You use the ``clear()`` method to remove *all* elements from a list,
 
 ::
+
+    # Example 61:
 
     # a list x
     x = ["a", "b", "c"]
@@ -1033,12 +1146,16 @@ have a list in which the string "b" occurs serveral times,
 
 ::
 
+    # Example 62:
+
     x = ["a", "b", "c", "b", "b"]
 
-To remove the first occurrence of "b" you invoke the ``remove()``
-method with the string object "b" as an argument,
+    # To remove the first occurrence of "b" you invoke the ``remove()``
+    # method with the string object "b" as an argument,
 
 ::
+
+    # Example 63:
 
     # remove first element equal to "b"
     x.remove("b")
@@ -1051,6 +1168,7 @@ If no element in the list is equal to the object passed to
 
 ::
 
+    # Example 64:
 
     # a list x
     x = ["a", "b", "c"]
@@ -1067,6 +1185,8 @@ return ``None``, not the modified list,
 
 ::
 
+    # Example 65:
+
     # confirm clear() returns None
     x = ["a", "b", "c"]
     assert x.clear() == None
@@ -1079,6 +1199,8 @@ You use the ``pop()`` method to retrieve *and* remove an element at
 a specified index,
 
 ::
+
+    # Example 66:
 
     # a list x
     x = ["a", "b", "c"]
@@ -1097,6 +1219,8 @@ removes the last element in the list,
 
 ::
 
+    # Example 67:
+
     # a list x
     x = ["a", "b", "c"]
 
@@ -1114,6 +1238,8 @@ an element from a list at a specified index,
 
 ::
 
+    # Example 68:
+
     # a list x
     x = ["a", "b", "c"]
 
@@ -1130,6 +1256,8 @@ You can replace elements in a list using the index operator as a
 target of an assigment statement,
 
 ::
+
+    # Example 69:
 
     # a list x
     x = ["a", "b", "c"]
@@ -1178,6 +1306,8 @@ some examples of list slices,
 
 ::
 
+    # Example 70:
+
     # a list x
     x = ["a", "b", "c" ,"d", "e", "f"]
 
@@ -1205,6 +1335,8 @@ slice. For example, suppose you have the following list,
 
 ::
 
+    # Example 71:
+
     # a list x
     x = ["a", "b", "c", "d", "e", "f"]
 
@@ -1218,6 +1350,8 @@ operator for this example,
 
 ::
 
+    # Example 72:
+
     # create a slice of x using a slice step of 2
     assert x[0:len(x):2] == ["a", "c", "e"]
 
@@ -1226,6 +1360,8 @@ which we omit the third argument to the slice operator. The
 following snippet shows this equivalence,
 
 ::
+
+    # Example 73:
 
     # a list x
     x = ["a", "b", "c", "d", "e", "f"]
@@ -1239,6 +1375,8 @@ with an iterable object as the 'source', the statement is
 interpreted as a replacement operation.
 
 ::
+
+    # Example 74:
 
     # a list x
     x = ["a", "d", "e", "f"]
@@ -1282,6 +1420,8 @@ next example,
 
 ::
 
+    # Example 75:
+
     # a list x
     x = ["a", "b" ,"c"]
 
@@ -1297,6 +1437,8 @@ context of an assignment statement, is interpreted as an
 insertion operation.
 
 ::
+
+    # Example 76:
 
     # a list x
     x = ["d", "e", "f"]
@@ -1322,6 +1464,8 @@ Note that if the empty list is assigned nothing happens,
 
 ::
 
+    # Example 77:
+
     # a list x
     x = ["a", "b", "c"]
 
@@ -1340,6 +1484,8 @@ which is conveniently obtained using the built-in function
 
 ::
 
+    # Example 78:
+
     # a list x
     x = ["a"]
 
@@ -1357,6 +1503,8 @@ last element and 'assign' the iterable object using the assignment
 statement. This is shown in the following example,
 
 ::
+
+    # Example 79:
 
     # a list x
     x = ["a"]
@@ -1382,6 +1530,8 @@ example,
 
 ::
 
+    # Example 80:
+
     # an empty list x
     x = []
 
@@ -1397,6 +1547,8 @@ side of the assignment statement must be an interable object. The
 following are examples list insert operations,
 
 ::
+
+    # Example 81:
 
     # a list x
     x = [3]
@@ -1421,6 +1573,8 @@ using the length of the list or the negative index of the last
 element, -1,
 
 ::
+
+    # Example 82:
 
     # a list x
     x = ["a", "d"]
@@ -1447,6 +1601,8 @@ You can also remove elements using a list slice as the target of the
 list to a list slice. The following examples illustrate,
 
 ::
+
+    # Example 83:
 
     # a list x
     x = ["a", "b", "c", "d", "e", "f"]
@@ -1477,6 +1633,8 @@ integers,
 
 ::
 
+    # Example 84:
+
     x = [3, 1, 2]
     assert x.sort() == None
     assert x == [1, 2, 3]
@@ -1495,6 +1653,8 @@ of strings,
 
 ::
 
+    # Example 85:
+
     x = ["a", "b", "c"]
     assert x.reverse() == None
     assert x == ["c", "b", "a"]
@@ -1509,6 +1669,8 @@ Two lists with the same elements,
 
 ::
 
+    # Example 86:
+
     x = list("abc")
     y = list("abc")
     assert id(x) != id(y)
@@ -1517,6 +1679,8 @@ Two lists with the same elements,
 Two empty lists,
 
 ::
+
+    # Example 87:
 
     x = list()
     y = list()
@@ -1527,20 +1691,28 @@ Two lists with different elements of the same type,
 
 ::
 
+    # Example 88:
+
     x = ["a", "b"]
     y = ["a", "c"]
     assert x != y
 
-Two lists with elements of the same type with different number of
-elements,
+    # Two lists with elements of the same type with different number of
+    # elements,
 
 ::
+
+    # Example 89:
 
     x = ["a", "b", "c"]
     y = ["a", "c"]
     assert x != y
 
-Two lists with elements of different types, ::
+Two lists with elements of different types,
+
+::
+
+    # Example 90:
 
     x = ["a", "b"]
     y = [1, 2]
@@ -1557,6 +1729,8 @@ elements,
 
 ::
 
+    # Example 91:
+
     x = [1, 2, 3]; sum = 0
 
     for item in x:
@@ -1570,6 +1744,8 @@ You can, of course, use the traditional method of iterating using a
 ``while`` statement,
 
 ::
+
+    # Example 92:
 
     x = [1, 2, 3]; i = 0; sum = 0
 

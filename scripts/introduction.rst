@@ -43,4 +43,3 @@ always in sync with the scripts.
 .. _`Python to learn Python`: https://github.com/ombuvirtual/python-to-learn-python
 .. _`Python to Learn Python Pages`: https://ombuvirtual.github.io/python-to-learn-python/
 .. _`Sphinx tool`: http://www.sphinx-doc.org/en/master/
-
